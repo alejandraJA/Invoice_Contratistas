@@ -1,32 +1,48 @@
 package com.invoice.contratista.ui.fragment.login
 
-import androidx.lifecycle.ViewModelProvider
+import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.invoice.contratista.R
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
+import com.google.android.material.snackbar.Snackbar
+import com.invoice.contratista.databinding.LoginFragmentBinding
+import com.invoice.contratista.ui.activity.MainActivity
 
-class LoginFragment : Fragment() {
-
-    companion object {
-        fun newInstance() = LoginFragment()
-    }
+class LoginFragment(private val onClick: (Boolean) -> Unit) : Fragment() {
 
     private lateinit var viewModel: LoginViewModel
+    private lateinit var binding: LoginFragmentBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.login_fragment, container, false)
+    ): View {
+        viewModel = ViewModelProvider(this)[LoginViewModel::class.java]
+        binding = LoginFragmentBinding.inflate(layoutInflater, container, false)
+        return binding.root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
-        // TODO: Use the ViewModel
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.buttonDoYouHaveAnAccount.setOnClickListener {
+            onClick.invoke(false)
+        }
+        binding.buttonLogin.setOnClickListener {
+            requireActivity().startActivity(Intent(requireContext(), MainActivity::class.java))
+            requireActivity().finish()
+        }
+        binding.buttonLostYourPassword.setOnClickListener {
+            Snackbar.make(
+                it,
+                "Revise su bandeja de entrada para recuperar su cuenta.",
+                Snackbar.LENGTH_INDEFINITE
+            ).setAction("Ir") {
+
+            }.show()
+        }
     }
 
 }

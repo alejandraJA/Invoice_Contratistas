@@ -1,32 +1,35 @@
 package com.invoice.contratista.ui.fragment.welcome
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.invoice.contratista.R
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
+import com.invoice.contratista.databinding.WelcomeFragmentBinding
 
-class WelcomeFragment : Fragment() {
-
-    companion object {
-        fun newInstance() = WelcomeFragment()
-    }
+class WelcomeFragment(private val onClick: (Boolean) -> Unit) : Fragment() {
 
     private lateinit var viewModel: WelcomeViewModel
+    private lateinit var binding: WelcomeFragmentBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.welcome_fragment, container, false)
+    ): View {
+        binding = WelcomeFragmentBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(WelcomeViewModel::class.java)
-        // TODO: Use the ViewModel
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        viewModel = ViewModelProvider(this)[WelcomeViewModel::class.java]
+        binding.buttonGoToLogin.setOnClickListener {
+            onClick.invoke(true)
+        }
+        binding.buttonGoToCreateAccount.setOnClickListener {
+            onClick.invoke(false)
+        }
     }
 
-}
+}//

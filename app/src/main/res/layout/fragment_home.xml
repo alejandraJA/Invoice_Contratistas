@@ -4,9 +4,113 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingTop="16sp"
     tools:context=".ui.fragment.home.HomeFragment">
 
+    <ImageView
+        android:id="@+id/image_profile"
+        android:layout_width="40sp"
+        android:layout_height="40sp"
+        android:layout_marginStart="16sp"
+        android:layout_marginTop="16sp"
+        android:contentDescription="@string/profile"
+        android:elevation="16sp"
+        android:padding="8sp"
+        android:src="@drawable/ic_business"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/hi"
+        style="@style/TextAppearance.MaterialComponents.Body1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16sp"
+        android:text="@string/hi"
+        app:layout_constraintStart_toEndOf="@+id/image_profile"
+        app:layout_constraintTop_toTopOf="@+id/image_profile" />
+
+    <TextView
+        android:id="@+id/name"
+        style="@style/TextAppearance.MaterialComponents.Body1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4sp"
+        app:layout_constraintStart_toEndOf="@+id/hi"
+        app:layout_constraintTop_toTopOf="@+id/image_profile"
+        tools:text="@tools:sample/first_names" />
+
+    <TextView
+        android:id="@+id/see_your_daily"
+        style="@style/TextAppearance.MaterialComponents.Body2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16sp"
+        android:text="@string/see_your_daily"
+        app:layout_constraintStart_toEndOf="@+id/image_profile"
+        app:layout_constraintTop_toBottomOf="@+id/name" />
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chipGroup"
+        android:layout_width="0sp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16sp"
+        android:layout_marginEnd="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_to_do"
+        app:singleSelection="true">
+
+        <com.google.android.material.chip.Chip
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/visit" />
+
+        <com.google.android.material.chip.Chip
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/budget" />
+
+        <com.google.android.material.chip.Chip
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/receipt" />
+
+        <com.google.android.material.chip.Chip
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/invoice" />
+
+    </com.google.android.material.chip.ChipGroup>
+
+    <TextView
+        android:id="@+id/text_to_do"
+        style="@style/TextAppearance.MaterialComponents.Subtitle1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16sp"
+        android:layout_marginTop="16sp"
+        android:text="@string/to_do"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image_profile" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_event"
+        android:layout_width="match_parent"
+        android:layout_height="0sp"
+        android:layout_margin="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chipGroup"
+        tools:layout_editor_absoluteX="16dp"
+        tools:listitem="@layout/to_do" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16sp"
+        android:contentDescription="@string/add"
+        android:src="@drawable/ic_add"
+        app:fabSize="mini"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -12,8 +12,8 @@ class SplashScreen : AppCompatActivity() {
         setContentView(R.layout.activity_splash)
         val timer: Thread = object : Thread() {
             override fun run() {
-                try { sleep(1000) } finally {
-                    startActivity(Intent(this@SplashScreen, MainActivity::class.java))
+                try { sleep(1500) } finally {
+                    startActivity(Intent(this@SplashScreen, StartActivity::class.java))
                     finish()
                 }
             }

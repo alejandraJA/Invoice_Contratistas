@@ -1,32 +1,38 @@
 package com.invoice.contratista.ui.fragment.singUp
 
-import androidx.lifecycle.ViewModelProvider
+import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.invoice.contratista.R
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
+import com.invoice.contratista.databinding.SingUpFragmentBinding
+import com.invoice.contratista.ui.activity.MainActivity
 
-class SingUpFragment : Fragment() {
-
-    companion object {
-        fun newInstance() = SingUpFragment()
-    }
+class SingUpFragment(private val onClick: (Boolean) -> Unit) : Fragment() {
 
     private lateinit var viewModel: SingUpViewModel
+    private lateinit var binding: SingUpFragmentBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.sing_up_fragment, container, false)
+    ): View {
+        binding = SingUpFragmentBinding.inflate(layoutInflater, container, false)
+        viewModel = ViewModelProvider(this)[SingUpViewModel::class.java]
+        return binding.root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(SingUpViewModel::class.java)
-        // TODO: Use the ViewModel
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.buttonAlreadyHaveAnAccount.setOnClickListener {
+            onClick.invoke(true)
+        }
+        binding.buttonSingUp.setOnClickListener {
+            requireActivity().startActivity(Intent(requireContext(), MainActivity::class.java))
+            requireActivity().finish()
+        }
     }
 
 }

@@ -3,24 +3,48 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/aejimenez/AndroidStudioProjects/Practicas/InvoiceContratistas/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1745" />
         <entry key="..\:/Users/aejimenez/AndroidStudioProjects/Practicas/InvoiceContratistas/app/src/main/res/drawable/circle.xml" value="0.1755" />
         <entry key="..\:/Users/aejimenez/AndroidStudioProjects/Practicas/InvoiceContratistas/app/src/main/res/drawable/ic_business.xml" value="0.2455" />
+        <entry key="..\:/Users/aejimenez/AndroidStudioProjects/Practicas/InvoiceContratistas/app/src/main/res/drawable/ic_certificate.xml" value="0.1745" />
+        <entry key="..\:/Users/aejimenez/AndroidStudioProjects/Practicas/InvoiceContratistas/app/src/main/res/drawable/ic_customers.xml" value="0.1745" />
+        <entry key="..\:/Users/aejimenez/AndroidStudioProjects/Practicas/InvoiceContratistas/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.1745" />
+        <entry key="..\:/Users/aejimenez/AndroidStudioProjects/Practicas/InvoiceContratistas/app/src/main/res/drawable/ic_edit.xml" value="0.1745" />
         <entry key="..\:/Users/aejimenez/AndroidStudioProjects/Practicas/InvoiceContratistas/app/src/main/res/drawable/ic_email.xml" value="0.2455" />
+        <entry key="..\:/Users/aejimenez/AndroidStudioProjects/Practicas/InvoiceContratistas/app/src/main/res/drawable/ic_home.xml" value="0.1745" />
+        <entry key="..\:/Users/aejimenez/AndroidStudioProjects/Practicas/InvoiceContratistas/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.1745" />
+        <entry key="..\:/Users/aejimenez/AndroidStudioProjects/Practicas/InvoiceContratistas/app/src/main/res/drawable/ic_inventory.xml" value="0.1745" />
+        <entry key="..\:/Users/aejimenez/AndroidStudioProjects/Practicas/InvoiceContratistas/app/src/main/res/drawable/ic_invoice.xml" value="0.1745" />
+        <entry key="..\:/Users/aejimenez/AndroidStudioProjects/Practicas/InvoiceContratistas/app/src/main/res/drawable/ic_key.xml" value="0.1745" />
+        <entry key="..\:/Users/aejimenez/AndroidStudioProjects/Practicas/InvoiceContratistas/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1745" />
+        <entry key="..\:/Users/aejimenez/AndroidStudioProjects/Practicas/InvoiceContratistas/app/src/main/res/drawable/ic_legal_data.xml" value="0.1745" />
+        <entry key="..\:/Users/aejimenez/AndroidStudioProjects/Practicas/InvoiceContratistas/app/src/main/res/drawable/ic_location.xml" value="0.1745" />
+        <entry key="..\:/Users/aejimenez/AndroidStudioProjects/Practicas/InvoiceContratistas/app/src/main/res/drawable/ic_lock.xml" value="0.1745" />
+        <entry key="..\:/Users/aejimenez/AndroidStudioProjects/Practicas/InvoiceContratistas/app/src/main/res/drawable/ic_logout.xml" value="0.1745" />
+        <entry key="..\:/Users/aejimenez/AndroidStudioProjects/Practicas/InvoiceContratistas/app/src/main/res/drawable/ic_maintenance.xml" value="0.1745" />
+        <entry key="..\:/Users/aejimenez/AndroidStudioProjects/Practicas/InvoiceContratistas/app/src/main/res/drawable/ic_money.xml" value="0.1745" />
         <entry key="..\:/Users/aejimenez/AndroidStudioProjects/Practicas/InvoiceContratistas/app/src/main/res/drawable/ic_round_inventory_24.xml" value="0.1755" />
         <entry key="..\:/Users/aejimenez/AndroidStudioProjects/Practicas/InvoiceContratistas/app/src/main/res/drawable/motion.xml" value="0.1755" />
         <entry key="..\:/Users/aejimenez/AndroidStudioProjects/Practicas/InvoiceContratistas/app/src/main/res/drawable/motion_day.xml" value="0.1755" />
         <entry key="..\:/Users/aejimenez/AndroidStudioProjects/Practicas/InvoiceContratistas/app/src/main/res/font-v26/font.xml" value="0.24947916666666667" />
         <entry key="..\:/Users/aejimenez/AndroidStudioProjects/Practicas/InvoiceContratistas/app/src/main/res/font/font.xml" value="0.24947916666666667" />
-        <entry key="..\:/Users/aejimenez/AndroidStudioProjects/Practicas/InvoiceContratistas/app/src/main/res/layout/activity_main.xml" value="1.0" />
+        <entry key="..\:/Users/aejimenez/AndroidStudioProjects/Practicas/InvoiceContratistas/app/src/main/res/layout/activity_event.xml" value="0.18" />
+        <entry key="..\:/Users/aejimenez/AndroidStudioProjects/Practicas/InvoiceContratistas/app/src/main/res/layout/activity_main.xml" value="0.21927083333333333" />
         <entry key="..\:/Users/aejimenez/AndroidStudioProjects/Practicas/InvoiceContratistas/app/src/main/res/layout/activity_splash.xml" value="0.21927083333333333" />
         <entry key="..\:/Users/aejimenez/AndroidStudioProjects/Practicas/InvoiceContratistas/app/src/main/res/layout/activity_start.xml" value="0.21927083333333333" />
-        <entry key="..\:/Users/aejimenez/AndroidStudioProjects/Practicas/InvoiceContratistas/app/src/main/res/layout/fragment_home.xml" value="0.23958333333333334" />
+        <entry key="..\:/Users/aejimenez/AndroidStudioProjects/Practicas/InvoiceContratistas/app/src/main/res/layout/budget_fragment.xml" value="0.21927083333333333" />
+        <entry key="..\:/Users/aejimenez/AndroidStudioProjects/Practicas/InvoiceContratistas/app/src/main/res/layout/event_fragment.xml" value="0.21927083333333333" />
+        <entry key="..\:/Users/aejimenez/AndroidStudioProjects/Practicas/InvoiceContratistas/app/src/main/res/layout/fragment_event.xml" value="0.21927083333333333" />
+        <entry key="..\:/Users/aejimenez/AndroidStudioProjects/Practicas/InvoiceContratistas/app/src/main/res/layout/fragment_home.xml" value="0.21927083333333333" />
         <entry key="..\:/Users/aejimenez/AndroidStudioProjects/Practicas/InvoiceContratistas/app/src/main/res/layout/fragment_login.xml" value="0.25" />
         <entry key="..\:/Users/aejimenez/AndroidStudioProjects/Practicas/InvoiceContratistas/app/src/main/res/layout/fragment_start.xml" value="0.21927083333333333" />
+        <entry key="..\:/Users/aejimenez/AndroidStudioProjects/Practicas/InvoiceContratistas/app/src/main/res/layout/invoice_fragment.xml" value="0.21927083333333333" />
         <entry key="..\:/Users/aejimenez/AndroidStudioProjects/Practicas/InvoiceContratistas/app/src/main/res/layout/log_fragment.xml" value="0.1984375" />
         <entry key="..\:/Users/aejimenez/AndroidStudioProjects/Practicas/InvoiceContratistas/app/src/main/res/layout/log_up_fragment.xml" value="0.23958333333333334" />
-        <entry key="..\:/Users/aejimenez/AndroidStudioProjects/Practicas/InvoiceContratistas/app/src/main/res/layout/login_fragment.xml" value="0.23958333333333334" />
+        <entry key="..\:/Users/aejimenez/AndroidStudioProjects/Practicas/InvoiceContratistas/app/src/main/res/layout/login_fragment.xml" value="0.21041666666666667" />
+        <entry key="..\:/Users/aejimenez/AndroidStudioProjects/Practicas/InvoiceContratistas/app/src/main/res/layout/receipt_fragment.xml" value="0.21927083333333333" />
         <entry key="..\:/Users/aejimenez/AndroidStudioProjects/Practicas/InvoiceContratistas/app/src/main/res/layout/sing_up_fragment.xml" value="0.21927083333333333" />
+        <entry key="..\:/Users/aejimenez/AndroidStudioProjects/Practicas/InvoiceContratistas/app/src/main/res/layout/to_do.xml" value="0.33" />
         <entry key="..\:/Users/aejimenez/AndroidStudioProjects/Practicas/InvoiceContratistas/app/src/main/res/layout/welcome_fragment.xml" value="0.21927083333333333" />
         <entry key="..\:/Users/aejimenez/AndroidStudioProjects/Practicas/InvoiceContratistas/app/src/main/res/menu/bottom_nav_menu.xml" value="0.21927083333333333" />
       </map>

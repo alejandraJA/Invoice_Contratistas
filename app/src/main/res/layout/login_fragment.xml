@@ -78,6 +78,7 @@
     </LinearLayout>
 
     <Button
+        android:id="@+id/button_do_you_have_an_account"
         style="@style/Widget.Material3.Button.TextButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

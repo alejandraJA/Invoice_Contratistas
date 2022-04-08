@@ -31,4 +31,26 @@
     <string name="tab_text_2">Tab 2</string>
     <string name="login_now">Login now</string>
     <string name="let_s_get_started">Let´s get started</string>
+    <string name="profile">profile</string>
+    <string name="hi">Hi,</string>
+    <string name="see_your_daily">See your daily</string>
+    <string name="to_do">To do</string>
+    <string name="visit">Visit</string>
+    <string name="quotation">Quotation</string>
+    <string name="budget">Budget</string>
+    <string name="receipt">Receipt</string>
+    <string name="invoice">Invoice</string>
+    <string name="calendar">calendar</string>
+    <string name="finalize">Finalize</string>
+    <string name="cancel">Cancel</string>
+    <string name="step">Step</string>
+    <string name="priority">Priority</string>
+    <string name="low">Low</string>
+    <string name="hour">hour</string>
+    <string name="add">add</string>
+    <string name="title_activity_event">EventActivity</string>
+    <string name="event">Event</string>
+    <string name="customer">Customer</string>
+    <string name="save">save</string>
+    <string name="delete">delete</string>
 </resources>
