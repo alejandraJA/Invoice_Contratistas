@@ -70,6 +70,10 @@
         <item name="cornerSize">24sp</item>
     </style>
 
+    <style name="TextAppearance.MaterialComponents.Subtitle1.Title">
+        <item name="android:textSize">30sp</item>
+    </style>
+
     <style name="ShapeAppearance.MyApp.LargeComponent" parent="ShapeAppearance.Material3.LargeComponent">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">24sp</item>

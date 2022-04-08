@@ -53,4 +53,6 @@
     <string name="customer">Customer</string>
     <string name="save">save</string>
     <string name="delete">delete</string>
+    <string name="notes">Notes</string>
+    <string name="new_event">New event</string>
 </resources>

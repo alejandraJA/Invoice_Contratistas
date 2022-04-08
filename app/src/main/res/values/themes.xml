@@ -84,6 +84,10 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+    <style name="TextAppearance.MaterialComponents.Subtitle1.Title">
+        <item name="android:textSize">30sp</item>
+    </style>
+
     <style name="Theme.InvoiceContratistas.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.InvoiceContratistas.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />

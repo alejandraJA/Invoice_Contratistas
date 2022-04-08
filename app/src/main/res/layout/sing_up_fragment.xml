@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.fragment.singUp.SingUpFragment"
-    android:padding="16sp">
+    android:padding="16sp"
+    tools:context=".ui.fragment.singUp.SingUpFragment">
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -13,11 +13,10 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="16dp">
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            style="@style/TextAppearance.AppCompat.Title"
+            style="@style/TextAppearance.MaterialComponents.Subtitle1.Title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/create_an_account"
@@ -31,13 +30,15 @@
             android:layout_marginTop="16sp"
             android:hint="@string/name"
             app:errorEnabled="true"
-            app:startIconDrawable="@drawable/ic_business">
+            app:startIconDrawable="@drawable/ic_business"
+            app:startIconTint="@color/purple_500">
 
             <com.google.android.material.textfield.TextInputEditText
                 style="@style/customedit"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:inputType="textEmailAddress" />
+
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -45,13 +46,15 @@
             android:layout_height="wrap_content"
             android:hint="@string/email"
             app:errorEnabled="true"
-            app:startIconDrawable="@drawable/ic_email">
+            app:startIconDrawable="@drawable/ic_email"
+            app:startIconTint="@color/purple_500">
 
             <com.google.android.material.textfield.TextInputEditText
                 style="@style/customedit"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:inputType="textEmailAddress" />
+
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -59,13 +62,17 @@
             android:layout_height="wrap_content"
             android:hint="@string/password"
             app:errorEnabled="true"
-            app:startIconDrawable="@drawable/ic_password">
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="@color/purple_500"
+            app:startIconDrawable="@drawable/ic_password"
+            app:startIconTint="@color/purple_500">
 
             <com.google.android.material.textfield.TextInputEditText
                 style="@style/customedit"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:inputType="textPassword" />
+
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -73,13 +80,17 @@
             android:layout_height="wrap_content"
             android:hint="@string/confirm_password"
             app:errorEnabled="true"
-            app:startIconDrawable="@drawable/ic_password">
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="@color/purple_500"
+            app:startIconDrawable="@drawable/ic_password"
+            app:startIconTint="@color/purple_500">
 
             <com.google.android.material.textfield.TextInputEditText
                 style="@style/customedit"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:inputType="textPassword" />
+
         </com.google.android.material.textfield.TextInputLayout>
 
         <CheckBox
@@ -106,4 +117,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
