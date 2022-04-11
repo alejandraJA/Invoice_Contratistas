@@ -2,12 +2,20 @@ package com.invoice.contratista.ui.activity.event
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.viewpager.widget.ViewPager
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.tabs.TabLayout
+import com.google.android.material.tabs.TabLayoutMediator
+import com.invoice.contratista.R
 import com.invoice.contratista.databinding.ActivityEventBinding
 import com.invoice.contratista.ui.adapter.SectionsPagerAdapter
+
+private val TAB_TITLES = arrayOf(
+    R.string.visit,
+    R.string.budget,
+    R.string.receipt,
+    R.string.invoice
+)
 
 class EventActivity : AppCompatActivity() {
 
@@ -19,11 +27,14 @@ class EventActivity : AppCompatActivity() {
         binding = ActivityEventBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val sectionsPagerAdapter = SectionsPagerAdapter(this, supportFragmentManager, "")
-        val viewPager: ViewPager = binding.viewPager
+        val sectionsPagerAdapter = SectionsPagerAdapter(this, "")
+        val viewPager = binding.viewPager
         viewPager.adapter = sectionsPagerAdapter
         val tabs: TabLayout = binding.tabs
-        tabs.setupWithViewPager(viewPager)
+
+        TabLayoutMediator(tabs, viewPager) { tab, position ->
+            tab.text = resources.getString(TAB_TITLES[position])
+        }.attach()
         val fab: FloatingActionButton = binding.fab
 
         fab.setOnClickListener { view ->

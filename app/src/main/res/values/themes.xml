@@ -88,6 +88,14 @@
         <item name="android:textSize">30sp</item>
     </style>
 
+    <style name="TextAppearance.MaterialComponents.Body1.style">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="TextAppearance.MaterialComponents.Body2.style">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
     <style name="Theme.InvoiceContratistas.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.InvoiceContratistas.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />

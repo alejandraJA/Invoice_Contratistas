@@ -78,4 +78,12 @@
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">24sp</item>
     </style>
+
+    <style name="TextAppearance.MaterialComponents.Body1.style">
+        <item name="android:textColor">@color/background</item>
+    </style>
+
+    <style name="TextAppearance.MaterialComponents.Body2.style">
+        <item name="android:textColor">@color/background</item>
+    </style>
 </resources>

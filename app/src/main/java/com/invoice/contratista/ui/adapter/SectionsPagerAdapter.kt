@@ -1,9 +1,8 @@
 package com.invoice.contratista.ui.adapter
 
 import android.content.Context
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentPagerAdapter
+import androidx.fragment.app.FragmentActivity
+import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.invoice.contratista.R
 import com.invoice.contratista.ui.fragment.budget.BudgetFragment
 import com.invoice.contratista.ui.fragment.event.EventFragment
@@ -18,23 +17,22 @@ private val TAB_TITLES = arrayOf(
 )
 
 /**
- * A [FragmentPagerAdapter] that returns a fragment corresponding to
+ * A [FragmentStateAdapter] that returns a fragment corresponding to
  * one of the sections/tabs/pages.
  */
-class SectionsPagerAdapter(private val context: Context, fm: FragmentManager, val id:String) :
-    FragmentPagerAdapter(fm) {
+class SectionsPagerAdapter(fragmentActivity: FragmentActivity, val id: String) :
+    FragmentStateAdapter(fragmentActivity) {
 
-    override fun getItem(position: Int) = when(position) {
+    //override fun getPageTitle(position: Int) = context.resources.getString(TAB_TITLES[position])
+
+    override fun getItemCount() = TAB_TITLES.size
+
+    override fun createFragment(position: Int) = when(position) {
         0 -> EventFragment(id)
         1 -> BudgetFragment(id)
         2 -> ReceiptFragment(id)
         3 -> InvoiceFragment(id)
         else -> EventFragment(id)
     }
-
-    override fun getPageTitle(position: Int) = context.resources.getString(TAB_TITLES[position])
-
-
-    override fun getCount() = TAB_TITLES.size
 
 }

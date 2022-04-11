@@ -27,7 +27,7 @@ class StartActivity : AppCompatActivity() {
                 binding.pagerStart.setCurrentItem(1, true)
             }
         )
-        adapter = PagerAdapter(list, supportFragmentManager)
+        adapter = PagerAdapter(list, this)
         binding.pagerStart.adapter = adapter
     }
 }
