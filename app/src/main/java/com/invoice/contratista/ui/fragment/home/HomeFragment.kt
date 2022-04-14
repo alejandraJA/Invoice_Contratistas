@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.invoice.contratista.config.GlobalVariables
+import com.invoice.contratista.utils.GlobalVariables
 import com.invoice.contratista.databinding.FragmentHomeBinding
 import com.invoice.contratista.ui.fragment.home.apater.Event
 import com.invoice.contratista.ui.fragment.home.apater.EventAdapter

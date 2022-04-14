@@ -9,7 +9,11 @@
         android:id="@+id/navigation_home"
         android:name="com.invoice.contratista.ui.fragment.home.HomeFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_navigation_home_to_eventActivity"
+            app:destination="@id/eventActivity" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_dashboard"
@@ -22,4 +26,25 @@
         android:name="com.invoice.contratista.ui.fragment.notifications.NotificationsFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications" />
+
+    <fragment
+        android:id="@+id/addEventFragment"
+        android:name="com.invoice.contratista.ui.fragment.addEvent.AddEventFragment"
+        android:label="@string/new_event"
+        tools:layout="@layout/add_event_fragment" />
+
+    <activity
+        android:id="@+id/eventActivity"
+        android:name="com.invoice.contratista.ui.activity.event.EventActivity"
+        android:label="activity_event"
+        tools:layout="@layout/activity_event" />
+
+    <action
+        android:id="@+id/global_action_to_event_activity"
+        app:destination="@+id/eventActivity" />
+
+    <action
+        android:id="@+id/global_action_to_add_event"
+        app:destination="@+id/addEventFragment" />
+
 </navigation>

@@ -8,7 +8,6 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.invoice.contratista.R
 import com.invoice.contratista.databinding.ActivityMainBinding
 
-
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
@@ -20,6 +19,11 @@ class MainActivity : AppCompatActivity() {
         val navView: BottomNavigationView = binding.navView
         val navController = findNavController(R.id.nav_host_fragment_activity_main)
         navView.setupWithNavController(navController)
+        binding.fabAddEvent.setOnClickListener {
+            findNavController(R.id.nav_host_fragment_activity_main)
+                .navigate(R.id.global_action_to_add_event)
+        }
+
     }
 
 }

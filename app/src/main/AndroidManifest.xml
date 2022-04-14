@@ -2,7 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.invoice.contratista">
 
-    <uses-permission android:name="android.permission.SEND_SMS"/>
+    <uses-permission
+        android:name="android.permission.MANAGE_ACCOUNTS"
+        android:maxSdkVersion="22" />
 
     <application
         android:allowBackup="true"

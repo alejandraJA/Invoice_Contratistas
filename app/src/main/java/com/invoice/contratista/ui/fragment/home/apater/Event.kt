@@ -1,6 +1,6 @@
 package com.invoice.contratista.ui.fragment.home.apater
 
-import com.invoice.contratista.config.GlobalVariables
+import com.invoice.contratista.utils.GlobalVariables
 
 data class Event(
     val id: String,

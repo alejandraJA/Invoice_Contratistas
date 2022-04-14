@@ -11,7 +11,7 @@ import com.invoice.contratista.databinding.ActivityEventBinding
 import com.invoice.contratista.ui.adapter.SectionsPagerAdapter
 
 private val TAB_TITLES = arrayOf(
-    R.string.visit,
+    R.string.event,
     R.string.budget,
     R.string.receipt,
     R.string.invoice

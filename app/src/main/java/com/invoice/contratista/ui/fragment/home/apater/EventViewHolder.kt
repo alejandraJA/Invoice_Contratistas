@@ -5,7 +5,7 @@ import android.content.Intent
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.invoice.contratista.R
-import com.invoice.contratista.config.GlobalVariables
+import com.invoice.contratista.utils.GlobalVariables
 import com.invoice.contratista.databinding.ToDoBinding
 import com.invoice.contratista.ui.activity.event.EventActivity
 

@@ -17,93 +17,60 @@
             android:padding="16sp">
 
             <TextView
-                android:id="@+id/textView5"
-                style="@style/TextAppearance.MaterialComponents.Body2.style"
-                android:layout_width="0sp"
+                android:id="@+id/text_name_client"
+                style="@style/TextAppearance.MaterialComponents.Subtitle1.Subtitle.Style"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintEnd_toStartOf="@+id/linearLayout2"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/linearLayout2"
+                app:layout_constraintTop_toTopOf="parent"
                 tools:text="@tools:sample/full_names" />
 
             <TextView
-                android:id="@+id/priority"
-                style="@style/TextAppearance.MaterialComponents.Body1.style"
+                android:id="@+id/text_legal_name"
+                style="@style/TextAppearance.MaterialComponents.Body2.style"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/priority"
-                app:layout_constraintBottom_toBottomOf="@+id/linearLayout2"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView5" />
+                app:layout_constraintTop_toBottomOf="@+id/text_name_client"
+                tools:text="Dunder Mifflin S.A. de C.V." />
 
             <TextView
-                android:id="@+id/textView3"
-                style="@style/TextAppearance.MaterialComponents.Body2"
+                android:id="@+id/textView7"
+                style="@style/TextAppearance.MaterialComponents.Body2.style"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8sp"
-                android:layout_marginTop="1dp"
-                android:layout_marginEnd="4sp"
-                android:textColor="?attr/colorPrimary"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@+id/priority"
-                app:layout_constraintStart_toEndOf="@+id/priority"
-                app:layout_constraintTop_toTopOf="@+id/priority"
-                tools:text="@string/low" />
-
-            <ImageView
-                android:id="@+id/image_priority"
-                android:layout_width="18sp"
-                android:layout_height="18sp"
-                android:layout_marginStart="4sp"
-                android:contentDescription="@string/priority"
-                android:src="@drawable/ic_arrow_down"
-                app:layout_constraintBottom_toBottomOf="@+id/priority"
-                app:layout_constraintStart_toEndOf="@+id/textView3"
-                app:layout_constraintTop_toTopOf="@+id/priority" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_legal_name"
+                tools:text="ABCD101010XYZ" />
 
             <LinearLayout
-                android:id="@+id/linearLayout2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
-                <ImageButton
-                    android:id="@+id/imageView2"
-                    android:layout_width="28sp"
-                    android:layout_height="28sp"
-                    android:layout_margin="8sp"
-                    android:clickable="true"
-                    android:contentDescription="@string/delete"
-                    android:focusable="true"
-                    android:padding="4sp"
-                    android:src="@drawable/ic_trash"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_phone"
+                    android:contentDescription="@string/call_phone" />
 
                 <ImageView
-                    android:id="@+id/imageView3"
-                    android:layout_width="28sp"
-                    android:layout_height="28sp"
-                    android:layout_margin="8sp"
-                    android:clickable="true"
-                    android:contentDescription="@string/save"
-                    android:focusable="true"
-                    android:padding="4sp"
-                    android:src="@drawable/ic_floppy_disk" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16sp"
+                    android:src="@drawable/ic_email"
+                    android:contentDescription="@string/send_email" />
 
                 <ImageView
-                    android:id="@+id/imageView4"
-                    android:layout_width="28sp"
-                    android:layout_height="28sp"
-                    android:layout_margin="8sp"
-                    android:clickable="true"
-                    android:contentDescription="@string/save"
-                    android:focusable="true"
-                    android:padding="4sp"
-                    android:src="@drawable/ic_check" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16sp"
+                    android:src="@drawable/ic_round_message_24"
+                    android:contentDescription="@string/send_message" />
+
             </LinearLayout>
-
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <com.google.android.material.tabs.TabLayout

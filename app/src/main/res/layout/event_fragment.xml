@@ -4,12 +4,311 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragment.event.EventFragment"
-    android:padding="16sp">
+    tools:context=".ui.fragment.event.EventFragment">
 
-    <androidx.recyclerview.widget.RecyclerView
+    <com.michalsvec.singlerowcalendar.calendar.SingleRowCalendar
+        android:id="@+id/datePicker"
         android:layout_width="match_parent"
-        tools:listitem="@layout/item_event"
-        android:layout_height="match_parent"/>
+        android:layout_height="wrap_content"
+        app:deselection="false"
+        app:longPress="false"
+        app:multiSelection="false"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/datePicker">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16sp"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/text_number1"
+                    style="@style/TextAppearance.MaterialComponents.Subtitle1.Title.Day"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="01" />
+
+                <TextView
+                    android:id="@+id/text_name1"
+                    style="@style/TextAppearance.MaterialComponents.Body1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sun"
+                    app:layout_constraintEnd_toEndOf="@id/text_number1"
+                    app:layout_constraintStart_toStartOf="@id/text_number1"
+                    app:layout_constraintTop_toBottomOf="@id/text_number1" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/text_number1"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:itemCount="0"
+                    tools:listitem="@layout/item_event" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8sp"
+                android:layout_marginBottom="8sp" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/text_number2"
+                    style="@style/TextAppearance.MaterialComponents.Subtitle1.Title.Day"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="02" />
+
+                <TextView
+                    android:id="@+id/text_name2"
+                    style="@style/TextAppearance.MaterialComponents.Body1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/mon"
+                    app:layout_constraintEnd_toEndOf="@id/text_number2"
+                    app:layout_constraintStart_toStartOf="@id/text_number2"
+                    app:layout_constraintTop_toBottomOf="@id/text_number2" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/text_number2"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:itemCount="0"
+                    tools:listitem="@layout/item_event" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8sp"
+                android:layout_marginBottom="8sp" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/text_number3"
+                    style="@style/TextAppearance.MaterialComponents.Subtitle1.Title.Day"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="03" />
+
+                <TextView
+                    android:id="@+id/text_name3"
+                    style="@style/TextAppearance.MaterialComponents.Body1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tue"
+                    app:layout_constraintEnd_toEndOf="@id/text_number3"
+                    app:layout_constraintStart_toStartOf="@id/text_number3"
+                    app:layout_constraintTop_toBottomOf="@id/text_number3" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/text_number3"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:itemCount="2"
+                    tools:listitem="@layout/item_event" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8sp"
+                android:layout_marginBottom="8sp" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/text_number4"
+                    style="@style/TextAppearance.MaterialComponents.Subtitle1.Title.Day"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="04" />
+
+                <TextView
+                    android:id="@+id/text_name4"
+                    style="@style/TextAppearance.MaterialComponents.Body1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/wed"
+                    app:layout_constraintEnd_toEndOf="@id/text_number4"
+                    app:layout_constraintStart_toStartOf="@id/text_number4"
+                    app:layout_constraintTop_toBottomOf="@id/text_number4" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/text_number4"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:itemCount="1"
+                    tools:listitem="@layout/item_event" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8sp"
+                android:layout_marginBottom="8sp" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/text_number5"
+                    style="@style/TextAppearance.MaterialComponents.Subtitle1.Title.Day"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="05" />
+
+                <TextView
+                    android:id="@+id/text_name5"
+                    style="@style/TextAppearance.MaterialComponents.Body1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/thu"
+                    app:layout_constraintEnd_toEndOf="@id/text_number5"
+                    app:layout_constraintStart_toStartOf="@id/text_number5"
+                    app:layout_constraintTop_toBottomOf="@id/text_number5" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/text_number5"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:itemCount="0"
+                    tools:listitem="@layout/item_event" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8sp"
+                android:layout_marginBottom="8sp" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/text_number6"
+                    style="@style/TextAppearance.MaterialComponents.Subtitle1.Title.Day"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="06" />
+
+                <TextView
+                    android:id="@+id/text_name6"
+                    style="@style/TextAppearance.MaterialComponents.Body1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/fri"
+                    app:layout_constraintEnd_toEndOf="@id/text_number6"
+                    app:layout_constraintStart_toStartOf="@id/text_number6"
+                    app:layout_constraintTop_toBottomOf="@id/text_number6" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/text_number6"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:itemCount="0"
+                    tools:listitem="@layout/item_event" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8sp"
+                android:layout_marginBottom="8sp" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/text_number7"
+                    style="@style/TextAppearance.MaterialComponents.Subtitle1.Title.Day"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="07" />
+
+                <TextView
+                    android:id="@+id/text_name7"
+                    style="@style/TextAppearance.MaterialComponents.Body1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sat"
+                    app:layout_constraintEnd_toEndOf="@id/text_number7"
+                    app:layout_constraintStart_toStartOf="@id/text_number7"
+                    app:layout_constraintTop_toBottomOf="@id/text_number7" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/text_number7"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:itemCount="0"
+                    tools:listitem="@layout/item_event" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

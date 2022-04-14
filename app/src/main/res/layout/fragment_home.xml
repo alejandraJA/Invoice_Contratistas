@@ -63,7 +63,7 @@
         <com.google.android.material.chip.Chip
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/visit" />
+            android:text="@string/event" />
 
         <com.google.android.material.chip.Chip
             android:layout_width="wrap_content"
@@ -84,7 +84,7 @@
 
     <TextView
         android:id="@+id/text_to_do"
-        style="@style/TextAppearance.MaterialComponents.Subtitle1"
+        style="@style/TextAppearance.MaterialComponents.Subtitle1.Subtitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16sp"
@@ -102,15 +102,5 @@
         app:layout_constraintTop_toBottomOf="@+id/chipGroup"
         tools:layout_editor_absoluteX="16dp"
         tools:listitem="@layout/to_do" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="16sp"
-        android:contentDescription="@string/add"
-        android:src="@drawable/ic_add"
-        app:fabSize="mini"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

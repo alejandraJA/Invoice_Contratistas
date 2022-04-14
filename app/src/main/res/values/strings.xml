@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">Invoice Contratistas</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
@@ -35,7 +35,6 @@
     <string name="hi">Hi,</string>
     <string name="see_your_daily">See your daily</string>
     <string name="to_do">To do</string>
-    <string name="visit">Visit</string>
     <string name="quotation">Quotation</string>
     <string name="budget">Budget</string>
     <string name="receipt">Receipt</string>
@@ -55,4 +54,28 @@
     <string name="delete">delete</string>
     <string name="notes">Notes</string>
     <string name="new_event">New event</string>
+    <string name="select_a_customer">Select a Customer</string>
+    <string name="mm_dd_yyyy">mm/dd/yyyy</string>
+    <string name="process">Process</string>
+    <string name="location">Location</string>
+    <string name="add_customer">Add customer</string>
+    <string name="date">Date</string>
+    <string name="start">Start</string>
+    <string name="finish">Finish</string>
+    <string name="title">Title</string>
+    <string name="select_steps">Select steps</string>
+    <string name="create_event">Create event</string>
+    <string name="line">-</string>
+    <string name="send_message">send message</string>
+    <string name="send_email">send email</string>
+    <string name="call_phone">call phone</string>
+    <string name="sun">Sun</string>
+    <string name="mon">Mon</string>
+    <string name="tue">Tue</string>
+    <string name="wed">Wed</string>
+    <string name="thu">Thu</string>
+    <string name="fri">Fri</string>
+    <string name="sat">Sat</string>
+    <!-- This is the label underneath the icon for Calendar -->
+
 </resources>
