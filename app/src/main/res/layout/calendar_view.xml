@@ -1,0 +1,618 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16sp">
+
+    <TextView
+        android:id="@+id/text_month"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="month year"
+        tools:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/navigate_to_selected"
+        android:layout_width="24sp"
+        android:layout_height="24sp"
+        android:layout_marginStart="16sp"
+        android:contentDescription="@string/go_to_selected"
+        android:src="@drawable/ic_calendar_days"
+        app:layout_constraintBottom_toBottomOf="@+id/text_month"
+        app:layout_constraintStart_toEndOf="@+id/text_month"
+        app:layout_constraintTop_toTopOf="@+id/text_month" />
+
+    <ImageView
+        android:id="@+id/navigate_to_previous"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/navigate_to_previous"
+        android:src="@drawable/ic_round_chevron_left"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/navigate_to_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/navigate_to_next"
+        android:src="@drawable/ic_round_chevron_right_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text_sun"
+        android:layout_width="48sp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16sp"
+        android:text="@string/sunday"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toStartOf="@+id/text_mon"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_month" />
+
+    <TextView
+        android:id="@+id/text_mon"
+        android:layout_width="48sp"
+        android:layout_height="wrap_content"
+        android:text="@string/monday"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toStartOf="@+id/text_tue"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/text_sun"
+        app:layout_constraintTop_toTopOf="@+id/text_sun" />
+
+    <TextView
+        android:id="@+id/text_tue"
+        android:layout_width="48sp"
+        android:layout_height="wrap_content"
+        android:text="@string/tuesday"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toStartOf="@+id/text_wed"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/text_mon"
+        app:layout_constraintTop_toTopOf="@+id/text_sun" />
+
+    <TextView
+        android:id="@+id/text_wed"
+        android:layout_width="48sp"
+        android:layout_height="wrap_content"
+        android:text="@string/wednesday"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toStartOf="@+id/text_thu"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/text_tue"
+        app:layout_constraintTop_toTopOf="@+id/text_sun" />
+
+    <TextView
+        android:id="@+id/text_thu"
+        android:layout_width="48sp"
+        android:layout_height="wrap_content"
+        android:text="@string/thursday"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toStartOf="@+id/text_fri"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/text_wed"
+        app:layout_constraintTop_toTopOf="@+id/text_sun" />
+
+    <TextView
+        android:id="@+id/text_fri"
+        android:layout_width="48sp"
+        android:layout_height="wrap_content"
+        android:text="@string/friday"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toStartOf="@+id/text_sat"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/text_thu"
+        app:layout_constraintTop_toTopOf="@+id/text_sun" />
+
+    <TextView
+        android:id="@+id/text_sat"
+        android:layout_width="48sp"
+        android:layout_height="wrap_content"
+        android:text="@string/saturday"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/text_fri"
+        app:layout_constraintTop_toTopOf="@+id/text_sun" />
+
+    <ImageView
+        android:id="@+id/more"
+        android:layout_width="match_parent"
+        android:layout_height="24sp"
+        android:contentDescription="@string/more"
+        android:src="@drawable/ic_round_horizontal_rule"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/motion_base" />
+
+    <androidx.constraintlayout.motion.widget.MotionLayout
+        android:id="@+id/motion_base"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layoutDescription="@xml/activity_main_scene"
+        app:layout_constraintTop_toBottomOf="@+id/text_wed"
+        tools:layout_editor_absoluteX="16dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/first_constraint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <include
+                android:id="@+id/text01"
+                layout="@layout/day_item"
+                android:layout_width="48sp"
+                android:layout_height="48sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/text02"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <include
+                android:id="@+id/text02"
+                layout="@layout/day_item"
+                android:layout_width="48sp"
+                android:layout_height="48sp"
+                app:layout_constraintBottom_toBottomOf="@+id/text01"
+                app:layout_constraintEnd_toStartOf="@id/text03"
+                app:layout_constraintStart_toEndOf="@+id/text01"
+                app:layout_constraintTop_toTopOf="@+id/text01" />
+
+            <include
+                android:id="@+id/text03"
+                layout="@layout/day_item"
+                android:layout_width="48sp"
+                android:layout_height="48sp"
+                app:layout_constraintBottom_toBottomOf="@+id/text01"
+                app:layout_constraintEnd_toStartOf="@id/text04"
+                app:layout_constraintStart_toEndOf="@+id/text02"
+                app:layout_constraintTop_toTopOf="@+id/text01" />
+
+            <include
+                android:id="@+id/text04"
+                layout="@layout/day_item"
+                android:layout_width="48sp"
+                android:layout_height="48sp"
+                app:layout_constraintBottom_toBottomOf="@+id/text01"
+                app:layout_constraintEnd_toStartOf="@id/text05"
+                app:layout_constraintStart_toEndOf="@+id/text03"
+                app:layout_constraintTop_toTopOf="@+id/text01" />
+
+            <include
+                android:id="@+id/text05"
+                layout="@layout/day_item"
+                android:layout_width="48sp"
+                android:layout_height="48sp"
+                app:layout_constraintBottom_toBottomOf="@+id/text01"
+                app:layout_constraintEnd_toStartOf="@id/text06"
+                app:layout_constraintStart_toEndOf="@+id/text04"
+                app:layout_constraintTop_toTopOf="@+id/text01" />
+
+            <include
+                android:id="@+id/text06"
+                layout="@layout/day_item"
+                android:layout_width="48sp"
+                android:layout_height="48sp"
+                app:layout_constraintBottom_toBottomOf="@+id/text01"
+                app:layout_constraintEnd_toEndOf="@+id/text07"
+                app:layout_constraintStart_toEndOf="@+id/text05"
+                app:layout_constraintTop_toTopOf="@+id/text01" />
+
+            <include
+                android:id="@+id/text07"
+                layout="@layout/day_item"
+                android:layout_width="48sp"
+                android:layout_height="48sp"
+                app:layout_constraintBottom_toBottomOf="@+id/text01"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/text06"
+                app:layout_constraintTop_toTopOf="@+id/text01" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/second_constraint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/first_constraint">
+
+            <include
+                android:id="@+id/text08"
+                layout="@layout/day_item"
+                android:layout_width="48sp"
+                android:layout_height="48sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/text09"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <include
+                android:id="@+id/text09"
+                layout="@layout/day_item"
+                android:layout_width="48sp"
+                android:layout_height="48sp"
+                app:layout_constraintBottom_toBottomOf="@+id/text08"
+                app:layout_constraintEnd_toStartOf="@id/text10"
+                app:layout_constraintStart_toEndOf="@+id/text08"
+                app:layout_constraintTop_toTopOf="@+id/text08" />
+
+            <include
+                android:id="@+id/text10"
+                layout="@layout/day_item"
+                android:layout_width="48sp"
+                android:layout_height="48sp"
+                app:layout_constraintBottom_toBottomOf="@+id/text08"
+                app:layout_constraintEnd_toStartOf="@id/text11"
+                app:layout_constraintStart_toEndOf="@+id/text09"
+                app:layout_constraintTop_toTopOf="@+id/text08" />
+
+            <include
+                android:id="@+id/text11"
+                layout="@layout/day_item"
+                android:layout_width="48sp"
+                android:layout_height="48sp"
+                app:layout_constraintBottom_toBottomOf="@+id/text08"
+                app:layout_constraintEnd_toStartOf="@id/text12"
+                app:layout_constraintStart_toEndOf="@+id/text10"
+                app:layout_constraintTop_toTopOf="@+id/text08" />
+
+            <include
+                android:id="@+id/text12"
+                layout="@layout/day_item"
+                android:layout_width="48sp"
+                android:layout_height="48sp"
+                app:layout_constraintBottom_toBottomOf="@+id/text08"
+                app:layout_constraintEnd_toStartOf="@id/text13"
+                app:layout_constraintStart_toEndOf="@+id/text11"
+                app:layout_constraintTop_toTopOf="@+id/text08" />
+
+            <include
+                android:id="@+id/text13"
+                layout="@layout/day_item"
+                android:layout_width="48sp"
+                android:layout_height="48sp"
+                app:layout_constraintBottom_toBottomOf="@+id/text08"
+                app:layout_constraintEnd_toStartOf="@+id/text14"
+                app:layout_constraintStart_toEndOf="@+id/text12"
+                app:layout_constraintTop_toTopOf="@+id/text08" />
+
+            <include
+                android:id="@+id/text14"
+                layout="@layout/day_item"
+                android:layout_width="48sp"
+                android:layout_height="48sp"
+                app:layout_constraintBottom_toBottomOf="@+id/text08"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/text13"
+                app:layout_constraintTop_toTopOf="@+id/text08" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/third_constraint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/second_constraint">
+
+            <include
+                android:id="@+id/text15"
+                layout="@layout/day_item"
+                android:layout_width="48sp"
+                android:layout_height="48sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/text16"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <include
+                android:id="@+id/text16"
+                layout="@layout/day_item"
+                android:layout_width="48sp"
+                android:layout_height="48sp"
+                app:layout_constraintBottom_toBottomOf="@+id/text15"
+                app:layout_constraintEnd_toStartOf="@id/text17"
+                app:layout_constraintStart_toEndOf="@+id/text15"
+                app:layout_constraintTop_toTopOf="@+id/text15" />
+
+            <include
+                android:id="@+id/text17"
+                layout="@layout/day_item"
+                android:layout_width="48sp"
+                android:layout_height="48sp"
+                app:layout_constraintBottom_toBottomOf="@+id/text15"
+                app:layout_constraintEnd_toStartOf="@id/text18"
+                app:layout_constraintStart_toEndOf="@+id/text16"
+                app:layout_constraintTop_toTopOf="@+id/text15" />
+
+            <include
+                android:id="@+id/text18"
+                layout="@layout/day_item"
+                android:layout_width="48sp"
+                android:layout_height="48sp"
+                app:layout_constraintBottom_toBottomOf="@+id/text15"
+                app:layout_constraintEnd_toStartOf="@id/text19"
+                app:layout_constraintStart_toEndOf="@+id/text17"
+                app:layout_constraintTop_toTopOf="@+id/text15" />
+
+            <include
+                android:id="@+id/text19"
+                layout="@layout/day_item"
+                android:layout_width="48sp"
+                android:layout_height="48sp"
+                app:layout_constraintBottom_toBottomOf="@+id/text15"
+                app:layout_constraintEnd_toStartOf="@id/text20"
+                app:layout_constraintStart_toEndOf="@+id/text18"
+                app:layout_constraintTop_toTopOf="@+id/text15" />
+
+            <include
+                android:id="@+id/text20"
+                layout="@layout/day_item"
+                android:layout_width="48sp"
+                android:layout_height="48sp"
+                app:layout_constraintBottom_toBottomOf="@+id/text15"
+                app:layout_constraintEnd_toStartOf="@+id/text21"
+                app:layout_constraintStart_toEndOf="@+id/text19"
+                app:layout_constraintTop_toTopOf="@+id/text15" />
+
+            <include
+                android:id="@+id/text21"
+                layout="@layout/day_item"
+                android:layout_width="48sp"
+                android:layout_height="48sp"
+                app:layout_constraintBottom_toBottomOf="@+id/text15"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/text20"
+                app:layout_constraintTop_toTopOf="@+id/text15" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/fourth_constraint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/third_constraint"
+            tools:layout_editor_absoluteX="16dp">
+
+            <include
+                android:id="@+id/text22"
+                layout="@layout/day_item"
+                android:layout_width="48sp"
+                android:layout_height="48sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/text23"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <include
+                android:id="@+id/text23"
+                layout="@layout/day_item"
+                android:layout_width="48sp"
+                android:layout_height="48sp"
+                app:layout_constraintBottom_toBottomOf="@+id/text22"
+                app:layout_constraintEnd_toStartOf="@id/text24"
+                app:layout_constraintStart_toEndOf="@+id/text22"
+                app:layout_constraintTop_toTopOf="@+id/text22" />
+
+            <include
+                android:id="@+id/text24"
+                layout="@layout/day_item"
+                android:layout_width="48sp"
+                android:layout_height="48sp"
+                app:layout_constraintBottom_toBottomOf="@+id/text22"
+                app:layout_constraintEnd_toStartOf="@id/text25"
+                app:layout_constraintStart_toEndOf="@+id/text23"
+                app:layout_constraintTop_toTopOf="@+id/text22" />
+
+            <include
+                android:id="@+id/text25"
+                layout="@layout/day_item"
+                android:layout_width="48sp"
+                android:layout_height="48sp"
+                app:layout_constraintBottom_toBottomOf="@+id/text22"
+                app:layout_constraintEnd_toStartOf="@id/text26"
+                app:layout_constraintStart_toEndOf="@+id/text24"
+                app:layout_constraintTop_toTopOf="@+id/text22" />
+
+            <include
+                android:id="@+id/text26"
+                layout="@layout/day_item"
+                android:layout_width="48sp"
+                android:layout_height="48sp"
+                app:layout_constraintBottom_toBottomOf="@+id/text22"
+                app:layout_constraintEnd_toStartOf="@id/text27"
+                app:layout_constraintStart_toEndOf="@+id/text25"
+                app:layout_constraintTop_toTopOf="@+id/text22" />
+
+            <include
+                android:id="@+id/text27"
+                layout="@layout/day_item"
+                android:layout_width="48sp"
+                android:layout_height="48sp"
+                app:layout_constraintBottom_toBottomOf="@+id/text22"
+                app:layout_constraintEnd_toStartOf="@+id/text28"
+                app:layout_constraintStart_toEndOf="@+id/text26"
+                app:layout_constraintTop_toTopOf="@+id/text22" />
+
+            <include
+                android:id="@+id/text28"
+                layout="@layout/day_item"
+                android:layout_width="48sp"
+                android:layout_height="48sp"
+                app:layout_constraintBottom_toBottomOf="@+id/text22"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/text27"
+                app:layout_constraintTop_toTopOf="@+id/text22" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/fifth_constraint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/fourth_constraint">
+
+            <include
+                android:id="@+id/text29"
+                layout="@layout/day_item"
+                android:layout_width="48sp"
+                android:layout_height="48sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/text30"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <include
+                android:id="@+id/text30"
+                layout="@layout/day_item"
+                android:layout_width="48sp"
+                android:layout_height="48sp"
+                app:layout_constraintBottom_toBottomOf="@+id/text29"
+                app:layout_constraintEnd_toStartOf="@id/text31"
+                app:layout_constraintStart_toEndOf="@+id/text29"
+                app:layout_constraintTop_toTopOf="@+id/text29" />
+
+            <include
+                android:id="@+id/text31"
+                layout="@layout/day_item"
+                android:layout_width="48sp"
+                android:layout_height="48sp"
+                app:layout_constraintBottom_toBottomOf="@+id/text29"
+                app:layout_constraintEnd_toStartOf="@id/text32"
+                app:layout_constraintStart_toEndOf="@+id/text30"
+                app:layout_constraintTop_toTopOf="@+id/text29" />
+
+            <include
+                android:id="@+id/text32"
+                layout="@layout/day_item"
+                android:layout_width="48sp"
+                android:layout_height="48sp"
+                app:layout_constraintBottom_toBottomOf="@+id/text29"
+                app:layout_constraintEnd_toStartOf="@id/text33"
+                app:layout_constraintStart_toEndOf="@+id/text31"
+                app:layout_constraintTop_toTopOf="@+id/text29" />
+
+            <include
+                android:id="@+id/text33"
+                layout="@layout/day_item"
+                android:layout_width="48sp"
+                android:layout_height="48sp"
+                app:layout_constraintBottom_toBottomOf="@+id/text29"
+                app:layout_constraintEnd_toStartOf="@id/text34"
+                app:layout_constraintStart_toEndOf="@+id/text32"
+                app:layout_constraintTop_toTopOf="@+id/text29" />
+
+            <include
+                android:id="@+id/text34"
+                layout="@layout/day_item"
+                android:layout_width="48sp"
+                android:layout_height="48sp"
+                app:layout_constraintBottom_toBottomOf="@+id/text29"
+                app:layout_constraintEnd_toStartOf="@+id/text35"
+                app:layout_constraintStart_toEndOf="@+id/text33"
+                app:layout_constraintTop_toTopOf="@+id/text29" />
+
+            <include
+                android:id="@+id/text35"
+                layout="@layout/day_item"
+                android:layout_width="48sp"
+                android:layout_height="48sp"
+                app:layout_constraintBottom_toBottomOf="@+id/text29"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/text34"
+                app:layout_constraintTop_toTopOf="@+id/text29" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/sixth_constraint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/fifth_constraint"
+            tools:layout_editor_absoluteX="16dp">
+
+            <include
+                android:id="@+id/text36"
+                layout="@layout/day_item"
+                android:layout_width="48sp"
+                android:layout_height="48sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/text37"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <include
+                android:id="@+id/text37"
+                layout="@layout/day_item"
+                android:layout_width="48sp"
+                android:layout_height="48sp"
+                app:layout_constraintBottom_toBottomOf="@+id/text36"
+                app:layout_constraintEnd_toStartOf="@id/text38"
+                app:layout_constraintStart_toEndOf="@+id/text36"
+                app:layout_constraintTop_toTopOf="@+id/text36" />
+
+            <include
+                android:id="@+id/text38"
+                layout="@layout/day_item"
+                android:layout_width="48sp"
+                android:layout_height="48sp"
+                app:layout_constraintBottom_toBottomOf="@+id/text36"
+                app:layout_constraintEnd_toStartOf="@id/text39"
+                app:layout_constraintStart_toEndOf="@+id/text37"
+                app:layout_constraintTop_toTopOf="@+id/text36" />
+
+            <include
+                android:id="@+id/text39"
+                layout="@layout/day_item"
+                android:layout_width="48sp"
+                android:layout_height="48sp"
+                app:layout_constraintBottom_toBottomOf="@+id/text36"
+                app:layout_constraintEnd_toStartOf="@id/text40"
+                app:layout_constraintStart_toEndOf="@+id/text38"
+                app:layout_constraintTop_toTopOf="@+id/text36" />
+
+            <include
+                android:id="@+id/text40"
+                layout="@layout/day_item"
+                android:layout_width="48sp"
+                android:layout_height="48sp"
+                app:layout_constraintBottom_toBottomOf="@+id/text36"
+                app:layout_constraintEnd_toStartOf="@id/text41"
+                app:layout_constraintStart_toEndOf="@+id/text39"
+                app:layout_constraintTop_toTopOf="@+id/text36" />
+
+            <include
+                android:id="@+id/text41"
+                layout="@layout/day_item"
+                android:layout_width="48sp"
+                android:layout_height="48sp"
+                app:layout_constraintBottom_toBottomOf="@+id/text36"
+                app:layout_constraintEnd_toStartOf="@+id/text42"
+                app:layout_constraintStart_toEndOf="@+id/text40"
+                app:layout_constraintTop_toTopOf="@+id/text36" />
+
+            <include
+                android:id="@+id/text42"
+                layout="@layout/day_item"
+                android:layout_width="48sp"
+                android:layout_height="48sp"
+                app:layout_constraintBottom_toBottomOf="@+id/text36"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/text41"
+                app:layout_constraintTop_toTopOf="@+id/text36" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.motion.widget.MotionLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

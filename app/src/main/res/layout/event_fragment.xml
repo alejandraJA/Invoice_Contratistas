@@ -6,13 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".ui.fragment.event.EventFragment">
 
-    <com.michalsvec.singlerowcalendar.calendar.SingleRowCalendar
+    <include
         android:id="@+id/datePicker"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:deselection="false"
-        app:longPress="false"
-        app:multiSelection="false"
+        layout="@layout/calendar_view"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ScrollView

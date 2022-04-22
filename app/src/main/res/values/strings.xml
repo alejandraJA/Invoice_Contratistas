@@ -76,6 +76,10 @@
     <string name="thu">Thu</string>
     <string name="fri">Fri</string>
     <string name="sat">Sat</string>
+    <string name="go_to_selected">go to selected</string>
+    <string name="navigate_to_previous">navigate to previous</string>
+    <string name="navigate_to_next">navigate to next</string>
+    <string name="more">more</string>
     <!-- This is the label underneath the icon for Calendar -->
 
 </resources>
