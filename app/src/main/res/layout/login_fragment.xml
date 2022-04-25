@@ -29,8 +29,8 @@
             android:layout_marginTop="16sp"
             android:hint="@string/email"
             app:errorEnabled="true"
-            app:startIconDrawable="@drawable/ic_email"
-            app:startIconTint="@color/purple_500">
+            style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox"
+            app:startIconDrawable="@drawable/ic_email">
 
             <com.google.android.material.textfield.TextInputEditText
                 style="@style/customedit"
@@ -45,9 +45,8 @@
             android:hint="@string/password"
             app:errorEnabled="true"
             app:passwordToggleEnabled="true"
-            app:passwordToggleTint="@color/purple_500"
-            app:startIconDrawable="@drawable/ic_password"
-            app:startIconTint="@color/purple_500">
+            style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox"
+            app:startIconDrawable="@drawable/ic_password">
 
             <com.google.android.material.textfield.TextInputEditText
                 style="@style/customedit"

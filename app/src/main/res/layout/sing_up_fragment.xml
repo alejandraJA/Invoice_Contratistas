@@ -25,13 +25,13 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.textfield.TextInputLayout
+            style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16sp"
             android:hint="@string/name"
             app:errorEnabled="true"
-            app:startIconDrawable="@drawable/ic_business"
-            app:startIconTint="@color/purple_500">
+            app:startIconDrawable="@drawable/ic_business">
 
             <com.google.android.material.textfield.TextInputEditText
                 style="@style/customedit"
@@ -42,12 +42,12 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
+            style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/email"
             app:errorEnabled="true"
-            app:startIconDrawable="@drawable/ic_email"
-            app:startIconTint="@color/purple_500">
+            app:startIconDrawable="@drawable/ic_email">
 
             <com.google.android.material.textfield.TextInputEditText
                 style="@style/customedit"
@@ -58,14 +58,13 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
+            style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/password"
             app:errorEnabled="true"
             app:passwordToggleEnabled="true"
-            app:passwordToggleTint="@color/purple_500"
-            app:startIconDrawable="@drawable/ic_password"
-            app:startIconTint="@color/purple_500">
+            app:startIconDrawable="@drawable/ic_password">
 
             <com.google.android.material.textfield.TextInputEditText
                 style="@style/customedit"
@@ -76,14 +75,13 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
+            style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/confirm_password"
             app:errorEnabled="true"
             app:passwordToggleEnabled="true"
-            app:passwordToggleTint="@color/purple_500"
-            app:startIconDrawable="@drawable/ic_password"
-            app:startIconTint="@color/purple_500">
+            app:startIconDrawable="@drawable/ic_password">
 
             <com.google.android.material.textfield.TextInputEditText
                 style="@style/customedit"

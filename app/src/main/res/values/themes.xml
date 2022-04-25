@@ -75,8 +75,13 @@
         <item name="cornerSize">24sp</item>
     </style>
 
+    <style name="Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+        <item name="startIconTint">@color/purple_200</item>
+    </style>
+
     <style name="customedit" parent="">
         <item name="android:background">@drawable/motion_day</item>
+        <item name="android:backgroundTint">#46E37E5E</item>
     </style>
 
     <style name="Theme.InvoiceContratistas.NoActionBar">

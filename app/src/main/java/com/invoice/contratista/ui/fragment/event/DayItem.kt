@@ -3,8 +3,9 @@ package com.invoice.contratista.ui.fragment.event
 import java.util.*
 
 data class DayItem(
-    val day: String,
+    var day: String,
     val date: Date,
-    val currentDay: Boolean,
-    val currentMonth: Int,
+    var currentDay: Boolean,
+    var visibility: Int,
+    val currentMoth: Boolean,
 )
