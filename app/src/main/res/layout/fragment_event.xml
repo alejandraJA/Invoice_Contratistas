@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.fragment.event.EventFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/windowBackground">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="16sp"
+            android:paddingTop="8sp"
+            android:paddingBottom="8sp"
+            android:paddingEnd="16sp">
+
+            <TextView
+                android:id="@+id/text_name"
+                style="@style/TextAppearance.MaterialComponents.Subtitle1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dunder Mifflin S.A de C.V"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/text_rfc"
+                style="@style/TextAppearance.MaterialComponents.Body1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_name"
+                android:text="@string/rfc_example" />
+
+            <ImageButton
+                android:id="@+id/button_call"
+                style="@style/ImageButton"
+                android:layout_marginTop="8sp"
+                android:src="@drawable/ic_phone"
+                app:layout_constraintEnd_toStartOf="@+id/button_email"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_rfc" />
+
+            <ImageButton
+                android:id="@+id/button_email"
+                style="@style/ImageButton"
+                android:src="@drawable/ic_email"
+                app:layout_constraintEnd_toStartOf="@+id/button_message"
+                app:layout_constraintStart_toEndOf="@+id/button_call"
+                app:layout_constraintTop_toTopOf="@+id/button_call" />
+
+            <ImageButton
+                android:id="@+id/button_message"
+                style="@style/ImageButton"
+                android:src="@drawable/ic_round_message_24"
+                app:layout_constraintEnd_toStartOf="@+id/button_info"
+                app:layout_constraintStart_toEndOf="@+id/button_email"
+                app:layout_constraintTop_toTopOf="@+id/button_call" />
+
+            <ImageButton
+                android:id="@+id/button_info"
+                style="@style/ImageButton"
+                android:src="@drawable/ic_round_person_24"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/button_message"
+                app:layout_constraintTop_toTopOf="@+id/button_call" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabs"
+            android:layout_width="match_parent"
+            android:background="?android:attr/windowBackground"
+            android:layout_height="wrap_content"
+            app:tabMode="fixed" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

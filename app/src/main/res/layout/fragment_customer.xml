@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16sp"
+    tools:context=".ui.fragment.customer.wach.CustomerFragment">
+
+    <TextView
+        style="@style/TextAppearance.MaterialComponents.Body1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/ic_address_card"
+        android:drawablePadding="8sp"
+        app:drawableTint="?android:attr/colorPrimary"
+        tools:text="Empresa S.A de C.V" />
+
+    <TextView
+        style="@style/TextAppearance.MaterialComponents.Body1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/ic_address_card"
+        android:layout_marginTop="8sp"
+        android:paddingTop="8sp"
+        android:drawablePadding="8sp"
+        app:drawableTint="?android:attr/colorPrimary"
+        tools:text="ABC101010111" />
+
+    <TextView
+        style="@style/TextAppearance.MaterialComponents.Body1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/ic_address_card"
+        android:layout_marginTop="8sp"
+        android:drawablePadding="8sp"
+        android:paddingTop="8sp"
+        app:drawableTint="?android:attr/colorPrimary"
+        tools:text="601" />
+
+    <TextView
+        style="@style/TextAppearance.MaterialComponents.Body1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/ic_email"
+        android:layout_marginTop="8sp"
+        android:drawablePadding="8sp"
+        android:paddingTop="8sp"
+        app:drawableTint="?android:attr/colorPrimary"
+        tools:text="email@email.com" />
+
+    <TextView
+        style="@style/TextAppearance.MaterialComponents.Body1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/ic_phone"
+        android:layout_marginTop="8sp"
+        android:drawablePadding="8sp"
+        android:paddingTop="8sp"
+        app:drawableTint="?android:attr/colorPrimary"
+        tools:text="(33) 3333 3333" />
+
+    <TextView
+        style="@style/TextAppearance.MaterialComponents.Body1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/ic_location"
+        android:layout_marginTop="8sp"
+        android:paddingTop="8sp"
+        tools:maxLines="4"
+        app:drawableTint="?android:attr/colorPrimary"
+        tools:text="@tools:sample/lorem/random" />
+
+</LinearLayout>

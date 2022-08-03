@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16sp"
-    tools:context=".ui.fragment.addEvent.AddEventFragment">
+    tools:context=".ui.fragment.add_event.AddEventFragment">
 
     <TextView
         android:id="@+id/textView8"
@@ -31,6 +31,7 @@
             android:id="@+id/auto_complete_customer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            style="@style/TextInputEditText"
             android:inputType="textAutoCorrect"
             tools:text="@tools:sample/first_names" />
 

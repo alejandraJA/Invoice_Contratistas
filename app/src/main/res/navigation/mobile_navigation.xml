@@ -11,8 +11,8 @@
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home">
         <action
-            android:id="@+id/action_navigation_home_to_eventActivity"
-            app:destination="@id/eventActivity" />
+            android:id="@+id/action_navigation_home_to_eventFragment"
+            app:destination="@id/eventFragment" />
     </fragment>
 
     <fragment
@@ -29,22 +29,38 @@
 
     <fragment
         android:id="@+id/addEventFragment"
-        android:name="com.invoice.contratista.ui.fragment.addEvent.AddEventFragment"
+        android:name="com.invoice.contratista.ui.fragment.add_event.AddEventFragment"
         android:label="@string/new_event"
-        tools:layout="@layout/add_event_fragment" />
-
-    <activity
-        android:id="@+id/eventActivity"
-        android:name="com.invoice.contratista.ui.activity.event.EventActivity"
-        android:label="activity_event"
-        tools:layout="@layout/activity_event" />
-
-    <action
-        android:id="@+id/global_action_to_event_activity"
-        app:destination="@+id/eventActivity" />
+        tools:layout="@layout/add_event_fragment" >
+        <action
+            android:id="@+id/action_addEventFragment_to_createCustomerFragment"
+            app:destination="@id/createCustomerFragment" />
+        <action
+            android:id="@+id/action_addEventFragment_to_eventFragment"
+            app:destination="@id/eventFragment" />
+    </fragment>
 
     <action
         android:id="@+id/global_action_to_add_event"
         app:destination="@+id/addEventFragment" />
+    <fragment
+        android:id="@+id/createCustomerFragment"
+        android:name="com.invoice.contratista.ui.fragment.customer.create.CreateCustomerFragment"
+        android:label="create_customer_fragment"
+        tools:layout="@layout/create_customer_fragment" />
+    <fragment
+        android:id="@+id/addPartFragment"
+        android:name="com.invoice.contratista.ui.fragment.add_part.AddPartFragment"
+        android:label="fragment_add_part"
+        tools:layout="@layout/fragment_add_part" />
+    <fragment
+        android:id="@+id/eventFragment"
+        android:name="com.invoice.contratista.ui.fragment.event.EventFragment"
+        android:label="fragment_event"
+        tools:layout="@layout/fragment_event" >
+        <action
+            android:id="@+id/action_eventFragment_to_addPartFragment"
+            app:destination="@id/addPartFragment" />
+    </fragment>
 
 </navigation>

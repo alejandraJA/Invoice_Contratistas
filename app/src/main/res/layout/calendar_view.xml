@@ -129,7 +129,7 @@
     <ImageView
         android:id="@+id/more"
         android:layout_width="match_parent"
-        android:layout_height="32sp"
+        android:layout_height="24sp"
         android:contentDescription="@string/more"
         android:src="@drawable/ic_round_horizontal_rule"
         app:layout_constraintEnd_toEndOf="parent"

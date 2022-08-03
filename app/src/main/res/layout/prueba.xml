@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16sp"
+    app:layoutDescription="@xml/prueba_scene">
+
+    <TextView
+        android:id="@+id/text_title_total_gain"
+        style="@style/TextAppearance.Material3.BodyLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/total_gain"
+        app:layout_constraintBottom_toBottomOf="@+id/text_total_gain"
+        app:layout_constraintEnd_toEndOf="@+id/text_title_gain_unit"
+        app:layout_constraintTop_toTopOf="@+id/text_total_gain" />
+
+    <ImageView
+        android:id="@+id/image_money5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8sp"
+        android:contentDescription="@string/money"
+        android:src="@drawable/ic_money"
+        app:layout_constraintBottom_toBottomOf="@+id/text_total_gain"
+        app:layout_constraintEnd_toStartOf="@+id/text_gain_unit"
+        app:layout_constraintTop_toTopOf="@+id/text_total_gain" />
+
+    <TextView
+        android:id="@+id/text_total_gain"
+        style="@style/TextAppearance.Material3.BodyLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8sp"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/text_units"
+        app:layout_constraintTop_toBottomOf="@id/text_gain_unit"
+        tools:text="675.00" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

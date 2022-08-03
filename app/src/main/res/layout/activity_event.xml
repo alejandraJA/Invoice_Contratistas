@@ -9,75 +9,75 @@
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/Theme.InvoiceContratistas.AppBarOverlay">
+        android:background="?android:attr/windowBackground">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="16sp">
+            android:paddingStart="16sp"
+            android:paddingTop="8sp"
+            android:paddingBottom="8sp"
+            android:paddingEnd="16sp">
 
             <TextView
-                android:id="@+id/text_name_client"
-                style="@style/TextAppearance.MaterialComponents.Subtitle1.Subtitle.Style"
+                android:id="@+id/text_name"
+                style="@style/TextAppearance.MaterialComponents.Subtitle1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dunder Mifflin S.A de C.V"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/text_rfc"
+                style="@style/TextAppearance.MaterialComponents.Body1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:text="@tools:sample/full_names" />
+                app:layout_constraintTop_toBottomOf="@+id/text_name"
+                android:text="@string/rfc_example" />
 
-            <TextView
-                android:id="@+id/text_legal_name"
-                style="@style/TextAppearance.MaterialComponents.Body2.style"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+            <ImageButton
+                android:id="@+id/button_call"
+                style="@style/ImageButton"
+                android:layout_marginTop="8sp"
+                android:src="@drawable/ic_phone"
+                app:layout_constraintEnd_toStartOf="@+id/button_email"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/text_name_client"
-                tools:text="Dunder Mifflin S.A. de C.V." />
+                app:layout_constraintTop_toBottomOf="@+id/text_rfc" />
 
-            <TextView
-                android:id="@+id/textView7"
-                style="@style/TextAppearance.MaterialComponents.Body2.style"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/text_legal_name"
-                tools:text="ABCD101010XYZ" />
+            <ImageButton
+                android:id="@+id/button_email"
+                style="@style/ImageButton"
+                android:src="@drawable/ic_email"
+                app:layout_constraintEnd_toStartOf="@+id/button_message"
+                app:layout_constraintStart_toEndOf="@+id/button_call"
+                app:layout_constraintTop_toTopOf="@+id/button_call" />
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintBottom_toBottomOf="parent"
+            <ImageButton
+                android:id="@+id/button_message"
+                style="@style/ImageButton"
+                android:src="@drawable/ic_round_message_24"
+                app:layout_constraintEnd_toStartOf="@+id/button_info"
+                app:layout_constraintStart_toEndOf="@+id/button_email"
+                app:layout_constraintTop_toTopOf="@+id/button_call" />
+
+            <ImageButton
+                android:id="@+id/button_info"
+                style="@style/ImageButton"
+                android:src="@drawable/ic_round_person_24"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                app:layout_constraintStart_toEndOf="@+id/button_message"
+                app:layout_constraintTop_toTopOf="@+id/button_call" />
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_phone"
-                    android:contentDescription="@string/call_phone" />
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16sp"
-                    android:src="@drawable/ic_email"
-                    android:contentDescription="@string/send_email" />
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16sp"
-                    android:src="@drawable/ic_round_message_24"
-                    android:contentDescription="@string/send_message" />
-
-            </LinearLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tabs"
-            app:tabMode="fixed"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:background="?android:attr/windowBackground"
+            android:layout_height="wrap_content"
+            app:tabMode="fixed" />
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.viewpager2.widget.ViewPager2
@@ -86,14 +86,4 @@
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_marginEnd="16sp"
-        android:layout_marginBottom="16dp"
-        android:contentDescription="@string/add"
-        app:fabSize="mini"
-        app:srcCompat="@drawable/ic_add" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

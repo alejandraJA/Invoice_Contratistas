@@ -6,7 +6,7 @@
     <data>
         <variable
             name="day"
-            type="com.invoice.contratista.ui.fragment.event.DayItem" />
+            type="com.invoice.contratista.calendar.DayItem" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

@@ -1,61 +1,56 @@
 package com.invoice.contratista.ui.fragment.event
 
-import android.annotation.SuppressLint
+import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
-import com.invoice.contratista.databinding.EventFragmentBinding
-import java.text.SimpleDateFormat
-import java.util.*
+import com.google.android.material.tabs.TabLayout
+import com.google.android.material.tabs.TabLayoutMediator
+import com.invoice.contratista.R
+import com.invoice.contratista.databinding.FragmentEventBinding
+import com.invoice.contratista.ui.adapter.SectionsPagerAdapter
 
-class EventFragment(private val id: String) : Fragment() {
+private val TAB_TITLES = arrayOf(
+    R.string.event,
+    R.string.budget,
+    R.string.receipt,
+    R.string.invoice
+)
+
+class EventFragment : Fragment() {
+
+    private lateinit var binding: FragmentEventBinding
 
     private lateinit var viewModel: EventViewModel
-    private lateinit var binding: EventFragmentBinding
-    private lateinit var calendarView: CalendarView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        binding = FragmentEventBinding.inflate(layoutInflater, container, false)
         viewModel = ViewModelProvider(this)[EventViewModel::class.java]
-        binding = EventFragmentBinding.inflate(layoutInflater, container, false)
         return binding.root
     }
 
-    @SuppressLint("SimpleDateFormat")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        calendarView = CalendarView(binding.datePicker)
 
-        calendarView.setOnDataChanged {
-            val simpleDateFormat = SimpleDateFormat("dd")
-            val textNumbers = listOf(
-                binding.textNumber1,
-                binding.textNumber2,
-                binding.textNumber3,
-                binding.textNumber4,
-                binding.textNumber5,
-                binding.textNumber6,
-                binding.textNumber7,
-            )
-            val list = setWeek(it.date)
-            for (num in list.indices) {
-                textNumbers[num].text = simpleDateFormat.format(list[num])
-            }
-        }
-    }
+        val sectionsPagerAdapter = SectionsPagerAdapter(requireActivity(), "")
+        val viewPager = binding.viewPager
+        viewPager.adapter = sectionsPagerAdapter
+        val tabs: TabLayout = binding.tabs
 
-    private fun setWeek(date: Date): List<Date> {
-        val dayOfWeek = calendarView.getDayOfWeek(date)
-        val datesOfWeek = mutableListOf<Date>()
-        for (day in dayOfWeek downTo 1) datesOfWeek.add(calendarView.addDays(date, -day))
-        datesOfWeek.add(date)
-        for (day in 1..(6 - dayOfWeek)) datesOfWeek.add(calendarView.addDays(date, day))
-        return datesOfWeek
+        TabLayoutMediator(tabs, viewPager) { tab, position ->
+            tab.text = resources.getString(TAB_TITLES[position])
+        }.attach()
+        /*val fab: FloatingActionButton = binding.fab
+
+        fab.setOnClickListener { view ->
+            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                .setAction("Action", null).show()
+        }*/
     }
 
 }

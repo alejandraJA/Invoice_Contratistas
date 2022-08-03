@@ -3,11 +3,11 @@ package com.invoice.contratista.ui.fragment.home.apater
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.view.View
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.invoice.contratista.R
 import com.invoice.contratista.utils.GlobalVariables
 import com.invoice.contratista.databinding.ToDoBinding
-import com.invoice.contratista.ui.activity.event.EventActivity
 
 class EventViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
     private val binding = ToDoBinding.bind(view)
@@ -16,7 +16,7 @@ class EventViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
     fun bind(event: Event) {
         binding.event = event
         binding.cardEvent.setOnClickListener {
-            view.context.startActivity(Intent(view.context, EventActivity::class.java))
+            view.findNavController().navigate(R.id.action_navigation_home_to_eventFragment)
             when (event.priority) {
                 GlobalVariables.Priority.Urgent -> binding.imagePriority.setImageDrawable(
                     view.resources.getDrawable(
