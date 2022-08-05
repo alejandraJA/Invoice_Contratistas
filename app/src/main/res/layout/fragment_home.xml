@@ -49,39 +49,6 @@
         app:layout_constraintStart_toEndOf="@+id/image_profile"
         app:layout_constraintTop_toBottomOf="@+id/name" />
 
-    <com.google.android.material.chip.ChipGroup
-        android:id="@+id/chipGroup"
-        android:layout_width="0sp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16sp"
-        android:layout_marginEnd="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_to_do"
-        app:singleSelection="true">
-
-        <com.google.android.material.chip.Chip
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/event" />
-
-        <com.google.android.material.chip.Chip
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/budget" />
-
-        <com.google.android.material.chip.Chip
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/receipt" />
-
-        <com.google.android.material.chip.Chip
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/invoice" />
-
-    </com.google.android.material.chip.ChipGroup>
-
     <TextView
         android:id="@+id/text_to_do"
         style="@style/TextAppearance.MaterialComponents.Subtitle1.Subtitle"
@@ -93,14 +60,28 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/image_profile" />
 
+    <Button
+        android:id="@+id/button_add_event"
+        style="@style/Widget.Material3.Button.ElevatedButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16sp"
+        android:layout_marginTop="8sp"
+        android:layout_marginEnd="16sp"
+        android:text="@string/add_event"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_to_do" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_event"
         android:layout_width="match_parent"
         android:layout_height="0sp"
-        android:layout_margin="16sp"
+        android:paddingTop="16sp"
+        app:layout_constraintTop_toBottomOf="@+id/button_add_event"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/chipGroup"
-        tools:layout_editor_absoluteX="16dp"
-        tools:listitem="@layout/to_do" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:listitem="@layout/item_to_do" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

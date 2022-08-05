@@ -123,4 +123,9 @@
     <string name="gain_unit">Ganancia x unidad</string>
     <string name="total_gain">Ganancia total</string>
     <string name="price_for_unit_for_client">Precio final</string>
+    <string name="add_event">Crear Evento</string>
+    <string name="price">Precio</string>
+    <string name="discount">Descuento</string>
+    <string name="price_with_gain">Precio con ganancias</string>
+    <string name="price_with_discount">"Precio con descuento "</string>
 </resources>

@@ -20,13 +20,13 @@
     <ImageButton
         android:id="@+id/button_send_budget"
         style="@style/ImageButton"
-        android:src="@drawable/ic_send"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginEnd="16sp"
+        android:contentDescription="@string/send_budget"
         android:padding="8sp"
-        app:layout_constraintTop_toTopOf="@+id/text_title"
+        android:src="@drawable/ic_send"
         app:layout_constraintBottom_toBottomOf="@+id/text_title"
-        android:contentDescription="@string/send_budget" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/text_title" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/layout_number"
@@ -36,8 +36,8 @@
         android:layout_marginStart="16sp"
         android:layout_marginTop="16sp"
         android:layout_marginEnd="8sp"
-        android:hint="@string/budget"
         android:enabled="false"
+        android:hint="@string/budget"
         app:layout_constraintEnd_toStartOf="@+id/layout_date"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_title"
@@ -59,8 +59,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8sp"
         android:layout_marginEnd="16sp"
-        android:hint="@string/date"
         android:enabled="false"
+        android:hint="@string/date"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/layout_number"
         app:layout_constraintTop_toTopOf="@+id/layout_number">
@@ -80,9 +80,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16sp"
-        android:text="@string/add_part"
         android:layout_marginTop="8sp"
         android:layout_marginEnd="16sp"
+        android:text="@string/add_part"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/layout_number" />
@@ -96,7 +96,7 @@
         android:paddingTop="8sp"
         app:layout_constraintBottom_toTopOf="@+id/layout_gain"
         app:layout_constraintTop_toBottomOf="@+id/button_add_part"
-        tools:itemCount="2"
+        tools:itemCount="5"
         tools:listitem="@layout/item_part" />
 
     <com.google.android.material.textfield.TextInputLayout
@@ -106,9 +106,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16sp"
         android:layout_marginEnd="16sp"
+        android:layout_marginBottom="8sp"
         android:enabled="false"
         android:hint="@string/gain"
-        android:layout_marginBottom="8sp"
         app:layout_constraintBottom_toTopOf="@+id/layout_sub_total"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -152,9 +152,9 @@
         android:layout_width="0sp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16sp"
+        android:layout_marginEnd="8sp"
         android:layout_marginBottom="16sp"
         android:enabled="false"
-        android:layout_marginEnd="8sp"
         android:hint="@string/iva"
         app:layout_constraintBottom_toTopOf="@+id/layout_total"
         app:layout_constraintEnd_toStartOf="@+id/layout_sub_total"
@@ -177,12 +177,12 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16sp"
         android:layout_marginEnd="16sp"
+        android:layout_marginBottom="16sp"
         android:enabled="false"
-        app:layout_constraintStart_toStartOf="parent"
         android:hint="@string/total"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginBottom="16sp"
+        app:layout_constraintStart_toStartOf="parent"
         app:prefixText="$">
 
         <com.google.android.material.textfield.TextInputEditText

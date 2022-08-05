@@ -19,11 +19,6 @@ class MainActivity : AppCompatActivity() {
         val navView: BottomNavigationView = binding.navView
         val navController = findNavController(R.id.nav_host_fragment_activity_main)
         navView.setupWithNavController(navController)
-        binding.fabAddEvent.setOnClickListener {
-            findNavController(R.id.nav_host_fragment_activity_main)
-                .navigate(R.id.global_action_to_add_event)
-        }
-
     }
 
 }

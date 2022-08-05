@@ -123,6 +123,11 @@
     <string name="gain_unit">Gain for unit</string>
     <string name="total_gain">Total gain</string>
     <string name="price_for_unit_for_client">Final price</string>
+    <string name="add_event">Add event</string>
+    <string name="price">Price</string>
+    <string name="discount">Discount</string>
+    <string name="price_with_gain">Price with gain</string>
+    <string name="price_with_discount">Price with discount</string>
     <!-- This is the label underneath the icon for Calendar -->
 
 </resources>

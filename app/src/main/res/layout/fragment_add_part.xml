@@ -1,533 +1,396 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.fragment.add_part.AddPartFragment">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <data>
+
+        <variable
+            name="part"
+            type="com.invoice.contratista.data.local.relations.Part" />
+    </data>
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="16sp">
+        android:layout_height="match_parent"
+        tools:context=".ui.fragment.add_part.AddPartFragment">
 
-        <TextView
-            android:id="@+id/text_title"
-            style="@style/TextAppearance.MaterialComponents.Subtitle1.Title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/part"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/text_title_number"
-            style="@style/TextAppearance.MaterialComponents.Subtitle1.Title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8sp"
-            app:layout_constraintStart_toEndOf="@id/text_title"
-            app:layout_constraintTop_toTopOf="@id/text_title"
-            tools:text="1" />
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/layout_product"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16sp"
-            android:hint="@string/product"
-            app:errorEnabled="true"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/text_title"
-            app:startIconDrawable="@drawable/ic_inventory">
+            android:padding="16sp">
 
-            <com.google.android.material.textfield.MaterialAutoCompleteTextView
-                style="@style/TextInputEditText"
+            <TextView
+                android:id="@+id/text_title"
+                style="@style/TextAppearance.MaterialComponents.Subtitle1.Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/part"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/text_title_number"
+                style="@style/TextAppearance.MaterialComponents.Subtitle1.Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8sp"
+                app:layout_constraintStart_toEndOf="@id/text_title"
+                app:layout_constraintTop_toTopOf="@id/text_title"
+                tools:text="1" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_product"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:inputType="none"
-                tools:text="Ukelele" />
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16sp"
+                android:hint="@string/product"
+                app:errorEnabled="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text_title"
+                app:startIconDrawable="@drawable/ic_inventory">
 
-        </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                    style="@style/TextInputEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="none"
+                    android:text="@{part.product.product.description}"
+                    tools:text="Ukelele" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/layout_description"
-            style="@style/Widget.App.TextInputLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/description"
-            app:errorEnabled="true"
-            app:layout_constraintTop_toBottomOf="@+id/layout_product"
-            app:startIconDrawable="@drawable/ic_address_card">
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputEditText
-                style="@style/TextInputEditText"
+            <Button
+                android:id="@+id/button_add_event"
+                style="@style/Widget.Material3.Button.ElevatedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8sp"
+                android:text="@string/add_event"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layout_product" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_description"
+                style="@style/Widget.App.TextInputLayout"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:inputType="textMultiLine"
-                android:maxLines="3"
-                tools:maxLines="2"
-                tools:text="@tools:sample/lorem/random" />
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8sp"
+                android:hint="@string/description"
+                app:layout_constraintTop_toBottomOf="@+id/button_add_event"
+                app:startIconDrawable="@drawable/ic_address_card">
 
-        </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputEditText
+                    style="@style/TextInputEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="textMultiLine"
+                    android:maxLines="3"
+                    android:text="@{part.partEntity.description}"
+                    tools:maxLines="2"
+                    tools:text="@tools:sample/lorem/random" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/layout_units"
-            style="@style/Widget.App.TextInputLayout"
-            android:layout_width="0sp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8sp"
-            android:hint="@string/unit"
-            app:errorEnabled="true"
-            app:layout_constraintEnd_toStartOf="@+id/slider_units"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/layout_description"
-            app:startIconDrawable="@drawable/ic_inventory"
-            app:suffixText="@string/units">
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputEditText
-                style="@style/TextInputEditText"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_units"
+                style="@style/Widget.App.TextInputLayout"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16sp"
+                android:layout_marginEnd="8sp"
+                android:hint="@string/unit"
+                app:layout_constraintEnd_toStartOf="@+id/slider_units"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layout_description"
+                app:startIconDrawable="@drawable/ic_inventory"
+                app:suffixText="@string/units">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    style="@style/TextInputEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="number"
+                    tools:text="6" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/text_title_units"
+                style="@style/TextAppearance.Material3.BodyLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8sp"
+                android:layout_marginTop="16sp"
+                android:text="@string/unit"
+                app:layout_constraintStart_toEndOf="@+id/layout_units"
+                app:layout_constraintTop_toBottomOf="@+id/layout_description" />
+
+            <com.google.android.material.slider.Slider
+                android:id="@+id/slider_units"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:stepSize="1.0"
+                android:value="1.0"
+                android:valueFrom="1"
+                android:valueTo="100"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/layout_units"
+                app:layout_constraintTop_toBottomOf="@id/text_title_units" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_discount"
+                style="@style/Widget.App.TextInputLayout"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16sp"
+                android:layout_marginEnd="8sp"
+                android:hint="@string/discount"
+                app:layout_constraintEnd_toStartOf="@+id/slider_discount"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/slider_units"
+                app:startIconDrawable="@drawable/ic_round_balance_24"
+                app:suffixText="%">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    style="@style/TextInputEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="number"
+                    tools:text="45" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/text_title_discount"
+                style="@style/TextAppearance.Material3.BodyLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8sp"
+                android:text="@string/discount"
+                app:layout_constraintStart_toEndOf="@+id/layout_discount"
+                app:layout_constraintTop_toTopOf="@+id/layout_discount" />
+
+            <com.google.android.material.slider.Slider
+                android:id="@+id/slider_discount"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8sp"
+                android:stepSize="1.0"
+                android:value="1.0"
+                android:valueFrom="0"
+                android:valueTo="100"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/layout_units"
+                app:layout_constraintTop_toBottomOf="@+id/text_title_discount" />
+
+            <TextView
+                android:id="@+id/text_title_price"
+                style="@style/TextAppearance.Material3.BodyMedium"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16sp"
+                android:text="@string/price"
+                android:textAlignment="textEnd"
+                app:layout_constraintEnd_toEndOf="@+id/text_title_total"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/slider_discount" />
+
+            <TextView
+                android:id="@+id/text_price"
+                style="@style/TextAppearance.Material3.BodyMedium"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:drawablePadding="8sp"
+                android:textAlignment="textEnd"
+                app:drawableStartCompat="@drawable/ic_money"
+                app:drawableTint="#4CAF50"
+                app:layout_constraintBottom_toBottomOf="@+id/text_title_price"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/text_title_total"
+                app:layout_constraintStart_toStartOf="@+id/text_total"
+                app:layout_constraintTop_toTopOf="@+id/text_title_price"
+                tools:text="1,450.25" />
+
+            <TextView
+                android:id="@+id/text_title_price_with_gain"
+                style="@style/TextAppearance.Material3.BodyMedium"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8sp"
+                android:text="@string/price_with_gain"
+                android:textAlignment="textEnd"
+                app:layout_constraintEnd_toEndOf="@+id/text_title_total"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_title_price" />
+
+            <TextView
+                android:id="@+id/text_price_with_gain"
+                style="@style/TextAppearance.Material3.BodyMedium"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:drawablePadding="8sp"
+                android:textAlignment="textEnd"
+                app:drawableStartCompat="@drawable/ic_money"
+                app:drawableTint="#4CAF50"
+                app:layout_constraintBottom_toBottomOf="@+id/text_title_price_with_gain"
+                app:layout_constraintEnd_toEndOf="@+id/text_price"
+                app:layout_constraintStart_toStartOf="@+id/text_total"
+                app:layout_constraintTop_toTopOf="@+id/text_title_price_with_gain"
+                tools:text="1,740.30" />
+
+            <TextView
+                android:id="@+id/text_title_price_with_discount"
+                style="@style/TextAppearance.Material3.BodyMedium"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8sp"
+                android:text="@string/price_with_discount"
+                android:textAlignment="textEnd"
+                app:layout_constraintEnd_toEndOf="@+id/text_title_total"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_title_price_with_gain" />
+
+            <TextView
+                android:id="@+id/text_price_with_discount"
+                style="@style/TextAppearance.Material3.LabelLarge"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:drawablePadding="8sp"
+                android:textAlignment="textEnd"
+                android:textStyle="bold"
+                app:drawableStartCompat="@drawable/ic_money"
+                app:drawableTint="#4CAF50"
+                app:layout_constraintBottom_toBottomOf="@+id/text_title_price_with_discount"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/text_total"
+                app:layout_constraintTop_toTopOf="@+id/text_title_price_with_discount"
+                tools:text="1,740.30" />
+
+            <TextView
+                android:id="@+id/text_title_subtotal"
+                style="@style/TextAppearance.Material3.BodyLarge"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16sp"
+                android:text="@string/sub_total"
+                android:textAlignment="textEnd"
+                app:layout_constraintEnd_toEndOf="@+id/text_title_total"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_price_with_discount" />
+
+            <TextView
+                android:id="@+id/text_price_for_unit_for_client"
+                style="@style/TextAppearance.Material3.LabelLarge"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:drawablePadding="8sp"
+                android:textAlignment="textEnd"
+                android:textStyle="bold"
+                app:drawableStartCompat="@drawable/ic_money"
+                app:drawableTint="#4CAF50"
+                app:layout_constraintBottom_toBottomOf="@+id/text_title_subtotal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/text_total"
+                app:layout_constraintTop_toTopOf="@+id/text_title_subtotal"
+                tools:text="10,441.80" />
+
+            <TextView
+                android:id="@+id/text_title_discount2"
+                style="@style/TextAppearance.Material3.BodyLarge"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8sp"
+                android:text="@string/discount"
+                android:textAlignment="textEnd"
+                app:layout_constraintEnd_toEndOf="@+id/text_title_total"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_title_subtotal" />
+
+            <TextView
+                android:id="@+id/text_price_for_client"
+                style="@style/TextAppearance.Material3.LabelLarge"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:drawablePadding="8sp"
+                android:textAlignment="textEnd"
+                android:textStyle="bold"
+                app:drawableStartCompat="@drawable/ic_money"
+                app:drawableTint="#4CAF50"
+                app:layout_constraintBottom_toBottomOf="@+id/text_title_discount2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/text_total"
+                app:layout_constraintTop_toTopOf="@+id/text_title_discount2"
+                tools:text="00.00" />
+
+            <TextView
+                android:id="@+id/text_title_price_total"
+                style="@style/TextAppearance.Material3.BodyLarge"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8sp"
+                android:text="@string/iva"
+                android:textAlignment="textEnd"
+                app:layout_constraintEnd_toEndOf="@+id/text_title_total"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_title_discount2" />
+
+            <TextView
+                android:id="@+id/text_price_total"
+                style="@style/TextAppearance.Material3.BodyLarge"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:drawablePadding="8sp"
+                android:textAlignment="textEnd"
+                android:textStyle="bold"
+                app:drawableStartCompat="@drawable/ic_money"
+                app:drawableTint="#4CAF50"
+                app:layout_constraintBottom_toBottomOf="@+id/text_title_price_total"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/text_total"
+                app:layout_constraintTop_toTopOf="@+id/text_title_price_total"
+                tools:text="1,670.68" />
+
+            <TextView
+                android:id="@+id/text_title_total"
+                style="@style/TextAppearance.Material3.BodyLarge"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8sp"
+                android:layout_marginEnd="8sp"
+                android:text="@string/total"
+                android:textAlignment="textEnd"
+                app:layout_constraintEnd_toStartOf="@+id/text_price_total"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_title_price_total" />
+
+            <TextView
+                android:id="@+id/text_total"
+                style="@style/TextAppearance.Material3.BodyLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawablePadding="8sp"
+                android:textAlignment="textEnd"
+                android:textStyle="bold"
+                app:drawableStartCompat="@drawable/ic_money"
+                app:drawableTint="#4CAF50"
+                app:layout_constraintBottom_toBottomOf="@+id/text_title_total"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/text_title_total"
+                tools:text="12,112.48" />
+
+            <Button
+                android:id="@+id/button2"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:inputType="number"
-                tools:text="6" />
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16sp"
+                android:text="@string/save"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_title_total" />
 
-        </com.google.android.material.textfield.TextInputLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <TextView
-            android:id="@+id/text_title_units"
-            style="@style/TextAppearance.Material3.BodyLarge"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8sp"
-            android:text="@string/unit"
-            app:layout_constraintStart_toEndOf="@+id/layout_units"
-            app:layout_constraintTop_toBottomOf="@+id/layout_description" />
-
-        <com.google.android.material.slider.Slider
-            android:id="@+id/slider_units"
-            android:layout_width="0sp"
-            android:layout_height="wrap_content"
-            android:stepSize="1.0"
-            android:value="6.0"
-            android:valueFrom="1"
-            android:valueTo="100"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/layout_units"
-            app:layout_constraintTop_toBottomOf="@id/text_title_units" />
-
-        <TextView
-            android:id="@+id/text_title_total_expenses"
-            style="@style/TextAppearance.Material3.BodyLarge"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8sp"
-            android:text="@string/total_expenses"
-            app:layout_constraintBottom_toBottomOf="@+id/text_total_expenses"
-            app:layout_constraintEnd_toEndOf="@id/text_title_unit_price"
-            app:layout_constraintTop_toTopOf="@+id/text_total_expenses" />
-
-        <TextView
-            android:id="@+id/text_title_unit_price"
-            style="@style/TextAppearance.Material3.BodyLarge"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16sp"
-            android:layout_marginEnd="16sp"
-            android:text="@string/unit_price"
-            app:layout_constraintEnd_toStartOf="@+id/image_money1"
-            app:layout_constraintTop_toBottomOf="@+id/layout_units" />
-
-        <ImageView
-            android:id="@+id/image_money1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8sp"
-            android:contentDescription="@string/money"
-            android:src="@drawable/ic_money"
-            app:layout_constraintBottom_toBottomOf="@+id/text_title_unit_price"
-            app:layout_constraintEnd_toStartOf="@+id/text_unit_price"
-            app:layout_constraintTop_toTopOf="@+id/text_title_unit_price" />
-
-        <TextView
-            android:id="@+id/text_unit_price"
-            style="@style/TextAppearance.Material3.BodyLarge"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="16sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toStartOf="@+id/image_operator_x1"
-            app:layout_constraintTop_toTopOf="@+id/text_title_unit_price"
-            tools:text="1,500.00" />
-
-        <ImageView
-            android:id="@+id/image_operator_x1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:contentDescription="@string/operator"
-            android:src="@drawable/ic_round_close_24"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/text_unit_price" />
-
-        <TextView
-            android:id="@+id/text_title_units2"
-            style="@style/TextAppearance.Material3.BodyLarge"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16sp"
-            android:text="@string/units"
-            app:layout_constraintEnd_toEndOf="@+id/text_title_unit_price"
-            app:layout_constraintTop_toBottomOf="@+id/text_title_unit_price" />
-
-        <TextView
-            android:id="@+id/text_units"
-            style="@style/TextAppearance.Material3.BodyLarge"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="@+id/text_unit_price"
-            app:layout_constraintTop_toTopOf="@+id/text_title_units2"
-            tools:text="6" />
-
-        <com.google.android.material.divider.MaterialDivider
-            android:id="@+id/divider_expenses"
-            android:layout_width="0sp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8sp"
-            app:layout_constraintEnd_toEndOf="@+id/image_operator_x1"
-            app:layout_constraintStart_toStartOf="@+id/text_title_total_expenses"
-            app:layout_constraintTop_toBottomOf="@+id/text_units" />
-
-        <ImageView
-            android:id="@+id/image_money2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8sp"
-            android:contentDescription="@string/money"
-            android:src="@drawable/ic_money"
-            app:layout_constraintBottom_toBottomOf="@+id/text_total_expenses"
-            app:layout_constraintEnd_toStartOf="@+id/text_total_expenses"
-            app:layout_constraintTop_toTopOf="@+id/text_total_expenses" />
-
-        <TextView
-            android:id="@+id/text_total_expenses"
-            style="@style/TextAppearance.Material3.BodyLarge"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="@+id/text_units"
-            app:layout_constraintTop_toBottomOf="@id/divider_expenses"
-            tools:text="9,000.00" />
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/layout_gains"
-            style="@style/Widget.App.TextInputLayout"
-            android:layout_width="0sp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16sp"
-            android:layout_marginEnd="8sp"
-            android:hint="@string/gain"
-            app:errorEnabled="true"
-            app:layout_constraintEnd_toStartOf="@+id/slider_gain"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text_total_expenses"
-            app:startIconDrawable="@drawable/ic_round_balance_24"
-            app:suffixText="%">
-
-            <com.google.android.material.textfield.TextInputEditText
-                style="@style/TextInputEditText"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:inputType="number"
-                tools:text="45" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <TextView
-            android:id="@+id/text_title_gain"
-            style="@style/TextAppearance.Material3.BodyLarge"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8sp"
-            android:text="@string/gain"
-            app:layout_constraintStart_toEndOf="@+id/layout_gains"
-            app:layout_constraintTop_toTopOf="@+id/layout_gains" />
-
-        <com.google.android.material.slider.Slider
-            android:id="@+id/slider_gain"
-            android:layout_width="0sp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8sp"
-            android:stepSize="1.0"
-            android:value="45"
-            android:valueFrom="1"
-            android:valueTo="100"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/layout_units"
-            app:layout_constraintTop_toBottomOf="@+id/text_title_gain" />
-
-        <TextView
-            android:id="@+id/text_title_unit_price2"
-            style="@style/TextAppearance.Material3.BodyLarge"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16sp"
-            android:layout_marginEnd="16sp"
-            android:text="@string/unit_price"
-            app:layout_constraintEnd_toStartOf="@+id/image_money3"
-            app:layout_constraintTop_toBottomOf="@+id/layout_gains" />
-
-        <ImageView
-            android:id="@+id/image_money3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8sp"
-            android:contentDescription="@string/money"
-            android:src="@drawable/ic_money"
-            app:layout_constraintBottom_toBottomOf="@+id/text_title_unit_price2"
-            app:layout_constraintEnd_toStartOf="@+id/text_unit_price2"
-            app:layout_constraintTop_toTopOf="@+id/text_title_unit_price2" />
-
-        <TextView
-            android:id="@+id/text_unit_price2"
-            style="@style/TextAppearance.Material3.BodyLarge"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="16sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toStartOf="@+id/image_operator_x2"
-            app:layout_constraintTop_toTopOf="@+id/text_title_unit_price2"
-            tools:text="1,500.00" />
-
-        <ImageView
-            android:id="@+id/image_operator_x2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:contentDescription="@string/operator"
-            android:src="@drawable/ic_round_close_24"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/text_unit_price2" />
-
-        <TextView
-            android:id="@+id/text_title_percentage"
-            style="@style/TextAppearance.Material3.BodyLarge"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16sp"
-            android:text="@string/percentage"
-            app:layout_constraintEnd_toEndOf="@+id/text_title_unit_price2"
-            app:layout_constraintTop_toBottomOf="@+id/text_title_unit_price2" />
-
-        <TextView
-            android:id="@+id/text_percentage"
-            style="@style/TextAppearance.Material3.BodyLarge"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toStartOf="@+id/image_percent"
-            app:layout_constraintTop_toTopOf="@+id/text_title_percentage"
-            tools:text="45" />
-
-        <ImageView
-            android:id="@+id/image_percent"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:contentDescription="@string/percentage"
-            android:src="@drawable/ic_round_percent_24"
-            app:layout_constraintBottom_toBottomOf="@+id/text_percentage"
-            app:layout_constraintEnd_toEndOf="@+id/text_unit_price2"
-            app:layout_constraintTop_toTopOf="@+id/text_percentage" />
-
-        <com.google.android.material.divider.MaterialDivider
-            android:id="@+id/divider_percent"
-            android:layout_width="0sp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8sp"
-            app:layout_constraintEnd_toEndOf="@+id/image_operator_x2"
-            app:layout_constraintStart_toStartOf="@+id/text_title_percentage"
-            app:layout_constraintTop_toBottomOf="@+id/text_percentage" />
-
-        <TextView
-            android:id="@+id/text_title_gain_unit"
-            style="@style/TextAppearance.Material3.BodyLarge"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/gain_unit"
-            app:layout_constraintBottom_toBottomOf="@+id/text_gain_unit"
-            app:layout_constraintEnd_toEndOf="@+id/text_title_percentage"
-            app:layout_constraintTop_toTopOf="@+id/text_gain_unit" />
-
-        <ImageView
-            android:id="@+id/image_money4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8sp"
-            android:contentDescription="@string/money"
-            android:src="@drawable/ic_money"
-            app:layout_constraintBottom_toBottomOf="@+id/text_gain_unit"
-            app:layout_constraintEnd_toStartOf="@+id/text_gain_unit"
-            app:layout_constraintTop_toTopOf="@+id/text_gain_unit" />
-
-        <TextView
-            android:id="@+id/text_gain_unit"
-            style="@style/TextAppearance.Material3.BodyLarge"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="@+id/text_units"
-            app:layout_constraintTop_toBottomOf="@id/divider_percent"
-            tools:text="675.00" />
-
-        <TextView
-            android:id="@+id/text_title_total_gain"
-            style="@style/TextAppearance.Material3.BodyLarge"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/total_gain"
-            app:layout_constraintBottom_toBottomOf="@+id/text_total_gain"
-            app:layout_constraintEnd_toEndOf="@+id/text_title_gain_unit"
-            app:layout_constraintTop_toTopOf="@+id/text_total_gain" />
-
-        <ImageView
-            android:id="@+id/image_money5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8sp"
-            android:contentDescription="@string/money"
-            android:src="@drawable/ic_money"
-            app:layout_constraintBottom_toBottomOf="@+id/text_total_gain"
-            app:layout_constraintEnd_toStartOf="@+id/text_total_gain"
-            app:layout_constraintTop_toTopOf="@+id/text_total_gain" />
-
-        <TextView
-            android:id="@+id/text_total_gain"
-            style="@style/TextAppearance.Material3.BodyLarge"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="@+id/text_units"
-            app:layout_constraintTop_toBottomOf="@id/text_gain_unit"
-            tools:text="4,050.00" />
-
-        <TextView
-            android:id="@+id/text_title_price_for_unit_for_client"
-            style="@style/TextAppearance.Material3.BodyLarge"
-            android:layout_width="0sp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32sp"
-            android:text="@string/price_for_unit_for_client"
-            android:textAlignment="textEnd"
-            app:layout_constraintEnd_toStartOf="@+id/image_money6"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text_title_total_gain" />
-
-        <ImageView
-            android:id="@+id/image_money6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8sp"
-            android:contentDescription="@string/money"
-            android:src="@drawable/ic_money"
-            app:layout_constraintBottom_toBottomOf="@+id/text_price_for_unit_for_client"
-            app:layout_constraintEnd_toEndOf="@+id/image_money8"
-            app:layout_constraintStart_toEndOf="@+id/text_title_price_for_unit_for_client"
-            app:layout_constraintTop_toTopOf="@+id/text_price_for_unit_for_client" />
-
-        <TextView
-            android:id="@+id/text_price_for_unit_for_client"
-            style="@style/TextAppearance.Material3.BodyLarge"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/text_title_price_for_unit_for_client"
-            tools:text="2,175.00" />
-
-        <TextView
-            android:id="@+id/text_title_price_for_client"
-            style="@style/TextAppearance.Material3.BodyLarge"
-            android:layout_width="0sp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16sp"
-            android:layout_marginEnd="8sp"
-            android:text="@string/sub_total"
-            android:textAlignment="textEnd"
-            app:layout_constraintEnd_toStartOf="@+id/image_money7"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text_title_price_for_unit_for_client" />
-
-        <ImageView
-            android:id="@+id/image_money7"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8sp"
-            android:contentDescription="@string/money"
-            android:src="@drawable/ic_money"
-            app:layout_constraintBottom_toBottomOf="@+id/text_price_for_client"
-            app:layout_constraintEnd_toStartOf="@+id/text_price_for_client"
-            app:layout_constraintStart_toEndOf="@+id/image_money8"
-            app:layout_constraintTop_toTopOf="@+id/text_price_for_client" />
-
-        <TextView
-            android:id="@+id/text_price_for_client"
-            style="@style/TextAppearance.Material3.BodyLarge"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/image_money7"
-            app:layout_constraintTop_toTopOf="@+id/text_title_price_for_client"
-            tools:text="13,050.00" />
-
-        <TextView
-            android:id="@+id/text_title_price_total"
-            style="@style/TextAppearance.Material3.BodyLarge"
-            android:layout_width="0sp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16sp"
-            android:layout_marginEnd="8sp"
-            android:text="@string/total"
-            android:textAlignment="textEnd"
-            app:layout_constraintEnd_toStartOf="@+id/image_money7"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text_title_price_for_client" />
-
-        <ImageView
-            android:id="@+id/image_money8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8sp"
-            android:contentDescription="@string/money"
-            android:src="@drawable/ic_money"
-            app:layout_constraintBottom_toBottomOf="@+id/text_price_total"
-            app:layout_constraintEnd_toStartOf="@+id/text_price_total"
-            app:layout_constraintStart_toEndOf="@+id/text_title_price_for_client"
-            app:layout_constraintTop_toTopOf="@+id/text_price_total" />
-
-        <TextView
-            android:id="@+id/text_price_total"
-            style="@style/TextAppearance.Material3.BodyLarge"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/image_money8"
-            app:layout_constraintTop_toTopOf="@+id/text_title_price_total"
-            tools:text="13,050.00" />
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16sp"
-            android:text="@string/save"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text_title_price_total" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-</ScrollView>
+    </ScrollView>
+</layout>

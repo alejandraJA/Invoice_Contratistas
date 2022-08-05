@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_navigation_home_to_eventFragment"
             app:destination="@id/eventFragment" />
+        <action
+            android:id="@+id/action_navigation_home_to_addEventFragment"
+            app:destination="@id/addEventFragment" />
     </fragment>
 
     <fragment
@@ -40,9 +43,6 @@
             app:destination="@id/eventFragment" />
     </fragment>
 
-    <action
-        android:id="@+id/global_action_to_add_event"
-        app:destination="@+id/addEventFragment" />
     <fragment
         android:id="@+id/createCustomerFragment"
         android:name="com.invoice.contratista.ui.fragment.customer.create.CreateCustomerFragment"

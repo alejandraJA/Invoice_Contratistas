@@ -7,38 +7,119 @@
     android:layout_height="match_parent"
     android:padding="16sp"
     app:layoutDescription="@xml/prueba_scene">
-
     <TextView
-        android:id="@+id/text_title_total_gain"
+        android:id="@+id/text_title_subtotal"
         style="@style/TextAppearance.Material3.BodyLarge"
-        android:layout_width="wrap_content"
+        android:layout_width="0sp"
         android:layout_height="wrap_content"
-        android:text="@string/total_gain"
-        app:layout_constraintBottom_toBottomOf="@+id/text_total_gain"
-        app:layout_constraintEnd_toEndOf="@+id/text_title_gain_unit"
-        app:layout_constraintTop_toTopOf="@+id/text_total_gain" />
+        android:layout_marginTop="32sp"
+        android:text="@string/price_for_unit_for_client"
+        android:textAlignment="textEnd"
+        app:layout_constraintEnd_toStartOf="@+id/image_money6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_price_with_discount" />
 
     <ImageView
-        android:id="@+id/image_money5"
+        android:id="@+id/image_money6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8sp"
+        android:layout_marginStart="8sp"
         android:contentDescription="@string/money"
         android:src="@drawable/ic_money"
-        app:layout_constraintBottom_toBottomOf="@+id/text_total_gain"
-        app:layout_constraintEnd_toStartOf="@+id/text_gain_unit"
-        app:layout_constraintTop_toTopOf="@+id/text_total_gain" />
+        app:layout_constraintBottom_toBottomOf="@+id/text_price_for_unit_for_client"
+        app:layout_constraintEnd_toEndOf="@+id/image_money8"
+        app:layout_constraintStart_toEndOf="@+id/text_title_subtotal"
+        app:layout_constraintTop_toTopOf="@+id/text_price_for_unit_for_client" />
 
     <TextView
-        android:id="@+id/text_total_gain"
+        android:id="@+id/text_price_for_unit_for_client"
         style="@style/TextAppearance.Material3.BodyLarge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8sp"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/text_units"
-        app:layout_constraintTop_toBottomOf="@id/text_gain_unit"
-        tools:text="675.00" />
+        android:layout_marginStart="8sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/text_title_subtotal"
+        tools:text="2,175.00" />
+
+    <TextView
+        android:id="@+id/text_title_discount2"
+        style="@style/TextAppearance.Material3.BodyLarge"
+        android:layout_width="0sp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16sp"
+        android:layout_marginEnd="8sp"
+        android:text="@string/sub_total"
+        android:textAlignment="textEnd"
+        app:layout_constraintEnd_toStartOf="@+id/image_money7"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_title_subtotal" />
+
+    <ImageView
+        android:id="@+id/image_money7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8sp"
+        android:contentDescription="@string/money"
+        android:src="@drawable/ic_money"
+        app:layout_constraintBottom_toBottomOf="@+id/text_price_for_client"
+        app:layout_constraintEnd_toStartOf="@+id/text_price_for_client"
+        app:layout_constraintStart_toEndOf="@+id/image_money8"
+        app:layout_constraintTop_toTopOf="@+id/text_price_for_client" />
+
+    <TextView
+        android:id="@+id/text_price_for_client"
+        style="@style/TextAppearance.Material3.BodyLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/image_money7"
+        app:layout_constraintTop_toTopOf="@+id/text_title_discount2"
+        tools:text="13,050.00" />
+
+    <TextView
+        android:id="@+id/text_title_price_total"
+        style="@style/TextAppearance.Material3.BodyLarge"
+        android:layout_width="0sp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16sp"
+        android:layout_marginEnd="8sp"
+        android:text="@string/total"
+        android:textAlignment="textEnd"
+        app:layout_constraintEnd_toStartOf="@+id/image_money7"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_title_discount2" />
+
+    <ImageView
+        android:id="@+id/image_money8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8sp"
+        android:contentDescription="@string/money"
+        android:src="@drawable/ic_money"
+        app:layout_constraintBottom_toBottomOf="@+id/text_price_total"
+        app:layout_constraintEnd_toStartOf="@+id/text_price_total"
+        app:layout_constraintStart_toEndOf="@+id/text_title_discount2"
+        app:layout_constraintTop_toTopOf="@+id/text_price_total" />
+
+    <TextView
+        android:id="@+id/text_price_total"
+        style="@style/TextAppearance.Material3.BodyLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/image_money8"
+        app:layout_constraintTop_toTopOf="@+id/text_title_price_total"
+        tools:text="13,050.00" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16sp"
+        android:text="@string/save"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_title_price_total" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

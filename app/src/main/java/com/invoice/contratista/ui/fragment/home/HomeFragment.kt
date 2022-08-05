@@ -6,8 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.invoice.contratista.utils.GlobalVariables
+import com.invoice.contratista.R
+import com.invoice.contratista.utils.Constants
 import com.invoice.contratista.databinding.FragmentHomeBinding
 import com.invoice.contratista.ui.fragment.home.apater.Event
 import com.invoice.contratista.ui.fragment.home.apater.EventAdapter
@@ -37,7 +39,7 @@ class HomeFragment : Fragment() {
                     "Alejandra",
                     "Descripcion improvisada",
                     "Receipt",
-                    GlobalVariables.Priority.Important,
+                    Constants.Priority.Important,
                     "12/04/2021",
                     "12:07"
                 ),
@@ -46,7 +48,7 @@ class HomeFragment : Fragment() {
                     "Abraham",
                     "Descripcion improvisada",
                     "Invoice",
-                    GlobalVariables.Priority.Important,
+                    Constants.Priority.Important,
                     "8/04/2021",
                     "12:07"
                 )
@@ -54,7 +56,12 @@ class HomeFragment : Fragment() {
         )
         binding.recyclerEvent.adapter = adapter
         binding.recyclerEvent.setHasFixedSize(true)
-        binding.recyclerEvent.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
+        binding.recyclerEvent.layoutManager =
+            LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
+
+        binding.buttonAddEvent.setOnClickListener {
+            findNavController().navigate(R.id.action_navigation_home_to_addEventFragment)
+        }
     }
 
     override fun onDestroyView() {

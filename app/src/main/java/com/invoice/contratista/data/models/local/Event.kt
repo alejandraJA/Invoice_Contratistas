@@ -1,14 +1,14 @@
 package com.invoice.contratista.data.models.local
 
-import com.invoice.contratista.utils.GlobalVariables
+import com.invoice.contratista.utils.Constants
 import java.time.LocalDate
 
 data class Event(
     val id: String,
     val idCustomer: String,
-    val priority: GlobalVariables.Priority,
-    val step: GlobalVariables.Steps,
-    val steps: ArrayList<GlobalVariables.Steps>,
+    val priority: Constants.Priority,
+    val step: Constants.Steps,
+    val steps: ArrayList<Constants.Steps>,
     val dates: ArrayList<Date>,
     val creationDate: LocalDate
 )
