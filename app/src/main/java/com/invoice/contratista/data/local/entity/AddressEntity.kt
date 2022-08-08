@@ -45,4 +45,8 @@ data class AddressEntity(
     var state: String,
     var country: String,
     var idCustomer: String
-)
+) {
+    fun isEmpty() = (street.isEmpty() && exterior.isEmpty() && interior.isEmpty() &&
+            neighborhood.isEmpty() && city.isEmpty() && municipality.isEmpty() &&
+            zip.isEmpty() && state.isEmpty())
+}

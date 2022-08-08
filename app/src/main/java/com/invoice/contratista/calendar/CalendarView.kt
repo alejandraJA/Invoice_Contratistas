@@ -415,7 +415,7 @@ class CalendarView(private val binding: CalendarViewBinding, ) {
             }
         }
 
-    fun addDays(date: Date, days: Int): Date {
+    private fun addDays(date: Date, days: Int): Date {
         val cal = Calendar.getInstance()
         cal.time = date
         cal.add(Calendar.DATE, days)

@@ -6,6 +6,7 @@ import androidx.room.Insert
 import com.invoice.contratista.data.local.entity.BudgetEntity
 import androidx.room.OnConflictStrategy.REPLACE
 import androidx.room.Query
+import androidx.room.Transaction
 import com.invoice.contratista.data.local.entity.event.PartEntity
 import com.invoice.contratista.data.local.entity.AddressEntity
 import com.invoice.contratista.data.local.entity.CustomerEntity
@@ -33,6 +34,7 @@ interface Dao {
      * @param idEvent Identificador del evento al que pertenece el seguimiento de la cotización.
      * @return Objeto de tipo [LiveData] que contiene un objeto de tipo [Budget]
      */
+    @Transaction
     @Query("SELECT * FROM budget WHERE id_event == :idEvent LIMIT 1")
     fun getBudget(idEvent: String): LiveData<Budget>
 
@@ -40,6 +42,7 @@ interface Dao {
      * Metodo para obtener todas las cotizaciones completas
      * @return Lista de objetos de tipo [Budget]
      */
+    @Transaction
     @Query("SELECT * FROM budget")
     fun getBudgets(): LiveData<List<Budget>>
 
@@ -60,6 +63,7 @@ interface Dao {
      * @param idBudget id que hace referencia al id de la cotización
      * @return Objeto de tipo [LiveData] que contiene una lista de tipo [Part]
      */
+    @Transaction
     @Query("SELECT * FROM part WHERE idBudget == :idBudget")
     fun getParts(idBudget: String): LiveData<List<Part>>
 
@@ -68,6 +72,7 @@ interface Dao {
      * @param idPart id de la partida que retorna.
      * @return Objeto de tipo [LiveData] que contiene un objeto de tipo [Part]
      */
+    @Transaction
     @Query("SELECT * FROM part WHERE id == :idPart LIMIT 1")
     fun getPart(idPart: String): LiveData<Part>
 
@@ -105,6 +110,7 @@ interface Dao {
      * @return Retorna un objeto de tipo [LiveData] que, a su vez, contiene uno de tipo [Customer]
      * que contiene todos los objetos relacionados al **Cliente**.
      */
+    @Transaction
     @Query("SELECT * FROM customer WHERE id == :idCustomer LIMIT 1")
     fun getCustomer(idCustomer: String): LiveData<Customer>
 
@@ -130,6 +136,7 @@ interface Dao {
      * @return Objeto de tipo [LiveData] que contiene un objeto de tipo [Product] que lleva todos
      * los obetos relacionados a un **Producto**.
      */
+    @Transaction
     @Query("SELECT * FROM product WHERE id == :idProduct LIMIT 1")
     fun getProduct(idProduct: String): LiveData<Product>
 

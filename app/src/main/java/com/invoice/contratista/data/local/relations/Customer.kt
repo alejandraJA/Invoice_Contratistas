@@ -17,4 +17,7 @@ data class Customer(
         entityColumn = "idCustomer",
     )
     val address: AddressEntity?,
-)
+) {
+    fun isNotEmpty() =
+        !((customer != null) && (address != null) && customer.isEmpty() && address.isEmpty())
+}

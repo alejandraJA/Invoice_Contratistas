@@ -6,10 +6,10 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.invoice.contratista.R
 import com.invoice.contratista.utils.Constants
-import com.invoice.contratista.databinding.ToDoBinding
+import com.invoice.contratista.databinding.ItemToDoBinding
 
 class EventViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
-    private val binding = ToDoBinding.bind(view)
+    private val binding = ItemToDoBinding.bind(view)
 
     @SuppressLint("UseCompatLoadingForDrawables")
     fun bind(event: Event) {

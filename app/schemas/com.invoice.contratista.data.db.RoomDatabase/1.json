@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "da5a50cb01b31ce797b33242edbcfd77",
+    "identityHash": "eb85340a07f1e2ff4801367f88fd52b5",
     "entities": [
       {
         "tableName": "budget",
@@ -149,24 +149,12 @@
       },
       {
         "tableName": "customer",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `created_at` TEXT NOT NULL, `livemode` INTEGER NOT NULL, `legal_name` TEXT NOT NULL, `tax_id` TEXT NOT NULL, `tax_system` TEXT NOT NULL, `email` TEXT NOT NULL, `phone` TEXT NOT NULL, PRIMARY KEY(`id`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `legal_name` TEXT NOT NULL, `tax_id` TEXT NOT NULL, `tax_system` TEXT NOT NULL, `email` TEXT NOT NULL, `phone` TEXT NOT NULL, PRIMARY KEY(`id`))",
         "fields": [
           {
             "fieldPath": "id",
             "columnName": "id",
             "affinity": "TEXT",
-            "notNull": true
-          },
-          {
-            "fieldPath": "created_at",
-            "columnName": "created_at",
-            "affinity": "TEXT",
-            "notNull": true
-          },
-          {
-            "fieldPath": "livemode",
-            "columnName": "livemode",
-            "affinity": "INTEGER",
             "notNull": true
           },
           {
@@ -438,7 +426,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'da5a50cb01b31ce797b33242edbcfd77')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'eb85340a07f1e2ff4801367f88fd52b5')"
     ]
   }
 }

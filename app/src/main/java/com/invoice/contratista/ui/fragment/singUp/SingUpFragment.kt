@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.invoice.contratista.databinding.SingUpFragmentBinding
-import com.invoice.contratista.ui.activity.MainActivity
+import com.invoice.contratista.ui.activity.main.MainActivity
 
 class SingUpFragment(private val onClick: (Boolean) -> Unit) : Fragment() {
 

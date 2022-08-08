@@ -1,11 +1,12 @@
 package com.invoice.contratista.di
 
 import android.content.Context
+import android.content.SharedPreferences
 import androidx.room.Room
 import com.invoice.contratista.data.db.RoomDatabase
+import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.Module
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
@@ -26,7 +27,7 @@ object Module {
     fun provideDataDao(db: RoomDatabase) = db.getDataDao()
 
     @Provides
-    fun provideSharedPreferenceUtils(@ApplicationContext context: Context) =
+    fun provideSharedPreferenceUtils(@ApplicationContext context: Context): SharedPreferences =
         context.getSharedPreferences("utils", Context.MODE_PRIVATE)
 
 }

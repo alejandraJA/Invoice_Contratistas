@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.snackbar.Snackbar
 import com.invoice.contratista.databinding.LoginFragmentBinding
-import com.invoice.contratista.ui.activity.MainActivity
+import com.invoice.contratista.ui.activity.main.MainActivity
 
 class LoginFragment(private val onClick: (Boolean) -> Unit) : Fragment() {
 
