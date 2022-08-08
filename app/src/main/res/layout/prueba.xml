@@ -5,8 +5,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16sp"
-    app:layoutDescription="@xml/prueba_scene">
+    android:padding="16sp">
     <TextView
         android:id="@+id/text_title_subtotal"
         style="@style/TextAppearance.Material3.BodyLarge"

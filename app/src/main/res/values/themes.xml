@@ -175,8 +175,8 @@
     </style>
 
     <style name="ImageButton">
-        <item name="android:layout_width">48sp</item>
-        <item name="android:layout_height">48sp</item>
+        <item name="android:layout_width">42sp</item>
+        <item name="android:layout_height">42sp</item>
         <item name="android:background">@drawable/ic_dot</item>
         <item name="android:backgroundTint">@color/list_colors_icon_background_light</item>
         <item name="backgroundTint">@color/list_colors_icon_background_light</item>

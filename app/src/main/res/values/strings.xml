@@ -128,6 +128,8 @@
     <string name="discount">Discount</string>
     <string name="price_with_gain">Price with gain</string>
     <string name="price_with_discount">Price with discount</string>
+    <string name="customers">Customers</string>
+    <string name="inventory">Inventory</string>
     <!-- This is the label underneath the icon for Calendar -->
 
 </resources>

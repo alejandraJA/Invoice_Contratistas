@@ -141,7 +141,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        app:layoutDescription="@xml/activity_main_scene"
+        app:layoutDescription="@xml/calendar_scene"
         app:layout_constraintTop_toBottomOf="@+id/text_wed"
         tools:layout_editor_absoluteX="16dp">
 
