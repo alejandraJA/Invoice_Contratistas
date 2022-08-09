@@ -4,53 +4,60 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginStart="16sp"
+    android:layout_marginEnd="16sp"
     android:layout_marginBottom="8sp"
     android:padding="8sp">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:paddingStart="16sp"
-            android:paddingEnd="16sp"
-            android:paddingTop="8sp"
-            android:paddingBottom="8sp">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingStart="16sp"
+        android:paddingTop="8sp"
+        android:paddingEnd="16sp"
+        android:paddingBottom="8sp">
 
-            <TextView
-                android:id="@+id/text_title"
-                style="@style/TextAppearance.MaterialComponents.Subtitle1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:layout_editor_absoluteX="16dp"
-                tools:text="@tools:sample/lorem" />
+        <TextView
+            android:id="@+id/text_name_event"
+            style="@style/TextAppearance.Material3.TitleMedium"
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8sp"
+            app:layout_constraintEnd_toStartOf="@+id/text_state"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Event name" />
 
-            <TextView
-                android:id="@+id/text_start_hour"
-                style="@style/TextAppearance.MaterialComponents.Body2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/text_title"
-                tools:text="@tools:sample/date/hhmm" />
+        <TextView
+            android:id="@+id/text_note"
+            style="@style/TextAppearance.Material3.BodySmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8sp"
+            android:maxLines="3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_name_event"
+            tools:text="@tools:sample/lorem/random" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/line"
-                app:layout_constraintEnd_toStartOf="@+id/text_end_hour"
-                app:layout_constraintStart_toEndOf="@+id/text_start_hour"
-                app:layout_constraintTop_toBottomOf="@+id/text_title" />
+        <TextView
+            android:id="@+id/text_priority"
+            style="@style/TextAppearance.Material3.TitleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Priority" />
 
-            <TextView
-                android:id="@+id/text_end_hour"
-                style="@style/TextAppearance.MaterialComponents.Body2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="24sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/text_start_hour"
-                app:layout_constraintTop_toBottomOf="@+id/text_title"
-                tools:text="@tools:sample/date/hhmm" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/text_state"
+            style="@style/TextAppearance.Material3.TitleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@+id/text_priority"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginEnd="8sp"
+            tools:text="State" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </com.google.android.material.card.MaterialCardView>

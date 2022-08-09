@@ -7,11 +7,11 @@ import com.invoice.contratista.R
 
 class EventAdapter(private val list: List<Event>): RecyclerView.Adapter<EventViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = EventViewHolder(
-        LayoutInflater.from(parent.context).inflate(R.layout.item_to_do, parent, false)
+        LayoutInflater.from(parent.context).inflate(R.layout.item_schedule, parent, false)
     )
 
     override fun onBindViewHolder(holder: EventViewHolder, position: Int) {
-        holder.bind(list[position])
+        holder.bind()
     }
 
     override fun getItemCount() = list.size
