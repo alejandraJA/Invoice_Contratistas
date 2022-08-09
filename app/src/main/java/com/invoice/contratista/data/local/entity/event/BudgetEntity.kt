@@ -1,4 +1,4 @@
-package com.invoice.contratista.data.local.entity
+package com.invoice.contratista.data.local.entity.event
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
@@ -20,7 +20,7 @@ data class BudgetEntity(
     val id: Long,
     val number: Int,
     val id_customer: String,
-    val id_event: String,
+    val id_event: Long,
     val date: String,
     val dateEnd: String,
     val conditions: String,

@@ -3,7 +3,7 @@ package com.invoice.contratista.data.local.dao
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
-import com.invoice.contratista.data.local.entity.BudgetEntity
+import com.invoice.contratista.data.local.entity.event.BudgetEntity
 import androidx.room.OnConflictStrategy.REPLACE
 import androidx.room.Query
 import androidx.room.Transaction

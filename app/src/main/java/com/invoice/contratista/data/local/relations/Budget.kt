@@ -2,7 +2,7 @@ package com.invoice.contratista.data.local.relations
 
 import androidx.room.Embedded
 import androidx.room.Relation
-import com.invoice.contratista.data.local.entity.BudgetEntity
+import com.invoice.contratista.data.local.entity.event.BudgetEntity
 import com.invoice.contratista.data.local.entity.CustomerEntity
 import com.invoice.contratista.data.local.entity.event.PartEntity
 
