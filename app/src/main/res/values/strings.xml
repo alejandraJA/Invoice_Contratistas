@@ -27,8 +27,6 @@
     <string name="sing_up">Sing Up</string>
     <string name="i_agree_with_privacy_policy">I agree with privacy policy</string>
     <string name="title_activity_start">StartActivity</string>
-    <string name="tab_text_1">Tab 1</string>
-    <string name="tab_text_2">Tab 2</string>
     <string name="login_now">Login now</string>
     <string name="let_s_get_started">Let´s get started</string>
     <string name="profile">profile</string>
@@ -132,5 +130,8 @@
     <string name="dis">--</string>
     <string name="multiplication">x</string>
     <string name="same">=</string>
+    <string name="schedule">Schedule</string>
+    <string name="add_note">Add note</string>
+    <string name="add_schedule">Add schedule</string>
 
 </resources>

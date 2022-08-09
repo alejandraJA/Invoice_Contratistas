@@ -27,8 +27,6 @@
     <string name="sing_up">Registrarse</string>
     <string name="i_agree_with_privacy_policy">Estoy deacuerdo con los terminos y condiciones</string>
     <string name="title_activity_start">Inicio</string>
-    <string name="tab_text_1">Tab1</string>
-    <string name="tab_text_2">Tab2</string>
     <string name="login_now">Iniciar ahora</string>
     <string name="let_s_get_started">Vamos a comenzar</string>
     <string name="profile">Perfil</string>
@@ -132,4 +130,7 @@
     <string name="dis">--</string>
     <string name="multiplication">x</string>
     <string name="same">=</string>
+    <string name="schedule">Agenda</string>
+    <string name="add_note">Agregar Nota</string>
+    <string name="add_schedule">Agregar a evento</string>
 </resources>

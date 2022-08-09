@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.invoice.contratista.databinding.ReceiptFragmentBinding
 
-class ReceiptFragment(private val id: String) : Fragment() {
+class ReceiptFragment : Fragment() {
 
     private lateinit var viewModel: ReceiptViewModel
     private lateinit var binding: ReceiptFragmentBinding

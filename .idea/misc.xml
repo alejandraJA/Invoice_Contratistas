@@ -58,6 +58,7 @@
         <entry key="..\:/Users/aejimenez/AndroidStudioProjects/Practicas/InvoiceContratistas/app/src/main/res/layout/date_range_title.xml" value="0.21927083333333333" />
         <entry key="..\:/Users/aejimenez/AndroidStudioProjects/Practicas/InvoiceContratistas/app/src/main/res/layout/day_item.xml" value="0.33" />
         <entry key="..\:/Users/aejimenez/AndroidStudioProjects/Practicas/InvoiceContratistas/app/src/main/res/layout/day_item_selected.xml" value="0.33" />
+        <entry key="..\:/Users/aejimenez/AndroidStudioProjects/Practicas/InvoiceContratistas/app/src/main/res/layout/diary_fragment.xml" value="0.1" />
         <entry key="..\:/Users/aejimenez/AndroidStudioProjects/Practicas/InvoiceContratistas/app/src/main/res/layout/event_fragment.xml" value="0.21927083333333333" />
         <entry key="..\:/Users/aejimenez/AndroidStudioProjects/Practicas/InvoiceContratistas/app/src/main/res/layout/fragment_add_part.xml" value="0.25" />
         <entry key="..\:/Users/aejimenez/AndroidStudioProjects/Practicas/InvoiceContratistas/app/src/main/res/layout/fragment_customer.xml" value="0.153125" />
@@ -66,7 +67,9 @@
         <entry key="..\:/Users/aejimenez/AndroidStudioProjects/Practicas/InvoiceContratistas/app/src/main/res/layout/fragment_event.xml" value="0.21927083333333333" />
         <entry key="..\:/Users/aejimenez/AndroidStudioProjects/Practicas/InvoiceContratistas/app/src/main/res/layout/fragment_home.xml" value="0.21" />
         <entry key="..\:/Users/aejimenez/AndroidStudioProjects/Practicas/InvoiceContratistas/app/src/main/res/layout/fragment_login.xml" value="0.25" />
+        <entry key="..\:/Users/aejimenez/AndroidStudioProjects/Practicas/InvoiceContratistas/app/src/main/res/layout/fragment_notes.xml" value="0.1675213675213675" />
         <entry key="..\:/Users/aejimenez/AndroidStudioProjects/Practicas/InvoiceContratistas/app/src/main/res/layout/fragment_notifications.xml" value="0.21927083333333333" />
+        <entry key="..\:/Users/aejimenez/AndroidStudioProjects/Practicas/InvoiceContratistas/app/src/main/res/layout/fragment_schedule.xml" value="0.15598290598290598" />
         <entry key="..\:/Users/aejimenez/AndroidStudioProjects/Practicas/InvoiceContratistas/app/src/main/res/layout/fragment_start.xml" value="0.21927083333333333" />
         <entry key="..\:/Users/aejimenez/AndroidStudioProjects/Practicas/InvoiceContratistas/app/src/main/res/layout/invoice_fragment.xml" value="0.21927083333333333" />
         <entry key="..\:/Users/aejimenez/AndroidStudioProjects/Practicas/InvoiceContratistas/app/src/main/res/layout/item_customer.xml" value="0.33" />
@@ -83,6 +86,7 @@
         <entry key="..\:/Users/aejimenez/AndroidStudioProjects/Practicas/InvoiceContratistas/app/src/main/res/layout/prueba.xml" value="0.33" />
         <entry key="..\:/Users/aejimenez/AndroidStudioProjects/Practicas/InvoiceContratistas/app/src/main/res/layout/quick_response_item.xml" value="0.21927083333333333" />
         <entry key="..\:/Users/aejimenez/AndroidStudioProjects/Practicas/InvoiceContratistas/app/src/main/res/layout/receipt_fragment.xml" value="0.21927083333333333" />
+        <entry key="..\:/Users/aejimenez/AndroidStudioProjects/Practicas/InvoiceContratistas/app/src/main/res/layout/schedule_fragment.xml" value="0.19" />
         <entry key="..\:/Users/aejimenez/AndroidStudioProjects/Practicas/InvoiceContratistas/app/src/main/res/layout/sing_up_fragment.xml" value="0.25" />
         <entry key="..\:/Users/aejimenez/AndroidStudioProjects/Practicas/InvoiceContratistas/app/src/main/res/layout/to_do.xml" value="0.21041666666666667" />
         <entry key="..\:/Users/aejimenez/AndroidStudioProjects/Practicas/InvoiceContratistas/app/src/main/res/layout/welcome_fragment.xml" value="0.21927083333333333" />

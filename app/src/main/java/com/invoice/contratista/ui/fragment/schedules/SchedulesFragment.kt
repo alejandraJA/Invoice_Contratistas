@@ -1,4 +1,4 @@
-package com.invoice.contratista.ui.fragment.budget
+package com.invoice.contratista.ui.fragment.schedules
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,26 +8,26 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.invoice.contratista.R
-import com.invoice.contratista.databinding.BudgetFragmentBinding
+import com.invoice.contratista.databinding.SchedulesFragmentBinding
 
-class BudgetFragment : Fragment() {
+class SchedulesFragment : Fragment() {
 
-    private lateinit var binding: BudgetFragmentBinding
-    private lateinit var viewModel: BudgetViewModel
+    private lateinit var viewModel: SchedulesViewModel
+    private lateinit var binding: SchedulesFragmentBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = BudgetFragmentBinding.inflate(inflater, container, false)
-        viewModel = ViewModelProvider(this)[BudgetViewModel::class.java]
+        viewModel = ViewModelProvider(this)[SchedulesViewModel::class.java]
+        binding = SchedulesFragmentBinding.inflate(layoutInflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.buttonAddPart.setOnClickListener {
-            findNavController().navigate(R.id.action_eventFragment_to_addPartFragment)
+        binding.buttonAddSchedule.setOnClickListener {
+            findNavController().navigate(R.id.action_eventFragment_to_scheduleFragment)
         }
     }
 

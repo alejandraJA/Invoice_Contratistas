@@ -13,7 +13,8 @@ import com.invoice.contratista.databinding.FragmentEventBinding
 import com.invoice.contratista.ui.adapter.SectionsPagerAdapter
 
 private val TAB_TITLES = arrayOf(
-    R.string.event,
+    R.string.notes,
+    R.string.schedule,
     R.string.budget,
     R.string.receipt,
     R.string.invoice
@@ -45,12 +46,6 @@ class EventFragment : Fragment() {
         TabLayoutMediator(tabs, viewPager) { tab, position ->
             tab.text = resources.getString(TAB_TITLES[position])
         }.attach()
-        /*val fab: FloatingActionButton = binding.fab
-
-        fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
-        }*/
     }
 
 }
