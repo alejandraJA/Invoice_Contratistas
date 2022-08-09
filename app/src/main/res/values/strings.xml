@@ -130,6 +130,7 @@
     <string name="price_with_discount">Price with discount</string>
     <string name="add_product">Add product</string>
     <string name="dis">--</string>
-    <!-- This is the label underneath the icon for Calendar -->
+    <string name="multiplication">x</string>
+    <string name="same">=</string>
 
 </resources>

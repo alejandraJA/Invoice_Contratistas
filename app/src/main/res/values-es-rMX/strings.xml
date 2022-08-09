@@ -128,4 +128,8 @@
     <string name="discount">Descuento</string>
     <string name="price_with_gain">Precio con ganancias</string>
     <string name="price_with_discount">"Precio con descuento "</string>
+    <string name="add_product">Agregar producto</string>
+    <string name="dis">--</string>
+    <string name="multiplication">x</string>
+    <string name="same">=</string>
 </resources>
