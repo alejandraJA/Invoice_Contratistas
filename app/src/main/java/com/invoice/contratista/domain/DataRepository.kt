@@ -11,6 +11,7 @@ import com.invoice.contratista.data.local.entity.EventEntity
 import com.invoice.contratista.data.local.entity.product.ProductEntity
 import com.invoice.contratista.data.local.relations.Budget
 import com.invoice.contratista.data.local.relations.Part
+import com.invoice.contratista.data.local.relations.Event
 
 class DataRepository @Inject constructor(
     private val dao: Dao,
@@ -111,13 +112,26 @@ class DataRepository @Inject constructor(
      */
     fun getBudget() = dao.getBudget(utilsManager.getIdEvent())
 
+    // endregion
+
+    // region Event - Create, Get
     /**
      * Metodo para crear un evento
      * @param event Objeto de tipo [EventEntity]
      */
     fun createEvent(event: EventEntity) = dao.setEvent(event)
 
+    /**
+     * Metodo para obtener todos los eventos activos
+     * @return Lista de objetos de tipo [EventEntity]
+     */
+    fun getEvents() = dao.getEvents()
 
+    /**
+     * Metodo para obtener un evento especifico
+     * @return Lista de objetos de tipo [Event]
+     */
+    fun getEvent() = dao.getEvent(utilsManager.getIdEvent())
     // endregion
 
 }

@@ -13,15 +13,18 @@ import com.google.android.material.tabs.TabLayoutMediator
 import com.invoice.contratista.R
 import com.invoice.contratista.databinding.FragmentEventBinding
 import com.invoice.contratista.ui.adapter.SectionsPagerAdapter
+import dagger.hilt.android.AndroidEntryPoint
 
 private val TAB_TITLES = arrayOf(
+    R.string.event,
     R.string.notes,
     R.string.schedule,
     R.string.budget,
     R.string.receipt,
-    R.string.invoice
+    R.string.invoice,
 )
 
+@AndroidEntryPoint
 class EventFragment : Fragment() {
 
     private lateinit var binding: FragmentEventBinding

@@ -4,12 +4,14 @@ import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.invoice.contratista.R
 import com.invoice.contratista.ui.fragment.budget.BudgetFragment
+import com.invoice.contratista.ui.fragment.event_data.EventDataFragment
 import com.invoice.contratista.ui.fragment.schedules.SchedulesFragment
 import com.invoice.contratista.ui.fragment.invoice.InvoiceFragment
 import com.invoice.contratista.ui.fragment.notes.NotesFragment
 import com.invoice.contratista.ui.fragment.receipt.ReceiptFragment
 
 private val TAB_TITLES = arrayOf(
+    R.string.event,
     R.string.notes,
     R.string.schedule,
     R.string.budget,
@@ -29,12 +31,13 @@ class SectionsPagerAdapter(fragmentActivity: FragmentActivity, val id: String) :
     override fun getItemCount() = TAB_TITLES.size
 
     override fun createFragment(position: Int) = when(position) {
-        0 -> NotesFragment()
-        1 -> SchedulesFragment()
-        2 -> BudgetFragment()
-        3 -> ReceiptFragment()
-        4 -> InvoiceFragment()
-        else -> NotesFragment()
+        0 -> EventDataFragment()
+        1 -> NotesFragment()
+        2 -> SchedulesFragment()
+        3 -> BudgetFragment()
+        4 -> ReceiptFragment()
+        5 -> InvoiceFragment()
+        else -> EventDataFragment()
     }
 
 }

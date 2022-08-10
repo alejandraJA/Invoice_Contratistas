@@ -3,21 +3,18 @@ package com.invoice.contratista.data.local.dao
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
-import com.invoice.contratista.data.local.entity.event.BudgetEntity
 import androidx.room.OnConflictStrategy.REPLACE
 import androidx.room.Query
 import androidx.room.Transaction
-import com.invoice.contratista.data.local.entity.event.PartEntity
 import com.invoice.contratista.data.local.entity.AddressEntity
 import com.invoice.contratista.data.local.entity.CustomerEntity
 import com.invoice.contratista.data.local.entity.EventEntity
+import com.invoice.contratista.data.local.entity.event.BudgetEntity
+import com.invoice.contratista.data.local.entity.event.PartEntity
 import com.invoice.contratista.data.local.entity.product.LocalTaxEntity
 import com.invoice.contratista.data.local.entity.product.ProductEntity
 import com.invoice.contratista.data.local.entity.product.TaxEntity
-import com.invoice.contratista.data.local.relations.Customer
-import com.invoice.contratista.data.local.relations.Product
-import com.invoice.contratista.data.local.relations.Budget
-import com.invoice.contratista.data.local.relations.Part
+import com.invoice.contratista.data.local.relations.*
 
 @Dao
 interface Dao {
@@ -37,7 +34,7 @@ interface Dao {
      */
     @Transaction
     @Query("SELECT * FROM budget WHERE id_event == :idEvent LIMIT 1")
-    fun getBudget(idEvent: String): LiveData<Budget>
+    fun getBudget(idEvent: Long): LiveData<Budget>
 
     /**
      * Metodo para obtener todas las cotizaciones completas
@@ -161,6 +158,11 @@ interface Dao {
     @Insert(onConflict = REPLACE)
     fun setTax(taxEntity: TaxEntity)
 
+    // endregion
+
+    // endregion
+
+    // region Event
     /**
      * Metodo para insertar un evento
      * @param event Objeto de tipo [EventEntity]
@@ -168,8 +170,14 @@ interface Dao {
     @Insert(onConflict = REPLACE)
     fun setEvent(event: EventEntity)
 
-    // endregion
-
+    /**
+     * Metodo para obtener todos los eventos activos
+     * @return Lista de objetos de tipo [EventEntity]
+     */
+    @Query("SELECT * FROM event WHERE state != 'Realizado'")
+    fun getEvents(): LiveData<List<EventEntity>>
+    @Query("SELECT * FROM event WHERE id == :idEvent")
+    fun getEvent(idEvent: Long): LiveData<Event>
     // endregion
 
 }

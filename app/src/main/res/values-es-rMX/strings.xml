@@ -135,4 +135,6 @@
     <string name="add_schedule">Agregar a evento</string>
     <string name="event_name">Nombre del evento</string>
     <string name="note">Nota</string>
+    <string name="event_data">Datos del evento</string>
+    <string name="customer_data">Datos del cliente</string>
 </resources>

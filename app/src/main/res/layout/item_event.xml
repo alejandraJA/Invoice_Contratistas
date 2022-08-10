@@ -1,63 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginStart="16sp"
-    android:layout_marginEnd="16sp"
-    android:layout_marginBottom="8sp"
-    android:padding="8sp">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <data>
+<variable
+    name="event"
+    type="com.invoice.contratista.data.local.entity.EventEntity" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingStart="16sp"
-        android:paddingTop="8sp"
-        android:paddingEnd="16sp"
-        android:paddingBottom="8sp">
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16sp"
+        android:id="@+id/card_event"
+        android:layout_marginEnd="16sp"
+        android:layout_marginBottom="8sp"
+        android:padding="8sp">
 
-        <TextView
-            android:id="@+id/text_name_event"
-            style="@style/TextAppearance.Material3.TitleMedium"
-            android:layout_width="0sp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8sp"
-            app:layout_constraintEnd_toStartOf="@+id/text_state"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="Event name" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingStart="16sp"
+            android:paddingTop="8sp"
+            android:paddingEnd="16sp"
+            android:paddingBottom="8sp">
 
-        <TextView
-            android:id="@+id/text_note"
-            style="@style/TextAppearance.Material3.BodySmall"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8sp"
-            android:maxLines="3"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text_name_event"
-            tools:text="@tools:sample/lorem/random" />
+            <TextView
+                android:id="@+id/text_name_event"
+                style="@style/TextAppearance.Material3.TitleMedium"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8sp"
+                android:text="@{event.event_name}"
+                app:layout_constraintEnd_toStartOf="@+id/text_state"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Event name" />
 
-        <TextView
-            android:id="@+id/text_priority"
-            style="@style/TextAppearance.Material3.TitleSmall"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="Priority" />
+            <TextView
+                android:id="@+id/text_note"
+                style="@style/TextAppearance.Material3.BodySmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8sp"
+                android:maxLines="3"
+                android:text="@{event.note}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_name_event"
+                tools:text="@tools:sample/lorem/random" />
 
-        <TextView
-            android:id="@+id/text_state"
-            style="@style/TextAppearance.Material3.TitleSmall"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toStartOf="@+id/text_priority"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginEnd="8sp"
-            tools:text="State" />
+            <TextView
+                android:id="@+id/text_state"
+                style="@style/TextAppearance.Material3.TitleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{event.state}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="State" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</com.google.android.material.card.MaterialCardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

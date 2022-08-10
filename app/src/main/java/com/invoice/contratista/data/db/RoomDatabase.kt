@@ -9,6 +9,7 @@ import com.invoice.contratista.data.local.entity.product.LocalTaxEntity
 import androidx.room.RoomDatabase
 import com.invoice.contratista.data.local.entity.AddressEntity
 import com.invoice.contratista.data.local.entity.CustomerEntity
+import com.invoice.contratista.data.local.entity.DateEntity
 import com.invoice.contratista.data.local.entity.EventEntity
 import com.invoice.contratista.data.local.entity.event.NoteEntity
 import com.invoice.contratista.data.local.entity.event.ScheduleEntity
@@ -27,6 +28,7 @@ import com.invoice.contratista.data.local.entity.product.TaxEntity
         LocalTaxEntity::class,
         ProductEntity::class,
         TaxEntity::class,
+        DateEntity::class
     ],
     version = 2,
     exportSchema = true,

@@ -22,7 +22,7 @@ class AddEventViewModel @Inject constructor(
             withContext(Dispatchers.IO) {
                 dataRepository.createEvent(
                     EventEntity(
-                        1,
+                        0,
                         idCustomer,
                         Constants.StateEvent.Creado.toString(),
                         note,

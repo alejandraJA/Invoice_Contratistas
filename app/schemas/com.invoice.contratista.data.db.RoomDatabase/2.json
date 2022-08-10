@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 2,
-    "identityHash": "a474c339955d35289898331f98add621",
+    "identityHash": "c9fb4c14bc976e3b033c2211f0739bb4",
     "entities": [
       {
         "tableName": "address",
@@ -547,12 +547,50 @@
         },
         "indices": [],
         "foreignKeys": []
+      },
+      {
+        "tableName": "date",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `idReference` TEXT NOT NULL, `date` TEXT NOT NULL, `name` TEXT NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "idReference",
+            "columnName": "idReference",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "date",
+            "columnName": "date",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
       }
     ],
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'a474c339955d35289898331f98add621')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'c9fb4c14bc976e3b033c2211f0739bb4')"
     ]
   }
 }

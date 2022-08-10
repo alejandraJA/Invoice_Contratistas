@@ -42,17 +42,8 @@
                 style="@style/ImageButton"
                 android:contentDescription="@string/send_message"
                 android:src="@drawable/ic_round_message_24"
-                app:layout_constraintEnd_toStartOf="@+id/button_info"
-                app:layout_constraintStart_toEndOf="@+id/button_email"
-                app:layout_constraintTop_toTopOf="@+id/button_call" />
-
-            <ImageButton
-                android:id="@+id/button_info"
-                style="@style/ImageButton"
-                android:contentDescription="@string/profile"
-                android:src="@drawable/ic_round_person_24"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/button_message"
+                app:layout_constraintStart_toEndOf="@+id/button_email"
                 app:layout_constraintTop_toTopOf="@+id/button_call" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
