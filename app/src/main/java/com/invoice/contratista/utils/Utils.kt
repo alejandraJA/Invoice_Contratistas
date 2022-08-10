@@ -7,7 +7,7 @@ object Utils {
         error = null
         true
     } else {
-        error = "*"
+        error = "Campo requerido"
         false
     }
 

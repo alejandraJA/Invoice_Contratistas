@@ -97,11 +97,12 @@
                 app:errorEnabled="true"
                 app:startIconDrawable="@drawable/ic_address_card">
 
-                <com.google.android.material.textfield.TextInputEditText
+                <AutoCompleteTextView
                     style="@style/TextInputEditText"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="@{customer.tax_system}" />
+                    android:text="@{customer.tax_system}"
+                    tools:ignore="LabelFor" />
 
             </com.google.android.material.textfield.TextInputLayout>
 

@@ -133,4 +133,6 @@
     <string name="schedule">Agenda</string>
     <string name="add_note">Agregar Nota</string>
     <string name="add_schedule">Agregar a evento</string>
+    <string name="event_name">Nombre del evento</string>
+    <string name="note">Nota</string>
 </resources>

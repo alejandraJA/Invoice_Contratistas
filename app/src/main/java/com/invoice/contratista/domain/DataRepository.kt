@@ -7,6 +7,7 @@ import com.invoice.contratista.data.shared_preferences.UtilsManager
 import javax.inject.Inject
 import androidx.lifecycle.LiveData
 import com.invoice.contratista.data.local.entity.CustomerEntity
+import com.invoice.contratista.data.local.entity.EventEntity
 import com.invoice.contratista.data.local.entity.product.ProductEntity
 import com.invoice.contratista.data.local.relations.Budget
 import com.invoice.contratista.data.local.relations.Part
@@ -109,6 +110,13 @@ class DataRepository @Inject constructor(
      * @return Objeto de tipo [Budget]
      */
     fun getBudget() = dao.getBudget(utilsManager.getIdEvent())
+
+    /**
+     * Metodo para crear un evento
+     * @param event Objeto de tipo [EventEntity]
+     */
+    fun createEvent(event: EventEntity) = dao.setEvent(event)
+
 
     // endregion
 

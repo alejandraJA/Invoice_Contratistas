@@ -90,7 +90,7 @@
         <item name="cornerSize">24sp</item>
     </style>
 
-    <style name="Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+    <style name="Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu" parent="Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
         <item name="startIconTint">@color/purple_200</item>
     </style>
 

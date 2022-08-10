@@ -6,6 +6,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.addCallback
+import androidx.navigation.fragment.findNavController
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import com.invoice.contratista.R
@@ -46,6 +48,10 @@ class EventFragment : Fragment() {
         TabLayoutMediator(tabs, viewPager) { tab, position ->
             tab.text = resources.getString(TAB_TITLES[position])
         }.attach()
+
+        requireActivity().onBackPressedDispatcher.addCallback {
+            findNavController().navigate(R.id.action_eventFragment_to_navigation_home)
+        }
     }
 
 }

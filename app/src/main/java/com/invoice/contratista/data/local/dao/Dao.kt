@@ -10,6 +10,7 @@ import androidx.room.Transaction
 import com.invoice.contratista.data.local.entity.event.PartEntity
 import com.invoice.contratista.data.local.entity.AddressEntity
 import com.invoice.contratista.data.local.entity.CustomerEntity
+import com.invoice.contratista.data.local.entity.EventEntity
 import com.invoice.contratista.data.local.entity.product.LocalTaxEntity
 import com.invoice.contratista.data.local.entity.product.ProductEntity
 import com.invoice.contratista.data.local.entity.product.TaxEntity
@@ -159,6 +160,13 @@ interface Dao {
      */
     @Insert(onConflict = REPLACE)
     fun setTax(taxEntity: TaxEntity)
+
+    /**
+     * Metodo para insertar un evento
+     * @param event Objeto de tipo [EventEntity]
+     */
+    @Insert(onConflict = REPLACE)
+    fun setEvent(event: EventEntity)
 
     // endregion
 

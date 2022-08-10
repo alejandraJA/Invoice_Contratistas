@@ -23,86 +23,90 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16sp"
         android:hint="@string/select_a_customer"
+        app:errorEnabled="true"
         app:layout_constraintTop_toBottomOf="@+id/textView8"
         app:startIconDrawable="@drawable/ic_customers"
         tools:layout_editor_absoluteX="16dp">
 
-        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+        <AutoCompleteTextView
             android:id="@+id/auto_complete_customer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="none"
+            tools:text="@tools:sample/first_names"
+            tools:ignore="LabelFor" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layout_name"
+        style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/event_name"
+        app:errorEnabled="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layout_customer"
+        app:startIconDrawable="@drawable/ic_legal_data">
+
+        <com.google.android.material.textfield.TextInputEditText
             style="@style/TextInputEditText"
-            android:inputType="textAutoCorrect"
-            tools:text="@tools:sample/first_names" />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine"
+            android:maxLines="3"
+            tools:maxLines="2"
+            tools:text="@tools:sample/lorem/random" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layout_note"
+        style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8sp"
+        android:hint="@string/note"
+        app:errorEnabled="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layout_name"
+        app:startIconDrawable="@drawable/ic_legal_data">
+
+        <com.google.android.material.textfield.TextInputEditText
+            style="@style/TextInputEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine"
+            android:maxLines="5"
+            tools:maxLines="3"
+            tools:text="@tools:sample/lorem/random" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/button_add_customer"
-        style="@style/Widget.Material3.Button.TextButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8sp"
-        android:text="@string/add_customer"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/layout_customer" />
-
-    <TextView
-        android:id="@+id/textView9"
-        style="@style/TextAppearance.MaterialComponents.Subtitle1.Subtitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/select_steps"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_add_customer" />
-
-    <com.google.android.material.chip.ChipGroup
-        android:id="@+id/chipGroup"
+        android:id="@+id/button_cancel_event"
+        style="@style/Widget.Material3.Button.OutlinedButton"
         android:layout_width="0sp"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16sp"
+        android:layout_marginEnd="8sp"
+        android:text="@string/cancel"
+        app:layout_constraintEnd_toStartOf="@+id/button_create"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView9"
-        app:singleSelection="false">
-
-        <com.google.android.material.chip.Chip
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/event" />
-
-        <com.google.android.material.chip.Chip
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/budget" />
-
-        <com.google.android.material.chip.Chip
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/receipt" />
-
-        <com.google.android.material.chip.Chip
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/invoice" />
-
-    </com.google.android.material.chip.ChipGroup>
+        app:layout_constraintTop_toBottomOf="@+id/layout_note" />
 
     <Button
         android:id="@+id/button_create"
-        android:layout_width="match_parent"
+        android:layout_width="0sp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16sp"
+        android:layout_marginStart="8sp"
         android:text="@string/create_event"
-        android:layout_marginBottom="8sp"
-        app:layout_constraintBottom_toTopOf="@+id/button_cancel_event"
-        tools:layout_editor_absoluteX="16dp" />
-
-    <Button
-        android:id="@+id/button_cancel_event"
-        style="@style/Widget.Material3.Button.OutlinedButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/cancel"
-        app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="16dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/button_cancel_event"
+        app:layout_constraintTop_toBottomOf="@+id/layout_note" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
