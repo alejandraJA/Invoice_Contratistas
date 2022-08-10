@@ -9,7 +9,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.invoice.contratista.data.local.entity.AddressEntity
 import com.invoice.contratista.data.local.entity.CustomerEntity
 import com.invoice.contratista.data.local.relations.Customer
-import com.invoice.contratista.databinding.CreateCustomerFragmentBinding
+import com.invoice.contratista.databinding.FragmentCreateCustomerBinding
 import com.invoice.contratista.utils.Utils.getText
 import dagger.hilt.android.AndroidEntryPoint
 import java.util.*
@@ -17,7 +17,7 @@ import java.util.*
 @AndroidEntryPoint
 class CreateCustomerFragment : Fragment() {
 
-    private lateinit var binding: CreateCustomerFragmentBinding
+    private lateinit var binding: FragmentCreateCustomerBinding
     private lateinit var viewModel: CreateCustomerViewModel
 
     override fun onCreateView(
@@ -25,7 +25,7 @@ class CreateCustomerFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         viewModel = ViewModelProvider(this)[CreateCustomerViewModel::class.java]
-        binding = CreateCustomerFragmentBinding.inflate(inflater, container, false)
+        binding = FragmentCreateCustomerBinding.inflate(inflater, container, false)
         return binding.root
     }
 

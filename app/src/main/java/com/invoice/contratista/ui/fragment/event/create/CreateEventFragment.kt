@@ -10,7 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.invoice.contratista.R
 import com.invoice.contratista.data.local.entity.CustomerEntity
-import com.invoice.contratista.databinding.CreateEventFragmentBinding
+import com.invoice.contratista.databinding.FragmentCreateEventBinding
 import com.invoice.contratista.utils.Utils.getText
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -18,7 +18,7 @@ import dagger.hilt.android.AndroidEntryPoint
 class CreateEventFragment : Fragment() {
 
     private lateinit var viewModel: CreateEventViewModel
-    private lateinit var binding: CreateEventFragmentBinding
+    private lateinit var binding: FragmentCreateEventBinding
     private val customerNamesList = mutableListOf<String>()
     private val customerList = mutableListOf<CustomerEntity>()
     private var idCustomer = ""
@@ -28,13 +28,13 @@ class CreateEventFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         viewModel = ViewModelProvider(this)[CreateEventViewModel::class.java]
-        binding = CreateEventFragmentBinding.inflate(layoutInflater, container, false)
+        binding = FragmentCreateEventBinding.inflate(layoutInflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val adapter = ArrayAdapter(requireContext(), R.layout.list_item, customerNamesList)
+        val adapter = ArrayAdapter(requireContext(), R.layout.item_list, customerNamesList)
         binding.autoCompleteCustomer.setAdapter(adapter)
         viewModel.customer.observe(viewLifecycleOwner) {
             customerNamesList.clear()

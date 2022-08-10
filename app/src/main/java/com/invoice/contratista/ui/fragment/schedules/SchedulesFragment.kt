@@ -8,19 +8,19 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.invoice.contratista.R
-import com.invoice.contratista.databinding.SchedulesFragmentBinding
+import com.invoice.contratista.databinding.FragmentSchedulesBinding
 
 class SchedulesFragment : Fragment() {
 
     private lateinit var viewModel: SchedulesViewModel
-    private lateinit var binding: SchedulesFragmentBinding
+    private lateinit var binding: FragmentSchedulesBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         viewModel = ViewModelProvider(this)[SchedulesViewModel::class.java]
-        binding = SchedulesFragmentBinding.inflate(layoutInflater, container, false)
+        binding = FragmentSchedulesBinding.inflate(layoutInflater, container, false)
         return binding.root
     }
 

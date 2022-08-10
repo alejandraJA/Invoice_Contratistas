@@ -38,7 +38,7 @@
         android:id="@+id/createEventFragment"
         android:name="com.invoice.contratista.ui.fragment.event.create.CreateEventFragment"
         android:label="@string/new_event"
-        tools:layout="@layout/create_event_fragment" >
+        tools:layout="@layout/fragment_create_event" >
         <action
             android:id="@+id/action_addEventFragment_to_eventFragment"
             app:destination="@id/eventFragment" />
@@ -48,7 +48,7 @@
         android:id="@+id/createCustomerFragment"
         android:name="com.invoice.contratista.ui.fragment.customer.create.CreateCustomerFragment"
         android:label="create_customer_fragment"
-        tools:layout="@layout/create_customer_fragment" />
+        tools:layout="@layout/fragment_create_customer" />
     <fragment
         android:id="@+id/addPartFragment"
         android:name="com.invoice.contratista.ui.fragment.add_part.AddPartFragment"

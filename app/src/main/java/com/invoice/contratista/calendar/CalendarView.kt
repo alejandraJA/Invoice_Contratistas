@@ -4,16 +4,16 @@ import android.annotation.SuppressLint
 import android.os.Build
 import android.view.View
 import com.invoice.contratista.R
-import com.invoice.contratista.databinding.CalendarViewBinding
-import com.invoice.contratista.databinding.DayItemBinding
+import com.invoice.contratista.databinding.LayoutCalendarBinding
+import com.invoice.contratista.databinding.ItemDayBinding
 import java.text.SimpleDateFormat
 import java.util.*
 
 @SuppressLint("SimpleDateFormat")
-class CalendarView(private val binding: CalendarViewBinding, ) {
+class CalendarView(private val binding: LayoutCalendarBinding) {
     private var dateSelected: DayItem
     private var currentDate = Date()
-    private var dayViews: List<DayItemBinding>
+    private var dayViews: List<ItemDayBinding>
     private var dates: List<DayItem> = listOf()
     private var stateMotion = false
     private var monthSelected: Int = 0

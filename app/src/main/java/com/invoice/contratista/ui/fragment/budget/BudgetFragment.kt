@@ -8,18 +8,18 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.invoice.contratista.R
-import com.invoice.contratista.databinding.BudgetFragmentBinding
+import com.invoice.contratista.databinding.FragmentBudgetBinding
 
 class BudgetFragment : Fragment() {
 
-    private lateinit var binding: BudgetFragmentBinding
+    private lateinit var binding: FragmentBudgetBinding
     private lateinit var viewModel: BudgetViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = BudgetFragmentBinding.inflate(inflater, container, false)
+        binding = FragmentBudgetBinding.inflate(inflater, container, false)
         viewModel = ViewModelProvider(this)[BudgetViewModel::class.java]
         return binding.root
     }

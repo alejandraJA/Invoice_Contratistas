@@ -154,7 +154,7 @@
 
             <include
                 android:id="@+id/text01"
-                layout="@layout/day_item"
+                layout="@layout/item_day"
                 android:layout_width="48sp"
                 android:layout_height="48sp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -164,7 +164,7 @@
 
             <include
                 android:id="@+id/text02"
-                layout="@layout/day_item"
+                layout="@layout/item_day"
                 android:layout_width="48sp"
                 android:layout_height="48sp"
                 app:layout_constraintBottom_toBottomOf="@+id/text01"
@@ -174,7 +174,7 @@
 
             <include
                 android:id="@+id/text03"
-                layout="@layout/day_item"
+                layout="@layout/item_day"
                 android:layout_width="48sp"
                 android:layout_height="48sp"
                 app:layout_constraintBottom_toBottomOf="@+id/text01"
@@ -184,7 +184,7 @@
 
             <include
                 android:id="@+id/text04"
-                layout="@layout/day_item"
+                layout="@layout/item_day"
                 android:layout_width="48sp"
                 android:layout_height="48sp"
                 app:layout_constraintBottom_toBottomOf="@+id/text01"
@@ -194,7 +194,7 @@
 
             <include
                 android:id="@+id/text05"
-                layout="@layout/day_item"
+                layout="@layout/item_day"
                 android:layout_width="48sp"
                 android:layout_height="48sp"
                 app:layout_constraintBottom_toBottomOf="@+id/text01"
@@ -204,7 +204,7 @@
 
             <include
                 android:id="@+id/text06"
-                layout="@layout/day_item"
+                layout="@layout/item_day"
                 android:layout_width="48sp"
                 android:layout_height="48sp"
                 app:layout_constraintBottom_toBottomOf="@+id/text01"
@@ -214,7 +214,7 @@
 
             <include
                 android:id="@+id/text07"
-                layout="@layout/day_item"
+                layout="@layout/item_day"
                 android:layout_width="48sp"
                 android:layout_height="48sp"
                 app:layout_constraintBottom_toBottomOf="@+id/text01"
@@ -233,7 +233,7 @@
 
             <include
                 android:id="@+id/text08"
-                layout="@layout/day_item"
+                layout="@layout/item_day"
                 android:layout_width="48sp"
                 android:layout_height="48sp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -243,7 +243,7 @@
 
             <include
                 android:id="@+id/text09"
-                layout="@layout/day_item"
+                layout="@layout/item_day"
                 android:layout_width="48sp"
                 android:layout_height="48sp"
                 app:layout_constraintBottom_toBottomOf="@+id/text08"
@@ -253,7 +253,7 @@
 
             <include
                 android:id="@+id/text10"
-                layout="@layout/day_item"
+                layout="@layout/item_day"
                 android:layout_width="48sp"
                 android:layout_height="48sp"
                 app:layout_constraintBottom_toBottomOf="@+id/text08"
@@ -263,7 +263,7 @@
 
             <include
                 android:id="@+id/text11"
-                layout="@layout/day_item"
+                layout="@layout/item_day"
                 android:layout_width="48sp"
                 android:layout_height="48sp"
                 app:layout_constraintBottom_toBottomOf="@+id/text08"
@@ -273,7 +273,7 @@
 
             <include
                 android:id="@+id/text12"
-                layout="@layout/day_item"
+                layout="@layout/item_day"
                 android:layout_width="48sp"
                 android:layout_height="48sp"
                 app:layout_constraintBottom_toBottomOf="@+id/text08"
@@ -283,7 +283,7 @@
 
             <include
                 android:id="@+id/text13"
-                layout="@layout/day_item"
+                layout="@layout/item_day"
                 android:layout_width="48sp"
                 android:layout_height="48sp"
                 app:layout_constraintBottom_toBottomOf="@+id/text08"
@@ -293,7 +293,7 @@
 
             <include
                 android:id="@+id/text14"
-                layout="@layout/day_item"
+                layout="@layout/item_day"
                 android:layout_width="48sp"
                 android:layout_height="48sp"
                 app:layout_constraintBottom_toBottomOf="@+id/text08"
@@ -311,7 +311,7 @@
 
             <include
                 android:id="@+id/text15"
-                layout="@layout/day_item"
+                layout="@layout/item_day"
                 android:layout_width="48sp"
                 android:layout_height="48sp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -321,7 +321,7 @@
 
             <include
                 android:id="@+id/text16"
-                layout="@layout/day_item"
+                layout="@layout/item_day"
                 android:layout_width="48sp"
                 android:layout_height="48sp"
                 app:layout_constraintBottom_toBottomOf="@+id/text15"
@@ -331,7 +331,7 @@
 
             <include
                 android:id="@+id/text17"
-                layout="@layout/day_item"
+                layout="@layout/item_day"
                 android:layout_width="48sp"
                 android:layout_height="48sp"
                 app:layout_constraintBottom_toBottomOf="@+id/text15"
@@ -341,7 +341,7 @@
 
             <include
                 android:id="@+id/text18"
-                layout="@layout/day_item"
+                layout="@layout/item_day"
                 android:layout_width="48sp"
                 android:layout_height="48sp"
                 app:layout_constraintBottom_toBottomOf="@+id/text15"
@@ -351,7 +351,7 @@
 
             <include
                 android:id="@+id/text19"
-                layout="@layout/day_item"
+                layout="@layout/item_day"
                 android:layout_width="48sp"
                 android:layout_height="48sp"
                 app:layout_constraintBottom_toBottomOf="@+id/text15"
@@ -361,7 +361,7 @@
 
             <include
                 android:id="@+id/text20"
-                layout="@layout/day_item"
+                layout="@layout/item_day"
                 android:layout_width="48sp"
                 android:layout_height="48sp"
                 app:layout_constraintBottom_toBottomOf="@+id/text15"
@@ -371,7 +371,7 @@
 
             <include
                 android:id="@+id/text21"
-                layout="@layout/day_item"
+                layout="@layout/item_day"
                 android:layout_width="48sp"
                 android:layout_height="48sp"
                 app:layout_constraintBottom_toBottomOf="@+id/text15"
@@ -390,7 +390,7 @@
 
             <include
                 android:id="@+id/text22"
-                layout="@layout/day_item"
+                layout="@layout/item_day"
                 android:layout_width="48sp"
                 android:layout_height="48sp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -400,7 +400,7 @@
 
             <include
                 android:id="@+id/text23"
-                layout="@layout/day_item"
+                layout="@layout/item_day"
                 android:layout_width="48sp"
                 android:layout_height="48sp"
                 app:layout_constraintBottom_toBottomOf="@+id/text22"
@@ -410,7 +410,7 @@
 
             <include
                 android:id="@+id/text24"
-                layout="@layout/day_item"
+                layout="@layout/item_day"
                 android:layout_width="48sp"
                 android:layout_height="48sp"
                 app:layout_constraintBottom_toBottomOf="@+id/text22"
@@ -420,7 +420,7 @@
 
             <include
                 android:id="@+id/text25"
-                layout="@layout/day_item"
+                layout="@layout/item_day"
                 android:layout_width="48sp"
                 android:layout_height="48sp"
                 app:layout_constraintBottom_toBottomOf="@+id/text22"
@@ -430,7 +430,7 @@
 
             <include
                 android:id="@+id/text26"
-                layout="@layout/day_item"
+                layout="@layout/item_day"
                 android:layout_width="48sp"
                 android:layout_height="48sp"
                 app:layout_constraintBottom_toBottomOf="@+id/text22"
@@ -440,7 +440,7 @@
 
             <include
                 android:id="@+id/text27"
-                layout="@layout/day_item"
+                layout="@layout/item_day"
                 android:layout_width="48sp"
                 android:layout_height="48sp"
                 app:layout_constraintBottom_toBottomOf="@+id/text22"
@@ -450,7 +450,7 @@
 
             <include
                 android:id="@+id/text28"
-                layout="@layout/day_item"
+                layout="@layout/item_day"
                 android:layout_width="48sp"
                 android:layout_height="48sp"
                 app:layout_constraintBottom_toBottomOf="@+id/text22"
@@ -467,7 +467,7 @@
 
             <include
                 android:id="@+id/text29"
-                layout="@layout/day_item"
+                layout="@layout/item_day"
                 android:layout_width="48sp"
                 android:layout_height="48sp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -477,7 +477,7 @@
 
             <include
                 android:id="@+id/text30"
-                layout="@layout/day_item"
+                layout="@layout/item_day"
                 android:layout_width="48sp"
                 android:layout_height="48sp"
                 app:layout_constraintBottom_toBottomOf="@+id/text29"
@@ -487,7 +487,7 @@
 
             <include
                 android:id="@+id/text31"
-                layout="@layout/day_item"
+                layout="@layout/item_day"
                 android:layout_width="48sp"
                 android:layout_height="48sp"
                 app:layout_constraintBottom_toBottomOf="@+id/text29"
@@ -497,7 +497,7 @@
 
             <include
                 android:id="@+id/text32"
-                layout="@layout/day_item"
+                layout="@layout/item_day"
                 android:layout_width="48sp"
                 android:layout_height="48sp"
                 app:layout_constraintBottom_toBottomOf="@+id/text29"
@@ -507,7 +507,7 @@
 
             <include
                 android:id="@+id/text33"
-                layout="@layout/day_item"
+                layout="@layout/item_day"
                 android:layout_width="48sp"
                 android:layout_height="48sp"
                 app:layout_constraintBottom_toBottomOf="@+id/text29"
@@ -517,7 +517,7 @@
 
             <include
                 android:id="@+id/text34"
-                layout="@layout/day_item"
+                layout="@layout/item_day"
                 android:layout_width="48sp"
                 android:layout_height="48sp"
                 app:layout_constraintBottom_toBottomOf="@+id/text29"
@@ -527,7 +527,7 @@
 
             <include
                 android:id="@+id/text35"
-                layout="@layout/day_item"
+                layout="@layout/item_day"
                 android:layout_width="48sp"
                 android:layout_height="48sp"
                 app:layout_constraintBottom_toBottomOf="@+id/text29"
@@ -545,7 +545,7 @@
 
             <include
                 android:id="@+id/text36"
-                layout="@layout/day_item"
+                layout="@layout/item_day"
                 android:layout_width="48sp"
                 android:layout_height="48sp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -555,7 +555,7 @@
 
             <include
                 android:id="@+id/text37"
-                layout="@layout/day_item"
+                layout="@layout/item_day"
                 android:layout_width="48sp"
                 android:layout_height="48sp"
                 app:layout_constraintBottom_toBottomOf="@+id/text36"
@@ -565,7 +565,7 @@
 
             <include
                 android:id="@+id/text38"
-                layout="@layout/day_item"
+                layout="@layout/item_day"
                 android:layout_width="48sp"
                 android:layout_height="48sp"
                 app:layout_constraintBottom_toBottomOf="@+id/text36"
@@ -575,7 +575,7 @@
 
             <include
                 android:id="@+id/text39"
-                layout="@layout/day_item"
+                layout="@layout/item_day"
                 android:layout_width="48sp"
                 android:layout_height="48sp"
                 app:layout_constraintBottom_toBottomOf="@+id/text36"
@@ -585,7 +585,7 @@
 
             <include
                 android:id="@+id/text40"
-                layout="@layout/day_item"
+                layout="@layout/item_day"
                 android:layout_width="48sp"
                 android:layout_height="48sp"
                 app:layout_constraintBottom_toBottomOf="@+id/text36"
@@ -595,7 +595,7 @@
 
             <include
                 android:id="@+id/text41"
-                layout="@layout/day_item"
+                layout="@layout/item_day"
                 android:layout_width="48sp"
                 android:layout_height="48sp"
                 app:layout_constraintBottom_toBottomOf="@+id/text36"
@@ -605,7 +605,7 @@
 
             <include
                 android:id="@+id/text42"
-                layout="@layout/day_item"
+                layout="@layout/item_day"
                 android:layout_width="48sp"
                 android:layout_height="48sp"
                 app:layout_constraintBottom_toBottomOf="@+id/text36"
