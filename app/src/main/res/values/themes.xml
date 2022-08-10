@@ -164,7 +164,7 @@
         <item name="android:paddingStart">16sp</item>
         <item name="android:paddingTop">16sp</item>
         <item name="android:paddingBottom">16sp</item>
-        <item name="android:background">@drawable/motion_day</item>
+        <item name="android:background">@drawable/backround_component</item>
         <item name="android:backgroundTint">#46E8D7D2</item>
     </style>
 

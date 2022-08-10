@@ -11,6 +11,7 @@ import androidx.navigation.fragment.findNavController
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import com.invoice.contratista.R
+import com.invoice.contratista.data.local.entity.CustomerEntity
 import com.invoice.contratista.databinding.FragmentEventBinding
 import com.invoice.contratista.ui.adapter.SectionsPagerAdapter
 import dagger.hilt.android.AndroidEntryPoint
@@ -28,7 +29,7 @@ private val TAB_TITLES = arrayOf(
 class EventFragment : Fragment() {
 
     private lateinit var binding: FragmentEventBinding
-
+    private lateinit var customerEntity: CustomerEntity
     private lateinit var viewModel: EventViewModel
 
     override fun onCreateView(
@@ -47,6 +48,19 @@ class EventFragment : Fragment() {
         val viewPager = binding.viewPager
         viewPager.adapter = sectionsPagerAdapter
         val tabs: TabLayout = binding.tabs
+
+        viewModel.customer.observe(viewLifecycleOwner) {
+            customerEntity = it
+            binding.buttonCall.setOnClickListener {
+
+            }
+            binding.buttonEmail.setOnClickListener {
+
+            }
+            binding.buttonMessage.setOnClickListener {
+
+            }
+        }
 
         TabLayoutMediator(tabs, viewPager) { tab, position ->
             tab.text = resources.getString(TAB_TITLES[position])

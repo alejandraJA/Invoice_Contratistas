@@ -127,7 +127,7 @@
             style="@style/TextAppearance.Material3.BodyMedium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{customer.tax_id}"
+            android:text="@{customer.tax_system}"
             app:layout_constraintStart_toStartOf="@+id/text_tax_title2"
             app:layout_constraintTop_toBottomOf="@+id/text_tax_title2"
             tools:text="@string/tax_system_example" />

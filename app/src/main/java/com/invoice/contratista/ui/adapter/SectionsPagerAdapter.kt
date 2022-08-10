@@ -4,7 +4,7 @@ import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.invoice.contratista.R
 import com.invoice.contratista.ui.fragment.budget.BudgetFragment
-import com.invoice.contratista.ui.fragment.event_data.EventDataFragment
+import com.invoice.contratista.ui.fragment.event.data.EventDataFragment
 import com.invoice.contratista.ui.fragment.schedules.SchedulesFragment
 import com.invoice.contratista.ui.fragment.invoice.InvoiceFragment
 import com.invoice.contratista.ui.fragment.notes.NotesFragment

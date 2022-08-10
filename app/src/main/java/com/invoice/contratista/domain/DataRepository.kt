@@ -12,6 +12,10 @@ import com.invoice.contratista.data.local.entity.product.ProductEntity
 import com.invoice.contratista.data.local.relations.Budget
 import com.invoice.contratista.data.local.relations.Part
 import com.invoice.contratista.data.local.relations.Event
+import com.invoice.contratista.data.local.entity.DateEntity
+import com.invoice.contratista.utils.Constants
+import com.invoice.contratista.utils.Utils.getDateComplete
+import java.util.*
 
 class DataRepository @Inject constructor(
     private val dao: Dao,
@@ -33,6 +37,12 @@ class DataRepository @Inject constructor(
      * @return Objeto de tipo [LiveData] que contiene uno más de tipo [Customer]
      */
     fun getCustomer() = dao.getCustomer(utilsManager.getIdCustomer())
+
+    /**
+     * Metodo para obtener un Cliente especifico de la base de datos local
+     * @return Objeto de tipo [LiveData] que contiene uno más de tipo [CustomerEntity]
+     */
+    fun getCustomerEntity() = dao.getCustomerEntity(utilsManager.getIdCustomer())
 
     /**
      * Metodo para obtener un Cliente especifico
@@ -119,7 +129,17 @@ class DataRepository @Inject constructor(
      * Metodo para crear un evento
      * @param event Objeto de tipo [EventEntity]
      */
-    fun createEvent(event: EventEntity) = dao.setEvent(event)
+    fun createEvent(event: EventEntity) {
+        dao.setEvent(event)
+        dao.setDate(
+            DateEntity(
+                0,
+                event.id,
+                Date().getDateComplete(),
+                Constants.StateEvent.Creado.name
+            )
+        )
+    }
 
     /**
      * Metodo para obtener todos los eventos activos
@@ -133,5 +153,11 @@ class DataRepository @Inject constructor(
      */
     fun getEvent() = dao.getEvent(utilsManager.getIdEvent())
     // endregion
+
+    /**
+     * Metodo para obtener las fechas del historial de un evento
+     * @return Lista de objetos de tipo [DateEntity]
+     */
+    fun getDates() = dao.getDates(utilsManager.getIdEvent())
 
 }

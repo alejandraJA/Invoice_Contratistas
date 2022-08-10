@@ -137,4 +137,5 @@
     <string name="note">Nota</string>
     <string name="event_data">Datos del evento</string>
     <string name="customer_data">Datos del cliente</string>
+    <string name="history">Historia</string>
 </resources>

@@ -22,7 +22,7 @@ import androidx.room.PrimaryKey
  */
 @Entity(tableName = "event")
 data class EventEntity(
-    @PrimaryKey(autoGenerate = true) val id: Long,
+    @PrimaryKey(autoGenerate = false) val id: String,
     val id_customer: String,
     val state: String,
     val note: String,

@@ -1,4 +1,4 @@
-package com.invoice.contratista.ui.fragment.add_event
+package com.invoice.contratista.ui.fragment.event.create
 
 import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.ViewModel
@@ -11,10 +11,11 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import java.util.*
 import javax.inject.Inject
 
 @HiltViewModel
-class AddEventViewModel @Inject constructor(
+class CreateEventViewModel @Inject constructor(
     private val dataRepository: DataRepository
 ) : ViewModel() {
     fun createEvent(idCustomer: String, note: String, eventName: String) {
@@ -22,7 +23,7 @@ class AddEventViewModel @Inject constructor(
             withContext(Dispatchers.IO) {
                 dataRepository.createEvent(
                     EventEntity(
-                        0,
+                        UUID.randomUUID().toString(),
                         idCustomer,
                         Constants.StateEvent.Creado.toString(),
                         note,

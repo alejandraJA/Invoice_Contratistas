@@ -1,4 +1,4 @@
-package com.invoice.contratista.ui.fragment.event_data
+package com.invoice.contratista.ui.fragment.event.data
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,8 +7,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.invoice.contratista.R
-import com.invoice.contratista.databinding.FragmentEventBinding
+import com.invoice.contratista.data.local.entity.DateEntity
 import com.invoice.contratista.databinding.FragmentEventDataBinding
+import com.invoice.contratista.ui.fragment.event.data.adapter.DateAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -28,6 +29,10 @@ class EventDataFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val listDates = mutableListOf<DateEntity>()
+        val adapter = DateAdapter(listDates)
+        binding.recyclerDate.setHasFixedSize(true)
+        binding.recyclerDate.adapter = adapter
         viewModel.event.observe(viewLifecycleOwner) {
             if (it.eventEntity != null) binding.event = it.eventEntity
             if ((it.customer != null) && (it.customer.customer != null)) {
@@ -47,6 +52,11 @@ class EventDataFragment : Fragment() {
                     binding.layoutCustomer.textAddress.text = address
                 }
             }
+        }
+        viewModel.dates.observe(viewLifecycleOwner) {
+            listDates.clear()
+            listDates.addAll(it)
+            adapter.notifyDataSetChanged()
         }
     }
 

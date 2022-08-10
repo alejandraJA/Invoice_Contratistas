@@ -1,4 +1,4 @@
-package com.invoice.contratista.ui.fragment.add_event
+package com.invoice.contratista.ui.fragment.event.create
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,15 +10,15 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.invoice.contratista.R
 import com.invoice.contratista.data.local.entity.CustomerEntity
-import com.invoice.contratista.databinding.AddEventFragmentBinding
+import com.invoice.contratista.databinding.CreateEventFragmentBinding
 import com.invoice.contratista.utils.Utils.getText
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class AddEventFragment : Fragment() {
+class CreateEventFragment : Fragment() {
 
-    private lateinit var viewModel: AddEventViewModel
-    private lateinit var binding: AddEventFragmentBinding
+    private lateinit var viewModel: CreateEventViewModel
+    private lateinit var binding: CreateEventFragmentBinding
     private val customerNamesList = mutableListOf<String>()
     private val customerList = mutableListOf<CustomerEntity>()
     private var idCustomer = ""
@@ -27,8 +27,8 @@ class AddEventFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        viewModel = ViewModelProvider(this)[AddEventViewModel::class.java]
-        binding = AddEventFragmentBinding.inflate(layoutInflater, container, false)
+        viewModel = ViewModelProvider(this)[CreateEventViewModel::class.java]
+        binding = CreateEventFragmentBinding.inflate(layoutInflater, container, false)
         return binding.root
     }
 
@@ -60,5 +60,4 @@ class AddEventFragment : Fragment() {
             }
         }
     }
-
 }

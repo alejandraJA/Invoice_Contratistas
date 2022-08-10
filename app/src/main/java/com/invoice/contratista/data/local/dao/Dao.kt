@@ -8,6 +8,7 @@ import androidx.room.Query
 import androidx.room.Transaction
 import com.invoice.contratista.data.local.entity.AddressEntity
 import com.invoice.contratista.data.local.entity.CustomerEntity
+import com.invoice.contratista.data.local.entity.DateEntity
 import com.invoice.contratista.data.local.entity.EventEntity
 import com.invoice.contratista.data.local.entity.event.BudgetEntity
 import com.invoice.contratista.data.local.entity.event.PartEntity
@@ -34,7 +35,7 @@ interface Dao {
      */
     @Transaction
     @Query("SELECT * FROM budget WHERE id_event == :idEvent LIMIT 1")
-    fun getBudget(idEvent: Long): LiveData<Budget>
+    fun getBudget(idEvent: String): LiveData<Budget>
 
     /**
      * Metodo para obtener todas las cotizaciones completas
@@ -112,6 +113,16 @@ interface Dao {
     @Query("SELECT * FROM customer WHERE id == :idCustomer LIMIT 1")
     fun getCustomer(idCustomer: String): LiveData<Customer>
 
+    /**
+     * Metodo para obtener a un cliente en especifico.
+     * @param idCustomer id del cliente
+     * @return Retorna un objeto de tipo [LiveData] que, a su vez, contiene uno de tipo [CustomerEntity]
+     * que contiene todos los objetos relacionados al **Cliente**.
+     */
+    @Transaction
+    @Query("SELECT * FROM customer WHERE id == :idCustomer LIMIT 1")
+    fun getCustomerEntity(idCustomer: String): LiveData<CustomerEntity>
+
     // endregion
 
     // region Product
@@ -176,8 +187,24 @@ interface Dao {
      */
     @Query("SELECT * FROM event WHERE state != 'Realizado'")
     fun getEvents(): LiveData<List<EventEntity>>
+
+    @Transaction
     @Query("SELECT * FROM event WHERE id == :idEvent")
-    fun getEvent(idEvent: Long): LiveData<Event>
+    fun getEvent(idEvent: String): LiveData<Event>
+
     // endregion
+
+    /**
+     * Metodo para obtener las fechas del historial de un evento
+     * @return Lista de objetos de tipo [DateEntity]
+     */
+    @Query("SELECT * FROM date WHERE idReference == :idEvent")
+    fun getDates(idEvent: String): LiveData<List<DateEntity>>
+
+    /**
+     * Metodo para insertar una fecha
+     */
+    @Insert(onConflict = REPLACE)
+    fun setDate(dateEntity: DateEntity)
 
 }
