@@ -25,9 +25,10 @@
         android:id="@+id/recycler_note"
         android:layout_width="match_parent"
         android:layout_height="0sp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         android:paddingTop="8sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_add_note"
-        tools:listitem="@layout/item_schedule" />
+        tools:listitem="@layout/item_note" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

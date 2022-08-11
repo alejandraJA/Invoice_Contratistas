@@ -33,6 +33,7 @@ object Constants {
         Finiquitado
     }
 
+    const val ID_NOTE = "idNote"
     const val ID_CUSTOMER = "idCustomer"
     const val ID_BUDGET = "idBudget"
     const val ID_PART = "idPart"

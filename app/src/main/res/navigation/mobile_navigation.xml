@@ -81,8 +81,8 @@
         tools:layout="@layout/fragment_schedule" />
     <fragment
         android:id="@+id/noteFragment"
-        android:name="com.invoice.contratista.ui.fragment.note.NoteFragment"
+        android:name="com.invoice.contratista.ui.fragment.notes.create.CreateEditNoteFragment"
         android:label="fragment_note"
-        tools:layout="@layout/fragment_note" />
+        tools:layout="@layout/fragment_create_edit_note" />
 
 </navigation>

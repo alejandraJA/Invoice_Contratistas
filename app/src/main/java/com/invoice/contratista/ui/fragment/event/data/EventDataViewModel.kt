@@ -18,7 +18,7 @@ class EventDataViewModel @Inject constructor(private val dataRepository: DataRep
     fun updateNote(note: String) {
         viewModelScope.launch {
             withContext(Dispatchers.IO) {
-                dataRepository.updateNote(note)
+                dataRepository.updateNoteEvent(note)
             }
         }
     }

@@ -2,16 +2,22 @@ package com.invoice.contratista.utils
 
 import com.google.android.material.textfield.TextInputLayout
 import com.invoice.contratista.utils.Utils.getDate
+import com.invoice.contratista.utils.Utils.setText
 import java.text.SimpleDateFormat
 import java.util.*
 
 object Utils {
-    private fun TextInputLayout.isNotEmptyUtils() = if (editText!!.text.toString().isNotEmpty()) {
+    fun TextInputLayout.isNotEmptyUtils() = if (editText!!.text.toString().isNotEmpty()) {
         error = null
         true
     } else {
         error = "Campo requerido"
         false
+    }
+
+    fun TextInputLayout.setText(string: String) {
+        editText!!.setText("")
+        editText!!.append(string)
     }
 
     fun TextInputLayout.getText() = if (isNotEmptyUtils()) editText!!.text.toString() else ""

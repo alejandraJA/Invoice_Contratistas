@@ -13,6 +13,7 @@ import com.invoice.contratista.data.local.relations.Budget
 import com.invoice.contratista.data.local.relations.Part
 import com.invoice.contratista.data.local.relations.Event
 import com.invoice.contratista.data.local.entity.DateEntity
+import com.invoice.contratista.data.local.entity.event.NoteEntity
 import com.invoice.contratista.utils.Constants
 import com.invoice.contratista.utils.Utils.getDateComplete
 import java.util.*
@@ -159,7 +160,7 @@ class DataRepository @Inject constructor(
      * Metodo para actualizar la nota del evento
      * @param note Objeto de tipo [String]
      */
-    fun updateNote(note: String) = dao.updateNote(utilsManager.getIdEvent(), note)
+    fun updateNoteEvent(note: String) = dao.updateNoteEvent(utilsManager.getIdEvent(), note)
     // endregion
 
     /**
@@ -167,5 +168,14 @@ class DataRepository @Inject constructor(
      * @return Lista de objetos de tipo [DateEntity]
      */
     fun getDates() = dao.getDates(utilsManager.getIdEvent())
+    fun createNote() {
+        val idNote = UUID.randomUUID().toString()
+        dao.createNote(NoteEntity(idNote, utilsManager.getIdEvent().toLong(), ""))
+        utilsManager.setIdNote(idNote)
+    }
+
+    fun updateNote(note: String) = dao.updateNote(utilsManager.getIdNote(), note)
+    fun getNotes() = dao.getNotes(utilsManager.getIdEvent())
+    fun getNote() = dao.getNote(utilsManager.getIdNote())
 
 }

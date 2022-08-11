@@ -13,6 +13,7 @@ class UtilsManager @Inject constructor(private val sharedPreferences: SharedPref
     fun setIdEvent(idEvent: String) = idEvent.setString(Constants.ID_EVENT)
     fun setIdUser(idUser: String) = idUser.setString(Constants.ID_USER)
     fun setIdProduct(idProduct: String) = idProduct.setString(Constants.ID_PRODUCT)
+    fun setIdNote(idNote: String) = idNote.setString(Constants.ID_NOTE)
 
     fun getIdCustomer() = Constants.ID_CUSTOMER.getString()
     fun getIdBudget() = Constants.ID_BUDGET.getString()
@@ -20,6 +21,7 @@ class UtilsManager @Inject constructor(private val sharedPreferences: SharedPref
     fun getIdEvent() = Constants.ID_EVENT.getString()
     fun getIdUser() = Constants.ID_USER.getString()
     fun getIdProduct() = Constants.ID_PRODUCT.getString()
+    fun getIdNote() = Constants.ID_NOTE.getString()
 
     private fun Long.setLong(key: String) = editor.putLong(key, this).apply()
     private fun String.getLong() = sharedPreferences.getLong(this, 0)
