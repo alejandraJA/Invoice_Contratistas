@@ -133,12 +133,14 @@ class DataRepository @Inject constructor(
         dao.setEvent(event)
         dao.setDate(
             DateEntity(
-                0,
-                event.id,
-                Date().getDateComplete(),
-                Constants.StateEvent.Creado.name
+                id = 0,
+                idReference = event.id,
+                date = Date().getDateComplete(),
+                name = Constants.StateEvent.Creado.name
             )
         )
+        utilsManager.setIdEvent(event.id)
+        utilsManager.setIdCustomer(event.id_customer)
     }
 
     /**
@@ -152,6 +154,12 @@ class DataRepository @Inject constructor(
      * @return Lista de objetos de tipo [Event]
      */
     fun getEvent() = dao.getEvent(utilsManager.getIdEvent())
+
+    /**
+     * Metodo para actualizar la nota del evento
+     * @param note Objeto de tipo [String]
+     */
+    fun updateNote(note: String) = dao.updateNote(utilsManager.getIdEvent(), note)
     // endregion
 
     /**

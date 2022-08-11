@@ -192,6 +192,9 @@ interface Dao {
     @Query("SELECT * FROM event WHERE id == :idEvent")
     fun getEvent(idEvent: String): LiveData<Event>
 
+    @Query("UPDATE event SET note = :note WHERE id == :idEvent")
+    fun updateNote(idEvent: String, note: String)
+
     // endregion
 
     /**
