@@ -1,6 +1,5 @@
 package com.invoice.contratista.data.local.entity.event
 
-import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 

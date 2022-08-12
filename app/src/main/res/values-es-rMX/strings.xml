@@ -138,4 +138,8 @@
     <string name="event_data">Datos del evento</string>
     <string name="customer_data">Datos del cliente</string>
     <string name="history">Historia</string>
+    <string name="save_event">Guardar evento</string>
+    <string name="complete">Completar</string>
+    <string name="select_date">Selecciona la fecha</string>
+    <string name="select_hour">Delecciona la hora</string>
 </resources>
