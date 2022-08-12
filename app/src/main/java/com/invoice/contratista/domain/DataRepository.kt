@@ -6,6 +6,7 @@ import com.invoice.contratista.data.local.relations.Product
 import com.invoice.contratista.data.shared_preferences.UtilsManager
 import javax.inject.Inject
 import androidx.lifecycle.LiveData
+import com.invoice.contratista.data.local.entity.AddressEntity
 import com.invoice.contratista.data.local.entity.CustomerEntity
 import com.invoice.contratista.data.local.entity.EventEntity
 import com.invoice.contratista.data.local.entity.product.ProductEntity
@@ -177,5 +178,39 @@ class DataRepository @Inject constructor(
     fun updateNote(note: String) = dao.updateNote(utilsManager.getIdNote(), note)
     fun getNotes() = dao.getNotes(utilsManager.getIdEvent())
     fun getNote() = dao.getNote(utilsManager.getIdNote())
+    fun getSchedulesByEvent() = dao.getSchedules(utilsManager.getIdEvent())
+    fun insertSchedule(date: String, note: String, address: AddressEntity) {
+        val idSchedule = UUID.randomUUID().toString()
+        address.idCustomer = idSchedule
+        if (utilsManager.getAction()) {
+            dao.setAddress(address)
+            dao.createSchedule(
+                idSchedule = idSchedule,
+                idEvent = utilsManager.getIdEvent(),
+                date = date,
+                state = Constants.StateSchedule.Pendiente.name,
+                note = note,
+                idAddress = address.id,
+                idCustomer = utilsManager.getIdCustomer()
+            )
+        } else {
+            dao.updateAddress(
+                address.street,
+                address.exterior,
+                address.interior,
+                address.neighborhood,
+                address.city,
+                address.municipality,
+                address.zip,
+                address.state,
+                utilsManager.getIdSchedule()
+            )
+            dao.updateSchedule(date, note, utilsManager.getIdSchedule())
+        }
+    }
 
+    fun getSchedules() = dao.getSchedules()
+    fun getSchedule() = dao.getSchedule(utilsManager.getIdSchedule())
+    fun getAddressOfSchedule() = dao.getAddressOfSchedule(utilsManager.getIdSchedule())
+    fun updateStateSchedule() = dao.updateStateSchedule(utilsManager.getIdSchedule())
 }

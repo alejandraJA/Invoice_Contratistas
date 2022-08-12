@@ -1,9 +1,11 @@
 package com.invoice.contratista.data.local.dao
 
 import androidx.lifecycle.LiveData
-import androidx.room.*
 import androidx.room.Dao
+import androidx.room.Insert
 import androidx.room.OnConflictStrategy.REPLACE
+import androidx.room.Query
+import androidx.room.Transaction
 import com.invoice.contratista.data.local.entity.AddressEntity
 import com.invoice.contratista.data.local.entity.CustomerEntity
 import com.invoice.contratista.data.local.entity.DateEntity
@@ -11,6 +13,7 @@ import com.invoice.contratista.data.local.entity.EventEntity
 import com.invoice.contratista.data.local.entity.event.BudgetEntity
 import com.invoice.contratista.data.local.entity.event.NoteEntity
 import com.invoice.contratista.data.local.entity.event.PartEntity
+import com.invoice.contratista.data.local.entity.event.ScheduleEntity
 import com.invoice.contratista.data.local.entity.product.LocalTaxEntity
 import com.invoice.contratista.data.local.entity.product.ProductEntity
 import com.invoice.contratista.data.local.entity.product.TaxEntity
@@ -221,4 +224,62 @@ interface Dao {
     @Query("SELECT note FROM note WHERE id == :idNote")
     fun getNote(idNote: String): LiveData<String>
 
+    @Query("SELECT DISTINCT * FROM schedule WHERE id_event == :idEvent ORDER BY date")
+    fun getSchedules(idEvent: String): LiveData<List<ScheduleEntity>>
+
+    @Query("SELECT DISTINCT * FROM schedule ORDER BY date")
+    fun getSchedules(): LiveData<List<ScheduleEntity>>
+
+    @Query(
+        "INSERT INTO schedule " +
+                "VALUES(:idSchedule, :idEvent, :date, :state, :note, :idAddress, " +
+                "(SELECT legal_name " +
+                "FROM customer " +
+                "WHERE id == :idCustomer LIMIT 1))"
+    )
+    fun createSchedule(
+        idSchedule: String,
+        idEvent: String,
+        date: String,
+        state: String,
+        note: String,
+        idAddress: String,
+        idCustomer: String
+    )
+
+    @Query("UPDATE schedule SET date =:date, note = :note WHERE id == :idSchedule")
+    fun updateSchedule(date: String, note: String, idSchedule: String)
+
+    @Query(
+        "UPDATE address " +
+                "SET street = :street," +
+                "exterior = :exterior," +
+                "interior = :interior," +
+                "neighborhood = :neighborhood," +
+                "city = :city," +
+                "municipality = :municipality," +
+                "zip = :zip," +
+                "state = :state " +
+                "WHERE idCustomer == :idSchedule"
+    )
+    fun updateAddress(
+        street: String,
+        exterior: String,
+        interior: String,
+        neighborhood: String,
+        city: String,
+        municipality: String,
+        zip: String,
+        state: String,
+        idSchedule: String
+    )
+
+    @Query("SELECT * FROM schedule WHERE id == :idSchedule")
+    fun getSchedule(idSchedule: String): LiveData<ScheduleEntity>
+
+    @Query("SELECT * FROM address WHERE idCustomer == :idSchedule")
+    fun getAddressOfSchedule(idSchedule: String): LiveData<AddressEntity>
+
+    @Query("UPDATE schedule SET state = 'Atendido' WHERE id == :idSchedule")
+    fun updateStateSchedule(idSchedule: String)
 }

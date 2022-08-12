@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.textfield.TextInputLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/layout_note"
+    style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:hint="@string/note"
     android:padding="16sp"
+    app:startIconDrawable="@drawable/ic_round_notes"
     tools:context=".ui.fragment.notes.create.CreateEditNoteFragment">
 
 

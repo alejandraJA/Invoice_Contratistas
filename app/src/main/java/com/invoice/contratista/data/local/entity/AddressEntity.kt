@@ -34,7 +34,7 @@ import androidx.room.PrimaryKey
  */
 @Entity(tableName = "address")
 data class AddressEntity(
-    @PrimaryKey(autoGenerate = true) val id: Long,
+    @PrimaryKey(autoGenerate = false) val id: String,
     var street: String,
     var exterior: String,
     var interior: String,

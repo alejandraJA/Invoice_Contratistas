@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16sp"
         android:layout_marginTop="16sp"
-        android:text="@string/to_do"
+        android:text="@string/schedule"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

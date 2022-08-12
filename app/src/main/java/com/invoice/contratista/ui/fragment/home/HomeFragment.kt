@@ -10,8 +10,10 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.invoice.contratista.R
 import com.invoice.contratista.data.local.entity.EventEntity
+import com.invoice.contratista.data.local.entity.event.ScheduleEntity
 import com.invoice.contratista.databinding.FragmentHomeBinding
 import com.invoice.contratista.ui.fragment.home.apater.EventAdapter
+import com.invoice.contratista.ui.fragment.schedule.adapter.ScheduleAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -34,12 +36,22 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val listEvent = mutableListOf<EventEntity>()
-        val adapter = EventAdapter(listEvent) { event ->
+        val listSchedule = mutableListOf<ScheduleEntity>()
+        val adapterSchedule = ScheduleAdapter(listSchedule) {
+            viewModel.setSchedule(idSchedule = it.id, action = false)
+            findNavController().navigate(R.id.action_navigation_home_to_scheduleFragment)
+        }
+        val adapterEvent = EventAdapter(listEvent) { event ->
             viewModel.saveEvent(event)
         }
-        binding.recyclerEvent.adapter = adapter
+        binding.recyclerEvent.adapter = adapterEvent
         binding.recyclerEvent.setHasFixedSize(true)
         binding.recyclerEvent.layoutManager =
+            LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
+
+        binding.recyclerSchedule.adapter = adapterSchedule
+        binding.recyclerSchedule.setHasFixedSize(true)
+        binding.recyclerSchedule.layoutManager =
             LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
         binding.buttonAddEvent.setOnClickListener {
             findNavController().navigate(R.id.action_navigation_home_to_addEventFragment)
@@ -47,7 +59,12 @@ class HomeFragment : Fragment() {
         viewModel.event.observe(viewLifecycleOwner) {
             listEvent.clear()
             listEvent.addAll(it)
-            adapter.notifyDataSetChanged()
+            adapterEvent.notifyDataSetChanged()
+        }
+        viewModel.schedule.observe(viewLifecycleOwner) {
+            listSchedule.clear()
+            listSchedule.addAll(it)
+            adapterSchedule.notifyDataSetChanged()
         }
     }
 

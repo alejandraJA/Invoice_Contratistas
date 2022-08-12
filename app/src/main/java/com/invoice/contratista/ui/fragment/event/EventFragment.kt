@@ -1,13 +1,11 @@
 package com.invoice.contratista.ui.fragment.event
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.activity.addCallback
-import androidx.navigation.fragment.findNavController
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import com.invoice.contratista.R
@@ -66,9 +64,6 @@ class EventFragment : Fragment() {
             tab.text = resources.getString(TAB_TITLES[position])
         }.attach()
 
-        requireActivity().onBackPressedDispatcher.addCallback {
-            findNavController().navigate(R.id.action_eventFragment_to_navigation_home)
-        }
     }
 
 }

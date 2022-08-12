@@ -43,7 +43,7 @@
     <string name="step">Step</string>
     <string name="priority">Priority</string>
     <string name="low">Low</string>
-    <string name="hour">hour</string>
+    <string name="hour">Hour</string>
     <string name="add">add</string>
     <string name="title_activity_event">EventActivity</string>
     <string name="event">Event</string>
@@ -138,5 +138,9 @@
     <string name="event_data">Event data</string>
     <string name="customer_data">Customer data</string>
     <string name="history">History</string>
+    <string name="save_event">Save event</string>
+    <string name="complete">Complete</string>
+    <string name="select_date">Select date</string>
+    <string name="select_hour">Select hour</string>
 
 </resources>

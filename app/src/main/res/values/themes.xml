@@ -21,7 +21,6 @@
         <item name="android:windowLightNavigationBar" tools:targetApi="27">true</item>
         <item name="android:windowLightStatusBar" tools:targetApi="23">true</item>
         <item name="bottomNavigationStyle">@style/Widget.App.BottomNavigationView</item>
-        <item name="fontFamily">@font/font</item>
         <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.MyApp.SmallComponent
         </item>
         <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.MyApp.MediumComponent
@@ -34,6 +33,8 @@
         <item name="snackbarTextViewStyle">@style/customText</item>
         <item name="chipStyle">@style/Widget.Material3.Chip.Suggestion.Elevated</item>
         <item name="materialCardViewStyle">?attr/materialCardViewElevatedStyle</item>
+        <item name="android:fontFamily">@font/font</item>
+        <item name="fontFamily">@font/font</item>
     </style>
 
     <style name="customText" parent="@style/TextAppearance.MaterialComponents.Body1">

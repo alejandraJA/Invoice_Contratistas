@@ -8,10 +8,10 @@ import android.view.ViewGroup
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.invoice.contratista.R
 import com.invoice.contratista.data.local.entity.DateEntity
 import com.invoice.contratista.databinding.FragmentEventDataBinding
 import com.invoice.contratista.ui.fragment.event.data.adapter.DateAdapter
+import com.invoice.contratista.utils.Utils.getAddress
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -40,20 +40,9 @@ class EventDataFragment : Fragment() {
             if (it.eventEntity != null) binding.event = it.eventEntity
             if ((it.customer != null) && (it.customer.customer != null)) {
                 binding.layoutCustomer.customer = it.customer.customer
-                if (it.customer.address != null) {
-                    val addressData = it.customer.address
-                    val address = "${addressData.street}, " +
-                            "${
-                                if (addressData.interior.isEmpty()) 
-                                    "${resources.getString(R.string.exterior)} ${addressData.exterior}"
-                                else "${resources.getString(R.string.interior)} ${addressData.interior}, " +
-                                        "${resources.getString(R.string.exterior)} ${addressData.exterior}"
-                            }, " +
-                            "${addressData.zip}, ${addressData.neighborhood}, " +
-                            "${addressData.city}, ${addressData.municipality}, " +
-                            "${addressData.state}, ${addressData.country}"
-                    binding.layoutCustomer.textAddress.text = address
-                }
+                if (it.customer.address != null)
+                    binding.layoutCustomer.textAddress.text =
+                        it.customer.address.getAddress(resources)
             }
         }
         viewModel.dates.observe(viewLifecycleOwner) {

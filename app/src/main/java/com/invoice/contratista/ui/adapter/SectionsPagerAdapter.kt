@@ -5,7 +5,7 @@ import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.invoice.contratista.R
 import com.invoice.contratista.ui.fragment.budget.BudgetFragment
 import com.invoice.contratista.ui.fragment.event.data.EventDataFragment
-import com.invoice.contratista.ui.fragment.schedules.SchedulesFragment
+import com.invoice.contratista.ui.fragment.schedule.ScheduleFragment
 import com.invoice.contratista.ui.fragment.invoice.InvoiceFragment
 import com.invoice.contratista.ui.fragment.notes.NotesFragment
 import com.invoice.contratista.ui.fragment.receipt.ReceiptFragment
@@ -26,14 +26,12 @@ private val TAB_TITLES = arrayOf(
 class SectionsPagerAdapter(fragmentActivity: FragmentActivity, val id: String) :
     FragmentStateAdapter(fragmentActivity) {
 
-    //override fun getPageTitle(position: Int) = context.resources.getString(TAB_TITLES[position])
-
     override fun getItemCount() = TAB_TITLES.size
 
     override fun createFragment(position: Int) = when(position) {
         0 -> EventDataFragment()
         1 -> NotesFragment()
-        2 -> SchedulesFragment()
+        2 -> ScheduleFragment()
         3 -> BudgetFragment()
         4 -> ReceiptFragment()
         5 -> InvoiceFragment()

@@ -11,7 +11,7 @@ import androidx.navigation.fragment.findNavController
 import com.invoice.contratista.R
 import com.invoice.contratista.data.local.entity.CustomerEntity
 import com.invoice.contratista.databinding.FragmentCreateEventBinding
-import com.invoice.contratista.utils.Utils.getText
+import com.invoice.contratista.utils.Utils.getTextWithValidation
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -52,8 +52,8 @@ class CreateEventFragment : Fragment() {
             findNavController().popBackStack()
         }
         binding.buttonCreate.setOnClickListener {
-            val nameEvent = binding.layoutName.getText()
-            val note = binding.layoutNote.getText()
+            val nameEvent = binding.layoutName.getTextWithValidation()
+            val note = binding.layoutNote.getTextWithValidation()
             if (idCustomer.isNotEmpty() && nameEvent.isNotEmpty() && note.isNotEmpty()) {
                 viewModel.createEvent(idCustomer, note, nameEvent)
                 findNavController().navigate(R.id.action_addEventFragment_to_eventFragment)

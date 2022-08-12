@@ -33,6 +33,9 @@ object Constants {
         Finiquitado
     }
 
+    enum class StateSchedule { Pendiente, Atendido }
+
+    const val ID_SCHEDULE = "idSchedule"
     const val ID_NOTE = "idNote"
     const val ID_CUSTOMER = "idCustomer"
     const val ID_BUDGET = "idBudget"

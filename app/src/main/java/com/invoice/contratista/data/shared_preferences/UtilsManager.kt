@@ -14,6 +14,8 @@ class UtilsManager @Inject constructor(private val sharedPreferences: SharedPref
     fun setIdUser(idUser: String) = idUser.setString(Constants.ID_USER)
     fun setIdProduct(idProduct: String) = idProduct.setString(Constants.ID_PRODUCT)
     fun setIdNote(idNote: String) = idNote.setString(Constants.ID_NOTE)
+    fun setIdSchedule(idSchedule: String) = idSchedule.setString(Constants.ID_SCHEDULE)
+    fun setAction(action: Boolean) = action.setBoolean("Action")
 
     fun getIdCustomer() = Constants.ID_CUSTOMER.getString()
     fun getIdBudget() = Constants.ID_BUDGET.getString()
@@ -22,10 +24,14 @@ class UtilsManager @Inject constructor(private val sharedPreferences: SharedPref
     fun getIdUser() = Constants.ID_USER.getString()
     fun getIdProduct() = Constants.ID_PRODUCT.getString()
     fun getIdNote() = Constants.ID_NOTE.getString()
+    fun getIdSchedule() = Constants.ID_SCHEDULE.getString()
+    fun getAction() = "Action".getBoolean()
 
     private fun Long.setLong(key: String) = editor.putLong(key, this).apply()
     private fun String.getLong() = sharedPreferences.getLong(this, 0)
     private fun String.setString(key: String) = editor.putString(key, this).apply()
     private fun String.getString() = sharedPreferences.getString(this, "")!!
+    private fun Boolean.setBoolean(key: String) = editor.putBoolean(key, this).apply()
+    private fun String.getBoolean() = sharedPreferences.getBoolean(this, false)
 
 }
