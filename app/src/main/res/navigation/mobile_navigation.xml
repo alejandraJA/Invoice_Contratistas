@@ -76,6 +76,9 @@
             app:destination="@id/navigation_home"
             app:popUpTo="@+id/navigation_home"
             app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_eventFragment_to_budgetFragment"
+            app:destination="@id/budgetFragment" />
     </fragment>
     <fragment
         android:id="@+id/scheduleFragment"
@@ -87,5 +90,10 @@
         android:name="com.invoice.contratista.ui.fragment.notes.create.CreateEditNoteFragment"
         android:label="fragment_note"
         tools:layout="@layout/fragment_create_edit_note" />
+    <fragment
+        android:id="@+id/budgetFragment"
+        android:name="com.invoice.contratista.ui.fragment.budget.BudgetFragment"
+        android:label="fragment_budget"
+        tools:layout="@layout/fragment_budget" />
 
 </navigation>

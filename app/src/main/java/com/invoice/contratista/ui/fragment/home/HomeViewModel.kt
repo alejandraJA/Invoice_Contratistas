@@ -5,13 +5,15 @@ import androidx.lifecycle.ViewModel
 import com.invoice.contratista.data.local.entity.EventEntity
 import com.invoice.contratista.data.local.entity.event.ScheduleEntity
 import com.invoice.contratista.data.shared_preferences.UtilsManager
-import com.invoice.contratista.domain.DataRepository
+import com.invoice.contratista.domain.EventRepository
+import com.invoice.contratista.domain.ScheduleRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(
-    private val dataRepository: DataRepository,
+    private val scheduleRepository: ScheduleRepository,
+    private val eventRepository: EventRepository,
     private val utilsManager: UtilsManager
 ) : ViewModel() {
     fun saveEvent(event: EventEntity) {
@@ -25,13 +27,13 @@ class HomeViewModel @Inject constructor(
     }
 
     val event = MediatorLiveData<List<EventEntity>>().apply {
-        addSource(dataRepository.getEvents()) {
+        addSource(eventRepository.getEvents()) {
             if (it.isNotEmpty()) value = it
         }
     }
 
     val schedule = MediatorLiveData<List<ScheduleEntity>>().apply {
-        addSource(dataRepository.getSchedules()) {
+        addSource(scheduleRepository.getSchedules()) {
             if (it.isNotEmpty()) value = it
         }
     }

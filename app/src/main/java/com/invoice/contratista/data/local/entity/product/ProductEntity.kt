@@ -69,3 +69,11 @@ data class ProductEntity(
     var unit_name: String,
     var sku: String,
 )
+
+/*
+curl https://www.facturapi.io/v2/products \
+  -H "Authorization: Bearer sk_test_0Lj7YMX1JeVKOeeZp0Jzd239RZOlykGa"
+
+  8c8b9e16-3cf2-46c5-82a4-ea96ff6c54f5
+
+ */

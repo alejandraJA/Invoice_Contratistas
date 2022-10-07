@@ -5,7 +5,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.invoice.contratista.data.local.entity.CustomerEntity
 import com.invoice.contratista.data.local.entity.EventEntity
-import com.invoice.contratista.domain.DataRepository
+import com.invoice.contratista.domain.CustomerRepository
+import com.invoice.contratista.domain.EventRepository
 import com.invoice.contratista.utils.Constants
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
@@ -16,12 +17,13 @@ import javax.inject.Inject
 
 @HiltViewModel
 class CreateEventViewModel @Inject constructor(
-    private val dataRepository: DataRepository
+    private val eventRepository: EventRepository,
+    private val customerRepository: CustomerRepository
 ) : ViewModel() {
     fun createEvent(idCustomer: String, note: String, eventName: String) {
         viewModelScope.launch {
             withContext(Dispatchers.IO) {
-                dataRepository.createEvent(
+                eventRepository.createEvent(
                     EventEntity(
                         UUID.randomUUID().toString(),
                         idCustomer,
@@ -35,7 +37,7 @@ class CreateEventViewModel @Inject constructor(
     }
 
     val customer = MediatorLiveData<List<CustomerEntity>>().apply {
-        addSource(dataRepository.getCustomers()) {
+        addSource(customerRepository.getCustomers()) {
             if (it.isNotEmpty()) value = it
         }
     }

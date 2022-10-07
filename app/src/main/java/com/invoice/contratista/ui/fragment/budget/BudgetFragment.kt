@@ -9,6 +9,9 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.invoice.contratista.R
 import com.invoice.contratista.databinding.FragmentBudgetBinding
+import com.invoice.contratista.utils.Utils.getDate
+import com.invoice.contratista.utils.Utils.getDateWithoutHour
+import java.util.*
 
 class BudgetFragment : Fragment() {
 
@@ -26,6 +29,10 @@ class BudgetFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val idBudget = UUID.randomUUID().toString()
+        binding.textDate.text = Date().getDateWithoutHour()
+        binding.idTextBudget.text = idBudget
+        viewModel.insertIdBudget(idBudget)
         binding.buttonAddPart.setOnClickListener {
             findNavController().navigate(R.id.action_eventFragment_to_addPartFragment)
         }

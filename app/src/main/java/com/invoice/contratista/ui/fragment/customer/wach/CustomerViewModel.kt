@@ -2,6 +2,4 @@ package com.invoice.contratista.ui.fragment.customer.wach
 
 import androidx.lifecycle.ViewModel
 
-class CustomerViewModel : ViewModel() {
-
-}
+class CustomerViewModel : ViewModel()

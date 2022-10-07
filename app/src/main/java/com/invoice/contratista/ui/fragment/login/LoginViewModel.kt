@@ -2,6 +2,4 @@ package com.invoice.contratista.ui.fragment.login
 
 import androidx.lifecycle.ViewModel
 
-class LoginViewModel : ViewModel() {
-
-}
+class LoginViewModel : ViewModel()

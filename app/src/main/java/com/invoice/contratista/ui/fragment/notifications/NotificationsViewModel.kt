@@ -1,9 +1,5 @@
 package com.invoice.contratista.ui.fragment.notifications
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class NotificationsViewModel : ViewModel() {
-
-}
+class NotificationsViewModel : ViewModel()

@@ -6,7 +6,7 @@ import androidx.lifecycle.viewModelScope
 import com.invoice.contratista.data.local.entity.AddressEntity
 import com.invoice.contratista.data.local.entity.event.ScheduleEntity
 import com.invoice.contratista.data.shared_preferences.UtilsManager
-import com.invoice.contratista.domain.DataRepository
+import com.invoice.contratista.domain.ScheduleRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -15,13 +15,13 @@ import javax.inject.Inject
 
 @HiltViewModel
 class CreateEditScheduleViewModel @Inject constructor(
-    private val dataRepository: DataRepository,
+    private val scheduleRepository: ScheduleRepository,
     private val utilsManager: UtilsManager
 ): ViewModel() {
     fun setSchedule(date: String, note: String, address: AddressEntity) {
         viewModelScope.launch {
             withContext(Dispatchers.IO) {
-                dataRepository.insertSchedule(date, note, address)
+                scheduleRepository.insertSchedule(date, note, address)
             }
         }
     }
@@ -31,19 +31,19 @@ class CreateEditScheduleViewModel @Inject constructor(
     fun updateStateSchedule() {
         viewModelScope.launch {
             withContext(Dispatchers.IO) {
-                dataRepository.updateStateSchedule()
+                scheduleRepository.updateStateSchedule()
             }
         }
     }
 
     val schedule = MediatorLiveData<ScheduleEntity>().apply {
-        addSource(dataRepository.getSchedule()) {
+        addSource(scheduleRepository.getSchedule()) {
             if (it != null && !utilsManager.getAction()) value = it
         }
     }
 
     val address = MediatorLiveData<AddressEntity>().apply {
-        addSource(dataRepository.getAddressOfSchedule()) {
+        addSource(scheduleRepository.getAddressOfSchedule()) {
             if (it != null && !utilsManager.getAction()) value = it
         }
     }

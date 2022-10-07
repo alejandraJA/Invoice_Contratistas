@@ -27,3 +27,4 @@ data class Product (
     )
     val taxes: List<TaxEntity>?,
 )
+

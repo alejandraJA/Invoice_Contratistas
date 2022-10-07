@@ -12,6 +12,6 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "note")
 data class NoteEntity(
     @PrimaryKey(autoGenerate = false) val id: String,
-    val id_event: Long,
+    val id_event: String,
     val note: String,
 )

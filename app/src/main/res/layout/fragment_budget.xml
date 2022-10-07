@@ -67,7 +67,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/id_text_budget_title2"
+                android:id="@+id/id_text_budget"
                 style="@style/TextAppearance.Material3.TitleLarge"
                 android:layout_width="0sp"
                 android:layout_height="wrap_content"
@@ -90,7 +90,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/text_date_title2"
+                android:id="@+id/text_date"
                 style="@style/TextAppearance.Material3.TitleLarge"
                 android:layout_width="0sp"
                 android:layout_height="wrap_content"

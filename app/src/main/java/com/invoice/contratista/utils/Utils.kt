@@ -1,19 +1,22 @@
 package com.invoice.contratista.utils
 
+import android.annotation.SuppressLint
 import android.content.res.Resources
 import com.google.android.material.textfield.TextInputLayout
 import com.invoice.contratista.R
 import com.invoice.contratista.data.local.entity.AddressEntity
 import com.invoice.contratista.databinding.LayoutAddressBinding
+import com.invoice.contratista.utils.Utils.getDateComplete
 import java.text.SimpleDateFormat
 import java.util.*
 
+@SuppressLint("SimpleDateFormat")
 object Utils {
     private fun TextInputLayout.isNotEmptyUtils() = if (editText!!.text.toString().isNotEmpty()) {
         error = null
         true
     } else {
-        error = "Campo requerido"
+        error = context.getString(R.string.required)
         false
     }
 
@@ -41,6 +44,11 @@ object Utils {
 
     fun Date.getDateComplete(): String {
         val formatter = SimpleDateFormat("dd-MM-yyyy HH:mm")
+        return formatter.format(this)
+    }
+
+    fun Date.getDateWithoutHour(): String {
+        val formatter = SimpleDateFormat("dd-MM-yyyy")
         return formatter.format(this)
     }
 

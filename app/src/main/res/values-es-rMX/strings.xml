@@ -142,4 +142,5 @@
     <string name="complete">Completar</string>
     <string name="select_date">Selecciona la fecha</string>
     <string name="select_hour">Delecciona la hora</string>
+    <string name="required">Campo requerido</string>
 </resources>
