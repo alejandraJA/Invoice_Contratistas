@@ -1,8 +1,15 @@
 package com.invoice.contratista.domain
 
 import com.invoice.contratista.data.local.dao.Dao
+import com.invoice.contratista.data.local.entity.event.BudgetEntity
 import com.invoice.contratista.data.local.relations.Budget
 import com.invoice.contratista.data.shared_preferences.UtilsManager
+import com.invoice.contratista.utils.Constants
+import com.invoice.contratista.utils.Utils.getDateComplete
+import com.invoice.contratista.utils.Utils.getDateWithoutHour
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
+import java.util.*
 import javax.inject.Inject
 
 class BudgetRepository @Inject constructor(
@@ -25,18 +32,27 @@ class BudgetRepository @Inject constructor(
         }
     }
 
+    fun createBudget() {
+        val number = dao.getNumberBudget() + 1
+        val budgetEntity = BudgetEntity(
+            number.toLong(),
+            number,
+            utilsManager.getIdCustomer(),
+            utilsManager.getIdEvent(),
+            Date().getDateComplete(),
+            "",
+            "",
+            Constants.BudgetStatus.Pendiente.name
+        )
+        dao.setBudget(budgetEntity)
+    }
+
     /**
      * Metodo para obtener una cotización
      * @return Objeto de tipo [Budget]
      */
-    fun getBudget() = dao.getBudget(utilsManager.getIdEvent())
-
-    /**
-     * Metodo para guardar el id de la cotización selecccionada
-     */
-    fun setIdBudget(id: String) = utilsManager.setIdBudget(id)
+    fun getBudget() = dao.getBudget(utilsManager.getIdBudget())
 
     fun getBudgets() = dao.getBudgetsEntity(utilsManager.getIdEvent())
-
 
 }

@@ -32,12 +32,12 @@ interface Dao {
 
     /**
      * Metodo para obtener el objeto budget completo
-     * @param idEvent Identificador del evento al que pertenece el seguimiento de la cotización.
+     * @param id Identificador de la cotizacion al que pertenece el seguimiento de la cotización.
      * @return Objeto de tipo [LiveData] que contiene un objeto de tipo [Budget]
      */
     @Transaction
-    @Query("SELECT * FROM budget WHERE id_event == :idEvent LIMIT 1")
-    fun getBudget(idEvent: String): LiveData<Budget>
+    @Query("SELECT * FROM budget WHERE id == :id LIMIT 1")
+    fun getBudget(id: Long): LiveData<Budget>
 
     /**
      * Metodo para obtener todas las cotizaciones completas
@@ -46,6 +46,9 @@ interface Dao {
     @Transaction
     @Query("SELECT * FROM budget")
     fun getBudgets(): LiveData<List<Budget>>
+
+    @Query("SELECT number FROM budget ORDER BY number DESC LIMIT 1")
+    fun getNumberBudget(): Int
 
     // endregion
 
@@ -66,7 +69,7 @@ interface Dao {
      */
     @Transaction
     @Query("SELECT * FROM part WHERE idBudget == :idBudget")
-    fun getParts(idBudget: String): LiveData<List<Part>>
+    fun getParts(idBudget: Long): LiveData<List<Part>>
 
     /**
      * Metodo para obtener una partida con su propio id.
@@ -283,6 +286,6 @@ interface Dao {
     @Query("UPDATE schedule SET state = 'Atendido' WHERE id == :idSchedule")
     fun updateStateSchedule(idSchedule: String)
 
-    @Query("SELECT * FROM budget WHERE id_event == :idEvent")
+    @Query("SELECT * FROM budget WHERE id_event == :idEvent ORDER BY number ASC")
     fun getBudgetsEntity(idEvent: String): LiveData<List<BudgetEntity>>
 }

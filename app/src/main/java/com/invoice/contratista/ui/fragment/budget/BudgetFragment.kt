@@ -11,8 +11,11 @@ import com.invoice.contratista.R
 import com.invoice.contratista.databinding.FragmentBudgetBinding
 import com.invoice.contratista.utils.Utils.getDate
 import com.invoice.contratista.utils.Utils.getDateWithoutHour
+import com.invoice.contratista.utils.Utils.setText
+import dagger.hilt.android.AndroidEntryPoint
 import java.util.*
 
+@AndroidEntryPoint
 class BudgetFragment : Fragment() {
 
     private lateinit var binding: FragmentBudgetBinding
@@ -32,9 +35,16 @@ class BudgetFragment : Fragment() {
         val idBudget = UUID.randomUUID().toString()
         binding.textDate.text = Date().getDateWithoutHour()
         binding.idTextBudget.text = idBudget
-        viewModel.insertIdBudget(idBudget)
+        viewModel.budget.observe(viewLifecycleOwner) {
+            val budgetEntity = it.budgetEntity!!
+            binding.apply {
+                textDate.text = budgetEntity.date.getDate()
+                layoutTitle.setText("${resources.getString(R.string.budget)}_${budgetEntity.number}")
+                idTextBudget.text = budgetEntity.number.toString()
+            }
+        }
         binding.buttonAddPart.setOnClickListener {
-            findNavController().navigate(R.id.action_eventFragment_to_budgetFragment)
+            findNavController().navigate(R.id.action_budgetFragment_to_addPartFragment)
         }
     }
 
