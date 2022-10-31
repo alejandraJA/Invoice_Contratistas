@@ -20,9 +20,10 @@ data class BudgetEntity(
     val id: Long,
     val number: Int,
     val id_customer: String,
-    val id_event: Long,
+    val id_event: String,
     val date: String,
     val dateEnd: String,
     val conditions: String,
     val status: String,
 )
+// INSERT INTO budget (id, number, id_customer, id_event, date, dateEnd, conditions, status) VALUES (1, 1, 'bba762b5-174a-4809-abf0-33c8bdd4e060','f2f33763-4e21-47c9-8057-d51b385b813f', '07-10-2022 11:13', 'Condiciones', 'Pendiente' )

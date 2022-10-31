@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 2,
-    "identityHash": "63b25cb42cc9eb75d4fd68b7dcf791dc",
+    "identityHash": "96699b7b4013daf7be6ec74c4f2c5c50",
     "entities": [
       {
         "tableName": "address",
@@ -136,7 +136,7 @@
       },
       {
         "tableName": "budget",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER NOT NULL, `number` INTEGER NOT NULL, `id_customer` TEXT NOT NULL, `id_event` INTEGER NOT NULL, `date` TEXT NOT NULL, `dateEnd` TEXT NOT NULL, `conditions` TEXT NOT NULL, `status` TEXT NOT NULL, PRIMARY KEY(`id`, `id_customer`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER NOT NULL, `number` INTEGER NOT NULL, `id_customer` TEXT NOT NULL, `id_event` TEXT NOT NULL, `date` TEXT NOT NULL, `dateEnd` TEXT NOT NULL, `conditions` TEXT NOT NULL, `status` TEXT NOT NULL, PRIMARY KEY(`id`, `id_customer`))",
         "fields": [
           {
             "fieldPath": "id",
@@ -159,7 +159,7 @@
           {
             "fieldPath": "id_event",
             "columnName": "id_event",
-            "affinity": "INTEGER",
+            "affinity": "TEXT",
             "notNull": true
           },
           {
@@ -596,7 +596,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '63b25cb42cc9eb75d4fd68b7dcf791dc')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '96699b7b4013daf7be6ec74c4f2c5c50')"
     ]
   }
 }
