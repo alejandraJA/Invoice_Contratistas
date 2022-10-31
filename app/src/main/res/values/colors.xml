@@ -10,5 +10,8 @@
     <color name="background_night">#060209</color>
     <color name="background">#F0F1F6</color>
     <color name="error">#DF1F11</color>
+    <color name="errorCards">#FFB8B3</color>
+    <color name="success">#B0E2B2</color>
+    <color name="warning">#E3DDA7</color>
     <color name="text_secondary">#7C000000</color>
 </resources>

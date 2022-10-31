@@ -3,8 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/aejimenez/AndroidStudioProject/Invoice_Contratistas/app/src/main/res/layout/fragment_budget.xml" value="0.21" />
-        <entry key="..\:/Users/aejimenez/AndroidStudioProject/Invoice_Contratistas/app/src/main/res/layout/fragment_event.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/aejimenez/AndroidStudioProject/Invoice_Contratistas/app/src/main/res/layout/fragment_budget.xml" value="0.25" />
+        <entry key="..\:/Users/aejimenez/AndroidStudioProject/Invoice_Contratistas/app/src/main/res/layout/fragment_budgets.xml" value="0.1" />
+        <entry key="..\:/Users/aejimenez/AndroidStudioProject/Invoice_Contratistas/app/src/main/res/layout/fragment_create_edit_note.xml" value="0.1675929884566054" />
+        <entry key="..\:/Users/aejimenez/AndroidStudioProject/Invoice_Contratistas/app/src/main/res/layout/fragment_create_event.xml" value="0.1675929884566054" />
+        <entry key="..\:/Users/aejimenez/AndroidStudioProject/Invoice_Contratistas/app/src/main/res/layout/fragment_event.xml" value="0.25" />
+        <entry key="..\:/Users/aejimenez/AndroidStudioProject/Invoice_Contratistas/app/src/main/res/layout/fragment_event_data.xml" value="0.1675929884566054" />
+        <entry key="..\:/Users/aejimenez/AndroidStudioProject/Invoice_Contratistas/app/src/main/res/layout/item_budget.xml" value="0.25" />
+        <entry key="..\:/Users/aejimenez/AndroidStudioProject/Invoice_Contratistas/app/src/main/res/layout/layout_customer.xml" value="0.1675929884566054" />
         <entry key="..\:/Users/aejimenez/AndroidStudioProjects/Practicas/InvoiceContratistas/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1745" />
         <entry key="..\:/Users/aejimenez/AndroidStudioProjects/Practicas/InvoiceContratistas/app/src/main/res/drawable-v24/today_icon.xml" value="0.1615" />
         <entry key="..\:/Users/aejimenez/AndroidStudioProjects/Practicas/InvoiceContratistas/app/src/main/res/drawable-xxhdpi/ic_round_chevron_left.xml" value="0.2135" />

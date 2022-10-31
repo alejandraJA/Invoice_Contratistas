@@ -34,7 +34,7 @@ class BudgetFragment : Fragment() {
         binding.idTextBudget.text = idBudget
         viewModel.insertIdBudget(idBudget)
         binding.buttonAddPart.setOnClickListener {
-            findNavController().navigate(R.id.action_eventFragment_to_addPartFragment)
+            findNavController().navigate(R.id.action_eventFragment_to_budgetFragment)
         }
     }
 

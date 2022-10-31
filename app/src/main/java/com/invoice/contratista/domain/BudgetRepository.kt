@@ -16,9 +16,11 @@ class BudgetRepository @Inject constructor(
      */
     fun createBudget(budget: Budget) {
         if (budget.budgetEntity != null) {
-            dao.setBudget(budget.budgetEntity)
-            if (budget.parts != null) budget.parts.forEach {
-                if (it.partEntity != null) dao.setPart(it.partEntity)
+            with(dao) {
+                setBudget(budget.budgetEntity)
+                if (budget.parts != null) budget.parts.forEach {
+                    if (it.partEntity != null) setPart(it.partEntity)
+                }
             }
         }
     }
@@ -33,6 +35,8 @@ class BudgetRepository @Inject constructor(
      * Metodo para guardar el id de la cotización selecccionada
      */
     fun setIdBudget(id: String) = utilsManager.setIdBudget(id)
+
+    fun getBudgets() = dao.getBudgetsEntity(utilsManager.getIdEvent())
 
 
 }

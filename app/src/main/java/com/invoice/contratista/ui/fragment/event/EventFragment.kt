@@ -18,9 +18,9 @@ private val TAB_TITLES = arrayOf(
     R.string.event,
     R.string.notes,
     R.string.schedule,
-    R.string.budget,
+    R.string.budgets,
     R.string.receipt,
-    R.string.invoice,
+    R.string.invoice
 )
 
 @AndroidEntryPoint

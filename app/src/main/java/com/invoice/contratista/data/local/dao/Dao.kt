@@ -282,4 +282,7 @@ interface Dao {
 
     @Query("UPDATE schedule SET state = 'Atendido' WHERE id == :idSchedule")
     fun updateStateSchedule(idSchedule: String)
+
+    @Query("SELECT * FROM budget WHERE id_event == :idEvent")
+    fun getBudgetsEntity(idEvent: String): LiveData<List<BudgetEntity>>
 }

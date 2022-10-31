@@ -143,4 +143,6 @@
     <string name="select_date">Selecciona la fecha</string>
     <string name="select_hour">Delecciona la hora</string>
     <string name="required">Campo requerido</string>
+    <string name="budgets">Cotizaciones</string>
+    <string name="add_budget">Agregar cotización</string>
 </resources>
