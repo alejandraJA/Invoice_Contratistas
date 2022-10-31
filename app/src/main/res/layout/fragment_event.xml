@@ -19,32 +19,44 @@
             android:paddingEnd="16sp"
             android:paddingBottom="8sp">
 
+            <TextView
+                android:id="@+id/text_name_customer"
+                style="@style/TextAppearance.Material3.BodyLarge"
+                android:layout_width="0sp"
+                android:layout_marginEnd="8sp"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/button_call"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="@tools:sample/full_names" />
+
             <ImageButton
                 android:id="@+id/button_call"
                 style="@style/ImageButton"
                 android:contentDescription="@string/call_phone"
                 android:src="@drawable/ic_phone"
+                app:layout_constraintBottom_toBottomOf="@+id/button_email"
                 app:layout_constraintEnd_toStartOf="@+id/button_email"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="@+id/button_email" />
 
             <ImageButton
                 android:id="@+id/button_email"
                 style="@style/ImageButton"
                 android:contentDescription="@string/send_email"
                 android:src="@drawable/ic_email"
+                app:layout_constraintBottom_toBottomOf="@+id/button_message"
                 app:layout_constraintEnd_toStartOf="@+id/button_message"
-                app:layout_constraintStart_toEndOf="@+id/button_call"
-                app:layout_constraintTop_toTopOf="@+id/button_call" />
+                app:layout_constraintTop_toTopOf="@+id/button_message" />
 
             <ImageButton
                 android:id="@+id/button_message"
                 style="@style/ImageButton"
                 android:contentDescription="@string/send_message"
                 android:src="@drawable/ic_round_message_24"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/button_email"
-                app:layout_constraintTop_toTopOf="@+id/button_call" />
+                app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

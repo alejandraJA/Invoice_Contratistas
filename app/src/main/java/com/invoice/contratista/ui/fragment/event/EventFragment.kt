@@ -49,6 +49,7 @@ class EventFragment : Fragment() {
 
         viewModel.customer.observe(viewLifecycleOwner) {
             customerEntity = it
+            binding.textNameCustomer.text = it.legal_name
             binding.buttonCall.setOnClickListener {
 
             }
