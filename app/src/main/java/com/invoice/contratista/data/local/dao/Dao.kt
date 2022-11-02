@@ -18,6 +18,7 @@ import com.invoice.contratista.data.local.entity.product.LocalTaxEntity
 import com.invoice.contratista.data.local.entity.product.ProductEntity
 import com.invoice.contratista.data.local.entity.product.TaxEntity
 import com.invoice.contratista.data.local.relations.*
+import com.invoice.contratista.ui.fragment.part.ProductsItem
 
 @Dao
 interface Dao {
@@ -288,4 +289,10 @@ interface Dao {
 
     @Query("SELECT * FROM budget WHERE id_event == :idEvent ORDER BY number ASC")
     fun getBudgetsEntity(idEvent: String): LiveData<List<BudgetEntity>>
+
+    @Query("SELECT id, description FROM product ORDER BY description ASC")
+    fun getProductsForSelector(): LiveData<List<ProductsItem>>
+
+    @Query("SELECT number FROM part WHERE idBudget == :idBudget ORDER BY number DESC LIMIT 1")
+    fun getNumberOfPart(idBudget: Long): Int
 }

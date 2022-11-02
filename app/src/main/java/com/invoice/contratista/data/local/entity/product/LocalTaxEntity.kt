@@ -22,7 +22,7 @@ import com.invoice.contratista.data.local.relations.Product
 @Entity(tableName = "local_tax")
 data class LocalTaxEntity(
     @PrimaryKey(autoGenerate = true) var id: Long,
-    var rate: Int,
+    var rate: Double,
     var type: String,
     var withholding: Boolean,
     val idProduct: String

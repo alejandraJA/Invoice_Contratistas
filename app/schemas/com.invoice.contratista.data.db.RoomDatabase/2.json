@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 2,
-    "identityHash": "96699b7b4013daf7be6ec74c4f2c5c50",
+    "identityHash": "538ee387612ede60faaee8a7bddc7083",
     "entities": [
       {
         "tableName": "address",
@@ -394,7 +394,7 @@
       },
       {
         "tableName": "local_tax",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `rate` INTEGER NOT NULL, `type` TEXT NOT NULL, `withholding` INTEGER NOT NULL, `idProduct` TEXT NOT NULL)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `rate` REAL NOT NULL, `type` TEXT NOT NULL, `withholding` INTEGER NOT NULL, `idProduct` TEXT NOT NULL)",
         "fields": [
           {
             "fieldPath": "id",
@@ -405,7 +405,7 @@
           {
             "fieldPath": "rate",
             "columnName": "rate",
-            "affinity": "INTEGER",
+            "affinity": "REAL",
             "notNull": true
           },
           {
@@ -438,7 +438,7 @@
       },
       {
         "tableName": "product",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `description` TEXT NOT NULL, `product_key` INTEGER NOT NULL, `price` REAL NOT NULL, `tax_included` INTEGER NOT NULL, `taxability` TEXT NOT NULL, `unit_key` TEXT NOT NULL, `unit_name` TEXT NOT NULL, `sku` TEXT NOT NULL, PRIMARY KEY(`id`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `description` TEXT NOT NULL, `product_key` INTEGER NOT NULL, `price` REAL NOT NULL, `tax_included` INTEGER NOT NULL, `taxability` TEXT NOT NULL, `unit_key` TEXT NOT NULL, `unit_name` TEXT NOT NULL, `sku` TEXT NOT NULL, `gain` INTEGER NOT NULL DEFAULT 10, PRIMARY KEY(`id`))",
         "fields": [
           {
             "fieldPath": "id",
@@ -493,6 +493,13 @@
             "columnName": "sku",
             "affinity": "TEXT",
             "notNull": true
+          },
+          {
+            "fieldPath": "gain",
+            "columnName": "gain",
+            "affinity": "INTEGER",
+            "notNull": true,
+            "defaultValue": "10"
           }
         ],
         "primaryKey": {
@@ -596,7 +603,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '96699b7b4013daf7be6ec74c4f2c5c50')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '538ee387612ede60faaee8a7bddc7083')"
     ]
   }
 }

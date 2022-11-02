@@ -53,6 +53,7 @@
                 app:startIconDrawable="@drawable/ic_inventory">
 
                 <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                    android:id="@+id/auto_complete_product"
                     style="@style/TextInputEditText"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -163,7 +164,7 @@
                 android:layout_marginTop="8sp"
                 android:text="@string/quantity"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/card_general_data" />
+                app:layout_constraintTop_toBottomOf="@+id/card_discount" />
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/card_quantity"
@@ -217,7 +218,7 @@
                         tools:text="1000.00" />
 
                     <ImageButton
-                        android:id="@+id/button_"
+                        android:id="@+id/button_less"
                         style="@style/ImageButton"
                         android:contentDescription="@string/dis"
                         android:src="@drawable/ic_round_remove_24"
@@ -233,7 +234,7 @@
                         android:layout_marginStart="8sp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toStartOf="@+id/button_add"
-                        app:layout_constraintStart_toEndOf="@+id/button_"
+                        app:layout_constraintStart_toEndOf="@+id/button_less"
                         app:layout_constraintTop_toTopOf="parent"
                         tools:text="5" />
 
@@ -259,7 +260,7 @@
                 android:layout_marginTop="8sp"
                 android:text="@string/discount"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/card_quantity" />
+                app:layout_constraintTop_toBottomOf="@+id/card_general_data" />
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/card_discount"
@@ -329,10 +330,10 @@
                 android:id="@+id/card_total"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="16sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/card_discount">
+                app:layout_constraintTop_toBottomOf="@+id/card_quantity">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
@@ -342,33 +343,16 @@
                     android:paddingEnd="16sp"
                     android:paddingBottom="8sp">
 
-                    <TextView
-                        android:id="@+id/text_iva_title"
-                        style="@style/TextAppearance.Material3.LabelLarge"
-                        android:layout_width="0sp"
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recycler_tax"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="8dp"
-                        android:text="@string/iva"
-                        android:textAlignment="textEnd"
-                        app:layout_constraintBottom_toBottomOf="@+id/text_iva"
-                        app:layout_constraintEnd_toStartOf="@+id/text_iva"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="@+id/text_iva" />
-
-                    <TextView
-                        android:id="@+id/text_iva"
-                        style="@style/TextAppearance.Material3.TitleLarge"
-                        android:layout_width="0sp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="8sp"
-                        android:drawablePadding="8sp"
-                        android:textAlignment="textEnd"
-                        app:drawableStartCompat="@drawable/ic_money"
-                        app:drawableTint="#4CAF50"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/text_iva_title"
+                        android:orientation="vertical"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                         app:layout_constraintTop_toTopOf="parent"
-                        tools:text="24.56" />
+                        tools:itemCount="2"
+                        tools:layout_editor_absoluteX="16dp"
+                        tools:listitem="@layout/item_tax" />
 
                     <TextView
                         android:id="@+id/text_total_title"
@@ -389,7 +373,6 @@
                         android:layout_width="0sp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8sp"
-                        android:layout_marginTop="8sp"
                         android:drawablePadding="8sp"
                         android:textAlignment="textEnd"
                         android:textStyle="bold"
@@ -397,7 +380,7 @@
                         app:drawableTint="#4CAF50"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/text_total_title"
-                        app:layout_constraintTop_toBottomOf="@+id/text_iva"
+                        app:layout_constraintTop_toBottomOf="@+id/recycler_tax"
                         tools:text="4,587.56" />
 
                     <com.google.android.material.divider.MaterialDivider
@@ -422,7 +405,7 @@
 
                     <TextView
                         android:id="@+id/text_total_gain"
-                        style="@style/TextAppearance.Material3.LabelLarge"
+                        style="@style/TextAppearance.Material3.TitleLarge"
                         android:layout_width="0sp"
                         android:layout_height="wrap_content"
                         android:drawablePadding="8sp"

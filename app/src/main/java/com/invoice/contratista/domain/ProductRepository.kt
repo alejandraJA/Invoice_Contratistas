@@ -37,10 +37,13 @@ class ProductRepository @Inject constructor(
      */
     fun getProduct() = dao.getProduct(utilsManager.getIdProduct())
 
+    fun getProduct(idProduct: String) = dao.getProduct(idProduct)
+
     /**
      * Metodo para obtener todos los productos de la base de datos local
      * @return Objeto de tipo [LiveData] que contiene una lista de objetos de tipo [ProductEntity]
      */
     fun getProducts() = dao.getProducts()
+    fun getProductsForSelector() = dao.getProductsForSelector()
 
 }
