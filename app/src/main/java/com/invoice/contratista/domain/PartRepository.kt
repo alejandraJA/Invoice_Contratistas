@@ -23,4 +23,6 @@ class PartRepository @Inject constructor(
      */
     fun getParts() = dao.getParts(utilsManager.getIdBudget())
 
+    fun getNumber() = dao.getNumberOfPart(utilsManager.getIdBudget())
+
 }
