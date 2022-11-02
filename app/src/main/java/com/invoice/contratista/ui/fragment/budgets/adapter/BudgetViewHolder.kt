@@ -10,7 +10,7 @@ import com.invoice.contratista.databinding.ItemBudgetBinding
 import com.invoice.contratista.utils.Constants
 import com.invoice.contratista.utils.Utils.getStatusBudget
 
-class BudgetViewHolder(view: View, private val onClick: (Long) -> Unit) :
+class BudgetViewHolder(view: View, private val onClick: (String) -> Unit) :
     RecyclerView.ViewHolder(view) {
     private val binding = ItemBudgetBinding.bind(view)
 

@@ -2,6 +2,7 @@ package com.invoice.contratista.domain
 
 import androidx.lifecycle.LiveData
 import com.invoice.contratista.data.local.dao.Dao
+import com.invoice.contratista.data.local.entity.event.PartEntity
 import com.invoice.contratista.data.local.relations.Part
 import com.invoice.contratista.data.shared_preferences.UtilsManager
 import javax.inject.Inject
@@ -22,6 +23,11 @@ class PartRepository @Inject constructor(
      * @return [LiveData] de una lista de [Part]
      */
     fun getParts() = dao.getParts(utilsManager.getIdBudget())
+
+    fun setPart(partEntity: PartEntity){
+        partEntity.idBudget = utilsManager.getIdBudget()
+        dao.setPart(partEntity)
+    }
 
     fun getNumber() = dao.getNumberOfPart(utilsManager.getIdBudget())
 

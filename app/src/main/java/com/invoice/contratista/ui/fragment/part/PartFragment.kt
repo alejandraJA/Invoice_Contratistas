@@ -9,12 +9,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import com.invoice.contratista.R
+import com.invoice.contratista.data.local.entity.event.PartEntity
 import com.invoice.contratista.databinding.FragmentPartBinding
 import com.invoice.contratista.ui.fragment.part.adapter.TaxAdapter
 import com.invoice.contratista.ui.fragment.part.adapter.TaxItem
 import com.invoice.contratista.ui.fragment.part.adapter.TaxItem.Companion.toTaxItem
 import com.invoice.contratista.utils.MoneyUtils.moneyFormat
 import dagger.hilt.android.AndroidEntryPoint
+import java.util.*
 
 @AndroidEntryPoint
 class PartFragment : Fragment() {
@@ -29,6 +31,7 @@ class PartFragment : Fragment() {
     private var discount = 0.00
     private var taxes = 0.00
     private var gain = 0.00
+    private var partNumber = 0
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -75,7 +78,8 @@ class PartFragment : Fragment() {
                 }
             }
             getNumber().observe(viewLifecycleOwner) {
-                binding.textTitleNumber.text = (it + 1).toString()
+                partNumber = it + 1
+                binding.textTitleNumber.text = partNumber.toString()
             }
         }
     }
@@ -113,6 +117,20 @@ class PartFragment : Fragment() {
             }
             if (it.taxes != null) it.taxes.forEach { tax -> taxList.add(tax.toTaxItem(subTotal)) }
             if (taxList.isNotEmpty()) taxAdapter.notifyDataSetChanged()
+
+            binding.buttonSave.setOnClickListener {
+                viewModel.setPart(
+                    PartEntity(
+                        UUID.randomUUID().toString(),
+                        partNumber,
+                        "",
+                        product.id,
+                        quantity,
+                        discount,
+                    )
+                )
+            }
+
         }
     }
 

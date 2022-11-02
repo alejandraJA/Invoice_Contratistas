@@ -35,7 +35,7 @@ class BudgetRepository @Inject constructor(
     fun createBudget() {
         val number = dao.getNumberBudget() + 1
         val budgetEntity = BudgetEntity(
-            number.toLong(),
+            "${UUID.randomUUID()}$number",
             number,
             utilsManager.getIdCustomer(),
             utilsManager.getIdEvent(),

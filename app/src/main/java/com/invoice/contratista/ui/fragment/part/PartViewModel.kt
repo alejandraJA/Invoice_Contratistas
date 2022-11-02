@@ -1,6 +1,7 @@
 package com.invoice.contratista.ui.fragment.part
 
 import androidx.lifecycle.*
+import com.invoice.contratista.data.local.entity.event.PartEntity
 import com.invoice.contratista.data.local.relations.Product
 import com.invoice.contratista.domain.PartRepository
 import com.invoice.contratista.domain.ProductRepository
@@ -39,5 +40,13 @@ class PartViewModel @Inject constructor(
             }
         }
         return product
+    }
+
+    fun setPart(partEntity: PartEntity) {
+        viewModelScope.launch {
+            withContext(Dispatchers.IO) {
+                partRepository.setPart(partEntity)
+            }
+        }
     }
 }

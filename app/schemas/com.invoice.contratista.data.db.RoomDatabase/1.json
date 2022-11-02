@@ -2,79 +2,16 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "eb85340a07f1e2ff4801367f88fd52b5",
+    "identityHash": "1f2bb4c27e32a3b3215502c37153abdd",
     "entities": [
       {
-        "tableName": "budget",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER NOT NULL, `number` INTEGER NOT NULL, `id_customer` TEXT NOT NULL, `id_event` TEXT NOT NULL, `date` TEXT NOT NULL, `dateEnd` TEXT NOT NULL, `conditions` TEXT NOT NULL, `status` TEXT NOT NULL, PRIMARY KEY(`id`, `id_customer`))",
-        "fields": [
-          {
-            "fieldPath": "id",
-            "columnName": "id",
-            "affinity": "INTEGER",
-            "notNull": true
-          },
-          {
-            "fieldPath": "number",
-            "columnName": "number",
-            "affinity": "INTEGER",
-            "notNull": true
-          },
-          {
-            "fieldPath": "id_customer",
-            "columnName": "id_customer",
-            "affinity": "TEXT",
-            "notNull": true
-          },
-          {
-            "fieldPath": "id_event",
-            "columnName": "id_event",
-            "affinity": "TEXT",
-            "notNull": true
-          },
-          {
-            "fieldPath": "date",
-            "columnName": "date",
-            "affinity": "TEXT",
-            "notNull": true
-          },
-          {
-            "fieldPath": "dateEnd",
-            "columnName": "dateEnd",
-            "affinity": "TEXT",
-            "notNull": true
-          },
-          {
-            "fieldPath": "conditions",
-            "columnName": "conditions",
-            "affinity": "TEXT",
-            "notNull": true
-          },
-          {
-            "fieldPath": "status",
-            "columnName": "status",
-            "affinity": "TEXT",
-            "notNull": true
-          }
-        ],
-        "primaryKey": {
-          "columnNames": [
-            "id",
-            "id_customer"
-          ],
-          "autoGenerate": false
-        },
-        "indices": [],
-        "foreignKeys": []
-      },
-      {
         "tableName": "address",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `street` TEXT NOT NULL, `exterior` TEXT NOT NULL, `interior` TEXT NOT NULL, `neighborhood` TEXT NOT NULL, `city` TEXT NOT NULL, `municipality` TEXT NOT NULL, `zip` TEXT NOT NULL, `state` TEXT NOT NULL, `country` TEXT NOT NULL, `idCustomer` TEXT NOT NULL)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `street` TEXT NOT NULL, `exterior` TEXT NOT NULL, `interior` TEXT NOT NULL, `neighborhood` TEXT NOT NULL, `city` TEXT NOT NULL, `municipality` TEXT NOT NULL, `zip` TEXT NOT NULL, `state` TEXT NOT NULL, `country` TEXT NOT NULL, `idCustomer` TEXT NOT NULL, PRIMARY KEY(`id`))",
         "fields": [
           {
             "fieldPath": "id",
             "columnName": "id",
-            "affinity": "INTEGER",
+            "affinity": "TEXT",
             "notNull": true
           },
           {
@@ -142,7 +79,7 @@
           "columnNames": [
             "id"
           ],
-          "autoGenerate": true
+          "autoGenerate": false
         },
         "indices": [],
         "foreignKeys": []
@@ -198,13 +135,108 @@
         "foreignKeys": []
       },
       {
-        "tableName": "part",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER NOT NULL, `number` INTEGER NOT NULL, `idBudget` INTEGER NOT NULL, `idProduct` TEXT NOT NULL, `quantity` INTEGER NOT NULL, `discount` INTEGER NOT NULL, `custom_keys` TEXT NOT NULL, `description` TEXT NOT NULL, PRIMARY KEY(`id`, `idProduct`))",
+        "tableName": "budget",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `number` INTEGER NOT NULL, `id_customer` TEXT NOT NULL, `id_event` TEXT NOT NULL, `date` TEXT NOT NULL, `dateEnd` TEXT NOT NULL, `conditions` TEXT NOT NULL, `status` TEXT NOT NULL, PRIMARY KEY(`id`, `id_customer`))",
         "fields": [
           {
             "fieldPath": "id",
             "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "number",
+            "columnName": "number",
             "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "id_customer",
+            "columnName": "id_customer",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "id_event",
+            "columnName": "id_event",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "date",
+            "columnName": "date",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dateEnd",
+            "columnName": "dateEnd",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "conditions",
+            "columnName": "conditions",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "status",
+            "columnName": "status",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id",
+            "id_customer"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "note",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `id_event` TEXT NOT NULL, `note` TEXT NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "id_event",
+            "columnName": "id_event",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "note",
+            "columnName": "note",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "part",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `number` INTEGER NOT NULL, `idBudget` TEXT NOT NULL, `idProduct` TEXT NOT NULL, `quantity` INTEGER NOT NULL, `discount` REAL NOT NULL, PRIMARY KEY(`id`, `idProduct`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
             "notNull": true
           },
           {
@@ -216,7 +248,7 @@
           {
             "fieldPath": "idBudget",
             "columnName": "idBudget",
-            "affinity": "INTEGER",
+            "affinity": "TEXT",
             "notNull": true
           },
           {
@@ -234,19 +266,7 @@
           {
             "fieldPath": "discount",
             "columnName": "discount",
-            "affinity": "INTEGER",
-            "notNull": true
-          },
-          {
-            "fieldPath": "custom_keys",
-            "columnName": "custom_keys",
-            "affinity": "TEXT",
-            "notNull": true
-          },
-          {
-            "fieldPath": "description",
-            "columnName": "description",
-            "affinity": "TEXT",
+            "affinity": "REAL",
             "notNull": true
           }
         ],
@@ -261,8 +281,108 @@
         "foreignKeys": []
       },
       {
+        "tableName": "schedule",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `id_event` TEXT NOT NULL, `date` TEXT NOT NULL, `state` TEXT NOT NULL, `note` TEXT NOT NULL, `id_address` TEXT NOT NULL, `name` TEXT NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "id_event",
+            "columnName": "id_event",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "date",
+            "columnName": "date",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "state",
+            "columnName": "state",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "note",
+            "columnName": "note",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "id_address",
+            "columnName": "id_address",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "event",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `id_customer` TEXT NOT NULL, `state` TEXT NOT NULL, `note` TEXT NOT NULL, `event_name` TEXT NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "id_customer",
+            "columnName": "id_customer",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "state",
+            "columnName": "state",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "note",
+            "columnName": "note",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "event_name",
+            "columnName": "event_name",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
         "tableName": "local_tax",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `rate` INTEGER NOT NULL, `type` TEXT NOT NULL, `withholding` INTEGER NOT NULL, `idProduct` TEXT NOT NULL)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `rate` REAL NOT NULL, `type` TEXT NOT NULL, `withholding` INTEGER NOT NULL, `idProduct` TEXT NOT NULL)",
         "fields": [
           {
             "fieldPath": "id",
@@ -273,7 +393,7 @@
           {
             "fieldPath": "rate",
             "columnName": "rate",
-            "affinity": "INTEGER",
+            "affinity": "REAL",
             "notNull": true
           },
           {
@@ -306,7 +426,7 @@
       },
       {
         "tableName": "product",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `description` TEXT NOT NULL, `product_key` INTEGER NOT NULL, `price` REAL NOT NULL, `tax_included` INTEGER NOT NULL, `taxability` TEXT NOT NULL, `unit_key` TEXT NOT NULL, `unit_name` TEXT NOT NULL, `sku` TEXT NOT NULL, PRIMARY KEY(`id`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `description` TEXT NOT NULL, `product_key` INTEGER NOT NULL, `price` REAL NOT NULL, `tax_included` INTEGER NOT NULL, `taxability` TEXT NOT NULL, `unit_key` TEXT NOT NULL, `unit_name` TEXT NOT NULL, `sku` TEXT NOT NULL, `gain` INTEGER NOT NULL DEFAULT 10, PRIMARY KEY(`id`))",
         "fields": [
           {
             "fieldPath": "id",
@@ -361,6 +481,13 @@
             "columnName": "sku",
             "affinity": "TEXT",
             "notNull": true
+          },
+          {
+            "fieldPath": "gain",
+            "columnName": "gain",
+            "affinity": "INTEGER",
+            "notNull": true,
+            "defaultValue": "10"
           }
         ],
         "primaryKey": {
@@ -421,12 +548,50 @@
         },
         "indices": [],
         "foreignKeys": []
+      },
+      {
+        "tableName": "date",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `idReference` TEXT NOT NULL, `date` TEXT NOT NULL, `name` TEXT NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "idReference",
+            "columnName": "idReference",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "date",
+            "columnName": "date",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
       }
     ],
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'eb85340a07f1e2ff4801367f88fd52b5')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '1f2bb4c27e32a3b3215502c37153abdd')"
     ]
   }
 }

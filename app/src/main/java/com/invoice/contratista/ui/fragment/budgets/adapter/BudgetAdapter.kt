@@ -8,7 +8,7 @@ import com.invoice.contratista.data.local.entity.event.BudgetEntity
 
 class BudgetAdapter(
     private val listBudget: List<BudgetEntity>,
-    private val onClick: (Long) -> Unit
+    private val onClick: (String) -> Unit
 ) : RecyclerView.Adapter<BudgetViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = BudgetViewHolder(
         LayoutInflater.from(parent.context).inflate(R.layout.item_budget, parent, false),

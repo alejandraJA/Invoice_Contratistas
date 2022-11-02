@@ -38,7 +38,7 @@ interface Dao {
      */
     @Transaction
     @Query("SELECT * FROM budget WHERE id == :id LIMIT 1")
-    fun getBudget(id: Long): LiveData<Budget>
+    fun getBudget(id: String): LiveData<Budget>
 
     /**
      * Metodo para obtener todas las cotizaciones completas
@@ -70,7 +70,7 @@ interface Dao {
      */
     @Transaction
     @Query("SELECT * FROM part WHERE idBudget == :idBudget")
-    fun getParts(idBudget: Long): LiveData<List<Part>>
+    fun getParts(idBudget: String): LiveData<List<Part>>
 
     /**
      * Metodo para obtener una partida con su propio id.
@@ -294,5 +294,5 @@ interface Dao {
     fun getProductsForSelector(): LiveData<List<ProductsItem>>
 
     @Query("SELECT number FROM part WHERE idBudget == :idBudget ORDER BY number DESC LIMIT 1")
-    fun getNumberOfPart(idBudget: Long): Int
+    fun getNumberOfPart(idBudget: String): Int
 }

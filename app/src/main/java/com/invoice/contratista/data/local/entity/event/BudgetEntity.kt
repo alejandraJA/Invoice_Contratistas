@@ -18,7 +18,7 @@ import androidx.room.PrimaryKey
  */
 @Entity(tableName = "budget", primaryKeys = ["id", "id_customer"])
 data class BudgetEntity(
-    val id: Long,
+    val id: String,
     val number: Int,
     val id_customer: String,
     val id_event: String,

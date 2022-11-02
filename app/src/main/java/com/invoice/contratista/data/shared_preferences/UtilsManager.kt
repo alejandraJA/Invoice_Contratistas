@@ -8,7 +8,7 @@ class UtilsManager @Inject constructor(private val sharedPreferences: SharedPref
     private val editor = sharedPreferences.edit()
 
     fun setIdCustomer(idCustomer: String) = idCustomer.setString(Constants.ID_CUSTOMER)
-    fun setIdBudget(idBudget: Long) = idBudget.setLong(Constants.ID_BUDGET)
+    fun setIdBudget(idBudget: String) = idBudget.setString(Constants.ID_BUDGET)
     fun setIdPart(idPart: String) = idPart.setString(Constants.ID_PART)
     fun setIdEvent(idEvent: String) = idEvent.setString(Constants.ID_EVENT)
     fun setIdUser(idUser: String) = idUser.setString(Constants.ID_USER)
@@ -18,7 +18,7 @@ class UtilsManager @Inject constructor(private val sharedPreferences: SharedPref
     fun setAction(action: Boolean) = action.setBoolean("Action")
 
     fun getIdCustomer() = Constants.ID_CUSTOMER.getString()
-    fun getIdBudget() = Constants.ID_BUDGET.getLong()
+    fun getIdBudget() = Constants.ID_BUDGET.getString()
     fun getIdPart() = Constants.ID_PART.getString()
     fun getIdEvent() = Constants.ID_EVENT.getString()
     fun getIdUser() = Constants.ID_USER.getString()
