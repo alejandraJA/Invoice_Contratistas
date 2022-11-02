@@ -1,5 +1,6 @@
 package com.invoice.contratista.ui.fragment.budget
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,7 +9,9 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.invoice.contratista.R
+import com.invoice.contratista.data.local.relations.Part
 import com.invoice.contratista.databinding.FragmentBudgetBinding
+import com.invoice.contratista.ui.fragment.budget.adapter.PartAdapter
 import com.invoice.contratista.utils.Utils.getDate
 import com.invoice.contratista.utils.Utils.getDateWithoutHour
 import com.invoice.contratista.utils.Utils.setText
@@ -30,21 +33,34 @@ class BudgetFragment : Fragment() {
         return binding.root
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val idBudget = UUID.randomUUID().toString()
-        binding.textDate.text = Date().getDateWithoutHour()
-        binding.idTextBudget.text = idBudget
-        viewModel.budget.observe(viewLifecycleOwner) {
-            val budgetEntity = it.budgetEntity!!
-            binding.apply {
-                textDate.text = budgetEntity.date.getDate()
-                layoutTitle.setText("${resources.getString(R.string.budget)}_${budgetEntity.number}")
-                idTextBudget.text = budgetEntity.number.toString()
+        val partList = mutableListOf<Part>()
+        val partAdapter = PartAdapter(partList)
+        viewModel.apply {
+            budget.observe(viewLifecycleOwner) {
+                val budgetEntity = it.budgetEntity!!
+                binding.apply {
+                    textDate.text = budgetEntity.date.getDate()
+                    layoutTitle.setText("${resources.getString(R.string.budget)}_${budgetEntity.number}")
+                    idTextBudget.text = budgetEntity.number.toString()
+                }
+            }
+            parts.observe(viewLifecycleOwner) {
+                partList.clear()
+                partList.addAll(it)
+                partAdapter.notifyDataSetChanged()
             }
         }
-        binding.buttonAddPart.setOnClickListener {
-            findNavController().navigate(R.id.action_budgetFragment_to_addPartFragment)
+        binding.apply {
+            buttonAddPart.setOnClickListener {
+                findNavController().navigate(R.id.action_budgetFragment_to_addPartFragment)
+            }
+            recyclerPart.apply {
+                adapter = partAdapter
+                setHasFixedSize(true)
+            }
         }
     }
 

@@ -3,7 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/aejimenez/AndroidStudioProject/Invoice_Contratistas/app/src/main/res/layout/fragment_budget.xml" value="0.22" />
+        <entry key="..\:/Users/aejimenez/AndroidStudioProject/Invoice_Contratistas/app/src/main/res/layout/fragment_budget.xml" value="0.25" />
         <entry key="..\:/Users/aejimenez/AndroidStudioProject/Invoice_Contratistas/app/src/main/res/layout/fragment_budgets.xml" value="0.1" />
         <entry key="..\:/Users/aejimenez/AndroidStudioProject/Invoice_Contratistas/app/src/main/res/layout/fragment_create_edit_note.xml" value="0.1675929884566054" />
         <entry key="..\:/Users/aejimenez/AndroidStudioProject/Invoice_Contratistas/app/src/main/res/layout/fragment_create_event.xml" value="0.1675929884566054" />
@@ -12,6 +12,7 @@
         <entry key="..\:/Users/aejimenez/AndroidStudioProject/Invoice_Contratistas/app/src/main/res/layout/fragment_part.xml" value="0.17" />
         <entry key="..\:/Users/aejimenez/AndroidStudioProject/Invoice_Contratistas/app/src/main/res/layout/item_budget.xml" value="0.25" />
         <entry key="..\:/Users/aejimenez/AndroidStudioProject/Invoice_Contratistas/app/src/main/res/layout/item_list.xml" value="0.1675929884566054" />
+        <entry key="..\:/Users/aejimenez/AndroidStudioProject/Invoice_Contratistas/app/src/main/res/layout/item_part.xml" value="0.33" />
         <entry key="..\:/Users/aejimenez/AndroidStudioProject/Invoice_Contratistas/app/src/main/res/layout/item_tax.xml" value="0.33" />
         <entry key="..\:/Users/aejimenez/AndroidStudioProject/Invoice_Contratistas/app/src/main/res/layout/item_taxe.xml" value="0.1675929884566054" />
         <entry key="..\:/Users/aejimenez/AndroidStudioProject/Invoice_Contratistas/app/src/main/res/layout/layout_customer.xml" value="0.1675929884566054" />
