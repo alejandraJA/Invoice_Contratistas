@@ -42,12 +42,13 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/layout_product"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-                android:layout_width="match_parent"
+                android:layout_width="0sp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16sp"
+                android:layout_marginEnd="8dp"
                 android:hint="@string/product"
                 app:errorEnabled="true"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/card_discount"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/text_title"
                 app:startIconDrawable="@drawable/ic_inventory">
@@ -65,10 +66,9 @@
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/card_general_data"
-                android:layout_width="match_parent"
+                android:layout_width="0sp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16sp"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/layout_product"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/layout_product">
 
@@ -135,22 +135,96 @@
             </com.google.android.material.card.MaterialCardView>
 
             <TextView
+                android:id="@+id/text_discount_title1"
+                style="@style/TextAppearance.Material3.BodySmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/discount"
+                app:layout_constraintStart_toStartOf="@+id/card_discount"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_discount"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/layout_product"
+                app:layout_constraintTop_toBottomOf="@+id/text_discount_title1">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="16sp"
+                    android:paddingTop="8sp"
+                    android:paddingEnd="16sp"
+                    android:paddingBottom="8sp">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/textInputLayout"
+                        android:layout_width="0sp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8sp"
+                        android:hint="@string/discount"
+                        app:layout_constraintEnd_toStartOf="@+id/text_discount"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:suffixText="%">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            style="@style/TextInputEditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="number"
+                            tools:text="16" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <TextView
+                        android:id="@+id/text_discount_title"
+                        style="@style/TextAppearance.Material3.BodySmall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/discount"
+                        android:textColor="@color/text_secondary"
+                        app:layout_constraintEnd_toEndOf="@+id/text_discount"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/text_discount"
+                        style="@style/TextAppearance.Material3.TitleLarge"
+                        android:layout_width="0sp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8sp"
+                        android:drawablePadding="8sp"
+                        android:textAlignment="textEnd"
+                        app:drawableStartCompat="@drawable/ic_money"
+                        app:drawableTint="@color/money"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/textInputLayout"
+                        app:layout_constraintTop_toBottomOf="@+id/text_discount_title"
+                        tools:text="1000.00" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
                 android:id="@+id/text_quantity_title"
                 style="@style/TextAppearance.Material3.BodySmall"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginTop="8sp"
                 android:text="@string/quantity"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/card_discount"
                 app:layout_constraintTop_toBottomOf="@+id/card_discount" />
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/card_quantity"
-                android:layout_width="match_parent"
+                android:layout_width="0sp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/card_discount"
                 app:layout_constraintTop_toBottomOf="@+id/text_quantity_title">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -230,88 +304,15 @@
 
             </com.google.android.material.card.MaterialCardView>
 
-            <TextView
-                android:id="@+id/text_discount_title1"
-                style="@style/TextAppearance.Material3.BodySmall"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8sp"
-                android:text="@string/discount"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/card_general_data" />
-
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/card_discount"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4sp"
-                app:layout_constraintTop_toBottomOf="@+id/text_discount_title1">
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="16sp"
-                    android:paddingTop="8sp"
-                    android:paddingEnd="16sp"
-                    android:paddingBottom="8sp">
-
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/textInputLayout"
-                        android:layout_width="0sp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="8sp"
-                        android:hint="@string/discount"
-                        app:layout_constraintEnd_toStartOf="@+id/text_discount"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:suffixText="%">
-
-                        <com.google.android.material.textfield.TextInputEditText
-                            style="@style/TextInputEditText"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:inputType="number"
-                            tools:text="16" />
-
-                    </com.google.android.material.textfield.TextInputLayout>
-
-                    <TextView
-                        android:id="@+id/text_discount_title"
-                        style="@style/TextAppearance.Material3.BodySmall"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/discount"
-                        android:textColor="@color/text_secondary"
-                        app:layout_constraintEnd_toEndOf="@+id/text_discount"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <TextView
-                        android:id="@+id/text_discount"
-                        style="@style/TextAppearance.Material3.TitleLarge"
-                        android:layout_width="0sp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="8sp"
-                        android:drawablePadding="8sp"
-                        android:textAlignment="textEnd"
-                        app:drawableStartCompat="@drawable/ic_money"
-                        app:drawableTint="@color/money"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/textInputLayout"
-                        app:layout_constraintTop_toBottomOf="@+id/text_discount_title"
-                        tools:text="1000.00" />
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-            </com.google.android.material.card.MaterialCardView>
-
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/card_total"
-                android:layout_width="match_parent"
+                android:layout_width="0sp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16sp"
+                android:layout_marginTop="16dp"
+                android:visibility="visible"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/card_quantity">
+                app:layout_constraintTop_toBottomOf="@+id/card_general_data">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
@@ -401,11 +402,13 @@
 
             <Button
                 android:id="@+id/button_save"
-                android:layout_width="match_parent"
+                android:layout_width="0sp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16sp"
                 android:text="@string/save"
-                app:layout_constraintStart_toStartOf="parent"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/card_quantity"
                 app:layout_constraintTop_toBottomOf="@+id/card_total" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

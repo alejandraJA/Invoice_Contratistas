@@ -3,6 +3,7 @@ package com.invoice.contratista.ui.fragment.part
 import androidx.lifecycle.*
 import com.invoice.contratista.data.local.entity.event.PartEntity
 import com.invoice.contratista.data.local.relations.Product
+import com.invoice.contratista.data.shared_preferences.UtilsManager
 import com.invoice.contratista.domain.PartRepository
 import com.invoice.contratista.domain.ProductRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -14,22 +15,37 @@ import javax.inject.Inject
 @HiltViewModel
 class PartViewModel @Inject constructor(
     private val productRepository: ProductRepository,
-    private val partRepository: PartRepository
+    private val partRepository: PartRepository,
+    private val utilsManager: UtilsManager
 ) : ViewModel() {
 
-    fun getNumber(): LiveData<Int> {
-        val number = MutableLiveData<Int>()
-        viewModelScope.launch {
-            withContext(Dispatchers.IO) {
-                number.postValue(partRepository.getNumber())
+    val oldPart = MediatorLiveData<UpdatePart>().apply {
+        if (utilsManager.getIdPart().isNotBlank()) {
+            addSource(partRepository.getPart()) {
+                if (it != null) {
+                    val updatePart = UpdatePart()
+                    updatePart.partEntity = it.partEntity!!
+                    updatePart.product = it.product!!
+                    value = updatePart
+                }
             }
         }
-        return number
     }
 
-    val listProduct = MediatorLiveData<List<ProductsItem>>().apply {
-        addSource(productRepository.getProductsForSelector()) {
-            if (it.isNotEmpty()) value = it
+    val newPart = MediatorLiveData<NewPart>().apply {
+        val newPart = NewPart()
+        if (utilsManager.getIdPart().isBlank()) {
+            viewModelScope.launch {
+                withContext(Dispatchers.IO) {
+                    newPart.budgetNumber = partRepository.getNumber()
+                    addSource(productRepository.getProductsForSelector()) {
+                        if (it.isNotEmpty()) {
+                            newPart.productsList = it
+                            value = newPart
+                        }
+                    }
+                }
+            }
         }
     }
 

@@ -13,10 +13,8 @@ import com.invoice.contratista.data.local.relations.Part
 import com.invoice.contratista.databinding.FragmentBudgetBinding
 import com.invoice.contratista.ui.fragment.budget.adapter.PartAdapter
 import com.invoice.contratista.utils.Utils.getDate
-import com.invoice.contratista.utils.Utils.getDateWithoutHour
 import com.invoice.contratista.utils.Utils.setText
 import dagger.hilt.android.AndroidEntryPoint
-import java.util.*
 
 @AndroidEntryPoint
 class BudgetFragment : Fragment() {
@@ -37,8 +35,12 @@ class BudgetFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val partList = mutableListOf<Part>()
-        val partAdapter = PartAdapter(partList)
+        val partAdapter = PartAdapter(partList) {
+            viewModel.setPart(it)
+            findNavController().navigate(R.id.action_budgetFragment_to_addPartFragment)
+        }
         viewModel.apply {
+            setPart("")
             budget.observe(viewLifecycleOwner) {
                 val budgetEntity = it.budgetEntity!!
                 binding.apply {

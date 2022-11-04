@@ -14,7 +14,7 @@ import androidx.room.Entity
  */
 @Entity(tableName = "part", primaryKeys = ["id", "idProduct"])
 data class PartEntity(
-    val id: String,
+    var id: String,
     val number: Int,
     var idBudget: String,
     val idProduct: String,

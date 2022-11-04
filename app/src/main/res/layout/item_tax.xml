@@ -16,7 +16,7 @@
         android:drawablePadding="8sp"
         android:textAlignment="textEnd"
         app:drawableStartCompat="@drawable/ic_money"
-        app:drawableTint="#4CAF50"
+        app:drawableTint="@color/money"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"

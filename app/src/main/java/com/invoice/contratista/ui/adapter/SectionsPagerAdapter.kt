@@ -3,13 +3,12 @@ package com.invoice.contratista.ui.adapter
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.invoice.contratista.R
-import com.invoice.contratista.ui.fragment.budget.BudgetFragment
 import com.invoice.contratista.ui.fragment.budgets.BudgetsFragment
 import com.invoice.contratista.ui.fragment.event.data.EventDataFragment
-import com.invoice.contratista.ui.fragment.schedule.ScheduleFragment
 import com.invoice.contratista.ui.fragment.invoice.InvoiceFragment
 import com.invoice.contratista.ui.fragment.notes.NotesFragment
 import com.invoice.contratista.ui.fragment.receipt.ReceiptFragment
+import com.invoice.contratista.ui.fragment.schedule.ScheduleFragment
 
 private val TAB_TITLES = arrayOf(
     R.string.event,

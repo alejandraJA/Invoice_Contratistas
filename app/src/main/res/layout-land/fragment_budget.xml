@@ -13,10 +13,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16sp"
         android:layout_marginTop="16sp"
-        android:layout_marginEnd="8sp"
+        android:layout_marginEnd="8dp"
         android:enabled="false"
         android:hint="@string/title"
-        app:layout_constraintEnd_toStartOf="@+id/check_title"
+        app:layout_constraintEnd_toStartOf="@+id/card_data"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:startIconDrawable="@drawable/ic_legal_data">
@@ -32,24 +32,16 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <CheckBox
-        android:id="@+id/check_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16sp"
-        android:checked="true"
-        app:layout_constraintBottom_toBottomOf="@+id/layout_title"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/layout_title" />
-
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/card_data"
-        android:layout_width="match_parent"
+        android:layout_width="0sp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16sp"
-        android:layout_marginTop="8sp"
-        android:layout_marginEnd="16sp"
-        app:layout_constraintTop_toBottomOf="@+id/layout_title">
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/layout_title"
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -109,26 +101,24 @@
     <Button
         android:id="@+id/button_add_part"
         style="@style/Widget.Material3.Button.ElevatedButton"
-        android:layout_width="match_parent"
+        android:layout_width="0sp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16sp"
-        android:layout_marginTop="8sp"
-        android:layout_marginEnd="16sp"
+        android:layout_marginTop="16dp"
         android:text="@string/add_part"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/layout_title"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/card_data" />
+        app:layout_constraintTop_toBottomOf="@+id/layout_title" />
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/card_parts"
-        android:layout_width="match_parent"
+        android:layout_width="0sp"
         android:layout_height="0sp"
         android:layout_marginStart="16sp"
         android:layout_marginTop="8sp"
-        android:layout_marginEnd="16sp"
-        android:layout_marginBottom="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/card_total"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/button_add_part"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_add_part">
 
@@ -144,14 +134,13 @@
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/card_total"
-        android:layout_width="match_parent"
+        android:layout_width="0sp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16sp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="16sp"
-        android:layout_marginBottom="8sp"
-        app:layout_constraintBottom_toTopOf="@+id/button_send"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="@+id/card_data"
+        app:layout_constraintTop_toBottomOf="@+id/card_data">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -260,11 +249,13 @@
 
     <Button
         android:id="@+id/button_send"
-        android:layout_width="match_parent"
+        android:layout_width="0sp"
         android:layout_height="wrap_content"
-        android:layout_margin="16sp"
         android:text="@string/send_budget"
+        android:layout_marginTop="16sp"
         app:icon="@drawable/ic_send"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/card_total"
+        app:layout_constraintStart_toStartOf="@+id/card_total"
+        app:layout_constraintTop_toBottomOf="@+id/card_total" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

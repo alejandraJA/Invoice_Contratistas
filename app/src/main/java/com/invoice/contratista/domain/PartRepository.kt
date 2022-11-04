@@ -24,8 +24,9 @@ class PartRepository @Inject constructor(
      */
     fun getParts() = dao.getParts(utilsManager.getIdBudget())
 
-    fun setPart(partEntity: PartEntity){
+    fun setPart(partEntity: PartEntity) {
         partEntity.idBudget = utilsManager.getIdBudget()
+        if (utilsManager.getIdPart().isNotBlank()) partEntity.id = utilsManager.getIdPart()
         dao.setPart(partEntity)
     }
 
