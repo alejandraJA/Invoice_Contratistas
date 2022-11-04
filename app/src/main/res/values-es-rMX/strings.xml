@@ -14,7 +14,7 @@
     <string name="invalid_password">La contraseña debe tener más de 5 caracteres</string>
     <string name="login_failed">Inicio fallido</string>
     <string name="welcome_back">Bienvenido otra vez</string>
-    <string name="do_you_have_an_account">¿Ya cuentas con una cuenta?</string>
+    <string name="do_you_have_an_account">¿Aun no cuentas con una cuenta?</string>
     <string name="email">Correo</string>
     <string name="password">Contraseña</string>
     <string name="login">Iniciar sesión</string>
