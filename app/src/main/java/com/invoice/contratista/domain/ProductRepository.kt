@@ -1,14 +1,16 @@
 package com.invoice.contratista.domain
 
 import androidx.lifecycle.LiveData
-import com.invoice.contratista.data.local.dao.Dao
+import com.invoice.contratista.data.local.dao.ProductDao
+import com.invoice.contratista.data.local.dao.TaxDao
 import com.invoice.contratista.data.local.entity.product.ProductEntity
 import com.invoice.contratista.data.local.relations.Product
 import com.invoice.contratista.data.shared_preferences.UtilsManager
 import javax.inject.Inject
 
 class ProductRepository @Inject constructor(
-    private val dao: Dao,
+    private val productDao: ProductDao,
+    private val taxDao: TaxDao,
     private val utilsManager: UtilsManager
 ) {
 
@@ -19,14 +21,14 @@ class ProductRepository @Inject constructor(
      */
     fun createProduct(product: Product) {
         if (product.product != null) {
-            dao.setProduct(product.product)
+            productDao.setProduct(product.product)
             if (product.localTaxes != null)
                 product.localTaxes.forEach {
-                    dao.setLocalTax(it)
+                    taxDao.setLocalTax(it)
                 }
             if (product.taxes != null)
                 product.taxes.forEach {
-                    dao.setTax(it)
+                    taxDao.setTax(it)
                 }
         }
     }
@@ -35,15 +37,15 @@ class ProductRepository @Inject constructor(
      * Metodo para obtener un producto de la base de datos local
      * @return Objeto de tipo [LiveData] que contiene un objeto de tipo [Product]
      */
-    fun getProduct() = dao.getProduct(utilsManager.getIdProduct())
+    fun getProduct() = productDao.getProduct(utilsManager.getIdProduct())
 
-    fun getProduct(idProduct: String) = dao.getProduct(idProduct)
+    fun getProduct(idProduct: String) = productDao.getProduct(idProduct)
 
     /**
      * Metodo para obtener todos los productos de la base de datos local
      * @return Objeto de tipo [LiveData] que contiene una lista de objetos de tipo [ProductEntity]
      */
-    fun getProducts() = dao.getProducts()
-    fun getProductsForSelector() = dao.getProductsForSelector()
+    fun getProducts() = productDao.getProducts()
+    fun getProductsForSelector() = productDao.getProductsForSelector()
 
 }

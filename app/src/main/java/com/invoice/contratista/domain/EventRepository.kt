@@ -1,6 +1,7 @@
 package com.invoice.contratista.domain
 
-import com.invoice.contratista.data.local.dao.Dao
+import com.invoice.contratista.data.local.dao.DateDao
+import com.invoice.contratista.data.local.dao.EventDao
 import com.invoice.contratista.data.local.entity.DateEntity
 import com.invoice.contratista.data.local.entity.EventEntity
 import com.invoice.contratista.data.local.relations.Event
@@ -11,7 +12,8 @@ import java.util.*
 import javax.inject.Inject
 
 class EventRepository @Inject constructor(
-    private val dao: Dao,
+    private val eventDao: EventDao,
+    private val dateDao: DateDao,
     private val utilsManager: UtilsManager
 ) {
 
@@ -20,8 +22,8 @@ class EventRepository @Inject constructor(
      * @param event Objeto de tipo [EventEntity]
      */
     fun createEvent(event: EventEntity) {
-        dao.setEvent(event)
-        dao.setDate(
+        eventDao.setEvent(event)
+        dateDao.setDate(
             DateEntity(
                 id = 0,
                 idReference = event.id,
@@ -37,18 +39,18 @@ class EventRepository @Inject constructor(
      * Metodo para obtener todos los eventos activos
      * @return Lista de objetos de tipo [EventEntity]
      */
-    fun getEvents() = dao.getEvents()
+    fun getEvents() = eventDao.getEvents()
 
     /**
      * Metodo para obtener un evento especifico
      * @return Lista de objetos de tipo [Event]
      */
-    fun getEvent() = dao.getEvent(utilsManager.getIdEvent())
+    fun getEvent() = eventDao.getEvent(utilsManager.getIdEvent())
 
     /**
      * Metodo para actualizar la nota del evento
      * @param note Objeto de tipo [String]
      */
-    fun updateNoteEvent(note: String) = dao.updateNoteEvent(utilsManager.getIdEvent(), note)
+    fun updateNoteEvent(note: String) = eventDao.updateNoteEvent(utilsManager.getIdEvent(), note)
 
 }

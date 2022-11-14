@@ -1,12 +1,12 @@
 package com.invoice.contratista.domain
 
-import com.invoice.contratista.data.local.dao.Dao
+import com.invoice.contratista.data.local.dao.DateDao
 import com.invoice.contratista.data.local.entity.DateEntity
 import com.invoice.contratista.data.shared_preferences.UtilsManager
 import javax.inject.Inject
 
 class DatesRepository @Inject constructor(
-    private val dao: Dao,
+    private val dao: DateDao,
     private val utilsManager: UtilsManager
 ) {
     /**

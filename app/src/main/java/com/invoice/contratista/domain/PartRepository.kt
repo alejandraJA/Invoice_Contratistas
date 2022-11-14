@@ -1,14 +1,14 @@
 package com.invoice.contratista.domain
 
 import androidx.lifecycle.LiveData
-import com.invoice.contratista.data.local.dao.Dao
+import com.invoice.contratista.data.local.dao.PartDao
 import com.invoice.contratista.data.local.entity.event.PartEntity
 import com.invoice.contratista.data.local.relations.Part
 import com.invoice.contratista.data.shared_preferences.UtilsManager
 import javax.inject.Inject
 
 class PartRepository @Inject constructor(
-    private val dao: Dao,
+    private val dao: PartDao,
     private val utilsManager: UtilsManager
 ) {
 

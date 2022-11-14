@@ -2,7 +2,7 @@ package com.invoice.contratista.data.db
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
-import com.invoice.contratista.data.local.dao.Dao
+import com.invoice.contratista.data.local.dao.*
 import com.invoice.contratista.data.local.entity.AddressEntity
 import com.invoice.contratista.data.local.entity.CustomerEntity
 import com.invoice.contratista.data.local.entity.DateEntity
@@ -33,5 +33,14 @@ import com.invoice.contratista.data.local.entity.product.TaxEntity
     exportSchema = true,
 )
 abstract class RoomDatabase : RoomDatabase() {
-    abstract fun getDataDao(): Dao
+    abstract fun getAddressDao(): AddressDao
+    abstract fun getBudgetDao(): BudgetDao
+    abstract fun getCustomerDao(): CustomerDao
+    abstract fun getDateDao(): DateDao
+    abstract fun getEventDao(): EventDao
+    abstract fun getNoteDao(): NoteDao
+    abstract fun getPartDao(): PartDao
+    abstract fun getProductDao(): ProductDao
+    abstract fun getScheduleDao(): ScheduleDao
+    abstract fun getTaxDao(): TaxDao
 }
