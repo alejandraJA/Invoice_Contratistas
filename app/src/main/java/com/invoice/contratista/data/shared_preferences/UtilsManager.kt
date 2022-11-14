@@ -1,10 +1,11 @@
 package com.invoice.contratista.data.shared_preferences
 
-import android.content.SharedPreferences
+import android.content.Context
 import com.invoice.contratista.utils.Constants
 import javax.inject.Inject
 
-class UtilsManager @Inject constructor(private val sharedPreferences: SharedPreferences) {
+class UtilsManager @Inject constructor(private val context: Context) {
+    private val sharedPreferences = context.getSharedPreferences("utils", Context.MODE_PRIVATE)
     private val editor = sharedPreferences.edit()
 
     fun setIdCustomer(idCustomer: String) = idCustomer.setString(Constants.ID_CUSTOMER)
