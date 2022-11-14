@@ -8,7 +8,7 @@ import com.invoice.contratista.R
 import com.invoice.contratista.data.local.entity.event.BudgetEntity
 import com.invoice.contratista.databinding.ItemBudgetBinding
 import com.invoice.contratista.utils.Constants
-import com.invoice.contratista.utils.Utils.getStatusBudget
+import com.invoice.contratista.utils.StatesUtils.getStatusBudget
 
 class BudgetViewHolder(view: View, private val onClick: (String) -> Unit) :
     RecyclerView.ViewHolder(view) {

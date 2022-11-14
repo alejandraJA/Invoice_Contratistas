@@ -6,7 +6,7 @@ import com.invoice.contratista.data.local.entity.EventEntity
 import com.invoice.contratista.data.local.relations.Event
 import com.invoice.contratista.data.shared_preferences.UtilsManager
 import com.invoice.contratista.utils.Constants
-import com.invoice.contratista.utils.Utils.getDateComplete
+import com.invoice.contratista.utils.DateUtils.getDateComplete
 import java.util.*
 import javax.inject.Inject
 

@@ -11,7 +11,7 @@ import androidx.navigation.fragment.findNavController
 import com.invoice.contratista.R
 import com.invoice.contratista.data.local.entity.CustomerEntity
 import com.invoice.contratista.databinding.FragmentCreateEventBinding
-import com.invoice.contratista.utils.Utils.getTextWithValidation
+import com.invoice.contratista.utils.InputUtils.getTextWithValidation
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

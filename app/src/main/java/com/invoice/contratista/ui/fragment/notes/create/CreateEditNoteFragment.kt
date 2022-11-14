@@ -1,16 +1,15 @@
 package com.invoice.contratista.ui.fragment.notes.create
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import android.text.Editable
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.view.isNotEmpty
 import androidx.core.widget.addTextChangedListener
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import com.invoice.contratista.databinding.FragmentCreateEditNoteBinding
-import com.invoice.contratista.utils.Utils.setText
+import com.invoice.contratista.utils.InputUtils.setText
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

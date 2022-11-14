@@ -5,9 +5,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.invoice.contratista.data.local.entity.event.ScheduleEntity
 import com.invoice.contratista.databinding.ItemScheduleBinding
 import com.invoice.contratista.utils.Constants
-import com.invoice.contratista.utils.Utils.getDate
-import com.invoice.contratista.utils.Utils.getHour
-import com.invoice.contratista.utils.Utils.getStateSchedule
+import com.invoice.contratista.utils.DateUtils.getDate
+import com.invoice.contratista.utils.DateUtils.getHour
+import com.invoice.contratista.utils.StatesUtils.getStateSchedule
 
 class ScheduleViewHolder(
     itemView: View,

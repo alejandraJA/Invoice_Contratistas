@@ -12,8 +12,8 @@ import com.invoice.contratista.R
 import com.invoice.contratista.data.local.relations.Part
 import com.invoice.contratista.databinding.FragmentBudgetBinding
 import com.invoice.contratista.ui.fragment.budget.adapter.PartAdapter
-import com.invoice.contratista.utils.Utils.getDate
-import com.invoice.contratista.utils.Utils.setText
+import com.invoice.contratista.utils.DateUtils.getDate
+import com.invoice.contratista.utils.InputUtils.setText
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

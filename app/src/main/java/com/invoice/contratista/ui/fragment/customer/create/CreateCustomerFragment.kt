@@ -10,7 +10,7 @@ import com.invoice.contratista.data.local.entity.AddressEntity
 import com.invoice.contratista.data.local.entity.CustomerEntity
 import com.invoice.contratista.data.local.relations.Customer
 import com.invoice.contratista.databinding.FragmentCreateCustomerBinding
-import com.invoice.contratista.utils.Utils.getTextWithValidation
+import com.invoice.contratista.utils.InputUtils.getTextWithValidation
 import dagger.hilt.android.AndroidEntryPoint
 import java.util.*
 

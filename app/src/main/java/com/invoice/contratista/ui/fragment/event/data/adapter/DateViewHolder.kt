@@ -4,8 +4,8 @@ import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.invoice.contratista.data.local.entity.DateEntity
 import com.invoice.contratista.databinding.ItemDateBinding
-import com.invoice.contratista.utils.Utils.getDate
-import com.invoice.contratista.utils.Utils.getHour
+import com.invoice.contratista.utils.DateUtils.getDate
+import com.invoice.contratista.utils.DateUtils.getHour
 
 class DateViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     val binding = ItemDateBinding.bind(itemView)

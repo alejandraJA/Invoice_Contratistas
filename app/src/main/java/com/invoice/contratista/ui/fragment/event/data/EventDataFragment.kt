@@ -1,5 +1,6 @@
 package com.invoice.contratista.ui.fragment.event.data
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.text.Editable
 import android.view.LayoutInflater
@@ -11,7 +12,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.invoice.contratista.data.local.entity.DateEntity
 import com.invoice.contratista.databinding.FragmentEventDataBinding
 import com.invoice.contratista.ui.fragment.event.data.adapter.DateAdapter
-import com.invoice.contratista.utils.Utils.getAddress
+import com.invoice.contratista.utils.AddressUtils.getAddress
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -29,6 +30,7 @@ class EventDataFragment : Fragment() {
         return binding.root
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     @Suppress("SENSELESS_COMPARISON")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
