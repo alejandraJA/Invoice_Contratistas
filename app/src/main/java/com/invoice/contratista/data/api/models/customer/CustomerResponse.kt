@@ -28,6 +28,6 @@ data class CustomerResponse(
 ) {
     companion object {
         fun CustomerResponse.toCustomerEntity() =
-            CustomerEntity(id, legalName, taxId, taxSystem, email, phone)
+            CustomerEntity(id, legalName, taxId, taxSystem, email ?: "", phone ?: "")
     }
 }

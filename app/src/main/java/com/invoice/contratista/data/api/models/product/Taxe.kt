@@ -12,6 +12,6 @@ data class Taxe(
 ) {
     companion object {
         fun Taxe.toTaxeEntity(idProduct: String) =
-            TaxEntity(1, type, rate, factor, withholding, idProduct)
+            TaxEntity(0, type, rate, factor, withholding, idProduct)
     }
 }

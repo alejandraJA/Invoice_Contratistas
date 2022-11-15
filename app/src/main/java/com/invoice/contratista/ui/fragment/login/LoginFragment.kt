@@ -37,14 +37,21 @@ class LoginFragment(private val onClick: (Boolean) -> Unit) : Fragment() {
         }
         binding.buttonLogin.setOnClickListener {
             viewModel.login { error ->
-                Snackbar.make(it, error, Snackbar.LENGTH_INDEFINITE).setAction(
+                if (error != null) Snackbar.make(it, error, Snackbar.LENGTH_INDEFINITE).setAction(
                     resources.getText(
                         R.string.ok
                     )
-                ) { }
+                ) { }.show()
+                else {
+                    requireActivity().startActivity(
+                        Intent(
+                            requireContext(),
+                            MainActivity::class.java
+                        )
+                    )
+                    requireActivity().finish()
+                }
             }
-            requireActivity().startActivity(Intent(requireContext(), MainActivity::class.java))
-            requireActivity().finish()
         }
         binding.buttonLostYourPassword.setOnClickListener {
             Snackbar.make(

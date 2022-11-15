@@ -10,7 +10,7 @@ data class LocalTaxe(
 ) {
     companion object {
         fun LocalTaxe.toLocalTaxEntity(idProduct: String) = LocalTaxEntity(
-            1,
+            0,
             rate,
             type,
             withholding,

@@ -1,7 +1,5 @@
 package com.invoice.contratista.domain
 
-import com.google.gson.Gson
-import com.invoice.contratista.data.api.models.ErrorResponse
 import com.invoice.contratista.data.api.models.customer.Address.Companion.toAddressEntity
 import com.invoice.contratista.data.api.models.customer.CustomerResponse.Companion.toCustomerEntity
 import com.invoice.contratista.data.api.models.product.LocalTaxe.Companion.toLocalTaxEntity
@@ -12,6 +10,7 @@ import com.invoice.contratista.data.local.dao.AddressDao
 import com.invoice.contratista.data.local.dao.CustomerDao
 import com.invoice.contratista.data.local.dao.ProductDao
 import com.invoice.contratista.data.local.dao.TaxDao
+import com.invoice.contratista.utils.Json.toObject
 import javax.inject.Inject
 
 class FacturapiRepository @Inject constructor(
@@ -21,23 +20,18 @@ class FacturapiRepository @Inject constructor(
     private val addressDao: AddressDao,
     private val taxDao: TaxDao
 ) {
-    suspend fun loadData(error: (String) -> Unit) {
+    suspend fun loadData(function: (String?) -> Unit) {
         val customer = helper.getCustomer()
         val products = helper.getProducts()
         if (customer.code() != 200 || products.code() != 200) {
-            val customerError = customer.errorBody().toString()
-            val productsError = products.errorBody().toString()
-            if (customerError.isBlank()) {
-                val errorResponseCustomer =
-                    Gson().fromJson(customerError, ErrorResponse::class.java)
-                error.invoke(errorResponseCustomer.message)
+            if (customer.code() != 200) {
+                val customerError = customer.errorBody()!!.toObject()
+                function.invoke(customerError.message)
             }
-            if (productsError.isBlank()) {
-                val errorResponseProducts =
-                    Gson().fromJson(productsError, ErrorResponse::class.java)
-                error.invoke(errorResponseProducts.message)
+            if (products.code() != 200) {
+                val productsError = products.errorBody()!!.toObject()
+                function.invoke(productsError.message)
             }
-            return
         }
         if (customer.code() == 200 && products.code() == 200) {
             val customerDataResponse = customer.body()!!
@@ -57,11 +51,11 @@ class FacturapiRepository @Inject constructor(
                     productResponse.localTaxes.forEach { localTaxe ->
                         taxDao.setLocalTax(localTaxe.toLocalTaxEntity(productResponse.id))
                     }
-                    productResponse.taxes.forEach { taxe ->
-                        taxDao.setTax(taxe.toTaxeEntity(productResponse.id))
+                    productResponse.taxes.forEach { tax ->
+                        taxDao.setTax(tax.toTaxeEntity(productResponse.id))
                     }
                 }
-
+            function.invoke(null)
         }
     }
 }

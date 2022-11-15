@@ -13,10 +13,10 @@ import javax.inject.Inject
 class LoginViewModel @Inject constructor(
     private val facturapiRepository: FacturapiRepository
 ) : ViewModel() {
-    fun login(error: (String) -> Unit) {
+    fun login(function: (String?) -> Unit) {
         viewModelScope.launch {
             withContext(Dispatchers.IO) {
-                facturapiRepository.loadData(error)
+                facturapiRepository.loadData(function)
             }
         }
     }

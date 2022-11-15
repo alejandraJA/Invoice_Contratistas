@@ -28,11 +28,11 @@ data class Address(
     companion object {
         fun Address.toAddressEntity(id: String) = AddressEntity(
             UUID.randomUUID().toString(),
-            street,
-            exterior,
-            interior,
-            neighborhood,
-            city,
+            street ?: "",
+            exterior ?: "",
+            interior ?: "",
+            neighborhood ?: "",
+            city ?: "",
             municipality,
             zip,
             state,
