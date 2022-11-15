@@ -7,7 +7,9 @@ import com.invoice.contratista.ui.adapter.PagerAdapter
 import com.invoice.contratista.ui.fragment.login.LoginFragment
 import com.invoice.contratista.ui.fragment.singUp.SingUpFragment
 import com.invoice.contratista.ui.fragment.welcome.WelcomeFragment
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class StartActivity : AppCompatActivity() {
     private lateinit var binding: ActivityStartBinding
     override fun onCreate(savedInstanceState: Bundle?) {

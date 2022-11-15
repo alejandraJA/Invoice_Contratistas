@@ -2,9 +2,10 @@ package com.invoice.contratista.data.shared_preferences
 
 import android.content.Context
 import com.invoice.contratista.utils.Constants
+import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject
 
-class UtilsManager @Inject constructor(private val context: Context) {
+class UtilsManager @Inject constructor(@ApplicationContext context: Context) {
     private val sharedPreferences = context.getSharedPreferences("utils", Context.MODE_PRIVATE)
     private val editor = sharedPreferences.edit()
 

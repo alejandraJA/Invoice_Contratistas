@@ -12,7 +12,7 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-object Module {
+object DatabaseModule {
     @Singleton
     @Provides
     fun providerDataDatabase(@ApplicationContext app: Context) = Room.databaseBuilder(

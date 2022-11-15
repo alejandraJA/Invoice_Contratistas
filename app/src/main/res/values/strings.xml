@@ -145,5 +145,6 @@
     <string name="required">Required</string>
     <string name="budgets">Budgets</string>
     <string name="add_budget">Add budget</string>
+    <string name="ok">OK</string>
 
 </resources>

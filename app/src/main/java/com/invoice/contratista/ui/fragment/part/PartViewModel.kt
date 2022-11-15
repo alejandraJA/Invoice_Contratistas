@@ -1,6 +1,8 @@
 package com.invoice.contratista.ui.fragment.part
 
-import androidx.lifecycle.*
+import androidx.lifecycle.MediatorLiveData
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.invoice.contratista.data.local.entity.event.PartEntity
 import com.invoice.contratista.data.local.relations.Product
 import com.invoice.contratista.data.shared_preferences.UtilsManager
@@ -38,12 +40,12 @@ class PartViewModel @Inject constructor(
             viewModelScope.launch {
                 withContext(Dispatchers.IO) {
                     newPart.budgetNumber = partRepository.getNumber()
-                    addSource(productRepository.getProductsForSelector()) {
-                        if (it.isNotEmpty()) {
-                            newPart.productsList = it
-                            value = newPart
-                        }
-                    }
+                }
+            }
+            addSource(productRepository.getProductsForSelector()) {
+                if (it.isNotEmpty()) {
+                    newPart.productsList = it
+                    value = newPart
                 }
             }
         }
