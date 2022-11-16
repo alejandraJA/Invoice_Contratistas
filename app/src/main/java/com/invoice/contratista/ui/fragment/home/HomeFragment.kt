@@ -1,5 +1,6 @@
 package com.invoice.contratista.ui.fragment.home
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -12,7 +13,7 @@ import com.invoice.contratista.R
 import com.invoice.contratista.data.local.entity.EventEntity
 import com.invoice.contratista.data.local.entity.event.ScheduleEntity
 import com.invoice.contratista.databinding.FragmentHomeBinding
-import com.invoice.contratista.ui.fragment.home.apater.EventAdapter
+import com.invoice.contratista.ui.fragment.home.adapter.EventAdapter
 import com.invoice.contratista.ui.fragment.schedule.adapter.ScheduleAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -33,6 +34,7 @@ class HomeFragment : Fragment() {
         return binding.root
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val listEvent = mutableListOf<EventEntity>()

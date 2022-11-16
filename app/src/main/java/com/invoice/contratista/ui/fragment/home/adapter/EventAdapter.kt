@@ -1,4 +1,4 @@
-package com.invoice.contratista.ui.fragment.home.apater
+package com.invoice.contratista.ui.fragment.home.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
