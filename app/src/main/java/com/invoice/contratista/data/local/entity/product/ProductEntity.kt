@@ -69,28 +69,5 @@ data class ProductEntity(
     var unit_key: String,
     var unit_name: String,
     var sku: String,
-    @ColumnInfo(defaultValue = 10.toString()) var gain: Int,
+    @ColumnInfo(defaultValue = 10.toString()) var gain: Double,
 )
-/*
-
-curl https://www.facturapi.io/v2/receipts \
-  -H "Authorization: Bearer sk_test_API_KEY" \
-  -H "Content-Type: application/json" \
-  -d '{
-        "folio_number": 1234,
-        "payment_form": "03",
-        "items": [{
-          "quantity": 1,
-          "product": {
-            "description": "Ukelele",
-            "product_key": "60131324",
-            "price": 345.60,
-            "sku": "ABC1234"
-          }
-        }]
-      }'
-
-
-curl https://www.facturapi.io/v2/products \
-  -H "Authorization: Bearer sk_test_0Lj7YMX1JeVKOeeZp0Jzd239RZOlykGa"
- */

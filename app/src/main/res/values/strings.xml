@@ -146,5 +146,11 @@
     <string name="budgets">Budgets</string>
     <string name="add_budget">Add budget</string>
     <string name="ok">OK</string>
+    <string name="local_tax">Local Tax</string>
+    <string name="amount">Amount</string>
+    <string name="apply_discount">Apply discount</string>
+    <string name="zero">0</string>
+    <string name="product_service">Product / Service</string>
+    <string name="sku">sku</string>
 
 </resources>

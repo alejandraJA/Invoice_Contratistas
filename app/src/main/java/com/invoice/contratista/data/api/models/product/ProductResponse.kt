@@ -8,14 +8,14 @@ data class ProductResponse(
     @SerializedName("description") val description: String,
     @SerializedName("id") val id: String,
     @SerializedName("livemode") val liveMode: Boolean,
-    @SerializedName("local_taxes") val localTaxes: List<LocalTaxe>,
+    @SerializedName("local_taxes") val localTaxes: List<LocalTax>,
     @SerializedName("organization") val organization: String,
     @SerializedName("price") val price: Double,
     @SerializedName("product_key") val productKey: String,
     @SerializedName("sku") val sku: String,
     @SerializedName("tax_included") val tax_included: Boolean,
     @SerializedName("taxability") val taxAbility: String,
-    @SerializedName("taxes") val taxes: List<Taxe>,
+    @SerializedName("taxes") val taxes: List<Tax>,
     @SerializedName("unit_key") val unit_key: String,
     @SerializedName("unit_name") val unit_name: String
 ) {
@@ -30,7 +30,7 @@ data class ProductResponse(
             unit_key,
             unit_name,
             sku,
-            20
+            0.20
         )
     }
 }

@@ -166,22 +166,22 @@
                         android:layout_width="0sp"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="8sp"
-                        app:layout_constraintEnd_toStartOf="@+id/text_subtotal"
+                        app:layout_constraintEnd_toStartOf="@+id/text_amount"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:id="@+id/text_subtotal_title"
+                        android:id="@+id/text_amount_title"
                         style="@style/TextAppearance.Material3.BodySmall"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/sub_total"
                         android:textColor="@color/text_secondary"
-                        app:layout_constraintEnd_toEndOf="@+id/text_subtotal"
+                        app:layout_constraintEnd_toEndOf="@+id/text_amount"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:id="@+id/text_subtotal"
+                        android:id="@+id/text_amount"
                         style="@style/TextAppearance.Material3.TitleLarge"
                         android:layout_width="0sp"
                         android:layout_height="wrap_content"
@@ -192,7 +192,7 @@
                         app:drawableTint="@color/money"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/view"
-                        app:layout_constraintTop_toBottomOf="@+id/text_subtotal_title"
+                        app:layout_constraintTop_toBottomOf="@+id/text_amount_title"
                         tools:text="1000.00" />
 
                     <ImageButton
@@ -256,12 +256,12 @@
                     android:paddingBottom="8sp">
 
                     <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/textInputLayout"
+                        android:id="@+id/layout_discount"
                         android:layout_width="0sp"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="8sp"
                         android:hint="@string/discount"
-                        app:layout_constraintEnd_toStartOf="@+id/text_discount"
+                        app:layout_constraintEnd_toStartOf="@+id/text_sub_total"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         app:suffixText="%">
@@ -276,17 +276,17 @@
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <TextView
-                        android:id="@+id/text_discount_title"
+                        android:id="@+id/text_sub_total_title"
                         style="@style/TextAppearance.Material3.BodySmall"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/discount"
                         android:textColor="@color/text_secondary"
-                        app:layout_constraintEnd_toEndOf="@+id/text_discount"
+                        app:layout_constraintEnd_toEndOf="@+id/text_sub_total"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:id="@+id/text_discount"
+                        android:id="@+id/text_sub_total"
                         style="@style/TextAppearance.Material3.TitleLarge"
                         android:layout_width="0sp"
                         android:layout_height="wrap_content"
@@ -296,8 +296,8 @@
                         app:drawableStartCompat="@drawable/ic_money"
                         app:drawableTint="@color/money"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/textInputLayout"
-                        app:layout_constraintTop_toBottomOf="@+id/text_discount_title"
+                        app:layout_constraintStart_toEndOf="@+id/layout_discount"
+                        app:layout_constraintTop_toBottomOf="@+id/text_sub_total_title"
                         tools:text="1000.00" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>

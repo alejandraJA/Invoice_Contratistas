@@ -2,7 +2,6 @@ package com.invoice.contratista.data.local.relations
 
 import androidx.room.Embedded
 import androidx.room.Relation
-import com.invoice.contratista.data.local.entity.product.LocalTaxEntity
 import com.invoice.contratista.data.local.entity.product.ProductEntity
 import com.invoice.contratista.data.local.entity.product.TaxEntity
 
@@ -16,11 +15,6 @@ import com.invoice.contratista.data.local.entity.product.TaxEntity
  */
 data class Product (
     @Embedded val product: ProductEntity?,
-    @Relation(
-        parentColumn = "id",
-        entityColumn = "idProduct",
-    )
-    val localTaxes: List<LocalTaxEntity>?,
     @Relation(
         parentColumn = "id",
         entityColumn = "idProduct",

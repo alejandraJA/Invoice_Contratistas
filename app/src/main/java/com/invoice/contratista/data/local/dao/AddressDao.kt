@@ -42,4 +42,7 @@ interface AddressDao {
 
     @Query("SELECT * FROM address WHERE idCustomer == :idSchedule")
     fun getAddress(idSchedule: String): LiveData<AddressEntity>
+
+    @Query("DELETE FROM address")
+    fun deleteAddress();
 }

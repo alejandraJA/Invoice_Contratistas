@@ -22,10 +22,6 @@ class ProductRepository @Inject constructor(
     fun createProduct(product: Product) {
         if (product.product != null) {
             productDao.setProduct(product.product)
-            if (product.localTaxes != null)
-                product.localTaxes.forEach {
-                    taxDao.setLocalTax(it)
-                }
             if (product.taxes != null)
                 product.taxes.forEach {
                     taxDao.setTax(it)
@@ -38,6 +34,8 @@ class ProductRepository @Inject constructor(
      * @return Objeto de tipo [LiveData] que contiene un objeto de tipo [Product]
      */
     fun getProduct() = productDao.getProduct(utilsManager.getIdProduct())
+    fun getProductPart() =
+        productDao.getProduct(utilsManager.getIdProduct(), utilsManager.getIdPart())
 
     fun getProduct(idProduct: String) = productDao.getProduct(idProduct)
 

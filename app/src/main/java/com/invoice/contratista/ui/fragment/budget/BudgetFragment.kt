@@ -35,12 +35,11 @@ class BudgetFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val partList = mutableListOf<Part>()
-        val partAdapter = PartAdapter(partList) {
-            viewModel.setPart(it)
+        val partAdapter = PartAdapter(partList) { idPart, idProduct ->
+            viewModel.setPart(idPart, idProduct)
             findNavController().navigate(R.id.action_budgetFragment_to_addPartFragment)
         }
         viewModel.apply {
-            setPart("")
             budget.observe(viewLifecycleOwner) {
                 val budgetEntity = it.budgetEntity!!
                 binding.apply {
@@ -57,7 +56,7 @@ class BudgetFragment : Fragment() {
         }
         binding.apply {
             buttonAddPart.setOnClickListener {
-                findNavController().navigate(R.id.action_budgetFragment_to_addPartFragment)
+                viewModel.createPart()
             }
             recyclerPart.apply {
                 adapter = partAdapter

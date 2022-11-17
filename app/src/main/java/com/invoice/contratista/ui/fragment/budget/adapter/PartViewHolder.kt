@@ -8,7 +8,8 @@ import com.invoice.contratista.data.local.relations.Part
 import com.invoice.contratista.databinding.ItemPartBinding
 import com.invoice.contratista.utils.MoneyUtils.moneyFormat
 
-class PartViewHolder(itemView: View, private val function: (String) -> Unit) : RecyclerView.ViewHolder(itemView) {
+class PartViewHolder(itemView: View, private val function: (String, String) -> Unit) :
+    RecyclerView.ViewHolder(itemView) {
     private val binding = ItemPartBinding.bind(itemView)
 
     @SuppressLint("SetTextI18n")
@@ -23,7 +24,7 @@ class PartViewHolder(itemView: View, private val function: (String) -> Unit) : R
             divider.visibility = View.VISIBLE
         }
         itemView.setOnClickListener {
-            function.invoke(part.partEntity!!.id)
+            function.invoke(part.partEntity!!.id, part.partEntity.idProduct)
         }
     }
 

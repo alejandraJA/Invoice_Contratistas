@@ -6,18 +6,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.fragment.findNavController
 import com.invoice.contratista.R
-import com.invoice.contratista.data.local.entity.event.PartEntity
-import com.invoice.contratista.data.local.relations.Product
 import com.invoice.contratista.databinding.FragmentPartBinding
 import com.invoice.contratista.ui.fragment.part.adapter.TaxAdapter
 import com.invoice.contratista.ui.fragment.part.adapter.TaxItem
-import com.invoice.contratista.ui.fragment.part.adapter.TaxItem.Companion.toTaxItem
+import com.invoice.contratista.ui.fragment.part.data.ProductItem
+import com.invoice.contratista.utils.InputUtils.setText
+import com.invoice.contratista.utils.MoneyUtils.moneyFormat
 import dagger.hilt.android.AndroidEntryPoint
-import java.util.*
 
 @AndroidEntryPoint
 class PartFragment : Fragment() {
@@ -25,8 +24,8 @@ class PartFragment : Fragment() {
     private lateinit var binding: FragmentPartBinding
     private lateinit var taxAdapter: TaxAdapter
     private lateinit var viewModel: PartViewModel
-    private val taxList = mutableListOf<TaxItem>()
-    private val partData = PartData()
+    private var quantity = 1
+    private var discount = 0.0
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -37,110 +36,70 @@ class PartFragment : Fragment() {
         return binding.root
     }
 
-    @SuppressLint("SetTextI18n")
+    @SuppressLint("SetTextI18n", "NotifyDataSetChanged")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val namesList = mutableListOf<String>()
+        val namesListCopy = mutableListOf<ProductItem>()
         val namesAdapter = ArrayAdapter(requireContext(), R.layout.item_list, namesList)
+        val taxList = mutableListOf<TaxItem>()
 
-        taxAdapter = TaxAdapter(taxList) { tax: Double ->
-            binding.textTotal.text = partData.getTotal(tax)
-        }
+        taxAdapter = TaxAdapter(taxList)
 
         binding.apply {
             autoCompleteProduct.setAdapter(namesAdapter)
             recyclerTax.setHasFixedSize(true)
             recyclerTax.adapter = taxAdapter
             buttonLess.setOnClickListener {
-                partData.changeQuatity(
-                    PartData.Operator.Res,
-                    taxAdapter
-                ) { subTotal, quantity, totalGain ->
-                    setData(subTotal, quantity, totalGain)
+                if (quantity > 1) {
+                    quantity--
+                    viewModel.updateQuantity(quantity)
                 }
             }
             buttonAdd.setOnClickListener {
-                partData.changeQuatity(
-                    PartData.Operator.Sum,
-                    taxAdapter
-                ) { subTotal, quantity, totalGain ->
-                    setData(subTotal, quantity, totalGain)
-                }
+                quantity++
+                viewModel.updateQuantity(quantity)
+            }
+            inputDiscount!!.doOnTextChanged { discountNumber, _, _, _ ->
+                if (discountNumber.toString().isNotEmpty())
+                    viewModel.updateDiscount(discountNumber.toString().toInt())
+                else viewModel.updateDiscount(0)
+            }
+            autoCompleteProduct.setOnItemClickListener { _, _, position, _ ->
+                viewModel.updateProduct(namesListCopy[position].id)
             }
         }
 
         viewModel.apply {
-            newPart.observe(viewLifecycleOwner) { part ->
-                partData.partNumber = part.budgetNumber + 1
-                binding.textTitleNumber.text = partData.partNumber.toString()
+            productItem.observe(viewLifecycleOwner) { products ->
                 namesList.clear()
-                part.productsList.forEach { product -> namesList.add(product.description) }
+                namesListCopy.clear()
+                namesListCopy.addAll(products)
+                products.forEach { namesList.add(it.description) }
                 namesAdapter.notifyDataSetChanged()
-                binding.autoCompleteProduct.setOnItemClickListener { _, _, position, _ ->
-                    loadProduct(part.productsList[position].id)
+            }
+            taxes.observe(viewLifecycleOwner) {
+                taxList.clear()
+                taxList.addAll(it)
+                taxAdapter.notifyDataSetChanged()
+            }
+            product.observe(viewLifecycleOwner) {
+                binding.apply {
+                    textProduct!!.text = it.description
+                    textSku!!.text = it.sku
+                    textTitleNumber.text = it.number.toString()
+                    textPrice.text = it.price.moneyFormat()
+                    textGain.text = it.gain.moneyFormat()
+                    if (discount != it.discount) layoutDiscount.setText(it.discount.moneyFormat())
+                    textTotalGain.text = it.totalGain.moneyFormat()
+                    textSubTotal.text = it.subTotal.moneyFormat()
+                    textTotal.text = it.total.moneyFormat()
+                    textAmount.text = it.amount.moneyFormat()
+                    textQuantity.text = it.quantity.toString()
+                    discount = it.discount
+                    quantity = it.quantity
                 }
             }
-            oldPart.observe(viewLifecycleOwner) { part ->
-                partData.partNumber = part.partEntity.number
-                binding.textTitleNumber.text = partData.partNumber.toString()
-                binding.autoCompleteProduct.setText(part.product.product!!.description)
-                partData.quantity = part.partEntity.quantity
-                setProduct(part.product)
-            }
-        }
-    }
-
-    private fun setData(subTotal: String, quantity: String, totalGain: String) {
-        binding.apply {
-            textSubtotal.text = subTotal
-            textQuantity.text = quantity
-            textTotalGain.text = totalGain
-        }
-    }
-
-    @SuppressLint("NotifyDataSetChanged")
-    private fun loadProduct(id: String) {
-        viewModel.getProduct(id).observe(viewLifecycleOwner) {
-            setProduct(it)
-        }
-    }
-
-    @SuppressLint("NotifyDataSetChanged")
-    private fun setProduct(product: Product) {
-        taxList.clear()
-        partData.getPrices(
-            product.product!!.price,
-            product.product.gain,
-            taxAdapter
-        ) { price, gain, discount, subTotal, quantity, totalGain ->
-            binding.apply {
-                textPrice.text = price
-                textGain.text = gain
-                textDiscount.text = discount
-            }
-            setData(subTotal, quantity, totalGain)
-        }
-        if (product.localTaxes != null) product.localTaxes.forEach { tax ->
-            taxList.add(
-                tax.toTaxItem(
-                    partData.subTotal
-                )
-            )
-        }
-        if (product.taxes != null) product.taxes.forEach { tax -> taxList.add(tax.toTaxItem(partData.subTotal)) }
-        if (taxList.isNotEmpty()) taxAdapter.notifyDataSetChanged()
-        binding.buttonSave.setOnClickListener {
-            viewModel.setPart(
-                PartEntity(
-                    UUID.randomUUID().toString(),
-                    partData.partNumber,
-                    "",
-                    product.product.id,
-                    partData.quantity,
-                    partData.discount,
-                )
-            )
-            findNavController().popBackStack()
         }
     }
 

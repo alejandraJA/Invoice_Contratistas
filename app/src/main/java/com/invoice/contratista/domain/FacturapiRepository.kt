@@ -2,9 +2,9 @@ package com.invoice.contratista.domain
 
 import com.invoice.contratista.data.api.models.customer.Address.Companion.toAddressEntity
 import com.invoice.contratista.data.api.models.customer.CustomerResponse.Companion.toCustomerEntity
-import com.invoice.contratista.data.api.models.product.LocalTaxe.Companion.toLocalTaxEntity
+import com.invoice.contratista.data.api.models.product.LocalTax.Companion.toLocalTaxEntity
 import com.invoice.contratista.data.api.models.product.ProductResponse.Companion.toProductEntity
-import com.invoice.contratista.data.api.models.product.Taxe.Companion.toTaxeEntity
+import com.invoice.contratista.data.api.models.product.Tax.Companion.toTaxEntity
 import com.invoice.contratista.data.api.retrofit.Helper
 import com.invoice.contratista.data.local.dao.AddressDao
 import com.invoice.contratista.data.local.dao.CustomerDao
@@ -34,6 +34,10 @@ class FacturapiRepository @Inject constructor(
             }
         }
         if (customer.code() == 200 && products.code() == 200) {
+            customerDao.deleteCustomers()
+            addressDao.deleteAddress()
+            productDao.deleteProducts()
+            taxDao.deleteTaxes()
             val customerDataResponse = customer.body()!!
             val productDataResponse = products.body()!!
             if (customerDataResponse.totalResults != 0)
@@ -48,11 +52,11 @@ class FacturapiRepository @Inject constructor(
             if (productDataResponse.totalResults != 0)
                 productDataResponse.data.forEach { productResponse ->
                     productDao.setProduct(productResponse.toProductEntity())
-                    productResponse.localTaxes.forEach { localTaxe ->
-                        taxDao.setLocalTax(localTaxe.toLocalTaxEntity(productResponse.id))
+                    productResponse.localTaxes.forEach { localTax ->
+                        taxDao.setTax(localTax.toLocalTaxEntity(productResponse.id))
                     }
                     productResponse.taxes.forEach { tax ->
-                        taxDao.setTax(tax.toTaxeEntity(productResponse.id))
+                        taxDao.setTax(tax.toTaxEntity(productResponse.id))
                     }
                 }
             function.invoke(null)

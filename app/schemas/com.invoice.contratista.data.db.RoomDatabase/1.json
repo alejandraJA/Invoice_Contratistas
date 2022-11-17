@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "1f2bb4c27e32a3b3215502c37153abdd",
+    "identityHash": "99b3bee157862fd93c2b8e055f5e63d6",
     "entities": [
       {
         "tableName": "address",
@@ -381,52 +381,8 @@
         "foreignKeys": []
       },
       {
-        "tableName": "local_tax",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `rate` REAL NOT NULL, `type` TEXT NOT NULL, `withholding` INTEGER NOT NULL, `idProduct` TEXT NOT NULL)",
-        "fields": [
-          {
-            "fieldPath": "id",
-            "columnName": "id",
-            "affinity": "INTEGER",
-            "notNull": true
-          },
-          {
-            "fieldPath": "rate",
-            "columnName": "rate",
-            "affinity": "REAL",
-            "notNull": true
-          },
-          {
-            "fieldPath": "type",
-            "columnName": "type",
-            "affinity": "TEXT",
-            "notNull": true
-          },
-          {
-            "fieldPath": "withholding",
-            "columnName": "withholding",
-            "affinity": "INTEGER",
-            "notNull": true
-          },
-          {
-            "fieldPath": "idProduct",
-            "columnName": "idProduct",
-            "affinity": "TEXT",
-            "notNull": true
-          }
-        ],
-        "primaryKey": {
-          "columnNames": [
-            "id"
-          ],
-          "autoGenerate": true
-        },
-        "indices": [],
-        "foreignKeys": []
-      },
-      {
         "tableName": "product",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `description` TEXT NOT NULL, `product_key` INTEGER NOT NULL, `price` REAL NOT NULL, `tax_included` INTEGER NOT NULL, `taxability` TEXT NOT NULL, `unit_key` TEXT NOT NULL, `unit_name` TEXT NOT NULL, `sku` TEXT NOT NULL, `gain` INTEGER NOT NULL DEFAULT 10, PRIMARY KEY(`id`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `description` TEXT NOT NULL, `product_key` INTEGER NOT NULL, `price` REAL NOT NULL, `tax_included` INTEGER NOT NULL, `taxability` TEXT NOT NULL, `unit_key` TEXT NOT NULL, `unit_name` TEXT NOT NULL, `sku` TEXT NOT NULL, `gain` REAL NOT NULL DEFAULT 10, PRIMARY KEY(`id`))",
         "fields": [
           {
             "fieldPath": "id",
@@ -485,7 +441,7 @@
           {
             "fieldPath": "gain",
             "columnName": "gain",
-            "affinity": "INTEGER",
+            "affinity": "REAL",
             "notNull": true,
             "defaultValue": "10"
           }
@@ -501,7 +457,7 @@
       },
       {
         "tableName": "tax",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `type` TEXT, `rate` REAL NOT NULL, `factor` TEXT, `withholding` INTEGER NOT NULL, `idProduct` TEXT NOT NULL)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `type` TEXT, `rate` REAL NOT NULL, `factor` TEXT, `withholding` INTEGER NOT NULL, `idProduct` TEXT NOT NULL, `localTax` INTEGER NOT NULL)",
         "fields": [
           {
             "fieldPath": "id",
@@ -537,6 +493,12 @@
             "fieldPath": "idProduct",
             "columnName": "idProduct",
             "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "localTax",
+            "columnName": "localTax",
+            "affinity": "INTEGER",
             "notNull": true
           }
         ],
@@ -591,7 +553,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '1f2bb4c27e32a3b3215502c37153abdd')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '99b3bee157862fd93c2b8e055f5e63d6')"
     ]
   }
 }

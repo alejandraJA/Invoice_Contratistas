@@ -5,6 +5,7 @@ import com.invoice.contratista.data.local.dao.PartDao
 import com.invoice.contratista.data.local.entity.event.PartEntity
 import com.invoice.contratista.data.local.relations.Part
 import com.invoice.contratista.data.shared_preferences.UtilsManager
+import java.util.UUID
 import javax.inject.Inject
 
 class PartRepository @Inject constructor(
@@ -24,12 +25,13 @@ class PartRepository @Inject constructor(
      */
     fun getParts() = dao.getParts(utilsManager.getIdBudget())
 
-    fun setPart(partEntity: PartEntity) {
-        partEntity.idBudget = utilsManager.getIdBudget()
-        if (utilsManager.getIdPart().isNotBlank()) partEntity.id = utilsManager.getIdPart()
-        dao.setPart(partEntity)
-    }
+    fun createPart() =
+        dao.createPart(UUID.randomUUID().toString(), utilsManager.getIdBudget())
 
     fun getNumber() = dao.getNumberOfPart(utilsManager.getIdBudget())
+    fun updatePart(partEntity: PartEntity) = dao.setPart(partEntity)
+    fun updateQuantity(quantity: Int) = dao.updateQuantity(quantity, utilsManager.getIdPart())
+    fun updateDiscount(discount: Int) = dao.updateDiscount(discount, utilsManager.getIdPart())
+    fun updateProduct(idProduct: String) = dao.updateProduct(idProduct, utilsManager.getIdPart())
 
 }

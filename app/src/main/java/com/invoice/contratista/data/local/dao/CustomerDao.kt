@@ -43,4 +43,7 @@ interface CustomerDao {
     @Query("SELECT * FROM customer WHERE id == :idCustomer LIMIT 1")
     fun getCustomerEntity(idCustomer: String): LiveData<CustomerEntity>
 
+    @Query("DELETE FROM customer")
+    fun deleteCustomers()
+
 }

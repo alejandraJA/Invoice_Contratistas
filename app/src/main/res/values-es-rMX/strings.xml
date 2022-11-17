@@ -146,4 +146,10 @@
     <string name="budgets">Cotizaciones</string>
     <string name="add_budget">Agregar cotización</string>
     <string name="ok">Aceptar</string>
+    <string name="local_tax">Impuesto Local</string>
+    <string name="amount">Monto</string>
+    <string name="apply_discount">Aplicar descuento</string>
+    <string name="zero">0</string>
+    <string name="product_service">Producto / Servicio</string>
+    <string name="sku">sku</string>
 </resources>

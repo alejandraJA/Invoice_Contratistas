@@ -39,4 +39,25 @@ interface PartDao {
     @Query("SELECT number FROM part WHERE idBudget == :idBudget ORDER BY number DESC LIMIT 1")
     fun getNumberOfPart(idBudget: String): Int
 
+    @Query(
+        "INSERT INTO part " +
+                "SELECT  " +
+                "   :idPart AS id," +
+                "   IFNULL((SELECT number FROM part WHERE idBudget == :idBudget ORDER BY number DESC LIMIT 1) + 1, 1) AS number," +
+                "   :idBudget AS idBudget," +
+                "   (SELECT id FROM product LIMIT 1) as idProduct," +
+                "   1 AS quantity," +
+                "   0.0 AS discount"
+    )
+    fun createPart(idPart: String, idBudget: String)
+
+    @Query("UPDATE part SET quantity = :quantity WHERE id == :idPart")
+    fun updateQuantity(quantity: Int, idPart: String)
+
+    @Query("UPDATE part SET discount = :discount WHERE id == :idPart")
+    fun updateDiscount(discount: Int, idPart: String)
+
+    @Query("UPDATE part SET idProduct = :idProduct WHERE id == :idPart")
+    fun updateProduct(idProduct: String, idPart: String)
+
 }
