@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.invoice.contratista.R
 import com.invoice.contratista.data.local.relations.Part
 
-class PartAdapter(private val list: List<Part>, private val function: (String, String) -> Unit) :
+class PartAdapter(private val list: List<PartItem>, private val function: (String, String) -> Unit) :
     RecyclerView.Adapter<PartViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = PartViewHolder(
         LayoutInflater.from(parent.context).inflate(R.layout.item_part, parent, false),

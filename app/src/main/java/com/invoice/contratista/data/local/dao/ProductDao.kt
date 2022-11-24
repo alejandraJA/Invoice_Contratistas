@@ -30,30 +30,30 @@ interface ProductDao {
     fun getProductsForSelector(): LiveData<List<ProductItem>>
 
     @Query(
-        "SELECT \n" +
-                "   pr.id,    \n" +
-                "   pr.description, \n" +
-                "   pr.sku, \n" +
-                "   pr.price,    \n" +
-                "   ((pr.price - p.discount) * pr.gain) AS gain,   \n" +
-                "   (((pr.price - p.discount) * pr.gain) * p.quantity) AS totalGain,   \n" +
-                "   p.quantity  * pr.price AS amount,   \n" +
-                "   totals.subTotal,\n" +
-                "   p.discount,\n" +
-                "   totals.total,\n" +
-                "   p.quantity, \n" +
-                "   p.number \n" +
-                "   FROM product AS pr, part AS p, \n" +
-                "   (SELECT\n" +
-                "      SUM(tax) + subTotal AS total,\n" +
-                "      subTotal\n" +
-                "    FROM (SELECT\n" +
-                "          ((pr.price * p.quantity) - p.discount) * t.rate AS tax,\n" +
-                "          (pr.price * p.quantity)-p.discount AS subTotal\n" +
-                "       FROM tax AS t, product AS pr, part AS p\n" +
-                "       WHERE t.idProduct == :idProduct AND pr.id == :idProduct AND p.id == :idPart\n" +
-                "    )\n" +
-                "   ) AS totals\n" +
+        "SELECT  " +
+                "   pr.id,     " +
+                "   pr.description,  " +
+                "   pr.sku,  " +
+                "   pr.price,     " +
+                "   ((pr.price - p.discount) * pr.gain) AS gain,    " +
+                "   (((pr.price - p.discount) * pr.gain) * p.quantity) AS totalGain,    " +
+                "   p.quantity  * pr.price AS amount,    " +
+                "   totals.subTotal, " +
+                "   p.discount, " +
+                "   totals.total, " +
+                "   p.quantity,  " +
+                "   p.number  " +
+                "   FROM product AS pr, part AS p,  " +
+                "   (SELECT " +
+                "      SUM(tax) + subTotal AS total, " +
+                "      subTotal " +
+                "    FROM (SELECT " +
+                "          ((pr.price * p.quantity) - p.discount) * t.rate AS tax, " +
+                "          (pr.price * p.quantity)-p.discount AS subTotal " +
+                "       FROM tax AS t, product AS pr, part AS p " +
+                "       WHERE t.idProduct == :idProduct AND pr.id == :idProduct AND p.id == :idPart " +
+                "    ) " +
+                "   ) AS totals " +
                 "WHERE pr.id == :idProduct AND p.id == :idPart"
     )
     fun getProduct(idProduct: String, idPart: String): LiveData<ProductPart>

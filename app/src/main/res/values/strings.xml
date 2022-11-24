@@ -151,6 +151,6 @@
     <string name="apply_discount">Apply discount</string>
     <string name="zero">0</string>
     <string name="product_service">Product / Service</string>
-    <string name="sku">sku</string>
+    <string name="sku">SKU</string>
 
 </resources>

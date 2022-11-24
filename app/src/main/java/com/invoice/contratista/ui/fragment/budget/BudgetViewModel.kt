@@ -8,6 +8,7 @@ import com.invoice.contratista.data.local.relations.Part
 import com.invoice.contratista.data.shared_preferences.UtilsManager
 import com.invoice.contratista.domain.BudgetRepository
 import com.invoice.contratista.domain.PartRepository
+import com.invoice.contratista.ui.fragment.budget.adapter.PartItem
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -34,8 +35,8 @@ class BudgetViewModel @Inject constructor(
         }
     }
 
-    val parts = MediatorLiveData<List<Part>>().apply {
-        addSource(partRepository.getParts()) {
+    val parts = MediatorLiveData<List<PartItem>>().apply {
+        addSource(partRepository.getPartsForRecycler()) {
             if (it.isNotEmpty()) value = it
         }
     }

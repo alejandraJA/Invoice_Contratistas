@@ -34,4 +34,6 @@ class PartRepository @Inject constructor(
     fun updateDiscount(discount: Int) = dao.updateDiscount(discount, utilsManager.getIdPart())
     fun updateProduct(idProduct: String) = dao.updateProduct(idProduct, utilsManager.getIdPart())
 
+    fun getPartsForRecycler() = dao.getPartsForRecycler(utilsManager.getIdBudget())
+
 }

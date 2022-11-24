@@ -12,8 +12,8 @@ import com.invoice.contratista.R
 import com.invoice.contratista.data.local.relations.Part
 import com.invoice.contratista.databinding.FragmentBudgetBinding
 import com.invoice.contratista.ui.fragment.budget.adapter.PartAdapter
+import com.invoice.contratista.ui.fragment.budget.adapter.PartItem
 import com.invoice.contratista.utils.DateUtils.getDate
-import com.invoice.contratista.utils.InputUtils.setText
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -34,7 +34,7 @@ class BudgetFragment : Fragment() {
     @SuppressLint("NotifyDataSetChanged")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val partList = mutableListOf<Part>()
+        val partList = mutableListOf<PartItem>()
         val partAdapter = PartAdapter(partList) { idPart, idProduct ->
             viewModel.setPart(idPart, idProduct)
             findNavController().navigate(R.id.action_budgetFragment_to_addPartFragment)
@@ -44,7 +44,6 @@ class BudgetFragment : Fragment() {
                 val budgetEntity = it.budgetEntity!!
                 binding.apply {
                     textDate.text = budgetEntity.date.getDate()
-                    layoutTitle.setText("${resources.getString(R.string.budget)}_${budgetEntity.number}")
                     idTextBudget.text = budgetEntity.number.toString()
                 }
             }

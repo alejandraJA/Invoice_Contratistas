@@ -13,18 +13,17 @@ class PartViewHolder(itemView: View, private val function: (String, String) -> U
     private val binding = ItemPartBinding.bind(itemView)
 
     @SuppressLint("SetTextI18n")
-    fun bind(part: Part) {
+    fun bind(part: PartItem) {
         binding.apply {
-            textProduct.text = part.product!!.product!!.description
-            textQuantity.text = part.partEntity!!.quantity.toString()
-            textPrice.text = part.product.product!!.price.moneyFormat()
-            textTotal.text = (part.product.product.price * part.partEntity.quantity).moneyFormat()
-            textPartNumber.text =
-                "${itemView.resources.getString(R.string.part)} ${part.partEntity.number}"
+            textPart.text = "${itemView.resources.getString(R.string.part)} ${part.partNumber}"
+            textProductName.text = part.productName
+            textQuantity.text = part.quantity.toString()
+            textUnit.text = part.unitName
+            textAmount.text = part.amount.moneyFormat()
             divider.visibility = View.VISIBLE
         }
         itemView.setOnClickListener {
-            function.invoke(part.partEntity!!.id, part.partEntity.idProduct)
+            function.invoke(part.idPart, part.idProduct)
         }
     }
 
