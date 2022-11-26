@@ -2,7 +2,7 @@ package com.invoice.contratista.di
 
 import android.content.Context
 import androidx.room.Room
-import com.invoice.contratista.data.db.RoomDatabase
+import com.invoice.contratista.data.source.local.RoomDatabase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

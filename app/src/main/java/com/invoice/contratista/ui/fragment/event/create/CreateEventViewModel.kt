@@ -3,10 +3,10 @@ package com.invoice.contratista.ui.fragment.event.create
 import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.invoice.contratista.data.local.entity.CustomerEntity
-import com.invoice.contratista.data.local.entity.EventEntity
-import com.invoice.contratista.domain.CustomerRepository
-import com.invoice.contratista.domain.EventRepository
+import com.invoice.contratista.data.repository.CustomerRepository
+import com.invoice.contratista.data.repository.EventRepository
+import com.invoice.contratista.data.source.local.entity.CustomerEntity
+import com.invoice.contratista.data.source.local.entity.EventEntity
 import com.invoice.contratista.utils.Constants
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers

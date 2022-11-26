@@ -1,9 +1,12 @@
 package com.invoice.contratista.di
 
 import com.invoice.contratista.BuildConfig
-import com.invoice.contratista.data.api.retrofit.Helper
-import com.invoice.contratista.data.api.retrofit.HelperImp
-import com.invoice.contratista.data.api.retrofit.Service
+import com.invoice.contratista.data.repository.CustomerRepositoryImp
+import com.invoice.contratista.data.repository.ProductRepositoryImp
+import com.invoice.contratista.data.source.api.retrofit.Helper
+import com.invoice.contratista.data.source.api.retrofit.HelperImp
+import com.invoice.contratista.data.source.api.retrofit.Service
+import com.invoice.contratista.domain.repository.CustomerRepository
 import com.invoice.contratista.utils.Constants
 import dagger.Module
 import dagger.Provides
@@ -38,6 +41,16 @@ object ApiModule {
     @Singleton
     @Provides
     fun provideService(retrofit: Retrofit): Service = retrofit.create(Service::class.java)
+
+    @Singleton
+    @Provides
+    fun provideCustomerRepository(customerRepositoryImp: CustomerRepositoryImp): CustomerRepository =
+        customerRepositoryImp
+
+    @Singleton
+    @Provides
+    fun provideProductRepository(customerRepositoryImp: ProductRepositoryImp): com.invoice.contratista.domain.repository.ProductRepository =
+        customerRepositoryImp
 
     @Singleton
     @Provides

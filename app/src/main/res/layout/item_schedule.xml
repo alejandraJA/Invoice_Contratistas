@@ -7,7 +7,7 @@
 
         <variable
             name="schedule"
-            type="com.invoice.contratista.data.local.entity.event.ScheduleEntity" />
+            type="com.invoice.contratista.data.source.local.entity.event.ScheduleEntity" />
     </data>
 
     <com.google.android.material.card.MaterialCardView

@@ -10,8 +10,8 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.invoice.contratista.R
-import com.invoice.contratista.data.local.entity.EventEntity
-import com.invoice.contratista.data.local.entity.event.ScheduleEntity
+import com.invoice.contratista.data.source.local.entity.EventEntity
+import com.invoice.contratista.data.source.local.entity.event.ScheduleEntity
 import com.invoice.contratista.databinding.FragmentHomeBinding
 import com.invoice.contratista.ui.fragment.home.adapter.EventAdapter
 import com.invoice.contratista.ui.fragment.schedule.adapter.ScheduleAdapter

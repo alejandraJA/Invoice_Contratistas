@@ -1,6 +1,6 @@
 package com.invoice.contratista.ui.fragment.part.adapter
 
-import com.invoice.contratista.data.local.entity.product.TaxEntity
+import com.invoice.contratista.data.source.local.entity.product.TaxEntity
 
 data class TaxItem(
     val rate: Double,

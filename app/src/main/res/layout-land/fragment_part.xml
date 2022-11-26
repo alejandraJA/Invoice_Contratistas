@@ -8,7 +8,7 @@
 
         <variable
             name="part"
-            type="com.invoice.contratista.data.local.relations.Part" />
+            type="com.invoice.contratista.data.source.local.relations.Part" />
     </data>
 
     <ScrollView

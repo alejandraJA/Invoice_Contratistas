@@ -8,7 +8,7 @@
 
         <variable
             name="event"
-            type="com.invoice.contratista.data.local.entity.EventEntity" />
+            type="com.invoice.contratista.data.source.local.entity.EventEntity" />
     </data>
 
     <ScrollView

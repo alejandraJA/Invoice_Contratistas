@@ -1,6 +1,9 @@
 package com.invoice.contratista.utils
 
 object Constants {
+
+    enum class Status { Success, Failure, Loading }
+
     enum class Priority {
         Low,
         Medium,

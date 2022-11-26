@@ -37,7 +37,7 @@ class LoginFragment(private val onClick: (Boolean) -> Unit) : Fragment() {
         }
         binding.buttonLogin.setOnClickListener {
             viewModel.login { error ->
-                if (error != null) Snackbar.make(it, error, Snackbar.LENGTH_INDEFINITE).setAction(
+                if (error != "") Snackbar.make(it, error, Snackbar.LENGTH_INDEFINITE).setAction(
                     resources.getText(
                         R.string.ok
                     )

@@ -3,10 +3,10 @@ package com.invoice.contratista.ui.fragment.schedule.create_edit
 import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.invoice.contratista.data.local.entity.AddressEntity
-import com.invoice.contratista.data.local.entity.event.ScheduleEntity
-import com.invoice.contratista.data.shared_preferences.UtilsManager
-import com.invoice.contratista.domain.ScheduleRepository
+import com.invoice.contratista.data.repository.ScheduleRepository
+import com.invoice.contratista.data.source.local.entity.AddressEntity
+import com.invoice.contratista.data.source.local.entity.event.ScheduleEntity
+import com.invoice.contratista.data.source.shared_preferences.UtilsManager
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

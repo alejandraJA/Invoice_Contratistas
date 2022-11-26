@@ -1,7 +1,7 @@
 package com.invoice.contratista.utils
 
 import com.google.gson.Gson
-import com.invoice.contratista.data.api.models.ErrorResponse
+import com.invoice.contratista.data.source.api.models.ErrorResponse
 import okhttp3.ResponseBody
 
 object Json {

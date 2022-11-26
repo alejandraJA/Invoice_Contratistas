@@ -9,7 +9,6 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.invoice.contratista.R
-import com.invoice.contratista.data.local.relations.Part
 import com.invoice.contratista.databinding.FragmentBudgetBinding
 import com.invoice.contratista.ui.fragment.budget.adapter.PartAdapter
 import com.invoice.contratista.ui.fragment.budget.adapter.PartItem

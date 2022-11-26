@@ -2,7 +2,7 @@ package com.invoice.contratista.utils
 
 import android.content.res.Resources
 import com.invoice.contratista.R
-import com.invoice.contratista.data.local.entity.AddressEntity
+import com.invoice.contratista.data.source.local.entity.AddressEntity
 import com.invoice.contratista.databinding.LayoutAddressBinding
 import com.invoice.contratista.utils.InputUtils.getTextWithValidation
 import java.util.*

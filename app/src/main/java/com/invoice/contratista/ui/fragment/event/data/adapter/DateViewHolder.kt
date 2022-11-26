@@ -2,7 +2,7 @@ package com.invoice.contratista.ui.fragment.event.data.adapter
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
-import com.invoice.contratista.data.local.entity.DateEntity
+import com.invoice.contratista.data.source.local.entity.DateEntity
 import com.invoice.contratista.databinding.ItemDateBinding
 import com.invoice.contratista.utils.DateUtils.getDate
 import com.invoice.contratista.utils.DateUtils.getHour

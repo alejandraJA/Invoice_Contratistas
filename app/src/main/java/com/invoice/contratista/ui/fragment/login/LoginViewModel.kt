@@ -2,7 +2,7 @@ package com.invoice.contratista.ui.fragment.login
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.invoice.contratista.domain.FacturapiRepository
+import com.invoice.contratista.domain.usecase.LoadDataUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -11,12 +11,12 @@ import javax.inject.Inject
 
 @HiltViewModel
 class LoginViewModel @Inject constructor(
-    private val facturapiRepository: FacturapiRepository
+    private val loadDataUseCase: LoadDataUseCase
 ) : ViewModel() {
-    fun login(function: (String?) -> Unit) {
+    fun login(function: (String) -> Unit) {
         viewModelScope.launch {
             withContext(Dispatchers.IO) {
-                facturapiRepository.loadData(function)
+                loadDataUseCase(function)
             }
         }
     }

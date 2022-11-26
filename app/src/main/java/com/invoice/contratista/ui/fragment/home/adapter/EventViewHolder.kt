@@ -5,7 +5,7 @@ import android.view.View
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.invoice.contratista.R
-import com.invoice.contratista.data.local.entity.EventEntity
+import com.invoice.contratista.data.source.local.entity.EventEntity
 import com.invoice.contratista.databinding.ItemEventBinding
 
 class EventViewHolder(private val view: View, private val function: (EventEntity) -> Unit) : RecyclerView.ViewHolder(view) {

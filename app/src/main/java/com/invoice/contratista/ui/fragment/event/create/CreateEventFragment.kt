@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.invoice.contratista.R
-import com.invoice.contratista.data.local.entity.CustomerEntity
+import com.invoice.contratista.data.source.local.entity.CustomerEntity
 import com.invoice.contratista.databinding.FragmentCreateEventBinding
 import com.invoice.contratista.utils.InputUtils.getTextWithValidation
 import dagger.hilt.android.AndroidEntryPoint

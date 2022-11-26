@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.invoice.contratista.R
-import com.invoice.contratista.data.local.entity.event.ScheduleEntity
+import com.invoice.contratista.data.source.local.entity.event.ScheduleEntity
 
 class ScheduleAdapter(
     private val list: List<ScheduleEntity>,

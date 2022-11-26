@@ -9,7 +9,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import com.invoice.contratista.R
-import com.invoice.contratista.data.local.entity.CustomerEntity
+import com.invoice.contratista.data.source.local.entity.CustomerEntity
 import com.invoice.contratista.databinding.FragmentEventBinding
 import com.invoice.contratista.ui.adapter.SectionsPagerAdapter
 import dagger.hilt.android.AndroidEntryPoint

@@ -7,7 +7,7 @@
 
         <variable
             name="customer"
-            type="com.invoice.contratista.data.local.entity.CustomerEntity" />
+            type="com.invoice.contratista.data.source.local.entity.CustomerEntity" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

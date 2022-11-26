@@ -7,7 +7,7 @@
 
         <variable
             name="date"
-            type="com.invoice.contratista.data.local.entity.DateEntity" />
+            type="com.invoice.contratista.data.source.local.entity.DateEntity" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

@@ -6,9 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.invoice.contratista.data.local.entity.AddressEntity
-import com.invoice.contratista.data.local.entity.CustomerEntity
-import com.invoice.contratista.data.local.relations.Customer
+import com.invoice.contratista.data.source.local.entity.AddressEntity
+import com.invoice.contratista.data.source.local.entity.CustomerEntity
+import com.invoice.contratista.data.source.local.relations.Customer
 import com.invoice.contratista.databinding.FragmentCreateCustomerBinding
 import com.invoice.contratista.utils.InputUtils.getTextWithValidation
 import dagger.hilt.android.AndroidEntryPoint

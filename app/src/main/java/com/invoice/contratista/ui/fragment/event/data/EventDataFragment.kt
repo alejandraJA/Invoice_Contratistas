@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.invoice.contratista.data.local.entity.DateEntity
+import com.invoice.contratista.data.source.local.entity.DateEntity
 import com.invoice.contratista.databinding.FragmentEventDataBinding
 import com.invoice.contratista.ui.fragment.event.data.adapter.DateAdapter
 import com.invoice.contratista.utils.AddressUtils.getAddress

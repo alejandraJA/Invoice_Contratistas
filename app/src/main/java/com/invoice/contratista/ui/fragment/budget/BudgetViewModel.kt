@@ -3,11 +3,10 @@ package com.invoice.contratista.ui.fragment.budget
 import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.invoice.contratista.data.local.relations.Budget
-import com.invoice.contratista.data.local.relations.Part
-import com.invoice.contratista.data.shared_preferences.UtilsManager
-import com.invoice.contratista.domain.BudgetRepository
-import com.invoice.contratista.domain.PartRepository
+import com.invoice.contratista.data.repository.BudgetRepository
+import com.invoice.contratista.data.repository.PartRepository
+import com.invoice.contratista.data.source.local.relations.Budget
+import com.invoice.contratista.data.source.shared_preferences.UtilsManager
 import com.invoice.contratista.ui.fragment.budget.adapter.PartItem
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
