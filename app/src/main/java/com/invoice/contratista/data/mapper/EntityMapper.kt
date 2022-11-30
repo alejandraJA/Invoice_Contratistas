@@ -9,7 +9,8 @@ import com.invoice.contratista.data.source.local.entity.AddressEntity
 import com.invoice.contratista.data.source.local.entity.CustomerEntity
 import com.invoice.contratista.data.source.local.entity.product.ProductEntity
 import com.invoice.contratista.data.source.local.entity.product.TaxEntity
-import java.util.*
+import com.invoice.contratista.ui.fragment.part.adapter.TaxItem
+import java.util.UUID
 
 fun CustomerResponse.toCustomerEntity() =
     CustomerEntity(id, legalName, taxId, taxSystem, email ?: "", phone ?: "")
@@ -40,6 +41,9 @@ fun ProductResponse.toProductEntity() = ProductEntity(
     sku,
     0.20
 )
+
+fun TaxEntity.toTaxItem(subtotal: Double) =
+    TaxItem(this.rate, this.type!!, subtotal, localTax, factor ?: "", withholding)
 
 fun Tax.toTaxEntity(idProduct: String) =
     TaxEntity(0, type, rate, factor, withholding, idProduct, false)

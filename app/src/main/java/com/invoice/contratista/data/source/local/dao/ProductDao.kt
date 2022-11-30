@@ -30,33 +30,29 @@ interface ProductDao {
     fun getProductsForSelector(): LiveData<List<ProductItem>>
 
     @Query(
-        "SELECT  " +
-                "   pr.id,     " +
-                "   pr.description,  " +
-                "   pr.sku,  " +
-                "   pr.price,     " +
-                "   ((pr.price - p.discount) * pr.gain) AS gain,    " +
-                "   (((pr.price - p.discount) * pr.gain) * p.quantity) AS totalGain,    " +
-                "   p.quantity  * pr.price AS amount,    " +
-                "   totals.subTotal, " +
-                "   p.discount, " +
-                "   totals.total, " +
-                "   p.quantity,  " +
-                "   p.number  " +
-                "   FROM product AS pr, part AS p,  " +
-                "   (SELECT " +
-                "      SUM(tax) + subTotal AS total, " +
-                "      subTotal " +
-                "    FROM (SELECT " +
-                "          ((pr.price * p.quantity) - p.discount) * t.rate AS tax, " +
-                "          (pr.price * p.quantity)-p.discount AS subTotal " +
-                "       FROM tax AS t, product AS pr, part AS p " +
-                "       WHERE t.idProduct == :idProduct AND pr.id == :idProduct AND p.id == :idPart " +
+        "SELECT " +
+                "    pr.id, " +
+                "    pr.description, " +
+                "    pr.sku, " +
+                "    pr.price, " +
+                "    ((pr.price - p.discount) * pr.gain) AS gain, " +
+                "    (((pr.price - p.discount) * pr.gain) * p.quantity) AS totalGain, " +
+                "    p.quantity * pr.price AS amount, " +
+                "    (pr.price * p.quantity)-p.discount AS subTotal, " +
+                "    ((pr.price * p.quantity)-p.discount) + IFNULL(r.sumTax, 0) - IFNULL(r.restTax, 0) AS total, " +
+                "    p.discount, " +
+                "    p.quantity, " +
+                "    p.number " +
+                "FROM part AS p, product AS pr, ( " +
+                "    SELECT SUM(CASE WHEN withholding == 0 THEN  tax ELSE 0 END) AS sumTax, SUM(CASE WHEN withholding == 1 THEN  tax ELSE 0 END) AS restTax FROM ( " +
+                "        SELECT CASE WHEN t.factor != 'Cuota' THEN ((pr.price * p.quantity) - p.discount) * t.rate ELSE t.rate * p.quantity END AS tax, t.withholding " +
+                "        FROM part AS p, product AS pr, tax AS t " +
+                "        WHERE p.idProduct == pr.id AND p.id == :idPart AND t.idProduct == p.idProduct AND t.factor != 'Exento' " +
                 "    ) " +
-                "   ) AS totals " +
-                "WHERE pr.id == :idProduct AND p.id == :idPart"
+                ")AS r " +
+                "WHERE p.idProduct == pr.id AND p.id == :idPart"
     )
-    fun getProduct(idProduct: String, idPart: String): LiveData<ProductPart>
+    fun getProductWithPart(idPart: String): LiveData<ProductPart>
 
     @Query("DELETE FROM product")
     fun deleteProducts()

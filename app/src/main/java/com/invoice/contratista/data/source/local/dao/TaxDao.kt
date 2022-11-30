@@ -27,9 +27,11 @@ interface TaxDao {
     @Query(
         "SELECT " +
                 "   t.type, " +
-                "   ((pr.price * p.quantity) - p.discount) * t.rate AS tax, " +
+                "   CASE WHEN t.factor != 'Cuota' THEN ((pr.price * p.quantity) - p.discount) * t.rate ELSE t.rate * p.quantity END AS tax, " +
                 "   t.rate, " +
-                "   t.localTax " +
+                "   t.localTax, " +
+                "   t.factor, " +
+                "   t.withholding " +
                 "FROM tax AS t, product AS pr, part AS p " +
                 "WHERE t.idProduct == :idProduct " +
                 "   AND pr.id == :idProduct " +

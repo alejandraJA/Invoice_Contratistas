@@ -35,7 +35,7 @@ class ProductRepository @Inject constructor(
      */
     fun getProduct() = productDao.getProduct(utilsManager.getIdProduct())
     fun getProductPart() =
-        productDao.getProduct(utilsManager.getIdProduct(), utilsManager.getIdPart())
+        productDao.getProductWithPart(utilsManager.getIdPart())
 
     fun getProduct(idProduct: String) = productDao.getProduct(idProduct)
 

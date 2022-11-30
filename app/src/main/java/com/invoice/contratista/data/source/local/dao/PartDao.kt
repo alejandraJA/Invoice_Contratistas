@@ -61,23 +61,18 @@ interface PartDao {
     @Query("UPDATE part SET idProduct = :idProduct WHERE id == :idPart")
     fun updateProduct(idProduct: String, idPart: String)
 
-    @Query("SELECT DISTINCT " +
-            "    p.id AS id_part, " +
-            "    pr.description AS product_name, " +
-            "    p.quantity,      " +
-            "    p.number AS part_number,  " +
-            "    pr.unit_name,  " +
-            "    pr.id as id_product,   " +
-            "    (SELECT SUM(tax) + subTotal AS amount " +
-            "      FROM ( " +
-            "          SELECT ((pr.price * p.quantity) - p.discount) * t.rate AS tax, " +
-            "                        (pr.price * p.quantity)-p.discount AS subTotal " +
-            "          FROM tax AS t  " +
-            "          WHERE t.idProduct == pr.id " +
-            "      ) " +
-            "    ) AS amount " +
-            "FROM product AS pr, part AS p " +
-            "WHERE p.idBudget = :idBudget AND pr.id = p.idProduct")
+    @Query(
+        "SELECT " +
+                "    p.id AS id_part, " +
+                "    pr.description AS product_name, " +
+                "    p.quantity, " +
+                "    p.number AS part_number, " +
+                "    pr.unit_name, " +
+                "    pr.id as id_product," +
+                "    ((pr.price * p.quantity)-p.discount) as amount " +
+                "FROM product AS pr, part AS p " +
+                "WHERE p.idBudget == :idBudget AND pr.id == p.idProduct"
+    )
     fun getPartsForRecycler(idBudget: String): LiveData<List<PartItem>>
 
 }
