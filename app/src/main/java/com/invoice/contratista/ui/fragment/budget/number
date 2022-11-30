@@ -1,9 +1,0 @@
-(SELECT
-   SUM(tax) + subTotal AS total,
- FROM (SELECT
-       ((pr.price * p.quantity) - p.discount) * t.rate AS tax,
-       (pr.price * p.quantity)-p.discount AS subTotal
-    FROM tax AS t, product AS pr, part AS p
-    WHERE t.idProduct == :idProduct AND pr.id == :idProduct AND p.id == :idPart
- )
-) AS amount

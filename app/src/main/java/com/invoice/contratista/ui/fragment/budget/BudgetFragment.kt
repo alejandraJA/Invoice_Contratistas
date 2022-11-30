@@ -13,6 +13,7 @@ import com.invoice.contratista.databinding.FragmentBudgetBinding
 import com.invoice.contratista.ui.fragment.budget.adapter.PartAdapter
 import com.invoice.contratista.ui.fragment.budget.adapter.PartItem
 import com.invoice.contratista.utils.DateUtils.getDate
+import com.invoice.contratista.utils.MoneyUtils.moneyFormat
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -40,10 +41,12 @@ class BudgetFragment : Fragment() {
         }
         viewModel.apply {
             budget.observe(viewLifecycleOwner) {
-                val budgetEntity = it.budgetEntity!!
                 binding.apply {
-                    textDate.text = budgetEntity.date.getDate()
-                    idTextBudget.text = budgetEntity.number.toString()
+                    textDate.text = it.date.getDate()
+                    idTextBudget.text = it.number.toString()
+                    textSubtotal.text = it.subtotal.moneyFormat()
+                    textTotal.text = it.total.moneyFormat()
+                    textTotalGain.text = it.totalGain.moneyFormat()
                 }
             }
             parts.observe(viewLifecycleOwner) {

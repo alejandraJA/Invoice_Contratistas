@@ -5,7 +5,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.invoice.contratista.data.repository.BudgetRepository
 import com.invoice.contratista.data.repository.PartRepository
-import com.invoice.contratista.data.source.local.relations.Budget
 import com.invoice.contratista.data.source.shared_preferences.UtilsManager
 import com.invoice.contratista.ui.fragment.budget.adapter.PartItem
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -39,8 +38,8 @@ class BudgetViewModel @Inject constructor(
             if (it.isNotEmpty()) value = it
         }
     }
-    val budget = MediatorLiveData<Budget>().apply {
-        addSource(budgetRepository.getBudget()) { budget ->
+    val budget = MediatorLiveData<BudgetData>().apply {
+        addSource(budgetRepository.findById()) { budget ->
             if (budget != null) value = budget
         }
     }

@@ -194,20 +194,20 @@
             android:paddingBottom="8sp">
 
             <TextView
-                android:id="@+id/text_iva_title"
+                android:id="@+id/text_subtotal_title"
                 style="@style/TextAppearance.Material3.LabelLarge"
                 android:layout_width="0sp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
-                android:text="@string/iva"
+                android:text="@string/sub_total"
                 android:textAlignment="textEnd"
-                app:layout_constraintBottom_toBottomOf="@+id/text_iva"
-                app:layout_constraintEnd_toStartOf="@+id/text_iva"
+                app:layout_constraintBottom_toBottomOf="@+id/text_subtotal"
+                app:layout_constraintEnd_toStartOf="@+id/text_subtotal"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/text_iva" />
+                app:layout_constraintTop_toTopOf="@+id/text_subtotal" />
 
             <TextView
-                android:id="@+id/text_iva"
+                android:id="@+id/text_subtotal"
                 style="@style/TextAppearance.Material3.TitleLarge"
                 android:layout_width="0sp"
                 android:layout_height="wrap_content"
@@ -217,7 +217,7 @@
                 app:drawableStartCompat="@drawable/ic_money"
                 app:drawableTint="@color/money"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/text_iva_title"
+                app:layout_constraintStart_toEndOf="@+id/text_subtotal_title"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:text="24.56" />
 
@@ -248,7 +248,7 @@
                 app:drawableTint="@color/money"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/text_total_title"
-                app:layout_constraintTop_toBottomOf="@+id/text_iva"
+                app:layout_constraintTop_toBottomOf="@+id/text_subtotal"
                 tools:text="4,587.56" />
 
             <com.google.android.material.divider.MaterialDivider

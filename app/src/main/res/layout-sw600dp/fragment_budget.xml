@@ -6,41 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".ui.fragment.budget.BudgetFragment">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/layout_title"
-        style="@style/Widget.App.TextInputLayout"
-        android:layout_width="0sp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16sp"
-        android:layout_marginTop="16sp"
-        android:layout_marginEnd="8dp"
-        android:enabled="false"
-        android:hint="@string/title"
-        app:layout_constraintEnd_toStartOf="@+id/card_data"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:startIconDrawable="@drawable/ic_legal_data">
-
-        <com.google.android.material.textfield.TextInputEditText
-            style="@style/TextInputEditText"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:inputType="textMultiLine"
-            android:maxLines="3"
-            tools:maxLines="1"
-            tools:text="Budget_785_19_05_2022" />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/card_data"
         android:layout_width="0sp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/layout_title"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/button_add_part"
+
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -103,32 +78,99 @@
         style="@style/Widget.Material3.Button.ElevatedButton"
         android:layout_width="0sp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16sp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16sp"
+        android:layout_marginEnd="8dp"
         android:text="@string/add_part"
-        app:layout_constraintEnd_toEndOf="@+id/layout_title"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/layout_title" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/card_data"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/card_parts"
         android:layout_width="0sp"
         android:layout_height="0sp"
-        android:layout_marginStart="16sp"
         android:layout_marginTop="8sp"
+        android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/button_add_part"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/button_add_part"
         app:layout_constraintTop_toBottomOf="@+id/button_add_part">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler_part"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:itemCount="4"
-            tools:listitem="@layout/item_part" />
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/text_product_name_title"
+                style="@style/TextAppearance.Material3.BodySmall"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/product_service"
+                android:textAlignment="center"
+                app:layout_constraintEnd_toStartOf="@+id/text_quantity_title"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/text_quantity_title"
+                style="@style/TextAppearance.Material3.BodySmall"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/quantity"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toBottomOf="@+id/text_product_name_title"
+                app:layout_constraintEnd_toStartOf="@+id/text_unit_title"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/text_product_name_title"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/text_unit_title"
+                style="@style/TextAppearance.Material3.BodySmall"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/unit"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toBottomOf="@+id/text_product_name_title"
+                app:layout_constraintEnd_toStartOf="@+id/text_amount_title"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/text_quantity_title"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/text_amount_title"
+                style="@style/TextAppearance.Material3.BodySmall"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/amount"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toBottomOf="@+id/text_product_name_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/text_unit_title"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_part"
+                android:layout_width="match_parent"
+                android:layout_height="0sp"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_product_name_title"
+                tools:itemCount="4"
+                tools:listitem="@layout/item_part" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.card.MaterialCardView
@@ -136,8 +178,7 @@
         android:layout_width="0sp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/card_data"
         app:layout_constraintStart_toStartOf="@+id/card_data"
         app:layout_constraintTop_toBottomOf="@+id/card_data">
 
@@ -150,20 +191,20 @@
             android:paddingBottom="8sp">
 
             <TextView
-                android:id="@+id/text_iva_title"
+                android:id="@+id/text_subtotal_title"
                 style="@style/TextAppearance.Material3.LabelLarge"
                 android:layout_width="0sp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
-                android:text="@string/iva"
+                android:text="@string/sub_total"
                 android:textAlignment="textEnd"
-                app:layout_constraintBottom_toBottomOf="@+id/text_iva"
-                app:layout_constraintEnd_toStartOf="@+id/text_iva"
+                app:layout_constraintBottom_toBottomOf="@+id/text_subtotal"
+                app:layout_constraintEnd_toStartOf="@+id/text_subtotal"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/text_iva" />
+                app:layout_constraintTop_toTopOf="@+id/text_subtotal" />
 
             <TextView
-                android:id="@+id/text_iva"
+                android:id="@+id/text_subtotal"
                 style="@style/TextAppearance.Material3.TitleLarge"
                 android:layout_width="0sp"
                 android:layout_height="wrap_content"
@@ -173,7 +214,7 @@
                 app:drawableStartCompat="@drawable/ic_money"
                 app:drawableTint="@color/money"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/text_iva_title"
+                app:layout_constraintStart_toEndOf="@+id/text_subtotal_title"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:text="24.56" />
 
@@ -204,7 +245,7 @@
                 app:drawableTint="@color/money"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/text_total_title"
-                app:layout_constraintTop_toBottomOf="@+id/text_iva"
+                app:layout_constraintTop_toBottomOf="@+id/text_subtotal"
                 tools:text="4,587.56" />
 
             <com.google.android.material.divider.MaterialDivider
@@ -250,11 +291,11 @@
         android:id="@+id/button_send"
         android:layout_width="0sp"
         android:layout_height="wrap_content"
-        android:layout_margin="16sp"
+        android:layout_marginTop="16sp"
         android:text="@string/send_budget"
         app:icon="@drawable/ic_send"
-        app:layout_constraintEnd_toEndOf="@+id/card_total"
-        app:layout_constraintStart_toStartOf="@+id/card_total"
+        app:layout_constraintEnd_toEndOf="@+id/card_data"
+        app:layout_constraintStart_toStartOf="@+id/card_data"
         app:layout_constraintTop_toBottomOf="@+id/card_total" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

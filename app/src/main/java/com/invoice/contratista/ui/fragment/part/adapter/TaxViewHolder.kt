@@ -23,7 +23,7 @@ class TaxViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
                 )
             } %) ${if (taxItem.withholding) "-" else "+"} "
             textTax.text = taxItem.tax.moneyFormat()
-            textTypeTax.visibility = if (taxItem.localTax) View.VISIBLE else View.INVISIBLE
+            textTypeTax.visibility = if (taxItem.localTax) View.VISIBLE else View.GONE
             if (taxItem.factor == "Exento")
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                     textType.setTextColor(itemView.resources.getColor(R.color.text_secondary, null))
