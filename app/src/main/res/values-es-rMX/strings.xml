@@ -14,7 +14,7 @@
     <string name="invalid_password">La contraseña debe tener más de 5 caracteres</string>
     <string name="login_failed">Inicio fallido</string>
     <string name="welcome_back">Bienvenido otra vez</string>
-    <string name="do_you_have_an_account">¿Ya cuentas con una cuenta?</string>
+    <string name="do_you_have_an_account">¿Aun no cuentas con una cuenta?</string>
     <string name="email">Correo</string>
     <string name="password">Contraseña</string>
     <string name="login">Iniciar sesión</string>
@@ -27,8 +27,6 @@
     <string name="sing_up">Registrarse</string>
     <string name="i_agree_with_privacy_policy">Estoy deacuerdo con los terminos y condiciones</string>
     <string name="title_activity_start">Inicio</string>
-    <string name="tab_text_1">Tab1</string>
-    <string name="tab_text_2">Tab2</string>
     <string name="login_now">Iniciar ahora</string>
     <string name="let_s_get_started">Vamos a comenzar</string>
     <string name="profile">Perfil</string>
@@ -128,4 +126,30 @@
     <string name="discount">Descuento</string>
     <string name="price_with_gain">Precio con ganancias</string>
     <string name="price_with_discount">"Precio con descuento "</string>
+    <string name="add_product">Agregar producto</string>
+    <string name="dis">--</string>
+    <string name="multiplication">x</string>
+    <string name="same">=</string>
+    <string name="schedule">Agenda</string>
+    <string name="add_note">Agregar Nota</string>
+    <string name="add_schedule">Agregar a evento</string>
+    <string name="event_name">Nombre del evento</string>
+    <string name="note">Nota</string>
+    <string name="event_data">Datos del evento</string>
+    <string name="customer_data">Datos del cliente</string>
+    <string name="history">Historia</string>
+    <string name="save_event">Guardar evento</string>
+    <string name="complete">Completar</string>
+    <string name="select_date">Selecciona la fecha</string>
+    <string name="select_hour">Delecciona la hora</string>
+    <string name="required">Campo requerido</string>
+    <string name="budgets">Cotizaciones</string>
+    <string name="add_budget">Agregar cotización</string>
+    <string name="ok">Aceptar</string>
+    <string name="local_tax">Impuesto Local</string>
+    <string name="amount">Monto</string>
+    <string name="apply_discount">Aplicar descuento</string>
+    <string name="zero">0</string>
+    <string name="product_service">Producto / Servicio</string>
+    <string name="sku">SKU</string>
 </resources>

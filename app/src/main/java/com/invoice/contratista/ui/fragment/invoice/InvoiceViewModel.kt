@@ -2,6 +2,4 @@ package com.invoice.contratista.ui.fragment.invoice
 
 import androidx.lifecycle.ViewModel
 
-class InvoiceViewModel : ViewModel() {
-    // TODO: Implement the ViewModel
-}
+class InvoiceViewModel : ViewModel()

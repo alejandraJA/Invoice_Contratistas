@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.fragment.event.EventFragment">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -16,49 +16,56 @@
             android:layout_height="wrap_content"
             android:paddingStart="16sp"
             android:paddingTop="16sp"
-            android:paddingBottom="8sp"
-            android:paddingEnd="16sp">
+            android:paddingEnd="16sp"
+            android:paddingBottom="8sp">
+
+            <TextView
+                android:id="@+id/text_name_customer"
+                style="@style/TextAppearance.Material3.BodyLarge"
+                android:layout_width="0sp"
+                android:layout_marginEnd="8sp"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/button_call"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="@tools:sample/full_names" />
 
             <ImageButton
                 android:id="@+id/button_call"
                 style="@style/ImageButton"
+                android:contentDescription="@string/call_phone"
                 android:src="@drawable/ic_phone"
+                app:layout_constraintBottom_toBottomOf="@+id/button_email"
                 app:layout_constraintEnd_toStartOf="@+id/button_email"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="@+id/button_email" />
 
             <ImageButton
                 android:id="@+id/button_email"
                 style="@style/ImageButton"
+                android:contentDescription="@string/send_email"
                 android:src="@drawable/ic_email"
+                app:layout_constraintBottom_toBottomOf="@+id/button_message"
                 app:layout_constraintEnd_toStartOf="@+id/button_message"
-                app:layout_constraintStart_toEndOf="@+id/button_call"
-                app:layout_constraintTop_toTopOf="@+id/button_call" />
+                app:layout_constraintTop_toTopOf="@+id/button_message" />
 
             <ImageButton
                 android:id="@+id/button_message"
                 style="@style/ImageButton"
+                android:contentDescription="@string/send_message"
                 android:src="@drawable/ic_round_message_24"
-                app:layout_constraintEnd_toStartOf="@+id/button_info"
-                app:layout_constraintStart_toEndOf="@+id/button_email"
-                app:layout_constraintTop_toTopOf="@+id/button_call" />
-
-            <ImageButton
-                android:id="@+id/button_info"
-                style="@style/ImageButton"
-                android:src="@drawable/ic_round_person_24"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/button_message"
-                app:layout_constraintTop_toTopOf="@+id/button_call" />
+                app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tabs"
             android:layout_width="match_parent"
-            android:background="?android:attr/windowBackground"
             android:layout_height="wrap_content"
-            app:tabMode="fixed" />
+            android:background="?android:attr/windowBackground"
+            app:tabMode="scrollable" />
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.viewpager2.widget.ViewPager2

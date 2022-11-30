@@ -15,7 +15,10 @@
             app:destination="@id/eventFragment" />
         <action
             android:id="@+id/action_navigation_home_to_addEventFragment"
-            app:destination="@id/addEventFragment" />
+            app:destination="@id/createEventFragment" />
+        <action
+            android:id="@+id/action_navigation_home_to_scheduleFragment"
+            app:destination="@id/scheduleFragment" />
     </fragment>
 
     <fragment
@@ -35,13 +38,10 @@
         tools:layout="@layout/fragment_notifications" />
 
     <fragment
-        android:id="@+id/addEventFragment"
-        android:name="com.invoice.contratista.ui.fragment.add_event.AddEventFragment"
+        android:id="@+id/createEventFragment"
+        android:name="com.invoice.contratista.ui.fragment.event.create.CreateEventFragment"
         android:label="@string/new_event"
-        tools:layout="@layout/add_event_fragment" >
-        <action
-            android:id="@+id/action_addEventFragment_to_createCustomerFragment"
-            app:destination="@id/createCustomerFragment" />
+        tools:layout="@layout/fragment_create_event" >
         <action
             android:id="@+id/action_addEventFragment_to_eventFragment"
             app:destination="@id/eventFragment" />
@@ -51,19 +51,49 @@
         android:id="@+id/createCustomerFragment"
         android:name="com.invoice.contratista.ui.fragment.customer.create.CreateCustomerFragment"
         android:label="create_customer_fragment"
-        tools:layout="@layout/create_customer_fragment" />
+        tools:layout="@layout/fragment_create_customer" />
     <fragment
         android:id="@+id/addPartFragment"
-        android:name="com.invoice.contratista.ui.fragment.add_part.AddPartFragment"
+        android:name="com.invoice.contratista.ui.fragment.part.PartFragment"
         android:label="fragment_add_part"
-        tools:layout="@layout/fragment_add_part" />
+        tools:layout="@layout/fragment_part" />
     <fragment
         android:id="@+id/eventFragment"
         android:name="com.invoice.contratista.ui.fragment.event.EventFragment"
         android:label="fragment_event"
         tools:layout="@layout/fragment_event" >
         <action
-            android:id="@+id/action_eventFragment_to_addPartFragment"
+            android:id="@+id/action_eventFragment_to_scheduleFragment"
+            app:destination="@id/scheduleFragment" />
+        <action
+            android:id="@+id/action_eventFragment_to_noteFragment"
+            app:destination="@id/noteFragment" />
+        <action
+            android:id="@+id/action_eventFragment_to_navigation_home"
+            app:destination="@id/navigation_home"
+            app:popUpTo="@+id/navigation_home"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_eventFragment_to_budgetFragment"
+            app:destination="@id/budgetFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/scheduleFragment"
+        android:name="com.invoice.contratista.ui.fragment.schedule.create_edit.CreateEditScheduleFragment"
+        android:label="fragment_schedule"
+        tools:layout="@layout/fragment_create_edit_schedule" />
+    <fragment
+        android:id="@+id/noteFragment"
+        android:name="com.invoice.contratista.ui.fragment.notes.create.CreateEditNoteFragment"
+        android:label="fragment_note"
+        tools:layout="@layout/fragment_create_edit_note" />
+    <fragment
+        android:id="@+id/budgetFragment"
+        android:name="com.invoice.contratista.ui.fragment.budget.BudgetFragment"
+        android:label="fragment_budget"
+        tools:layout="@layout/fragment_budget" >
+        <action
+            android:id="@+id/action_budgetFragment_to_addPartFragment"
             app:destination="@id/addPartFragment" />
     </fragment>
 

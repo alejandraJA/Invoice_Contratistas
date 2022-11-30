@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="customer"
+            type="com.invoice.contratista.data.source.local.entity.CustomerEntity" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/text_tax_title5"
+            style="@style/TextAppearance.Material3.TitleSmall"
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8sp"
+            android:text="@string/address"
+            android:textColor="@color/text_secondary"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/text_tax_title2"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_tax_identification4" />
+
+        <TextView
+            android:id="@+id/text_address"
+            style="@style/TextAppearance.Material3.BodyMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_tax_title5"
+            tools:maxLines="3"
+            tools:text="@tools:sample/lorem/random" />
+
+        <TextView
+            android:id="@+id/text_tax_title4"
+            style="@style/TextAppearance.Material3.TitleSmall"
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8sp"
+            android:text="@string/email"
+            android:textColor="@color/text_secondary"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/text_tax_title2"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_tax_identification2" />
+
+        <TextView
+            android:id="@+id/text_tax_title3"
+            style="@style/TextAppearance.Material3.TitleSmall"
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8sp"
+            android:text="@string/phone"
+            android:textColor="@color/text_secondary"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/text_tax_title"
+            app:layout_constraintTop_toBottomOf="@+id/text_tax_identification" />
+
+        <TextView
+            android:id="@+id/text_tax_identification4"
+            style="@style/TextAppearance.Material3.BodyMedium"
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            android:text="@{customer.email}"
+            app:layout_constraintEnd_toEndOf="@+id/text_tax_title4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_tax_title4"
+            tools:text="email@email.com" />
+
+        <TextView
+            android:id="@+id/text_tax_identification3"
+            style="@style/TextAppearance.Material3.BodyMedium"
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            android:text="@{customer.phone}"
+            app:layout_constraintEnd_toEndOf="@+id/text_tax_title3"
+            app:layout_constraintStart_toStartOf="@+id/text_tax_title2"
+            app:layout_constraintTop_toBottomOf="@+id/text_tax_title3"
+            tools:text="33 3333 3333" />
+
+        <TextView
+            android:id="@+id/text_legal_name_title"
+            style="@style/TextAppearance.Material3.TitleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/legal_name"
+            android:textColor="@color/text_secondary"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/text_name"
+            style="@style/TextAppearance.Material3.BodyLarge"
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            android:text="@{customer.legal_name}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_legal_name_title"
+            tools:text="@tools:sample/full_names" />
+
+        <TextView
+            android:id="@+id/text_tax_title"
+            style="@style/TextAppearance.Material3.TitleSmall"
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8sp"
+            android:text="@string/tax_identification"
+            android:textColor="@color/text_secondary"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/text_tax_title2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_name" />
+
+        <TextView
+            android:id="@+id/text_tax_title2"
+            style="@style/TextAppearance.Material3.TitleSmall"
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            android:text="@string/fiscal_regime"
+            android:textColor="@color/text_secondary"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/text_tax_title"
+            app:layout_constraintTop_toTopOf="@+id/text_tax_title" />
+
+        <TextView
+            android:id="@+id/text_tax_identification"
+            style="@style/TextAppearance.Material3.BodyMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{customer.tax_system}"
+            app:layout_constraintStart_toStartOf="@+id/text_tax_title2"
+            app:layout_constraintTop_toBottomOf="@+id/text_tax_title2"
+            tools:text="@string/tax_system_example" />
+
+        <TextView
+            android:id="@+id/text_tax_identification2"
+            style="@style/TextAppearance.Material3.BodyMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{customer.tax_id}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_tax_title"
+            tools:text="@string/rfc_example" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

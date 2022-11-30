@@ -1,6 +1,9 @@
 package com.invoice.contratista.utils
 
 object Constants {
+
+    enum class Status { Success, Failure, Loading }
+
     enum class Priority {
         Low,
         Medium,
@@ -21,6 +24,32 @@ object Constants {
         Finish,
     }
 
+    enum class StateEvent {
+        Creado,
+        Levantado,
+        Cotizando,
+        Enviado,
+        Aprobado,
+        Cancelado,
+        Pendiente,
+        Realizado,
+        Finiquitado
+    }
+
+    enum class StateSchedule { Pendiente, Atendido }
+
+    enum class BudgetStatus {
+        Pendiente,
+        Espera,
+        Cancelado,
+        Autorizado,
+    }
+
+    const val BASE_URL = "https://www.facturapi.io/v2/"
+    const val TOKEN = "Bearer sk_test_0Lj7YMX1JeVKOeeZp0Jzd239RZOlykGa"
+    const val AUTHORIZATION = "Authorization"
+    const val ID_SCHEDULE = "idSchedule"
+    const val ID_NOTE = "idNote"
     const val ID_CUSTOMER = "idCustomer"
     const val ID_BUDGET = "idBudget"
     const val ID_PART = "idPart"

@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragment.budget.BudgetFragment">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16sp">
+
+            <TextView
+                android:id="@+id/id_text_budget_title"
+                style="@style/TextAppearance.Material3.TitleMedium"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:text="@string/budget"
+                app:layout_constraintEnd_toStartOf="@+id/text_date_title"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/id_text_budget"
+                style="@style/TextAppearance.Material3.TitleLarge"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:drawablePadding="8sp"
+                app:drawableStartCompat="@drawable/ic_round_grid_3x3_24"
+                app:drawableTint="?android:attr/colorPrimary"
+                app:layout_constraintEnd_toStartOf="@+id/text_date_title"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/id_text_budget_title"
+                tools:text="785" />
+
+            <TextView
+                android:id="@+id/text_date_title"
+                style="@style/TextAppearance.Material3.TitleMedium"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:text="@string/date"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/id_text_budget_title"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/text_date"
+                style="@style/TextAppearance.Material3.TitleLarge"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:drawablePadding="8sp"
+                app:drawableStartCompat="@drawable/ic_calendar_days"
+                app:drawableTint="?android:attr/colorPrimary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/id_text_budget_title"
+                app:layout_constraintTop_toBottomOf="@+id/text_date_title"
+                tools:text="@tools:sample/date/ddmmyy" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <Button
+        android:id="@+id/button_add_part"
+        style="@style/Widget.Material3.Button.ElevatedButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16sp"
+        android:layout_marginTop="8sp"
+        android:layout_marginEnd="16sp"
+        android:text="@string/add_part"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/card_data" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_parts"
+        android:layout_width="match_parent"
+        android:layout_height="0sp"
+        android:layout_marginStart="16sp"
+        android:layout_marginTop="8sp"
+        android:layout_marginEnd="16sp"
+        android:layout_marginBottom="8sp"
+        app:layout_constraintBottom_toTopOf="@+id/card_total"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_add_part">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/text_product_name_title"
+                style="@style/TextAppearance.Material3.BodySmall"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/product_service"
+                android:textAlignment="center"
+                app:layout_constraintEnd_toStartOf="@+id/text_quantity_title"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/text_quantity_title"
+                style="@style/TextAppearance.Material3.BodySmall"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/quantity"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toBottomOf="@+id/text_product_name_title"
+                app:layout_constraintEnd_toStartOf="@+id/text_unit_title"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/text_product_name_title"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/text_unit_title"
+                style="@style/TextAppearance.Material3.BodySmall"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/unit"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toBottomOf="@+id/text_product_name_title"
+                app:layout_constraintEnd_toStartOf="@+id/text_amount_title"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/text_quantity_title"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/text_amount_title"
+                style="@style/TextAppearance.Material3.BodySmall"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/amount"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toBottomOf="@+id/text_product_name_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/text_unit_title"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_part"
+                android:layout_width="match_parent"
+                android:layout_height="0sp"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_product_name_title"
+                tools:itemCount="4"
+                tools:listitem="@layout/item_part" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_total"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16sp"
+        android:layout_marginEnd="16sp"
+        android:layout_marginBottom="8sp"
+        app:layout_constraintBottom_toTopOf="@+id/button_send"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="16sp"
+            android:paddingTop="8sp"
+            android:paddingEnd="16sp"
+            android:paddingBottom="8sp">
+
+            <TextView
+                android:id="@+id/text_subtotal_title"
+                style="@style/TextAppearance.Material3.LabelLarge"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:text="@string/sub_total"
+                android:textAlignment="textEnd"
+                app:layout_constraintBottom_toBottomOf="@+id/text_subtotal"
+                app:layout_constraintEnd_toStartOf="@+id/text_subtotal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/text_subtotal" />
+
+            <TextView
+                android:id="@+id/text_subtotal"
+                style="@style/TextAppearance.Material3.TitleLarge"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8sp"
+                android:drawablePadding="8sp"
+                android:textAlignment="textEnd"
+                app:drawableStartCompat="@drawable/ic_money"
+                app:drawableTint="@color/money"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/text_subtotal_title"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="24.56" />
+
+            <TextView
+                android:id="@+id/text_total_title"
+                style="@style/TextAppearance.Material3.LabelLarge"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:text="@string/total"
+                android:textAlignment="textEnd"
+                app:layout_constraintBottom_toBottomOf="@+id/text_total"
+                app:layout_constraintEnd_toStartOf="@+id/text_total"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/text_total" />
+
+            <TextView
+                android:id="@+id/text_total"
+                style="@style/TextAppearance.Material3.TitleLarge"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8sp"
+                android:layout_marginTop="8sp"
+                android:drawablePadding="8sp"
+                android:textAlignment="textEnd"
+                android:textStyle="bold"
+                app:drawableStartCompat="@drawable/ic_money"
+                app:drawableTint="@color/money"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/text_total_title"
+                app:layout_constraintTop_toBottomOf="@+id/text_subtotal"
+                tools:text="4,587.56" />
+
+            <com.google.android.material.divider.MaterialDivider
+                android:id="@+id/divider"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8sp"
+                app:layout_constraintTop_toBottomOf="@+id/text_total" />
+
+            <TextView
+                android:id="@+id/text_total_gain_title"
+                style="@style/TextAppearance.Material3.BodySmall"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8sp"
+                android:text="@string/total_gain"
+                android:textAlignment="textEnd"
+                android:textColor="@color/text_secondary"
+                app:layout_constraintEnd_toEndOf="@+id/text_total_gain"
+                app:layout_constraintStart_toStartOf="@+id/text_total"
+                app:layout_constraintTop_toBottomOf="@+id/divider" />
+
+            <TextView
+                android:id="@+id/text_total_gain"
+                style="@style/TextAppearance.Material3.LabelLarge"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:drawablePadding="8sp"
+                android:textAlignment="textEnd"
+                android:textStyle="bold"
+                app:drawableStartCompat="@drawable/ic_money"
+                app:drawableTint="@color/money"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/text_total"
+                app:layout_constraintTop_toBottomOf="@+id/text_total_gain_title"
+                tools:text="4,587.56" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <Button
+        android:id="@+id/button_send"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16sp"
+        android:text="@string/send_budget"
+        app:icon="@drawable/ic_send"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

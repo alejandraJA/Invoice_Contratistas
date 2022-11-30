@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16sp"
-    tools:context=".ui.fragment.customer.wach.CustomerFragment">
+    tools:context=".ui.fragment.customer.customer.CustomerFragment">
 
     <TextView
         style="@style/TextAppearance.MaterialComponents.Body1"

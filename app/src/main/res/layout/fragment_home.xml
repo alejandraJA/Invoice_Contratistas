@@ -6,59 +6,37 @@
     android:layout_height="match_parent"
     tools:context=".ui.fragment.home.HomeFragment">
 
-    <ImageView
-        android:id="@+id/image_profile"
-        android:layout_width="40sp"
-        android:layout_height="40sp"
+    <TextView
+        android:id="@+id/text_to_do"
+        style="@style/TextAppearance.Material3.TitleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="16sp"
         android:layout_marginTop="16sp"
-        android:contentDescription="@string/profile"
-        android:elevation="16sp"
-        android:padding="8sp"
-        android:src="@drawable/ic_business"
+        android:text="@string/schedule"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/hi"
-        style="@style/TextAppearance.MaterialComponents.Body1"
-        android:layout_width="wrap_content"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_schedule"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16sp"
-        android:text="@string/hi"
-        app:layout_constraintStart_toEndOf="@+id/image_profile"
-        app:layout_constraintTop_toTopOf="@+id/image_profile" />
-
-    <TextView
-        android:id="@+id/name"
-        style="@style/TextAppearance.MaterialComponents.Body1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4sp"
-        app:layout_constraintStart_toEndOf="@+id/hi"
-        app:layout_constraintTop_toTopOf="@+id/image_profile"
-        tools:text="@tools:sample/first_names" />
-
-    <TextView
-        android:id="@+id/see_your_daily"
-        style="@style/TextAppearance.MaterialComponents.Body2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16sp"
-        android:text="@string/see_your_daily"
-        app:layout_constraintStart_toEndOf="@+id/image_profile"
-        app:layout_constraintTop_toBottomOf="@+id/name" />
-
-    <TextView
-        android:id="@+id/text_to_do"
-        style="@style/TextAppearance.MaterialComponents.Subtitle1.Subtitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16sp"
-        android:layout_marginTop="16sp"
-        android:text="@string/to_do"
+        android:paddingTop="8sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/image_profile" />
+        app:layout_constraintTop_toBottomOf="@+id/text_to_do"
+        tools:itemCount="2"
+        tools:listitem="@layout/item_schedule" />
+
+    <TextView
+        android:id="@+id/text_event"
+        style="@style/TextAppearance.Material3.TitleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16sp"
+        android:text="@string/event"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recycler_schedule" />
 
     <Button
         android:id="@+id/button_add_event"
@@ -66,22 +44,21 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16sp"
-        android:layout_marginTop="8sp"
         android:layout_marginEnd="16sp"
+        android:layout_marginBottom="16sp"
         android:text="@string/add_event"
+        app:icon="@drawable/ic_add"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_to_do" />
+        app:layout_constraintTop_toBottomOf="@+id/text_event" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_event"
         android:layout_width="match_parent"
         android:layout_height="0sp"
-        android:paddingTop="16sp"
-        app:layout_constraintTop_toBottomOf="@+id/button_add_event"
+        android:paddingTop="8sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:listitem="@layout/item_to_do" />
+        app:layout_constraintTop_toBottomOf="@+id/button_add_event"
+        tools:listitem="@layout/item_event" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

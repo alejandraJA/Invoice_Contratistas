@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="schedule"
+            type="com.invoice.contratista.data.source.local.entity.event.ScheduleEntity" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_event"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16sp"
+        android:layout_marginTop="4sp"
+        android:layout_marginEnd="16sp"
+        android:layout_marginBottom="4sp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingStart="16sp"
+            android:paddingTop="8sp"
+            android:paddingEnd="16sp"
+            android:paddingBottom="8sp">
+
+            <TextView
+                android:id="@+id/text_hour"
+                style="@style/TextAppearance.Material3.TitleLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toTopOf="@+id/text_date"
+                app:layout_constraintEnd_toEndOf="@+id/text_date"
+                app:layout_constraintStart_toStartOf="@+id/text_date"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0"
+                tools:text="@tools:sample/date/hhmm" />
+
+            <TextView
+                android:id="@+id/text_date"
+                style="@style/TextAppearance.Material3.TitleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_secondary"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_hour"
+                app:layout_constraintVertical_bias="0.0"
+                tools:text="@tools:sample/date/ddmmyy" />
+
+            <com.google.android.material.divider.MaterialDivider
+                android:id="@+id/materialDivider"
+                android:layout_width="1sp"
+                android:layout_height="0sp"
+                android:layout_marginStart="16sp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/text_date"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/text_note"
+                style="@style/TextAppearance.Material3.TitleSmall"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8sp"
+                android:text="@{schedule.note}"
+                android:layout_marginEnd="8sp"
+                app:layout_constraintEnd_toStartOf="@+id/image_state"
+                app:layout_constraintStart_toEndOf="@+id/materialDivider"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:maxLines="2"
+                tools:text="@tools:sample/lorem" />
+
+            <ImageView
+                android:id="@+id/image_customer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8sp"
+                android:layout_marginTop="8sp"
+                android:contentDescription="@string/location"
+                android:src="@drawable/ic_customers"
+                app:layout_constraintStart_toEndOf="@+id/materialDivider"
+                app:layout_constraintTop_toBottomOf="@+id/text_note" />
+
+            <TextView
+                android:id="@+id/text_customer"
+                style="@style/TextAppearance.Material3.BodySmall"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8sp"
+                android:layout_marginEnd="8sp"
+                android:text="@{schedule.name}"
+                app:layout_constraintBottom_toBottomOf="@+id/image_customer"
+                app:layout_constraintEnd_toStartOf="@+id/image_state"
+                app:layout_constraintStart_toEndOf="@+id/image_customer"
+                app:layout_constraintTop_toTopOf="@+id/image_customer"
+                tools:maxLines="2"
+                tools:text="@tools:sample/full_names" />
+
+            <ImageView
+                android:id="@+id/image_state"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_check"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:contentDescription="@string/state" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>

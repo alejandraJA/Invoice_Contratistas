@@ -6,18 +6,18 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.invoice.contratista.databinding.WelcomeFragmentBinding
+import com.invoice.contratista.databinding.FragmentWelcomeBinding
 
 class WelcomeFragment(private val onClick: (Boolean) -> Unit) : Fragment() {
 
     private lateinit var viewModel: WelcomeViewModel
-    private lateinit var binding: WelcomeFragmentBinding
+    private lateinit var binding: FragmentWelcomeBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = WelcomeFragmentBinding.inflate(inflater, container, false)
+        binding = FragmentWelcomeBinding.inflate(inflater, container, false)
         return binding.root
     }
 

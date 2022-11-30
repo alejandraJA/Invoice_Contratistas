@@ -1,4 +1,4 @@
-<resources xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <!-- Base appApplication theme. -->
     <style name="Theme.InvoiceContratistas" parent="Theme.Material3.Dark.NoActionBar">
         <!-- Primary brand color. -->
@@ -14,10 +14,9 @@
         <item name="colorSecondaryVariant">@color/teal_200</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">@color/background_night</item>
+        <item name="android:statusBarColor">@color/background_night</item>
         <!-- Customize your theme here. -->
         <item name="android:windowBackground">@color/background_night</item>
-        <item name="fontFamily">@font/font</item>
         <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.MyApp.SmallComponent
         </item>
         <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.MyApp.MediumComponent
@@ -30,6 +29,8 @@
         <item name="snackbarTextViewStyle">@style/customText</item>
         <item name="chipStyle">@style/Widget.Material3.Chip.Suggestion.Elevated</item>
         <item name="materialCardViewStyle">?attr/materialCardViewElevatedStyle</item>
+        <item name="android:fontFamily">@font/font</item>
+        <item name="fontFamily">@font/font</item>
     </style>
 
     <style name="customText" parent="@style/TextAppearance.MaterialComponents.Body1">
@@ -70,7 +71,7 @@
         <item name="android:background">@drawable/motion</item>
     </style>
 
-    <style name="Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+    <style name="Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu" parent="Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
         <item name="startIconTint">@color/teal_200</item>
     </style>
 
@@ -140,7 +141,8 @@
 
     <style name="TextInputEditText" parent="ThemeOverlay.Material3.TextInputEditText">
         <item name="android:textSize">16sp</item>
-        <item name="android:background">@drawable/motion</item>
+        <item name="android:background">@drawable/backround_component</item>
+        <item name="backgroundTint">#1C1B20</item>
         <item name="android:textStyle">normal</item>
         <item name="android:paddingEnd">16sp</item>
         <item name="android:paddingStart">16sp</item>

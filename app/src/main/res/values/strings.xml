@@ -27,8 +27,6 @@
     <string name="sing_up">Sing Up</string>
     <string name="i_agree_with_privacy_policy">I agree with privacy policy</string>
     <string name="title_activity_start">StartActivity</string>
-    <string name="tab_text_1">Tab 1</string>
-    <string name="tab_text_2">Tab 2</string>
     <string name="login_now">Login now</string>
     <string name="let_s_get_started">Let´s get started</string>
     <string name="profile">profile</string>
@@ -45,7 +43,7 @@
     <string name="step">Step</string>
     <string name="priority">Priority</string>
     <string name="low">Low</string>
-    <string name="hour">hour</string>
+    <string name="hour">Hour</string>
     <string name="add">add</string>
     <string name="title_activity_event">EventActivity</string>
     <string name="event">Event</string>
@@ -128,6 +126,32 @@
     <string name="discount">Discount</string>
     <string name="price_with_gain">Price with gain</string>
     <string name="price_with_discount">Price with discount</string>
-    <!-- This is the label underneath the icon for Calendar -->
+    <string name="add_product">Add product</string>
+    <string name="dis">--</string>
+    <string name="multiplication">x</string>
+    <string name="same">=</string>
+    <string name="schedule">Schedule</string>
+    <string name="add_note">Add note</string>
+    <string name="add_schedule">Add schedule</string>
+    <string name="event_name">Event name</string>
+    <string name="note">Note</string>
+    <string name="event_data">Event data</string>
+    <string name="customer_data">Customer data</string>
+    <string name="history">History</string>
+    <string name="save_event">Save event</string>
+    <string name="complete">Complete</string>
+    <string name="select_date">Select date</string>
+    <string name="select_hour">Select hour</string>
+    <string name="required">Required</string>
+    <string name="budgets">Budgets</string>
+    <string name="add_budget">Add budget</string>
+    <string name="ok">OK</string>
+    <string name="local_tax">Local Tax</string>
+    <string name="amount">Amount</string>
+    <string name="apply_discount">Apply discount</string>
+    <string name="zero">0</string>
+    <string name="product_service">Product / Service</string>
+    <string name="sku">SKU</string>
+    <string name="empty_list">Empty list</string>
 
 </resources>

@@ -7,19 +7,19 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.invoice.contratista.databinding.SingUpFragmentBinding
+import com.invoice.contratista.databinding.FragmentSingUpBinding
 import com.invoice.contratista.ui.activity.main.MainActivity
 
 class SingUpFragment(private val onClick: (Boolean) -> Unit) : Fragment() {
 
     private lateinit var viewModel: SingUpViewModel
-    private lateinit var binding: SingUpFragmentBinding
+    private lateinit var binding: FragmentSingUpBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = SingUpFragmentBinding.inflate(layoutInflater, container, false)
+        binding = FragmentSingUpBinding.inflate(layoutInflater, container, false)
         viewModel = ViewModelProvider(this)[SingUpViewModel::class.java]
         return binding.root
     }
