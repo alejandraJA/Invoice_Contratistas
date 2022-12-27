@@ -35,8 +35,8 @@ interface ProductDao {
                 "    pr.description, " +
                 "    pr.sku, " +
                 "    pr.price, " +
-                "    ((pr.price - p.discount) * pr.gain) AS gain, " +
-                "    (((pr.price - p.discount) * pr.gain) * p.quantity) AS totalGain, " +
+                "    (pr.price - p.discount) AS gain, " +
+                "    ((pr.price - p.discount) * p.quantity) AS totalGain, " +
                 "    p.quantity * pr.price AS amount, " +
                 "    (pr.price * p.quantity)-p.discount AS subTotal, " +
                 "    ((pr.price * p.quantity)-p.discount) + IFNULL(r.sumTax, 0) - IFNULL(r.restTax, 0) AS total, " +
@@ -47,10 +47,10 @@ interface ProductDao {
                 "    SELECT SUM(CASE WHEN withholding == 0 THEN  tax ELSE 0 END) AS sumTax, SUM(CASE WHEN withholding == 1 THEN  tax ELSE 0 END) AS restTax FROM ( " +
                 "        SELECT CASE WHEN t.factor != 'Cuota' THEN ((pr.price * p.quantity) - p.discount) * t.rate ELSE t.rate * p.quantity END AS tax, t.withholding " +
                 "        FROM part AS p, product AS pr, tax AS t " +
-                "        WHERE p.idProduct == pr.id AND p.id == :idPart AND t.idProduct == p.idProduct AND t.factor != 'Exento' " +
+                "        WHERE p.id_product == pr.id AND p.id == :idPart AND t.id_product == p.id_product AND t.factor != 'Exento' " +
                 "    ) " +
                 ")AS r " +
-                "WHERE p.idProduct == pr.id AND p.id == :idPart"
+                "WHERE p.id_product == pr.id AND p.id == :idPart"
     )
     fun getProductWithPart(idPart: String): LiveData<ProductPart>
 

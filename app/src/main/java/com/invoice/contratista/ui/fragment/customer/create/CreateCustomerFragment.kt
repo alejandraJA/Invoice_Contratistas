@@ -35,9 +35,9 @@ class CreateCustomerFragment : Fragment() {
             val customer = Customer(
                 customer = CustomerEntity(
                     id = UUID.randomUUID().toString(),
-                    legal_name = binding.layoutLegalName.getTextWithValidation(),
-                    tax_id = binding.layoutTaxIdentification.getTextWithValidation(),
-                    tax_system = binding.layoutTaxSystem.getTextWithValidation(),
+                    legalName = binding.layoutLegalName.getTextWithValidation(),
+                    idTax = binding.layoutTaxIdentification.getTextWithValidation(),
+                    taxSystem = binding.layoutTaxSystem.getTextWithValidation(),
                     email = binding.layoutEmail.getTextWithValidation(),
                     phone = binding.layoutPhone.getTextWithValidation(),
                 ),
@@ -52,7 +52,7 @@ class CreateCustomerFragment : Fragment() {
                     zip = binding.address.layoutZip.getTextWithValidation(),
                     state = binding.address.layoutState.getTextWithValidation(),
                     country = binding.address.layoutCountry.getTextWithValidation(),
-                    idCustomer = "",
+                    idReference = "",
                 )
             )
             if (customer.isNotEmpty()) viewModel.createCustomer(customer)

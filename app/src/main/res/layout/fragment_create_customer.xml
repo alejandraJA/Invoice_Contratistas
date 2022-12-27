@@ -54,7 +54,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:inputType="textPersonName"
-                    android:text="@{customer.legal_name}" />
+                    android:text="@{customer.legalName}"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -78,7 +78,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:inputType="text"
-                    android:text="@{customer.tax_id}" />
+                    android:text="@{customer.idTax}"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -101,7 +101,7 @@
                     style="@style/TextInputEditText"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="@{customer.tax_system}"
+                    android:text="@{customer.taxSystem}"
                     tools:ignore="LabelFor" />
 
             </com.google.android.material.textfield.TextInputLayout>

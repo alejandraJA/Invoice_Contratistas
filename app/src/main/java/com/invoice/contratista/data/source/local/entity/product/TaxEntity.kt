@@ -1,5 +1,6 @@
 package com.invoice.contratista.data.source.local.entity.product
 
+import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.invoice.contratista.data.source.local.relations.Product
@@ -30,6 +31,6 @@ data class TaxEntity(
     var rate: Double = 0.0,
     var factor: String? = null,
     var withholding: Boolean = false,
-    var idProduct: String,
+    @ColumnInfo(name = "id_product") var idProduct: String,
     var localTax: Boolean
 )

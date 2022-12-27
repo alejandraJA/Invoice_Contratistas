@@ -32,7 +32,7 @@ class EventRepository @Inject constructor(
             )
         )
         utilsManager.setIdEvent(event.id)
-        utilsManager.setIdCustomer(event.id_customer)
+        utilsManager.setIdCustomer(event.idCustomer)
     }
 
     /**

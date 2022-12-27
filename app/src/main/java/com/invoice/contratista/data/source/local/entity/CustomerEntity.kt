@@ -1,5 +1,6 @@
 package com.invoice.contratista.data.source.local.entity
 
+import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
@@ -7,12 +8,12 @@ import androidx.room.PrimaryKey
  * # Clase Clientes
  *
  * @param id ID del cliente
- * @param legal_name Nombre fiscal o razón social del cliente
- * @param tax_id RFC o Identificacion tributaria.
+ * @param legalName Nombre fiscal o razón social del cliente
+ * @param taxId RFC o Identificacion tributaria.
  * - En clientes de México contiene el RFC del cliente.
  * - Para extranjeros es opcional y representa el número de registro de identificacón
  * tributaria, es decir, el equivalente al RFC en el país del cliente.
- * @param tax_system Clave del régimen fiscal del cliente.
+ * @param taxSystem Clave del régimen fiscal del cliente.
  * **NOTA** Requerido para clientes nacionales.
  * @param email Dirección de correo electrónico al cual enviar las facturas generadas
  * @param phone Teléfono del cliente
@@ -22,12 +23,12 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "customer")
 data class CustomerEntity(
     @PrimaryKey(autoGenerate = false) var id: String,
-    var legal_name: String,
-    var tax_id: String,
-    var tax_system: String,
+    @ColumnInfo(name = "legal_name") var legalName: String,
+    @ColumnInfo(name = "id_tax") var idTax: String,
+    @ColumnInfo(name = "tax_system") var taxSystem: String,
     var email: String,
     var phone: String,
 ) {
-    fun isEmpty() = (legal_name.isEmpty() && tax_id.isEmpty() && tax_system.isEmpty() &&
+    fun isEmpty() = (legalName.isEmpty() && idTax.isEmpty() && taxSystem.isEmpty() &&
             email.isEmpty() && phone.isEmpty())
 }

@@ -32,12 +32,6 @@
     </fragment>
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.invoice.contratista.ui.fragment.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
-
-    <fragment
         android:id="@+id/createEventFragment"
         android:name="com.invoice.contratista.ui.fragment.event.create.CreateEventFragment"
         android:label="@string/new_event"
@@ -86,15 +80,20 @@
         android:id="@+id/noteFragment"
         android:name="com.invoice.contratista.ui.fragment.notes.create.CreateEditNoteFragment"
         android:label="fragment_note"
-        tools:layout="@layout/fragment_create_edit_note" />
+        tools:layout="@layout/fragment_create_edit_note"/>
     <fragment
         android:id="@+id/budgetFragment"
         android:name="com.invoice.contratista.ui.fragment.budget.BudgetFragment"
         android:label="fragment_budget"
-        tools:layout="@layout/fragment_budget" >
+        tools:layout="@layout/fragment_budget">
         <action
             android:id="@+id/action_budgetFragment_to_addPartFragment"
-            app:destination="@id/addPartFragment" />
+            app:destination="@id/addPartFragment"/>
     </fragment>
+    <fragment
+        android:id="@+id/navigation_product"
+        android:name="com.invoice.contratista.ui.fragment.product.ProductFragment"
+        android:label="fragment_product"
+        tools:layout="@layout/fragment_product"/>
 
 </navigation>

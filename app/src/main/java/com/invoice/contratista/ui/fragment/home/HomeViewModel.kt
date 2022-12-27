@@ -18,7 +18,7 @@ class HomeViewModel @Inject constructor(
 ) : ViewModel() {
     fun saveEvent(event: EventEntity) {
         utilsManager.setIdEvent(event.id)
-        utilsManager.setIdCustomer(event.id_customer)
+        utilsManager.setIdCustomer(event.idCustomer)
     }
 
     fun setSchedule(idSchedule: String, action: Boolean) {

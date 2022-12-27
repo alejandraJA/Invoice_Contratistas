@@ -17,7 +17,7 @@ data class Product (
     @Embedded val product: ProductEntity?,
     @Relation(
         parentColumn = "id",
-        entityColumn = "idProduct",
+        entityColumn = "id_product",
     )
     val taxes: List<TaxEntity>?,
 )

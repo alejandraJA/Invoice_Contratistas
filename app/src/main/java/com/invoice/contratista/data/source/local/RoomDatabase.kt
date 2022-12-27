@@ -11,8 +11,7 @@ import com.invoice.contratista.data.source.local.entity.event.BudgetEntity
 import com.invoice.contratista.data.source.local.entity.event.NoteEntity
 import com.invoice.contratista.data.source.local.entity.event.PartEntity
 import com.invoice.contratista.data.source.local.entity.event.ScheduleEntity
-import com.invoice.contratista.data.source.local.entity.product.ProductEntity
-import com.invoice.contratista.data.source.local.entity.product.TaxEntity
+import com.invoice.contratista.data.source.local.entity.product.*
 
 @Database(
     entities = [
@@ -25,7 +24,10 @@ import com.invoice.contratista.data.source.local.entity.product.TaxEntity
         EventEntity::class,
         ProductEntity::class,
         TaxEntity::class,
-        DateEntity::class
+        DateEntity::class,
+        CategoryEntity::class,
+        InventoryEntity::class,
+        ReservedEntity::class,
     ],
     version = 1,
     exportSchema = true,

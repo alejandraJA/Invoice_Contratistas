@@ -33,7 +33,7 @@ interface TaxDao {
                 "   t.factor, " +
                 "   t.withholding " +
                 "FROM tax AS t, product AS pr, part AS p " +
-                "WHERE t.idProduct == :idProduct " +
+                "WHERE t.id_product == :idProduct " +
                 "   AND pr.id == :idProduct " +
                 "   AND p.id == :idPart " +
                 "ORDER BY t.localTax"

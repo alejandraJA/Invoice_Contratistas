@@ -14,7 +14,7 @@ interface DateDao {
      * Metodo para obtener las fechas del historial de un evento
      * @return Lista de objetos de tipo [DateEntity]
      */
-    @Query("SELECT * FROM date WHERE idReference == :idEvent")
+    @Query("SELECT * FROM date WHERE id_reference == :idEvent")
     fun getDates(idEvent: String): LiveData<List<DateEntity>>
 
     /**

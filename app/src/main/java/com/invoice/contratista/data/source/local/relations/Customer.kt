@@ -14,7 +14,7 @@ data class Customer(
     @Embedded val customer: CustomerEntity?,
     @Relation(
         parentColumn = "id",
-        entityColumn = "idCustomer",
+        entityColumn = "id_reference",
     )
     val address: AddressEntity?,
 ) {

@@ -16,7 +16,7 @@ class ScheduleRepository @Inject constructor(
     fun getSchedulesByEvent() = scheduleDao.getSchedules(utilsManager.getIdEvent())
     fun insertSchedule(date: String, note: String, address: AddressEntity) {
         val idSchedule = UUID.randomUUID().toString()
-        address.idCustomer = idSchedule
+        address.idReference = idSchedule
         if (utilsManager.getAction()) {
             addressDao.setAddress(address)
             scheduleDao.createSchedule(

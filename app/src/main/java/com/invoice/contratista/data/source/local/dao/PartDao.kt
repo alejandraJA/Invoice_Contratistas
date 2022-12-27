@@ -25,7 +25,7 @@ interface PartDao {
      * @return Objeto de tipo [LiveData] que contiene una lista de tipo [Part]
      */
     @Transaction
-    @Query("SELECT * FROM part WHERE idBudget == :idBudget")
+    @Query("SELECT * FROM part WHERE id_budget == :idBudget")
     fun getParts(idBudget: String): LiveData<List<Part>>
 
     /**
@@ -37,14 +37,14 @@ interface PartDao {
     @Query("SELECT * FROM part WHERE id == :idPart LIMIT 1")
     fun getPart(idPart: String): LiveData<Part>
 
-    @Query("SELECT number FROM part WHERE idBudget == :idBudget ORDER BY number DESC LIMIT 1")
+    @Query("SELECT number FROM part WHERE id_budget == :idBudget ORDER BY number DESC LIMIT 1")
     fun getNumberOfPart(idBudget: String): Int
 
     @Query(
         "INSERT INTO part " +
                 "SELECT  " +
                 "   :idPart AS id," +
-                "   IFNULL((SELECT number FROM part WHERE idBudget == :idBudget ORDER BY number DESC LIMIT 1) + 1, 1) AS number," +
+                "   IFNULL((SELECT number FROM part WHERE id_budget == :idBudget ORDER BY number DESC LIMIT 1) + 1, 1) AS number," +
                 "   :idBudget AS idBudget," +
                 "   (SELECT id FROM product LIMIT 1) as idProduct," +
                 "   1 AS quantity," +
@@ -58,7 +58,7 @@ interface PartDao {
     @Query("UPDATE part SET discount = :discount WHERE id == :idPart")
     fun updateDiscount(discount: Int, idPart: String)
 
-    @Query("UPDATE part SET idProduct = :idProduct WHERE id == :idPart")
+    @Query("UPDATE part SET id_product = :idProduct WHERE id == :idPart")
     fun updateProduct(idProduct: String, idPart: String)
 
     @Query(
@@ -71,7 +71,7 @@ interface PartDao {
                 "    pr.id as id_product," +
                 "    ((pr.price * p.quantity)-p.discount) as amount " +
                 "FROM product AS pr, part AS p " +
-                "WHERE p.idBudget == :idBudget AND pr.id == p.idProduct"
+                "WHERE p.id_budget == :idBudget AND pr.id == p.id_product"
     )
     fun getPartsForRecycler(idBudget: String): LiveData<List<PartItem>>
 

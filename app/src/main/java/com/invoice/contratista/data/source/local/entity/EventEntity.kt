@@ -1,14 +1,15 @@
 package com.invoice.contratista.data.source.local.entity
 
+import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 /**
  * # Evento
  * @param id Identificador para el evento.
- * @param id_customer Identificador para relacionarlo con el cliente.
+ * @param idCustomer Identificador para relacionarlo con el cliente.
  * @param note Notas adicionales sobre el evento.
- * @param event_name Nombre del evento
+ * @param eventName Nombre del evento
  * @param state Estado en el que se encuentra el evento. El dato puede ser:
  * - **Creado** - Se acaba de iniciar.
  * - **Levantado** - Se realizo la primera visita o el estimamiento.
@@ -23,8 +24,8 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "event")
 data class EventEntity(
     @PrimaryKey(autoGenerate = false) val id: String,
-    val id_customer: String,
+    @ColumnInfo(name = "id_customer") val idCustomer: String,
     val state: String,
     val note: String,
-    val event_name: String,
+    @ColumnInfo(name = "event_name") val eventName: String,
 )

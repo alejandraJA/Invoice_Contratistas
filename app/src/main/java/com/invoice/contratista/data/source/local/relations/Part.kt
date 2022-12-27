@@ -14,7 +14,7 @@ data class Part(
     @Embedded val partEntity: PartEntity?,
     @Relation(
         entity = ProductEntity::class,
-        parentColumn = "idProduct",
+        parentColumn = "id_product",
         entityColumn = "id"
     )
     val product: Product?,

@@ -8,14 +8,14 @@ import androidx.room.PrimaryKey
  * # Producto
  * @param id ID del producto
  * @param description Descripción del bien o servicio como aparecerá en la factura
- * @param product_key Clave de producto/servicio, del catálogo del SAT.
+ * @param productKey Clave de producto/servicio, del catálogo del SAT.
  * **NOTA** Nosotros te proporcionamos una manera más conveniente de encontrarlo utilizando
  * nuestra herramienta de búsqueda de claves.
  *
  * @param price Precio por unidad del bien o servicio. **NOTA** Este valor representará el
  * precio con IVA incluído o sin él, dependiendo del valor de [.tax_included].
  *
- * @param tax_included Impuestos incluidos.
+ * @param taxIncluded Impuestos incluidos.
  *
  * Su valor puede ser:
  * - `true`: Indica que todos los impuestos aplicables
@@ -39,7 +39,7 @@ import androidx.room.PrimaryKey
  * - `01` si el array [.taxes] está vacío
  * - `02` si el array [.taxes] tiene por lo menos un elemento.
  *
- * @param unit_key Clave de unidad de medida, del catálogo del SAT.
+ * @param unitKey Clave de unidad de medida, del catálogo del SAT.
  *
  * - El valor por default `H87` (elemento) es la clave para representar una
  * pieza o unidad de venta (lápiz, cuaderno, televisión, etc).
@@ -47,7 +47,7 @@ import androidx.room.PrimaryKey
  * - Si la unidad de tu producto es kilogramos, litros, horas u otra unidad,
  * puedes encontrar la clave utilizando nuestra herramienta de búsqueda de claves.
  *
- * @param unit_name Unidad de medida
+ * @param unitName Unidad de medida
  * @param sku Identificador de uso interno designado por la empresa. Puede tener cualquier valor
  *
  * - Palabra que representa la unidad de medida de tu producto. Debe estar relacionada con la
@@ -62,12 +62,11 @@ import androidx.room.PrimaryKey
 data class ProductEntity(
     @PrimaryKey(autoGenerate = false) var id: String,
     var description: String,
-    var product_key: Int,
+    @ColumnInfo(name = "product_key") var productKey: Int,
     var price: Double,
-    var tax_included: Boolean,
+    @ColumnInfo(name = "tax_included") var taxIncluded: Boolean,
     var taxability: String,
-    var unit_key: String,
-    var unit_name: String,
+    @ColumnInfo(name = "unit_key") var unitKey: String,
+    @ColumnInfo(name = "unit_name") var unitName: String,
     var sku: String,
-    @ColumnInfo(defaultValue = 10.toString()) var gain: Double,
 )

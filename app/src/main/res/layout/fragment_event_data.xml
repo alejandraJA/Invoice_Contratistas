@@ -48,7 +48,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="8sp"
                         android:maxLines="2"
-                        android:text="@{event.event_name}"
+                        android:text="@{event.eventName}"
                         app:layout_constraintEnd_toStartOf="@+id/text_state"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"

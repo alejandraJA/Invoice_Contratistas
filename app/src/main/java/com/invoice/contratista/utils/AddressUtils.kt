@@ -19,7 +19,7 @@ object AddressUtils {
         zip = layoutZip.getTextWithValidation(),
         state = layoutState.getTextWithValidation(),
         country = layoutCountry.getTextWithValidation(),
-        idCustomer = "",
+        idReference = "",
     )
 
     fun AddressEntity.isNotEmpty() =

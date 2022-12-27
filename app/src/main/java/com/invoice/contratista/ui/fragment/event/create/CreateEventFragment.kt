@@ -41,7 +41,7 @@ class CreateEventFragment : Fragment() {
             customerList.clear()
             customerList.addAll(it)
             customerList.forEach { customer ->
-                customerNamesList.add(customer.legal_name)
+                customerNamesList.add(customer.legalName)
             }
             adapter.setNotifyOnChange(true)
             binding.autoCompleteCustomer.setOnItemClickListener { _, _, position, _ ->

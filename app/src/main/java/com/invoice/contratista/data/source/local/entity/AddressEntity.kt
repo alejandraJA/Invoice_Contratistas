@@ -1,5 +1,6 @@
 package com.invoice.contratista.data.source.local.entity
 
+import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
@@ -44,7 +45,7 @@ data class AddressEntity(
     var zip: String,
     var state: String,
     var country: String,
-    var idCustomer: String
+    @ColumnInfo(name = "id_reference") var idReference: String
 ) {
     fun isEmpty() = (street.isEmpty() && exterior.isEmpty() && interior.isEmpty() &&
             neighborhood.isEmpty() && city.isEmpty() && municipality.isEmpty() &&

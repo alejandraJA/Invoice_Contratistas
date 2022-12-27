@@ -1,5 +1,6 @@
 package com.invoice.contratista.data.source.local.entity.event
 
+import androidx.room.ColumnInfo
 import androidx.room.Entity
 
 /**
@@ -12,12 +13,12 @@ import androidx.room.Entity
  * @param quantity Cantidad.
  * @param discount Descuento aplicado a la partida.
  */
-@Entity(tableName = "part", primaryKeys = ["id", "idProduct"])
+@Entity(tableName = "part", primaryKeys = ["id", "id_product"])
 data class PartEntity(
     var id: String,
     val number: Int,
-    var idBudget: String,
-    val idProduct: String,
+    @ColumnInfo(name = "id_budget") var idBudget: String,
+    @ColumnInfo(name = "id_product") val idProduct: String,
     val quantity: Int,
     val discount: Double,
 )

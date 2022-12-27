@@ -26,7 +26,7 @@ interface AddressDao {
                 "municipality = :municipality," +
                 "zip = :zip," +
                 "state = :state " +
-                "WHERE idCustomer == :idSchedule"
+                "WHERE id_reference == :idSchedule"
     )
     fun updateAddress(
         street: String,
@@ -40,7 +40,7 @@ interface AddressDao {
         idSchedule: String
     )
 
-    @Query("SELECT * FROM address WHERE idCustomer == :idSchedule")
+    @Query("SELECT * FROM address WHERE id_reference == :idSchedule")
     fun getAddress(idSchedule: String): LiveData<AddressEntity>
 
     @Query("DELETE FROM address")

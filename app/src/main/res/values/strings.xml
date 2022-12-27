@@ -153,5 +153,8 @@
     <string name="product_service">Product / Service</string>
     <string name="sku">SKU</string>
     <string name="empty_list">Empty list</string>
+    <string name="category">Category</string>
+    <string name="status">Status</string>
+    <string name="available">Available</string>
 
 </resources>
