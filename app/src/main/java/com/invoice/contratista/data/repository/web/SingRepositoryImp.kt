@@ -15,4 +15,7 @@ class SingRepositoryImp @Inject constructor(private val service: Service) : Sing
 
     override suspend fun updateToken(request: UpdateTokenRequest):
             Response<ResponseApi<TokenResponse>> = service.updateToken(request)
+
+    override suspend fun singUp(request: SingRequest): Response<ResponseApi<Any?>> =
+        service.singUp(request)
 }

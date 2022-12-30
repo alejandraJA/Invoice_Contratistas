@@ -8,7 +8,7 @@ object InputUtils {
         error = null
         true
     } else {
-        error = context.getString(R.string.required)
+        error = "${editText!!.hint} ${context.getString(R.string.required)}."
         false
     }
 

@@ -34,7 +34,7 @@ class UserManager @Inject constructor(@ApplicationContext context: Context) {
         return if (username != UserConstants.USERNAME.getString()) {
             R.string.invalid_username
         } else if (password != "$username.${UserConstants.PASSWORD}") {
-            R.string.invalid_password
+            R.string.password_incorrect
         } else R.string.login
     }
 

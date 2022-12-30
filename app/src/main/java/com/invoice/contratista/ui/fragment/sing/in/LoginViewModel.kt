@@ -1,4 +1,4 @@
-package com.invoice.contratista.ui.fragment.login
+package com.invoice.contratista.ui.fragment.sing.`in`
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

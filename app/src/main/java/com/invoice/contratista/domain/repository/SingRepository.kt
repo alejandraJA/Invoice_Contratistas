@@ -9,4 +9,5 @@ import retrofit2.Response
 interface SingRepository {
     suspend fun singIn(request: SingRequest): Response<ResponseApi<TokenResponse?>>
     suspend fun updateToken(request: UpdateTokenRequest): Response<ResponseApi<TokenResponse>>
+    suspend fun singUp(request: SingRequest): Response<ResponseApi<Any?>>
 }

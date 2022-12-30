@@ -143,7 +143,7 @@
     <string name="complete">Complete</string>
     <string name="select_date">Select date</string>
     <string name="select_hour">Select hour</string>
-    <string name="required">Required</string>
+    <string name="required">required</string>
     <string name="budgets">Budgets</string>
     <string name="add_budget">Add budget</string>
     <string name="ok">OK</string>

@@ -30,6 +30,9 @@ interface Service {
     @POST("sing/in")
     suspend fun singIn(@Body request: SingRequest): Response<ResponseApi<TokenResponse?>>
 
+    @POST("sing/up")
+    suspend fun singUp(@Body request: SingRequest): Response<ResponseApi<Any?>>
+
     @PUT("sing/updateToken")
     suspend fun updateToken(@Body request: UpdateTokenRequest): Response<ResponseApi<TokenResponse>>
 

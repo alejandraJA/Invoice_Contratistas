@@ -143,7 +143,7 @@
     <string name="complete">Completar</string>
     <string name="select_date">Selecciona la fecha</string>
     <string name="select_hour">Delecciona la hora</string>
-    <string name="required">Campo requerido</string>
+    <string name="required">requerido</string>
     <string name="budgets">Cotizaciones</string>
     <string name="add_budget">Agregar cotización</string>
     <string name="ok">Aceptar</string>
@@ -154,7 +154,7 @@
     <string name="product_service">Producto / Servicio</string>
     <string name="sku">SKU</string>
     <string name="empty_list">Lista vacia</string>
-    <string name="category">Categoria</string>
+    <string name="category">Categoría</string>
     <string name="status">Estatus</string>
     <string name="available">Disponible</string>
     <string name="unexpected_error">"Error inesperado./nIntente más tarde."</string>

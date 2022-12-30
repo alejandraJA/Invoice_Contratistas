@@ -1,4 +1,4 @@
-package com.invoice.contratista.ui.fragment.singUp
+package com.invoice.contratista.ui.fragment.sing.up
 
 import android.content.Intent
 import android.os.Bundle
