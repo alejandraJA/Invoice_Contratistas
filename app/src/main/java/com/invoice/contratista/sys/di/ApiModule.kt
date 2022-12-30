@@ -1,13 +1,13 @@
-package com.invoice.contratista.di
+package com.invoice.contratista.sys.di
 
 import com.invoice.contratista.BuildConfig
 import com.invoice.contratista.data.repository.web.CustomerRepositoryImp
 import com.invoice.contratista.data.repository.web.ProductRepositoryImp
 import com.invoice.contratista.data.repository.web.SingRepositoryImp
 import com.invoice.contratista.data.source.api.retrofit.Service
-import com.invoice.contratista.domain.repository.CustomerRepository
-import com.invoice.contratista.domain.repository.ProductRepository
-import com.invoice.contratista.domain.repository.SingRepository
+import com.invoice.contratista.sys.domain.repository.CustomerRepository
+import com.invoice.contratista.sys.domain.repository.ProductRepository
+import com.invoice.contratista.sys.domain.repository.SingRepository
 import com.invoice.contratista.utils.Constants
 import dagger.Module
 import dagger.Provides

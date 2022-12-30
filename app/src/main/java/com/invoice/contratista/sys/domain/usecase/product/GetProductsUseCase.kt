@@ -1,8 +1,8 @@
-package com.invoice.contratista.domain.usecase.product
+package com.invoice.contratista.sys.domain.usecase.product
 
 import com.invoice.contratista.data.source.api.models.response.product.ProductResponse
 import com.invoice.contratista.data.source.shared_preferences.UserManager
-import com.invoice.contratista.domain.repository.ProductRepository
+import com.invoice.contratista.sys.domain.repository.ProductRepository
 import com.invoice.contratista.utils.Json.toObject
 import com.invoice.contratista.utils.Resource
 import javax.inject.Inject

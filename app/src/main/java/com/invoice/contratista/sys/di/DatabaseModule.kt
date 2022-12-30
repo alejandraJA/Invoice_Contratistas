@@ -1,4 +1,4 @@
-package com.invoice.contratista.di
+package com.invoice.contratista.sys.di
 
 import android.content.Context
 import androidx.room.Room

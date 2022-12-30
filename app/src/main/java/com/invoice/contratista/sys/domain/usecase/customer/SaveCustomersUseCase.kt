@@ -1,4 +1,4 @@
-package com.invoice.contratista.domain.usecase.customer
+package com.invoice.contratista.sys.domain.usecase.customer
 
 import android.content.Context
 import com.invoice.contratista.R

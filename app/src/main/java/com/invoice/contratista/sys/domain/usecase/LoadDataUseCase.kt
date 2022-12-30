@@ -1,7 +1,7 @@
-package com.invoice.contratista.domain.usecase
+package com.invoice.contratista.sys.domain.usecase
 
-import com.invoice.contratista.domain.usecase.customer.SaveCustomersUseCase
-import com.invoice.contratista.domain.usecase.product.SaveProductsUseCase
+import com.invoice.contratista.sys.domain.usecase.customer.SaveCustomersUseCase
+import com.invoice.contratista.sys.domain.usecase.product.SaveProductsUseCase
 import com.invoice.contratista.utils.Constants
 import javax.inject.Inject
 

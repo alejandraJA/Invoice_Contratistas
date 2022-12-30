@@ -8,7 +8,7 @@ import com.invoice.contratista.data.source.api.models.request.SingRequest
 import com.invoice.contratista.data.source.api.models.request.UpdateTokenRequest
 import com.invoice.contratista.data.source.shared_preferences.User
 import com.invoice.contratista.data.source.shared_preferences.UserManager
-import com.invoice.contratista.domain.repository.SingRepository
+import com.invoice.contratista.sys.domain.repository.SingRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

@@ -4,7 +4,7 @@ import com.invoice.contratista.data.source.api.models.request.SingRequest
 import com.invoice.contratista.data.source.api.models.request.UpdateTokenRequest
 import com.invoice.contratista.data.source.api.models.response.TokenResponse
 import com.invoice.contratista.data.source.api.retrofit.Service
-import com.invoice.contratista.domain.repository.SingRepository
+import com.invoice.contratista.sys.domain.repository.SingRepository
 import com.invoice.contratista.utils.ResponseApi
 import retrofit2.Response
 import javax.inject.Inject
