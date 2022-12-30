@@ -1,11 +1,11 @@
-package com.invoice.contratista.data.repository
+package com.invoice.contratista.data.repository.local
 
 import com.invoice.contratista.data.source.local.dao.AddressDao
 import com.invoice.contratista.data.source.local.dao.ScheduleDao
 import com.invoice.contratista.data.source.local.entity.AddressEntity
 import com.invoice.contratista.data.source.shared_preferences.UtilsManager
 import com.invoice.contratista.utils.Constants
-import java.util.*
+import java.util.UUID
 import javax.inject.Inject
 
 class ScheduleRepository @Inject constructor(

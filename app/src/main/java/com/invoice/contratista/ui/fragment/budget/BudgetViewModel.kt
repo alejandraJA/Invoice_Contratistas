@@ -3,8 +3,8 @@ package com.invoice.contratista.ui.fragment.budget
 import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.invoice.contratista.data.repository.BudgetRepository
-import com.invoice.contratista.data.repository.PartRepository
+import com.invoice.contratista.data.repository.local.BudgetRepository
+import com.invoice.contratista.data.repository.local.PartRepository
 import com.invoice.contratista.data.source.shared_preferences.UtilsManager
 import com.invoice.contratista.ui.fragment.budget.adapter.PartItem
 import dagger.hilt.android.lifecycle.HiltViewModel

@@ -1,4 +1,4 @@
-package com.invoice.contratista.data.source.api.models.customer
+package com.invoice.contratista.data.source.api.models.response.customer
 
 
 import com.google.gson.annotations.SerializedName

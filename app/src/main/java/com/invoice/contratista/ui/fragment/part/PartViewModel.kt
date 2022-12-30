@@ -3,9 +3,9 @@ package com.invoice.contratista.ui.fragment.part
 import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.invoice.contratista.data.repository.PartRepository
-import com.invoice.contratista.data.repository.ProductRepository
-import com.invoice.contratista.data.repository.TaxRepository
+import com.invoice.contratista.data.repository.local.PartRepository
+import com.invoice.contratista.data.repository.local.ProductRepository
+import com.invoice.contratista.data.repository.local.TaxRepository
 import com.invoice.contratista.data.source.shared_preferences.UtilsManager
 import com.invoice.contratista.ui.fragment.part.adapter.TaxItem
 import com.invoice.contratista.ui.fragment.part.data.ProductItem

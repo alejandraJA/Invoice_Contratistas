@@ -3,7 +3,7 @@ package com.invoice.contratista.ui.fragment.schedule.create_edit
 import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.invoice.contratista.data.repository.ScheduleRepository
+import com.invoice.contratista.data.repository.local.ScheduleRepository
 import com.invoice.contratista.data.source.local.entity.AddressEntity
 import com.invoice.contratista.data.source.local.entity.event.ScheduleEntity
 import com.invoice.contratista.data.source.shared_preferences.UtilsManager

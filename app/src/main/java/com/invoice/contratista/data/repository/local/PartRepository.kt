@@ -1,11 +1,11 @@
-package com.invoice.contratista.data.repository
+package com.invoice.contratista.data.repository.local
 
 import androidx.lifecycle.LiveData
 import com.invoice.contratista.data.source.local.dao.PartDao
 import com.invoice.contratista.data.source.local.entity.event.PartEntity
 import com.invoice.contratista.data.source.local.relations.Part
 import com.invoice.contratista.data.source.shared_preferences.UtilsManager
-import java.util.*
+import java.util.UUID
 import javax.inject.Inject
 
 class PartRepository @Inject constructor(

@@ -1,4 +1,4 @@
-package com.invoice.contratista.data.repository
+package com.invoice.contratista.data.repository.local
 
 import com.invoice.contratista.data.source.local.dao.DateDao
 import com.invoice.contratista.data.source.local.dao.EventDao
@@ -8,7 +8,7 @@ import com.invoice.contratista.data.source.local.relations.Event
 import com.invoice.contratista.data.source.shared_preferences.UtilsManager
 import com.invoice.contratista.utils.Constants
 import com.invoice.contratista.utils.DateUtils.getDateComplete
-import java.util.*
+import java.util.Date
 import javax.inject.Inject
 
 class EventRepository @Inject constructor(

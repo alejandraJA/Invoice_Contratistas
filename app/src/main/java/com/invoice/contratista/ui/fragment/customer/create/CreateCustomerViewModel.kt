@@ -2,7 +2,7 @@ package com.invoice.contratista.ui.fragment.customer.create
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.invoice.contratista.data.repository.CustomerRepository
+import com.invoice.contratista.data.repository.local.CustomerRepository
 import com.invoice.contratista.data.source.local.relations.Customer
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers

@@ -1,4 +1,4 @@
-package com.invoice.contratista.data.repository
+package com.invoice.contratista.data.repository.local
 
 import com.invoice.contratista.data.source.local.dao.AddressDao
 import com.invoice.contratista.data.source.local.entity.AddressEntity

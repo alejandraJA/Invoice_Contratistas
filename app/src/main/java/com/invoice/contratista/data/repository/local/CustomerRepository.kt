@@ -1,4 +1,4 @@
-package com.invoice.contratista.data.repository
+package com.invoice.contratista.data.repository.local
 
 import androidx.lifecycle.LiveData
 import com.invoice.contratista.data.source.local.dao.AddressDao

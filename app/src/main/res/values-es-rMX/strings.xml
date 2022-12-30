@@ -11,6 +11,7 @@
     <string name="action_sign_in_short">Registrar</string>
     <string name="welcome">¡Bienvenido!</string>
     <string name="invalid_username">Nombre de usuario invalido</string>
+    <string name="password_incorrect">Contraseña incorrecta. Verifica que sea correcta</string>
     <string name="invalid_password">La contraseña debe tener más de 5 caracteres</string>
     <string name="login_failed">Inicio fallido</string>
     <string name="welcome_back">Bienvenido otra vez</string>
@@ -152,4 +153,10 @@
     <string name="zero">0</string>
     <string name="product_service">Producto / Servicio</string>
     <string name="sku">SKU</string>
+    <string name="empty_list">Lista vacia</string>
+    <string name="category">Categoria</string>
+    <string name="status">Estatus</string>
+    <string name="available">Disponible</string>
+    <string name="unexpected_error">"Error inesperado./nIntente más tarde."</string>
+    <string name="please_check_email">Verifica el correo</string>
 </resources>

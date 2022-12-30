@@ -45,8 +45,7 @@ object Constants {
         Autorizado,
     }
 
-    const val BASE_URL = "https://www.facturapi.io/v2/"
-    const val TOKEN = "Bearer sk_test_0Lj7YMX1JeVKOeeZp0Jzd239RZOlykGa"
+    const val BASE_URL = "https://invoicecontratista.azurewebsites.net/"
     const val AUTHORIZATION = "Authorization"
     const val ID_SCHEDULE = "idSchedule"
     const val ID_NOTE = "idNote"

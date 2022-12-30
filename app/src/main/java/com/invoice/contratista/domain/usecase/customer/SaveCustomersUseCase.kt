@@ -4,8 +4,8 @@ import android.content.Context
 import com.invoice.contratista.R
 import com.invoice.contratista.data.mapper.toAddressEntity
 import com.invoice.contratista.data.mapper.toCustomerEntity
-import com.invoice.contratista.data.repository.AddressRepository
-import com.invoice.contratista.data.repository.CustomerRepository
+import com.invoice.contratista.data.repository.local.AddressRepository
+import com.invoice.contratista.data.repository.local.CustomerRepository
 import com.invoice.contratista.utils.Constants
 import com.invoice.contratista.utils.Resource
 import dagger.hilt.android.qualifiers.ApplicationContext

@@ -1,16 +1,16 @@
 package com.invoice.contratista.data.mapper
 
-import com.invoice.contratista.data.source.api.models.customer.Address
-import com.invoice.contratista.data.source.api.models.customer.CustomerResponse
-import com.invoice.contratista.data.source.api.models.product.LocalTax
-import com.invoice.contratista.data.source.api.models.product.ProductResponse
-import com.invoice.contratista.data.source.api.models.product.Tax
+import com.invoice.contratista.data.source.api.models.response.customer.Address
+import com.invoice.contratista.data.source.api.models.response.customer.CustomerResponse
+import com.invoice.contratista.data.source.api.models.response.product.LocalTax
+import com.invoice.contratista.data.source.api.models.response.product.ProductResponse
+import com.invoice.contratista.data.source.api.models.response.product.Tax
 import com.invoice.contratista.data.source.local.entity.AddressEntity
 import com.invoice.contratista.data.source.local.entity.CustomerEntity
 import com.invoice.contratista.data.source.local.entity.product.ProductEntity
 import com.invoice.contratista.data.source.local.entity.product.TaxEntity
 import com.invoice.contratista.ui.fragment.part.adapter.TaxItem
-import java.util.*
+import java.util.UUID
 
 fun CustomerResponse.toCustomerEntity() =
     CustomerEntity(id, legalName, taxId, taxSystem, email ?: "", phone ?: "")

@@ -6,12 +6,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.snackbar.Snackbar
-import com.invoice.contratista.R
 import com.invoice.contratista.databinding.FragmentLoginBinding
 import com.invoice.contratista.ui.activity.main.MainActivity
+import com.invoice.contratista.utils.InputUtils.getText
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -36,32 +37,33 @@ class LoginFragment(private val onClick: (Boolean) -> Unit) : Fragment() {
             onClick.invoke(false)
         }
         binding.buttonLogin.setOnClickListener {
-            viewModel.login { error ->
-                if (error != "") Snackbar.make(it, error, Snackbar.LENGTH_INDEFINITE).setAction(
-                    resources.getText(
-                        R.string.ok
-                    )
-                ) { }.show()
-                else {
-                    requireActivity().startActivity(
-                        Intent(
-                            requireContext(),
-                            MainActivity::class.java
-                        )
-                    )
-                    requireActivity().finish()
-                }
+            val email = binding.layoutAddress!!.getText()
+            val password = binding.layoutPassword!!.getText()
+            if (viewModel.isLogged) {
+                viewModel.updateToken(email, password) { login() }
+            } else {
+                viewModel.login(email, password) { login() }
             }
         }
         binding.buttonLostYourPassword.setOnClickListener {
             Snackbar.make(
                 it,
-                "Revise su bandeja de entrada para recuperar su cuenta.",
+                "Hi",
                 Snackbar.LENGTH_INDEFINITE
             ).setAction("Ir") {
 
             }.show()
         }
+        viewModel.error.observe(viewLifecycleOwner) {
+            Toast.makeText(context, "Error: ${resources.getString(it!!)}", Toast.LENGTH_SHORT)
+                .show()
+        }
+    }
+
+    private fun login() {
+        requireActivity().startActivity(
+            Intent(requireContext(), MainActivity::class.java)
+        )
     }
 
 }

@@ -1,7 +1,7 @@
-package com.invoice.contratista.data.repository
+package com.invoice.contratista.data.repository.web
 
-import com.invoice.contratista.data.source.api.models.DataResponse
-import com.invoice.contratista.data.source.api.models.product.ProductResponse
+import com.invoice.contratista.data.source.api.models.response.DataResponse
+import com.invoice.contratista.data.source.api.models.response.product.ProductResponse
 import com.invoice.contratista.data.source.api.retrofit.Service
 import com.invoice.contratista.domain.repository.ProductRepository
 import retrofit2.Response

@@ -5,8 +5,8 @@ import com.invoice.contratista.R
 import com.invoice.contratista.data.mapper.toLocalTaxEntity
 import com.invoice.contratista.data.mapper.toProductEntity
 import com.invoice.contratista.data.mapper.toTaxEntity
-import com.invoice.contratista.data.repository.ProductRepository
-import com.invoice.contratista.data.repository.TaxRepository
+import com.invoice.contratista.data.repository.local.ProductRepository
+import com.invoice.contratista.data.repository.local.TaxRepository
 import com.invoice.contratista.utils.Constants
 import com.invoice.contratista.utils.Resource
 import dagger.hilt.android.qualifiers.ApplicationContext
