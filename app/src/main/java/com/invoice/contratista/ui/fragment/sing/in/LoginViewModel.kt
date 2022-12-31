@@ -9,6 +9,7 @@ import com.invoice.contratista.data.source.api.models.request.UpdateTokenRequest
 import com.invoice.contratista.data.source.shared_preferences.User
 import com.invoice.contratista.data.source.shared_preferences.UserManager
 import com.invoice.contratista.sys.domain.repository.SingRepository
+import com.invoice.contratista.sys.domain.usecase.customer.SaveCustomersUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -18,7 +19,8 @@ import javax.inject.Inject
 @HiltViewModel
 class LoginViewModel @Inject constructor(
     private val singRepository: SingRepository,
-    private val userManager: UserManager
+    private val userManager: UserManager,
+    private val saveCustomersUseCase: SaveCustomersUseCase,
 ) : ViewModel() {
 
     val error = MutableLiveData<Int>()
@@ -32,7 +34,9 @@ class LoginViewModel @Inject constructor(
                     val response = singIn.body()!!
                     if (response.status) {
                         userManager.setUserLogged(User(email, password, response.data!!.token))
-                        function.invoke()
+                        saveCustomersUseCase.invoke {
+                            function.invoke()
+                        }
                     } else {
                         if (response.message.contains("does not exist"))
                             error.postValue(R.string.please_check_email)
@@ -59,7 +63,9 @@ class LoginViewModel @Inject constructor(
                         val response = updateToken.body()!!
                         if (response.status) {
                             userManager.setToken(response.data!!.token, email)
-                            function.invoke()
+                            saveCustomersUseCase.invoke {
+                                function.invoke()
+                            }
                         } else {
                             val message = response.message
                             if (message.contains("The token does not correspond to the user."))

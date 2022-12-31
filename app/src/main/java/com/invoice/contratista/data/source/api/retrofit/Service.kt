@@ -22,10 +22,10 @@ interface Service {
         @Header(Constants.AUTHORIZATION) token: String
     ): Response<DataResponse<ProductResponse>>
 
-    @GET("customers")
+    @GET("customers/")
     suspend fun getCustomer(
         @Header(Constants.AUTHORIZATION) token: String
-    ): Response<DataResponse<CustomerResponse>>
+    ): Response<ResponseApi<List<CustomerResponse>>>
 
     @POST("sing/in")
     suspend fun singIn(@Body request: SingRequest): Response<ResponseApi<TokenResponse?>>

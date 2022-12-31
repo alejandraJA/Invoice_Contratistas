@@ -19,7 +19,7 @@ class GetCustomersUseCase @Inject constructor(
             Resource.error(customerError.message)
         } else {
             val customer = customerResponse.body()!!
-            if (customer.totalResults == 0) Resource.success(emptyList())
+            if (customer.status) Resource.success(emptyList())
             else Resource.success(customer.data)
         }
     }
