@@ -17,8 +17,8 @@ class SaveCustomersUseCase @Inject constructor(
     private val getCustomersUseCase: GetCustomersUseCase,
     @ApplicationContext private val context: Context
 ) {
-    suspend operator fun invoke(function: (Resource<Void>) -> Unit) {
-        val customersUseCase = getCustomersUseCase()
+    suspend operator fun invoke(token: String, function: (Resource<Void>) -> Unit) {
+        val customersUseCase = getCustomersUseCase(token)
         return if (customersUseCase.status == Constants.Status.Failure) function.invoke(
             Resource.error(
                 customersUseCase.exception!!
@@ -37,6 +37,7 @@ class SaveCustomersUseCase @Inject constructor(
                             customerResponse.id
                         )
                     )
+                    function.invoke(Resource.success(null))
                 }
             }
         }

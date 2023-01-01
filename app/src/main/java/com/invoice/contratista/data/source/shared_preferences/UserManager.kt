@@ -31,9 +31,11 @@ class UserManager @Inject constructor(@ApplicationContext context: Context) {
     }
 
     fun login(username: String, password: String): Int {
-        return if (username != UserConstants.USERNAME.getString()) {
+        val usernameShared = UserConstants.USERNAME.getString()
+        val passwordShared = "$username.${UserConstants.PASSWORD}".getString()
+        return if (username != usernameShared) {
             R.string.invalid_username
-        } else if (password != "$username.${UserConstants.PASSWORD}") {
+        } else if (password != passwordShared) {
             R.string.password_incorrect
         } else R.string.login
     }

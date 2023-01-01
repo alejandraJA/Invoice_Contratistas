@@ -22,7 +22,7 @@ interface Service {
         @Header(Constants.AUTHORIZATION) token: String
     ): Response<DataResponse<ProductResponse>>
 
-    @GET("customers/")
+    @GET("customer/")
     suspend fun getCustomer(
         @Header(Constants.AUTHORIZATION) token: String
     ): Response<ResponseApi<List<CustomerResponse>>>

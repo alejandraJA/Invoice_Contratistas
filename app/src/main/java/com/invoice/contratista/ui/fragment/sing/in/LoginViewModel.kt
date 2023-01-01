@@ -10,6 +10,7 @@ import com.invoice.contratista.data.source.shared_preferences.User
 import com.invoice.contratista.data.source.shared_preferences.UserManager
 import com.invoice.contratista.sys.domain.repository.SingRepository
 import com.invoice.contratista.sys.domain.usecase.customer.SaveCustomersUseCase
+import com.invoice.contratista.utils.Constants
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -34,8 +35,8 @@ class LoginViewModel @Inject constructor(
                     val response = singIn.body()!!
                     if (response.status) {
                         userManager.setUserLogged(User(email, password, response.data!!.token))
-                        saveCustomersUseCase.invoke {
-                            function.invoke()
+                        saveCustomersUseCase.invoke(response.data.token) {
+                            if (it.status == Constants.Status.Success) function.invoke()
                         }
                     } else {
                         if (response.message.contains("does not exist"))
@@ -49,6 +50,7 @@ class LoginViewModel @Inject constructor(
     }
 
     fun updateToken(email: String, password: String, function: () -> Unit) {
+        userManager.getToken(userManager.getUsername())
         val loginStatus = userManager.login(email, password)
         if (loginStatus == R.string.login) {
             viewModelScope.launch {
@@ -63,8 +65,8 @@ class LoginViewModel @Inject constructor(
                         val response = updateToken.body()!!
                         if (response.status) {
                             userManager.setToken(response.data!!.token, email)
-                            saveCustomersUseCase.invoke {
-                                function.invoke()
+                            saveCustomersUseCase.invoke(response.data.token) {
+                                if (it.status == Constants.Status.Success) function.invoke()
                             }
                         } else {
                             val message = response.message
