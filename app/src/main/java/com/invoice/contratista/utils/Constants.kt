@@ -45,7 +45,7 @@ object Constants {
         Autorizado,
     }
 
-    const val BASE_URL = "https://invoicecontratista.azurewebsites.net/"
+    const val BASE_URL = "http://localhost:9191/"
     const val AUTHORIZATION = "Authorization"
     const val ID_SCHEDULE = "idSchedule"
     const val ID_NOTE = "idNote"

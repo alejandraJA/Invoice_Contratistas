@@ -13,12 +13,13 @@ import androidx.room.Entity
  * @param quantity Cantidad.
  * @param discount Descuento aplicado a la partida.
  */
-@Entity(tableName = "part", primaryKeys = ["id", "id_product"])
+@Entity(tableName = "part", primaryKeys = ["id", "product_id"])
 data class PartEntity(
     var id: String,
     val number: Int,
-    @ColumnInfo(name = "id_budget") var idBudget: String,
-    @ColumnInfo(name = "id_product") val idProduct: String,
+    @ColumnInfo(name = "budget_id") var idBudget: String,
+    @ColumnInfo(name = "product_id") val idProduct: String,
     val quantity: Int,
     val discount: Double,
+    @ColumnInfo(name = "reserved_id")val reservedId: String
 )

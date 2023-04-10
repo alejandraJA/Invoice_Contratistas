@@ -1,9 +1,9 @@
 package com.invoice.contratista.data.repository.local
 
-import com.invoice.contratista.data.source.local.dao.NoteDao
+import com.invoice.contratista.data.source.local.dao.event.NoteDao
 import com.invoice.contratista.data.source.local.entity.event.NoteEntity
 import com.invoice.contratista.data.source.shared_preferences.UtilsManager
-import java.util.UUID
+import java.util.*
 import javax.inject.Inject
 
 class NoteRepository @Inject constructor(

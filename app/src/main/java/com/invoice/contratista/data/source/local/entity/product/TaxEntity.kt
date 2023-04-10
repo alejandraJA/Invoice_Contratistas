@@ -19,18 +19,18 @@ import com.invoice.contratista.data.source.local.relations.Product
  * @param rate Tasa del impuesto. Default *0.16*
  * @param factor Tipo factor. **NOTA** Sus valores pueden ser *Tasa*, *Cuota* y *Exento*.
  * @param withholding Indica si se trata de un impuesto retenido *true*, o un impuesto trasladado *false*.
- * @param idProduct Referencia a la tabla [ProductEntity]
+ * @param idProduct Referencia a la tabla [ProductBaseEntity]
  *
  * @author Alejandra JA - 17/03/2022
  * @see Product
  */
 @Entity(tableName = "tax")
 data class TaxEntity(
-    @PrimaryKey(autoGenerate = true) var id: Long,
+    @PrimaryKey var id: String,
     var type: String? = null,
     var rate: Double = 0.0,
     var factor: String? = null,
     var withholding: Boolean = false,
-    @ColumnInfo(name = "id_product") var idProduct: String,
-    var localTax: Boolean
+    @ColumnInfo(name = "local_tax") var localTax: Boolean,
+    @ColumnInfo(name = "product_id") var idProduct: String,
 )

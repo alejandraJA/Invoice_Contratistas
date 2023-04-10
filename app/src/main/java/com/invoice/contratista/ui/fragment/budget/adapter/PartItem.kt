@@ -9,5 +9,5 @@ data class PartItem(
     val quantity: Int,
     @ColumnInfo(name = "part_number") val partNumber: Int,
     @ColumnInfo(name = "unit_name") val unitName: String,
-    @ColumnInfo(name = "id_product") val idProduct: String,
+    @ColumnInfo(name = "product_id") val idProduct: String,
 )

@@ -2,13 +2,10 @@ package com.invoice.contratista.data.mapper
 
 import com.invoice.contratista.data.source.api.models.response.customer.Address
 import com.invoice.contratista.data.source.api.models.response.customer.CustomerResponse
-import com.invoice.contratista.data.source.api.models.response.product.LocalTax
-import com.invoice.contratista.data.source.api.models.response.product.ProductResponse
-import com.invoice.contratista.data.source.api.models.response.product.Tax
+import com.invoice.contratista.data.source.api.models.response.product.*
 import com.invoice.contratista.data.source.local.entity.AddressEntity
 import com.invoice.contratista.data.source.local.entity.CustomerEntity
-import com.invoice.contratista.data.source.local.entity.product.ProductEntity
-import com.invoice.contratista.data.source.local.entity.product.TaxEntity
+import com.invoice.contratista.data.source.local.entity.product.*
 import com.invoice.contratista.ui.fragment.part.adapter.TaxItem
 import java.util.*
 
@@ -36,30 +33,34 @@ fun Address.toAddressEntity(idCustomer: String) = AddressEntity(
     idCustomer
 )
 
-fun ProductResponse.toProductEntity() = ProductEntity(
+fun CostModel.toEntity(idProductInventory: String) =
+    CostEntity(id, date.timestamp, quantity, unitCost, vendorModel.id, idProductInventory)
+
+fun PriceModel.toEntity(idProduct: String) =
+    PriceEntity(id, date.timestamp, unitPrice, idProduct = idProduct)
+
+fun ProductBaseModel.toProductEntity(idProduct: String) = ProductBaseEntity(
     id,
     description,
     productKey.toInt(),
-    price,
-    tax_included,
-    taxAbility,
-    unit_key,
-    unit_name,
+    taxIncluded,
+    taxability,
+    unitKey,
+    unitName,
     sku,
+    idProduct
 )
+
+fun ProductModel.toEntity() = ProductEntity(id, modifiedModel.timestamp, name, productBaseModel.id)
+
+fun ProductInventoryModel.toEntity() = ProductInventoryEntity(
+    id, modified = modified.timestamp, quantity, product.id
+)
+
+fun TaxModel.toTaxEntity(idProduct: String) =
+    TaxEntity(id, type, rate, factor, withholding, localTax, idProduct)
+
+fun VendorModel.toEntity() = VendorEntity(id, name, address.id ?: "")
 
 fun TaxEntity.toTaxItem(subtotal: Double) =
     TaxItem(this.rate, this.type!!, subtotal, localTax, factor ?: "", withholding)
-
-fun Tax.toTaxEntity(idProduct: String) =
-    TaxEntity(0, type, rate, factor, withholding, idProduct, false)
-
-fun LocalTax.toLocalTaxEntity(idProduct: String) = TaxEntity(
-    0,
-    type,
-    rate,
-    "",
-    withholding,
-    idProduct,
-    true
-)

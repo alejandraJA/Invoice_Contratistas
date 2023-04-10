@@ -3,7 +3,7 @@ package com.invoice.contratista.data.source.local.relations
 import androidx.room.Embedded
 import androidx.room.Relation
 import com.invoice.contratista.data.source.local.entity.event.PartEntity
-import com.invoice.contratista.data.source.local.entity.product.ProductEntity
+import com.invoice.contratista.data.source.local.entity.product.ProductBaseEntity
 
 /**
  * Objeto Partida completo
@@ -13,8 +13,8 @@ import com.invoice.contratista.data.source.local.entity.product.ProductEntity
 data class Part(
     @Embedded val partEntity: PartEntity?,
     @Relation(
-        entity = ProductEntity::class,
-        parentColumn = "id_product",
+        entity = ProductBaseEntity::class,
+        parentColumn = "product_id",
         entityColumn = "id"
     )
     val product: Product?,

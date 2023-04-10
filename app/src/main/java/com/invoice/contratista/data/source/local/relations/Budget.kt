@@ -18,7 +18,7 @@ data class Budget(
     @Relation(
         entity = PartEntity::class,
         parentColumn = "id",
-        entityColumn = "id_budget"
+        entityColumn = "budget_id"
     )
     val parts: List<Part>?,
     @Relation(

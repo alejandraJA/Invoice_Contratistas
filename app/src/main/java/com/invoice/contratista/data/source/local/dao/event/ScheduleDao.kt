@@ -1,4 +1,4 @@
-package com.invoice.contratista.data.source.local.dao
+package com.invoice.contratista.data.source.local.dao.event
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao

@@ -5,6 +5,8 @@ import com.google.gson.annotations.SerializedName
 import java.util.*
 
 data class Address(
+    @SerializedName("id")
+    val id: String?,
     @SerializedName("city")
     val city: String?,
     @SerializedName("country")

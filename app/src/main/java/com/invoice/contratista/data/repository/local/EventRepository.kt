@@ -8,7 +8,7 @@ import com.invoice.contratista.data.source.local.relations.Event
 import com.invoice.contratista.data.source.shared_preferences.UtilsManager
 import com.invoice.contratista.utils.Constants
 import com.invoice.contratista.utils.DateUtils.getDateComplete
-import java.util.Date
+import java.util.*
 import javax.inject.Inject
 
 class EventRepository @Inject constructor(

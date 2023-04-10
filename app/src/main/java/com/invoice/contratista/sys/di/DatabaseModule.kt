@@ -23,42 +23,51 @@ object DatabaseModule {
 
     @Singleton
     @Provides
-    fun provideAddressDao(db: RoomDatabase) = db.getAddressDao()
-
+    fun provideBudgetEntity(db: RoomDatabase) = db.getBudgetDao()
     @Singleton
     @Provides
-    fun provideBudgetDao(db: RoomDatabase) = db.getBudgetDao()
-
+    fun provideNoteEntity(db: RoomDatabase) = db.getNoteDao()
     @Singleton
     @Provides
-    fun provideCustomerDao(db: RoomDatabase) = db.getCustomerDao()
-
+    fun providePartEntity(db: RoomDatabase) = db.getPartDao()
     @Singleton
     @Provides
-    fun provideDateDao(db: RoomDatabase) = db.getDateDao()
-
+    fun provideReservedEntity(db: RoomDatabase) = db.getReservedDao()
     @Singleton
     @Provides
-    fun provideEventDao(db: RoomDatabase) = db.getEventDao()
-
+    fun provideScheduleEntity(db: RoomDatabase) = db.getScheduleDao()
     @Singleton
     @Provides
-    fun provideNoteDao(db: RoomDatabase) = db.getNoteDao()
-
+    fun provideCostEntity(db: RoomDatabase) = db.getCostDao()
     @Singleton
     @Provides
-    fun providePartDao(db: RoomDatabase) = db.getPartDao()
-
+    fun providePriceEntity(db: RoomDatabase) = db.getPriceDao()
     @Singleton
     @Provides
-    fun provideProductDao(db: RoomDatabase) = db.getProductDao()
-
+    fun provideProductBaseEntity(db: RoomDatabase) = db.getProductBaseDao()
     @Singleton
     @Provides
-    fun provideScheduleDao(db: RoomDatabase) = db.getScheduleDao()
-
+    fun provideProductEntity(db: RoomDatabase) = db.getProductDao()
     @Singleton
     @Provides
-    fun provideTaxDao(db: RoomDatabase) = db.getTaxDao()
+    fun provideProductInventoryEntity(db: RoomDatabase) = db.getProductInventoryDao()
+    @Singleton
+    @Provides
+    fun provideTaxEntity(db: RoomDatabase) = db.getTaxDao()
+    @Singleton
+    @Provides
+    fun provideVendorEntity(db: RoomDatabase) = db.getVendorDao()
+    @Singleton
+    @Provides
+    fun provideAddressEntity(db: RoomDatabase) = db.getAddressDao()
+    @Singleton
+    @Provides
+    fun provideCustomerEntity(db: RoomDatabase) = db.getCustomerDao()
+    @Singleton
+    @Provides
+    fun provideDateEntity(db: RoomDatabase) = db.getDateDao()
+    @Singleton
+    @Provides
+    fun provideEventEntity(db: RoomDatabase) = db.getEventDao()
 
 }

@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.invoice.contratista.R
 import com.invoice.contratista.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint

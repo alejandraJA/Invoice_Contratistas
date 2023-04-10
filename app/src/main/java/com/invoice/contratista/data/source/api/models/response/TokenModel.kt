@@ -1,8 +1,8 @@
 package com.invoice.contratista.data.source.api.models.response
 
-import java.util.Date
+import java.util.*
 
-data class TokenResponse(
+data class TokenModel(
     val token: String,
     val expiration: Date,
 )

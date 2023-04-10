@@ -4,10 +4,10 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "product")
-data class ProductEntity(
+@Entity(tableName = "product_inventory")
+data class ProductInventoryEntity(
     @PrimaryKey val id: String,
     val modified: String,
-    val name: String,
-    @ColumnInfo(name = "product_base_id")val idProductBase: String,
+    val quantity: Int,
+    @ColumnInfo(name = "product_id") val idProduct: String,
 )
