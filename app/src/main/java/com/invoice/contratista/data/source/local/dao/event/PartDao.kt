@@ -41,17 +41,15 @@ interface PartDao {
     fun getNumberOfPart(idBudget: String): Int
 
     @Query(
-        "INSERT INTO part " +
-                "SELECT  " +
-                "   :idPart AS id," +
-                "   IFNULL((SELECT number FROM part WHERE budget_id == :idBudget ORDER BY number DESC LIMIT 1) + 1, 1) AS number," +
-                "   :idBudget AS idBudget," +
-                "   (SELECT id FROM product LIMIT 1) as idProduct," +
-                "   1 AS quantity," +
-                "   0.0 AS discount," +
-                "   ''"
+        "INSERT INTO part (id, discount, number, quantity, budget_id, reserved_id) " +
+                "VALUES ( :idPart " +
+                "       , 0.0 " +
+                "       , IFNULL((SELECT number FROM part WHERE budget_id == :idBudget ORDER BY number DESC LIMIT 1) + 1, 1) " +
+                "       , 1 " +
+                "       , :idBudget " +
+                "       , :idReserved)"
     )
-    fun createPart(idPart: String, idBudget: String)
+    fun createPart(idPart: String, idBudget: String, idReserved: String)
 
     @Query("UPDATE part SET quantity = :quantity WHERE id == :idPart")
     fun updateQuantity(quantity: Int, idPart: String)
@@ -59,23 +57,23 @@ interface PartDao {
     @Query("UPDATE part SET discount = :discount WHERE id == :idPart")
     fun updateDiscount(discount: Int, idPart: String)
 
-    @Query("UPDATE part SET product_id = :idProduct WHERE id == :idPart")
-    fun updateProduct(idProduct: String, idPart: String)
+    @Query("UPDATE reserved SET product_id = :idProduct WHERE id = :idReserved")
+    fun updateProduct(idProduct: String, idReserved: String)
 
     @Query(
-        "SELECT pa.id                                         AS id_part\n" +
-                "     , pb.description                                AS product_name\n" +
-                "     , pa.quantity\n" +
-                "     , pa.number                                     AS part_number\n" +
-                "     , pb.unit_name\n" +
-                "     , pr.id                                         AS product_id\n" +
-                "     , ((pr.unit_price * pa.quantity) - pa.discount) AS amount\n" +
-                "FROM part pa\n" +
-                "         LEFT JOIN reserved r on pa.reserved_id = r.id\n" +
-                "         LEFT JOIN price pr on pr.id = r.price_id\n" +
-                "         LEFT JOIN product_inventory pi on pr.product_id = pi.product_id\n" +
-                "         LEFT JOIN product p on pi.product_id = p.id\n" +
-                "         LEFT JOIN product_base pb on p.product_base_id = pb.id\n" +
+        "SELECT pa.id                                                    AS id_part " +
+                "     , IFNULL(pb.description, 'NOT')                            AS product_name " +
+                "     , pa.quantity " +
+                "     , pa.number                                                AS part_number " +
+                "     , IFNULL(pb.unit_name, '')                                 AS unit_name" +
+                "     , IFNULL(pr.id, 'NOT')                                     AS product_id " +
+                "     , IFNULL(((pr.unit_price * pa.quantity) - pa.discount), 0) AS amount " +
+                "FROM part pa " +
+                "         LEFT JOIN reserved r on pa.reserved_id = r.id " +
+                "         LEFT JOIN price pr on pr.id = r.price_id " +
+                "         LEFT JOIN product_inventory pi on pr.product_id = pi.product_id " +
+                "         LEFT JOIN product p on pi.product_id = p.id " +
+                "         LEFT JOIN product_base pb on p.product_base_id = pb.id " +
                 "WHERE pa.budget_id = :idBudget"
     )
     fun getPartsForRecycler(idBudget: String): LiveData<List<PartItem>>

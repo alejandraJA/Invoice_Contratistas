@@ -18,6 +18,7 @@ import javax.inject.Inject
 
 class SaveProductsUseCase @Inject constructor(
     private val productRepository: ProductRepository,
+    private val priceRepository: TaxRepository,
     private val taxRepository: TaxRepository,
     private val getProductsUseCase: GetProductsUseCase,
     @ApplicationContext private val context: Context
@@ -45,20 +46,20 @@ class SaveProductsUseCase @Inject constructor(
                     val listTaxes = mutableListOf<TaxEntity>()
                     val listVendor = mutableListOf<VendorEntity>()
 
+                    // TODO: Tax
                     productResponse.product.taxEntities.forEach {
                         listTaxes.add(it.toTaxEntity(idProduct = product.id))
                     }
+                    // TODO: Price
                     productResponse.product.priceEntities.forEach {
                         listPrices.add(it.toEntity(idProduct = product.id))
                     }
+                    // TODO: Cost and Vendor
                     productResponse.cost.forEach {
                         listCost.add(it.toEntity(idProductInventory = productInventory.id))
                         listVendor.add(it.vendorModel.toEntity())
                     }
                     productRepository.set(productBase)
-                    productResponse.product.taxEntities.forEach {
-                        taxRepository.set(it.toTaxEntity(productResponse.id))
-                    }
                 }
             }
         }

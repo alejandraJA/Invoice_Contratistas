@@ -13,7 +13,7 @@ class GetProductsUseCase @Inject constructor(
 ) {
     suspend operator fun invoke(): Resource<List<ProductInventoryModel>> {
         val productsResponse =
-            productRepository.getProducts(userManager.getToken(userManager.getUsername()))
+            productRepository.getProducts(userManager.token)
         return if (productsResponse.code() != 200) {
             val productError = productsResponse.errorBody()!!.toObject()
             Resource.error(productError.message)

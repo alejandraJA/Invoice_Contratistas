@@ -25,7 +25,9 @@ class BudgetsViewModel @Inject constructor(
             }
         }
     }
-    fun setIdBudget(idBudget: String) = utilsManager.setIdBudget(idBudget)
+    fun setIdBudget(idBudget: String) {
+        utilsManager.idBudget = idBudget
+    }
 
     val budget = MediatorLiveData<List<BudgetEntity>>().apply {
         addSource(budgetRepository.getBudgets()) {

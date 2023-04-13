@@ -9,8 +9,7 @@ import com.invoice.contratista.data.source.api.models.request.UpdateTokenRequest
 import com.invoice.contratista.data.source.shared_preferences.User
 import com.invoice.contratista.data.source.shared_preferences.UserManager
 import com.invoice.contratista.sys.domain.repository.SingRepository
-import com.invoice.contratista.sys.domain.usecase.customer.SaveCustomersUseCase
-import com.invoice.contratista.utils.Constants
+import com.invoice.contratista.sys.domain.usecase.LoadDataUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -21,8 +20,10 @@ import javax.inject.Inject
 class LoginViewModel @Inject constructor(
     private val singRepository: SingRepository,
     private val userManager: UserManager,
-    private val saveCustomersUseCase: SaveCustomersUseCase,
+//    private val saveCustomersUseCase: SaveCustomersUseCase,
+    private val loadDataUseCase: LoadDataUseCase
 ) : ViewModel() {
+
 
     val error = MutableLiveData<Int>()
     val isLogged = userManager.isUserLogged()
@@ -35,9 +36,12 @@ class LoginViewModel @Inject constructor(
                     val response = singIn.body()!!
                     if (response.status) {
                         userManager.setUserLogged(User(email, password, response.data!!.token))
-                        saveCustomersUseCase.invoke(response.data.token) {
-                            if (it.status == Constants.Status.Success) function.invoke()
+                        loadDataUseCase.invoke {
+                            if (it.isEmpty()) function.invoke()
                         }
+//                        saveCustomersUseCase.invoke(response.data.token) {
+//                            if (it.status == Constants.Status.Success) function.invoke()
+//                        }
                     } else {
                         if (response.message.contains("does not exist"))
                             error.postValue(R.string.please_check_email)
@@ -50,7 +54,6 @@ class LoginViewModel @Inject constructor(
     }
 
     fun updateToken(email: String, password: String, function: () -> Unit) {
-        userManager.getToken(userManager.getUsername())
         val loginStatus = userManager.login(email, password)
         if (loginStatus == R.string.login) {
             viewModelScope.launch {
@@ -65,9 +68,12 @@ class LoginViewModel @Inject constructor(
                         val response = updateToken.body()!!
                         if (response.status) {
                             userManager.setToken(response.data!!.token, email)
-                            saveCustomersUseCase.invoke(response.data.token) {
-                                if (it.status == Constants.Status.Success) function.invoke()
+                            loadDataUseCase.invoke {
+                                if (it.isEmpty()) function.invoke()
                             }
+//                            saveCustomersUseCase.invoke(response.data.token) {
+//                                if (it.status == Constants.Status.Success) function.invoke()
+//                            }
                         } else {
                             val message = response.message
                             if (message.contains("The token does not correspond to the user."))

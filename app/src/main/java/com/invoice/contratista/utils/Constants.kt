@@ -45,7 +45,7 @@ object Constants {
         Autorizado,
     }
 
-    const val BASE_URL = "http://localhost:9191/"
+    const val BASE_URL = "http://localhost:8080/"
     const val AUTHORIZATION = "Authorization"
     const val ID_SCHEDULE = "idSchedule"
     const val ID_NOTE = "idNote"
@@ -54,5 +54,6 @@ object Constants {
     const val ID_PART = "idPart"
     const val ID_EVENT = "idEvent"
     const val ID_USER = "idUser"
+    const val ID_RESERVED: String = "idReserved"
     const val ID_PRODUCT = "idProduct"
 }

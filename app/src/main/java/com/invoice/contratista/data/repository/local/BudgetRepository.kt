@@ -52,6 +52,6 @@ class BudgetRepository @Inject constructor(
 
     fun getBudgets() = budgetDao.getBudgetsEntity(utilsManager.getIdEvent())
 
-    fun findById() = budgetDao.findById(utilsManager.getIdBudget())
+    fun findById() = budgetDao.findById(utilsManager.idBudget)
 
 }

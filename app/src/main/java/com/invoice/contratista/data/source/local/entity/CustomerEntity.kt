@@ -9,7 +9,7 @@ import androidx.room.PrimaryKey
  *
  * @param id ID del cliente
  * @param legalName Nombre fiscal o razón social del cliente
- * @param taxId RFC o Identificacion tributaria.
+ * @param idTax RFC o Identificacion tributaria.
  * - En clientes de México contiene el RFC del cliente.
  * - Para extranjeros es opcional y representa el número de registro de identificacón
  * tributaria, es decir, el equivalente al RFC en el país del cliente.

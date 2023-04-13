@@ -10,6 +10,18 @@ class UserManager @Inject constructor(@ApplicationContext context: Context) {
         context.getSharedPreferences(UserConstants.NAME, Context.MODE_PRIVATE)
     private val editor = sharedPreferences.edit()
 
+    var email: String
+        get() = sharedPreferences.getString(UserConstants.USERNAME, "")!!
+        set(value) = editor.putString(UserConstants.USERNAME, value).apply()
+
+    var token: String
+        get() = sharedPreferences.getString("${email}.${UserConstants.TOKEN}", "")!!
+        set(value) = editor.putString("${email}.${UserConstants.TOKEN}", value).apply()
+
+    var password: String
+        get() = sharedPreferences.getString("$email.${UserConstants.PASSWORD}", "")!!
+        set(value) = editor.putString("$email.${UserConstants.PASSWORD}", value).apply()
+
     fun setUserLogged(user: User) {
         user.apply {
             username.setString(UserConstants.USERNAME)
@@ -21,8 +33,6 @@ class UserManager @Inject constructor(@ApplicationContext context: Context) {
     fun getToken(username: String) = "$username.${UserConstants.TOKEN}".getString()
     fun setToken(token: String, username: String) =
         token.setString("$username.${UserConstants.TOKEN}")
-
-    fun getUsername() = UserConstants.USERNAME.getString()
 
     fun isUserLogged(): Boolean {
         val username = UserConstants.USERNAME.getString()

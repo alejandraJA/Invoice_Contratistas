@@ -9,8 +9,15 @@ class UtilsManager @Inject constructor(@ApplicationContext private val context: 
     private val sharedPreferences = context.getSharedPreferences("utils", Context.MODE_PRIVATE)
     private val editor = sharedPreferences.edit()
 
+    var idReserved: String
+        get() = sharedPreferences.getString(Constants.ID_RESERVED, "")!!
+        set(value) = editor.putString(Constants.ID_RESERVED, value).apply()
+
+    var idBudget: String
+        get() = Constants.ID_BUDGET.getString()
+        set(value) = value.setString(Constants.ID_BUDGET)
+
     fun setIdCustomer(idCustomer: String) = idCustomer.setString(Constants.ID_CUSTOMER)
-    fun setIdBudget(idBudget: String) = idBudget.setString(Constants.ID_BUDGET)
     fun setIdPart(idPart: String) = idPart.setString(Constants.ID_PART)
     fun setIdEvent(idEvent: String) = idEvent.setString(Constants.ID_EVENT)
     fun setIdProduct(idProduct: String) = idProduct.setString(Constants.ID_PRODUCT)
@@ -18,7 +25,6 @@ class UtilsManager @Inject constructor(@ApplicationContext private val context: 
     fun setIdSchedule(idSchedule: String) = idSchedule.setString(Constants.ID_SCHEDULE)
     fun setAction(action: Boolean) = action.setBoolean("Action")
     fun getIdCustomer() = Constants.ID_CUSTOMER.getString()
-    fun getIdBudget() = Constants.ID_BUDGET.getString()
     fun getIdPart() = Constants.ID_PART.getString()
     fun getIdEvent() = Constants.ID_EVENT.getString()
     fun getIdProduct() = Constants.ID_PRODUCT.getString()

@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "b3be00ab354b1b9ded51e86a6073051f",
+    "identityHash": "c7ba731d46fa4242385abb14d3fe36f1",
     "entities": [
       {
         "tableName": "budget",
@@ -95,7 +95,7 @@
       },
       {
         "tableName": "part",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `number` INTEGER NOT NULL, `budget_id` TEXT NOT NULL, `product_id` TEXT NOT NULL, `quantity` INTEGER NOT NULL, `discount` REAL NOT NULL, `reserved_id` TEXT NOT NULL, PRIMARY KEY(`id`, `product_id`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `number` INTEGER NOT NULL, `budget_id` TEXT NOT NULL, `quantity` INTEGER NOT NULL, `discount` REAL NOT NULL, `reserved_id` TEXT NOT NULL, PRIMARY KEY(`id`, `reserved_id`))",
         "fields": [
           {
             "fieldPath": "id",
@@ -112,12 +112,6 @@
           {
             "fieldPath": "idBudget",
             "columnName": "budget_id",
-            "affinity": "TEXT",
-            "notNull": true
-          },
-          {
-            "fieldPath": "idProduct",
-            "columnName": "product_id",
             "affinity": "TEXT",
             "notNull": true
           },
@@ -144,7 +138,7 @@
           "autoGenerate": false,
           "columnNames": [
             "id",
-            "product_id"
+            "reserved_id"
           ]
         },
         "indices": [],
@@ -794,7 +788,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'b3be00ab354b1b9ded51e86a6073051f')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'c7ba731d46fa4242385abb14d3fe36f1')"
     ]
   }
 }
