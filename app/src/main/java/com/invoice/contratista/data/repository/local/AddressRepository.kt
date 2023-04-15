@@ -6,5 +6,6 @@ import javax.inject.Inject
 
 class AddressRepository @Inject constructor(private val addressDao: AddressDao) {
     fun deleteAddress() = addressDao.deleteAddress()
-    fun setAddress(addressEntity: AddressEntity) = addressDao.setAddress(addressEntity)
+    fun setAddress(addressEntity: AddressEntity) = addressDao.add(addressEntity)
+    fun addAll(listAddress: MutableList<AddressEntity>) = addressDao.addAll(listAddress)
 }

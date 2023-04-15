@@ -9,6 +9,6 @@ data class ReservedEntity(
     @ColumnInfo(name = "product_id") val idProduct: String,
     @ColumnInfo(name = "id_part") val idPart: String,
     @ColumnInfo(name = "price_id") val idReserved: String,
-    val dateExpiry: String,
-    val quantity: String,
+    val quantity: String? = "0",
+    @ColumnInfo(name = "date_expiry" ) val dateExpiry: String? = "",
 )

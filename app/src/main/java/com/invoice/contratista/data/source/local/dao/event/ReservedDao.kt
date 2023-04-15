@@ -17,7 +17,7 @@ interface ReservedDao {
     @Query("DELETE FROM reserved")
     fun deleteAll()
 
-    @Query("insert into reserved (id, id_part, price_id, product_id) " +
+    @Query("insert into reserved (id, id_part, price_id, product_id, date_expiry, quantity) " +
             "values ( :idReserved " +
             "       , :idPart " +
             "       , (SELECT pri.unit_price " +
@@ -29,6 +29,8 @@ interface ReservedDao {
             "          FROM product pr " +
             "                   LEFT JOIN price pri on pr.id = pri.product_id " +
             "          ORDER BY pr.id " +
-            "          LIMIT 1)) ")
+            "          LIMIT 1)" +
+            "       , ''" +
+            "       , '0') ")
     fun createDefault(idReserved: String, idPart: String)
 }

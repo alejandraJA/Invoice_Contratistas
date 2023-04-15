@@ -4,7 +4,7 @@ import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.invoice.contratista.data.repository.local.PartRepository
-import com.invoice.contratista.data.repository.local.ProductRepository
+import com.invoice.contratista.data.repository.local.ProductBaseRepository
 import com.invoice.contratista.data.repository.local.TaxRepository
 import com.invoice.contratista.data.source.shared_preferences.UtilsManager
 import com.invoice.contratista.ui.fragment.part.adapter.TaxItem
@@ -18,7 +18,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class PartViewModel @Inject constructor(
-    private val productRepository: ProductRepository,
+    private val productBaseRepository: ProductBaseRepository,
     private val partRepository: PartRepository,
     private val taxRepository: TaxRepository,
     private val utilsManager: UtilsManager,
@@ -28,7 +28,7 @@ class PartViewModel @Inject constructor(
     val product = MediatorLiveData<ProductPart>()
 
     val productItem = MediatorLiveData<List<ProductItem>>().apply {
-        addSource(productRepository.getProductsForSelector()) {
+        addSource(productBaseRepository.getProductsForSelector()) {
             if (it.isNotEmpty()) value = it
         }
     }
@@ -39,7 +39,7 @@ class PartViewModel @Inject constructor(
 
     private fun loadProduct() {
         product.apply {
-            addSource(productRepository.getProductPart()) {
+            addSource(productBaseRepository.getProductPart()) {
                 if (it != null) value = it
             }
         }

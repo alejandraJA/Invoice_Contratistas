@@ -15,4 +15,5 @@ class TaxRepository @Inject constructor(
 
     fun delete() = taxDao.deleteAll()
     fun set(taxEntity: TaxEntity) = taxDao.add(taxEntity)
+    fun addAll(listTaxes: MutableList<TaxEntity>) = taxDao.addAll(listTaxes)
 }

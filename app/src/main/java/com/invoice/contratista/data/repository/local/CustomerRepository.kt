@@ -20,7 +20,7 @@ class CustomerRepository @Inject constructor(
      */
     fun createCustomer(customer: Customer) {
         if (customer.customer != null) customerDao.setCustomer(customer.customer)
-        if (customer.address != null) addressDao.setAddress(customer.address)
+        if (customer.address != null) addressDao.add(customer.address)
     }
 
     /**

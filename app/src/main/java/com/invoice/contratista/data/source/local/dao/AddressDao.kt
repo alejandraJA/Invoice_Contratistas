@@ -14,7 +14,7 @@ interface AddressDao {
      * @param addressEntity Objeto dirección
      */
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun setAddress(addressEntity: AddressEntity)
+    fun add(addressEntity: AddressEntity)
 
     @Query(
         "UPDATE address " +
@@ -45,4 +45,7 @@ interface AddressDao {
 
     @Query("DELETE FROM address")
     fun deleteAddress();
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun addAll(listAddress: MutableList<AddressEntity>)
 }
