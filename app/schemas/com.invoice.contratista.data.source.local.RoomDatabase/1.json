@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "c7ba731d46fa4242385abb14d3fe36f1",
+    "identityHash": "9aaac3034fe9ca7c24f7d7b0b9487f5c",
     "entities": [
       {
         "tableName": "budget",
@@ -146,7 +146,7 @@
       },
       {
         "tableName": "reserved",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `product_id` TEXT NOT NULL, `id_part` TEXT NOT NULL, `price_id` TEXT NOT NULL, `dateExpiry` TEXT NOT NULL, `quantity` TEXT NOT NULL, PRIMARY KEY(`id`, `product_id`, `id_part`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `product_id` TEXT NOT NULL, `id_part` TEXT NOT NULL, `price_id` TEXT NOT NULL, `quantity` TEXT, `date_expiry` TEXT, PRIMARY KEY(`id`, `product_id`, `id_part`))",
         "fields": [
           {
             "fieldPath": "id",
@@ -173,16 +173,16 @@
             "notNull": true
           },
           {
-            "fieldPath": "dateExpiry",
-            "columnName": "dateExpiry",
-            "affinity": "TEXT",
-            "notNull": true
-          },
-          {
             "fieldPath": "quantity",
             "columnName": "quantity",
             "affinity": "TEXT",
-            "notNull": true
+            "notNull": false
+          },
+          {
+            "fieldPath": "dateExpiry",
+            "columnName": "date_expiry",
+            "affinity": "TEXT",
+            "notNull": false
           }
         ],
         "primaryKey": {
@@ -788,7 +788,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'c7ba731d46fa4242385abb14d3fe36f1')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '9aaac3034fe9ca7c24f7d7b0b9487f5c')"
     ]
   }
 }
