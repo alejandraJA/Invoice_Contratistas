@@ -20,15 +20,15 @@ class BudgetViewHolder(view: View, private val onClick: (String) -> Unit) :
             val color = when (budgetEntity.status.getStatusBudget()) {
                 Constants.BudgetStatus.Pendiente -> R.color.warning
                 Constants.BudgetStatus.Espera -> R.color.warning
-                Constants.BudgetStatus.Cancelado -> R.color.errorCards
+                Constants.BudgetStatus.Cancelado -> androidx.appcompat.R.color.error_color_material_dark
                 Constants.BudgetStatus.Autorizado -> R.color.success
             }
             textTitleBudget.text =
                 "${itemView.resources.getString(R.string.budget)}_${budgetEntity.number}"
             idTextBudget.text = budgetEntity.number.toString()
             textDate.text = budgetEntity.date
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) viewStatus
-                .setBackgroundColor(itemView.resources.getColor(color, null))
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
+                viewStatus.setBackgroundColor(itemView.resources.getColor(color, null))
             else viewStatus
                 .setBackgroundColor(itemView.resources.getColor(color))
 

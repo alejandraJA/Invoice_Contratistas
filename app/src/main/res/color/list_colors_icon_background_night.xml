@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:state_pressed="true" android:color="#EF9F86" />
-    <item android:state_focused="true" android:color="#EF9F86" />
-    <item android:color="@color/teal_200" />
+    <item android:state_pressed="true" android:color="@color/md_theme_dark_onPrimaryContainer" />
+    <item android:state_focused="true" android:color="@color/md_theme_dark_inversePrimary" />
+    <item android:color="@color/md_theme_dark_primary" />
 </selector>

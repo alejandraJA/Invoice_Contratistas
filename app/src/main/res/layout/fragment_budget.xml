@@ -266,7 +266,6 @@
                 android:layout_marginTop="8sp"
                 android:text="@string/total_gain"
                 android:textAlignment="textEnd"
-                android:textColor="@color/text_secondary"
                 app:layout_constraintEnd_toEndOf="@+id/text_total_gain"
                 app:layout_constraintStart_toStartOf="@+id/text_total"
                 app:layout_constraintTop_toBottomOf="@+id/divider" />
